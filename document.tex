@@ -48,7 +48,7 @@
 \vfill
 \centering
 \includegraphics[width=\paperwidth,height=\paperheight,%
-keepaspectratio]{images/Logo_H-BRS_background}%
+keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 \vfill
 }}}
 
@@ -67,23 +67,23 @@ keepaspectratio]{images/Logo_H-BRS_background}%
 % #
 % #####
 
-\newcommand{\HEADER}[0]{H-BRS, WS 2015 / 2016}
+\newcommand{\HEADER}[0]{H-BRS, WS 2018 / 2019}
 \newcommand{\PAGENUMBERS}[0]{\pagemark}
-\newcommand{\DATE}[0]{1.10.2015}
+\newcommand{\DATE}[0]{20.11.2018}
 
-\newcommand{\AUTHOR}[0]{Max Muster}
-\newcommand{\MATNR}[0]{123456}
-\newcommand{\STREET}[0]{Musterstraße 11}
-\newcommand{\ZIP}[0]{12345}
-\newcommand{\TOWN}[0]{Musterstadt}
+\newcommand{\AUTHOR}[0]{Rolf Kimmelmann, Jennifer Wittling, Jan Löffelsender}
+%\newcommand{\MATNR}[0]{123456}
+%\newcommand{\STREET}[0]{Musterstraße 11}
+%\newcommand{\ZIP}[0]{12345}
+%\newcommand{\TOWN}[0]{Musterstadt}
 
-\newcommand{\REFERENT}[0]{Prof. Dr. Marie Musterfrau}
-\newcommand{\KOREFERENT}[0]{Prof. Dr. Max Mustermann}
+\newcommand{\REFERENT}[0]{Prof. Dr. Harm Knolle}
+%\newcommand{\KOREFERENT}[0]{Prof. Dr. Max Mustermann}
 
-\newcommand{\TITLE}[0]{Thema}
-\newcommand{\COURSE}[0]{Studiengang XYZ}
-\newcommand{\TYPE}[0]{Projektarbeit, Bachelor-Arbeit, Master-Arbeit}
-\newcommand{\COMPLETION}[0]{Bachelor / Master of Science}
+\newcommand{\TITLE}[0]{PostgresSQL - Rekursion auf Basis generischer Stored Procedures}
+%\newcommand{\COURSE}[0]{Master of Science Informatik}
+\newcommand{\TYPE}[0]{Projektarbeit}
+%\newcommand{\COMPLETION}[0]{Bachelor / Master of Science}
 
 % #####
 % #
@@ -107,59 +107,59 @@ keepaspectratio]{images/Logo_H-BRS_background}%
 \input{abstract}
 
 % load the preamble
-\input{preamble}
-
-% loads the fancy pagestyle for register part
-\input{fancyRegisterPart}
-
-% create the registers
-\tableofcontents\newpage
-
-% set pagenumbering to arabic(1 2 3 4)
-\pagenumbering{arabic}
-% loads the fancy pagestyle for main part
-\input{fancyMainPart}
-
-% #####
-% # load the chapter from the files
-% #
-% # TODO: create new chapter
-% #####
-\input{chapter1}
-\input{chapter2}
-
-\newpage
-
-% loads the fancy pagestyle for register part
-\input{fancyRegisterPart}
-
-% #####
-% # load the appendix from the files
-% #####
-\input{appendix}
-
-% #####
-% # list of table, list of figures, and list of listings in ToC
-% #####
-\newpage
-\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-\listoffigures
-\newpage
-\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
-\listoftables
-\newpage
-\addcontentsline{toc}{chapter}{Listings}
-\lstlistoflistings
-
-% #####
-% # List of Abbreviations
-% #####
-\phantomsection 
-\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-\renewcommand\refname{Abkürzungsverzeichnis} 
-\chapter*{Abkürzungsverzeichnis}
-\input{abbreviations}
-\newpage
+%\input{preamble}
+%
+%% loads the fancy pagestyle for register part
+%\input{fancyRegisterPart}
+%
+%% create the registers
+%\tableofcontents\newpage
+%
+%% set pagenumbering to arabic(1 2 3 4)
+%\pagenumbering{arabic}
+%% loads the fancy pagestyle for main part
+%\input{fancyMainPart}
+%
+%% #####
+%% # load the chapter from the files
+%% #
+%% # TODO: create new chapter
+%% #####
+%\input{chapter1}
+%\input{chapter2}
+%
+%\newpage
+%
+%% loads the fancy pagestyle for register part
+%\input{fancyRegisterPart}
+%
+%% #####
+%% # load the appendix from the files
+%% #####
+%\input{appendix}
+%
+%% #####
+%% # list of table, list of figures, and list of listings in ToC
+%% #####
+%\newpage
+%\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+%\listoffigures
+%\newpage
+%\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+%\listoftables
+%\newpage
+%\addcontentsline{toc}{chapter}{Listings}
+%\lstlistoflistings
+%
+%% #####
+%% # List of Abbreviations
+%% #####
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+%\renewcommand\refname{Abkürzungsverzeichnis}
+%\chapter*{Abkürzungsverzeichnis}
+%\input{abbreviations}
+%\newpage
 
 % #####
 % # load the bibliography
@@ -169,6 +169,6 @@ keepaspectratio]{images/Logo_H-BRS_background}%
 % #####
 % # load the sworn declaration
 % #####
-\input{declaration}
+%\input{declaration}
 % end of the document
 \end{document}
