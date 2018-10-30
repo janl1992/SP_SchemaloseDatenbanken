@@ -21,6 +21,12 @@
 \newblock {In: }\emph{First International Workshop on Graph Data Management
   Experiences and Systems} ACM, 2013, S.~15
 
+\bibitem[AU95]{33444}
+\textsc{Aho}, Alfred~V. ; \textsc{Ullman}, Jeffrey~D.:
+\newblock \emph{Foundations of computer science}.
+\newblock Computer Science Press, 1995
+  \url{http://infolab.stanford.edu/~ullman/focs.html}
+
 \bibitem[Eis03]{eisentraut01}
 \textsc{Eisentraut}, Peter:
 \newblock \emph{PostgreSQL Das Offizielle Handbuch}.
@@ -31,10 +37,11 @@
 \newblock \emph{PostgresSQL}.
 \newblock Carl Hanser Verlag München, 2018
 
-\bibitem[Gru]{grucia17}
+\bibitem[Gru17]{grucia17}
 \textsc{Grucia}, Jelena:
 \newblock \emph{PostgreSQL and GraphQL}.
-\newblock \url{https://blog.cloudboost.io/postgresql-and-graphql-2da30c6cde26}
+\newblock \url{https://blog.cloudboost.io/postgresql-and-graphql-2da30c6cde26}.
+\newblock \,Version:\,2017
 
 \bibitem[KHA{\etalchar{+}}16]{kucuk2016pg}
 \textsc{Kucuk}, Ahmet ; \textsc{Hamdi}, Shah~M. ; \textsc{Aydin}, Berkay ;
@@ -55,5 +62,11 @@
 \textsc{Redmond}, Eric:
 \newblock \emph{Sieben Wochen, sieben Datenbanken}.
 \newblock O'Reilly Verlag, 2012
+
+\bibitem[Sas18]{sasaki18}
+\textsc{Sasaki}, Bryce~M.:
+\newblock \emph{Graph Databases for Beginners: The Basics of Data Modeling}.
+\newblock \url{https://neo4j.com/blog/data-modeling-basics/}.
+\newblock \,Version:\,2018
 
 \end{thebibliography}

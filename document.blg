@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
 The style file: alphadin.bst
@@ -10,45 +10,52 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
 Warning--entry type for "grucia17" isn't style-file defined
 --line 25 of file bibliography.bib
-You've used 8 entries,
+Warning--entry type for "sasaki18" isn't style-file defined
+--line 57 of file bibliography.bib
+I was expecting a `,' or a `}'---line 71 of file bibliography.bib
+ :  
+ :  address = {USA}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You've used 10 entries,
             4793 wiz_defined-function locations,
-            932 strings with 7529 characters,
-and the built_in function-call counts, 4416 in all, are:
-= -- 462
-> -- 114
-< -- 135
-+ -- 149
-- -- 40
-* -- 257
-:= -- 794
-add.period$ -- 8
-call.type$ -- 8
-change.case$ -- 39
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 138
-empty$ -- 314
-format.name$ -- 80
-if$ -- 868
+            943 strings with 7805 characters,
+and the built_in function-call counts, 5512 in all, are:
+= -- 573
+> -- 141
+< -- 172
++ -- 190
+- -- 51
+* -- 319
+:= -- 977
+add.period$ -- 12
+call.type$ -- 10
+change.case$ -- 48
+chr.to.int$ -- 10
+cite$ -- 10
+duplicate$ -- 171
+empty$ -- 394
+format.name$ -- 97
+if$ -- 1089
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 25
-newline$ -- 51
-num.names$ -- 24
-pop$ -- 59
+missing$ -- 35
+newline$ -- 63
+num.names$ -- 30
+pop$ -- 70
 preamble$ -- 1
-purify$ -- 55
+purify$ -- 68
 quote$ -- 0
-skip$ -- 239
+skip$ -- 314
 stack$ -- 0
-substring$ -- 264
-swap$ -- 26
-text.length$ -- 24
-text.prefix$ -- 6
+substring$ -- 327
+swap$ -- 31
+text.length$ -- 28
+text.prefix$ -- 7
 top$ -- 0
-type$ -- 64
+type$ -- 80
 warning$ -- 0
-while$ -- 38
-width$ -- 12
-write$ -- 105
-(There was 1 warning)
+while$ -- 46
+width$ -- 15
+write$ -- 132
+(There was 1 error message)
