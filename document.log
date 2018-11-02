@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.20)  30 OCT 2018 21:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.20)  31 OCT 2018 16:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1328,34 +1328,34 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 8.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 33.
+(babel)             in language  on input line 32.
  [2
 
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 33.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 35.
+(babel)             in language  on input line 33.
  [3]
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 44.
+(babel)             in language  on input line 45.
  [4]) (./document.bbl
 chapter without number
 Package babel Info: Redefining ngerman shorthand "|
@@ -1440,7 +1440,7 @@ f/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on document.pdf (5 pages, 830150 bytes).
+Output written on document.pdf (5 pages, 830268 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  84 compressed objects within 1 object stream
