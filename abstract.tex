@@ -10,6 +10,11 @@
 	\item Es soll untersucht werden wie sich Graphen in der relationalen Datenbank Postgresql abbilden lassen
 	\item Ist es besser eine Relationale Datenbank als Graphdatenbank zu verwenden oder eine "richtige" Graphendatenbank zu verwenden.
 	\item Welche Problemstellungen lassen sich durch die Modellierung von Daten in Form von Graphen lösen
+	\item Optimierungemöglichkeiten? Handgrestrikte  SQLs vs. Stored Procedure
+\end{itemize}s
+\item Forschungsstand Eigene Vorkenntnisse im Exposé darlegen: Wie ist der aktuelle Forschungsstand zum Thema der Arbeit?
+\begin{itemize}
+	\item ... (Kein Dunst) Ist das für uns überhaupt relevant?
 	\item Optimierungemöglichkeiten?
 	\item In einer relationalen Datenbank wird beim Auflösen von Beziehungen (z.B. Vater-Kind Beziehung oder wer kennt wen Beziehung) ein JOIN verwendet,
 	Bei einem JOIN wird das kartesische Produkt verwendet, welches schon nach relativ wenigen Eingabeelementen viel Rechenleistung beansprucht.
@@ -28,8 +33,7 @@ $\rightarrow$ Warum sind Graphdatenbanken so schnell?
 \newpage
 \item Ziel/Hypothese Im Exposé darlegen, welches Ziel erreicht werden soll: Was soll bewiesen oder widerlegt werden? Kurz: „Was will ich wissen? (Fragestellung), wozu will ich das wissen? (Ziel)“
 \begin{itemize}
-	\item Kann man über einen Graphen, abgespeichert in einer relationalen Datenbank, traversieren mit Hilfe von generisch generierten Stored Procedures?
-	\item Wie performant lässt sich die Traversierung mit hilfe von Stored Procedures abbilden? Kann man hier Abschätzungen zur Komplexität machen?
+	\item Wie performant lässt sich die Traversierung mit hilfe von Stored Procedures bzw SQL-Erweiterungen abbilden? Kann man hier Abschätzungen zur Komplexität machen?
 	\item Welche Besonderheiten bietet Postgresql?
 %	\item Gibt es Frameworks die hier unterstützen? // Anmerkung Jan: Laut Prof. Knolle sollten wir ja plain PL/SQL verwenden
 	\item Schneiden die relationale Datenbanken im Vergleich zu Graphdatenbanken in Hinsicht auf Performance beim Traversieren von Graphen ähnlich gut ab,
@@ -40,6 +44,7 @@ $\rightarrow$ Warum sind Graphdatenbanken so schnell?
 	\item Graphentheorie
 	\item Relationale Algebra
 	\item Komplexitätstheorie
+	\item Rekursion - Besonderheit Rekursion in SQL
 \end{itemize}
 \end{itemize}
  
