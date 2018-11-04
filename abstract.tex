@@ -10,34 +10,40 @@
 	\item Es soll untersucht werden wie sich Graphen in der relationalen Datenbank Postgresql abbilden lassen
 	\item Ist es besser eine Relationale Datenbank als Graphdatenbank zu verwenden oder eine "richtige" Graphendatenbank zu verwenden.
 	\item Welche Problemstellungen lassen sich durch die Modellierung von Daten in Form von Graphen lösen
-	\item Optimierungemöglichkeiten? 
+	\item Optimierungemöglichkeiten? Handgrestrikte  SQLs vs. Stored Procedure
 \end{itemize}
 \item Forschungsstand Eigene Vorkenntnisse im Exposé darlegen: Wie ist der aktuelle Forschungsstand zum Thema der Arbeit?
 \begin{itemize}
-	\item ... (Kein Dunst) Ist das für uns überhaupt relevant?
+%	\item ... (Kein Dunst) Ist das für uns überhaupt relevant?
+%	\item Optimierungemöglichkeiten?
+	\item In einer relationalen Datenbank wird beim Auflösen von Beziehungen (z.B. Vater-Kind Beziehung oder wer kennt wen Beziehung) ein JOIN verwendet,
+	Bei einem JOIN wird das kartesische Produkt verwendet, welches schon nach relativ wenigen Eingabeelementen viel Rechenleistung beansprucht.
 \end{itemize}
+\item Forschungsstand Eigene Vorkenntnisse im Exposé darlegen: Wie ist der aktuelle Forschungsstand zum Thema der Arbeit? \\
+	$\rightarrow$ In der Praxis wurde folgende Beobachtung gemacht: Das Traversieren über einen Graph mit Hilfe von Stored Procedures auf einer relationalen Datenbank
+	ist vermutlich ähnlich schnell, wie das Traversieren mit Hilfe einer klassischen Graphdatenbank.
 \item Wissenslücke/Erkenntnisinteresse	Warum will man sich mit diesem Problem beschäftigen? Welche Wissenslücke kann man dadurch schließen?
  \begin{itemize}
  	\item Praktische Anwendungsgebiete wie Empfehlungsengines o.Ä.
  	\item Vorteile von Relationalen Datenbanken.
  	\item Auswirkungen auf bestehende Anwendungen. Was sind die Vorteile? Wie wären die Auswirkungen auf ein Datenbankschema?
  \end{itemize}
-\item Fragestellung	Welche Frage (Forschungsfrage) soll in der Arbeit beantwortet werden?
-\begin{itemize}
-	\item ... (Kein Dunst) Haben wir überhaupt eine Forschungsfrage?
-\end{itemize}
+\item Fragestellung	Welche Frage (Forschungsfrage) soll in der Arbeit beantwortet werden? \\
+$\rightarrow$ Warum sind Graphdatenbanken so schnell?
 \item Ziel/Hypothese Im Exposé darlegen, welches Ziel erreicht werden soll: Was soll bewiesen oder widerlegt werden? Kurz: „Was will ich wissen? (Fragestellung), wozu will ich das wissen? (Ziel)“
 \begin{itemize}
-	\item Wie performant lässt sich die Traversierung mit hilfe von Stored Procedures abbilden? Kann man hier Abschätzungen zur Komplexität machen?
+	\item Wie performant lässt sich die Traversierung mit hilfe von Stored Procedures bzw SQL-Erweiterungen abbilden? Kann man hier Abschätzungen zur Komplexität machen?
 	\item Welche Besonderheiten bietet Postgresql?
-	\item Gibt es Frameworks die hier unterstützen?
-	\item 
+%	\item Gibt es Frameworks die hier unterstützen? // Anmerkung Jan: Laut Prof. Knolle sollten wir ja plain PL/SQL verwenden
+	\item Schneiden die relationale Datenbanken im Vergleich zu Graphdatenbanken in Hinsicht auf Performance beim Traversieren von Graphen ähnlich gut ab,
+	wenn man unkonventionelle Methoden verwendet (Traversieren mit Hilfe von rekursiven Stored Procedures).
 \end{itemize}
 \item Theoriebezug	Welche Theorien sollen als Basis für die Bearbeitung der Fragestellung dienen?
 \begin{itemize}
 	\item Graphentheorie
 	\item Relationale Algebra
 	\item Komplexitätstheorie
+	\item Rekursion - Besonderheit Rekursion in SQL
 \end{itemize}
 \end{itemize}
  
