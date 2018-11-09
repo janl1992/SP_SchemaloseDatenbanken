@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.31)  7 NOV 2018 16:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.31)  9 NOV 2018 14:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1263,7 +1263,7 @@ LaTeX Info: Redefining \nameref on input line 102.
 \openout5 = `document.out'.
 
  ABD: EveryShipout initializing macros
-(./title.tex <./images/Logo_H-BRS.jpg, id=15, 284.5029pt x 55.6479pt>
+(./title.tex <./images/Logo_H-BRS.jpg, id=19, 284.5029pt x 55.6479pt>
 File: ./images/Logo_H-BRS.jpg Graphic file (type jpg)
 
 <use ./images/Logo_H-BRS.jpg>
@@ -1324,7 +1324,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 45.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 45.
-<images/Logo_H-BRS_background.pdf, id=16, 62.634pt x 40.15pt>
+<images/Logo_H-BRS_background.pdf, id=20, 62.634pt x 40.15pt>
 File: images/Logo_H-BRS_background.pdf Graphic file (type pdf)
 
 <use images/Logo_H-BRS_background.pdf>
@@ -1378,18 +1378,27 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 50.
  [4])
-(./beispielgliederung.tex) (./document.bbl
+(./beispielgliederung.tex
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
+(babel)             in language  on input line 40.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
+(babel)             in language  on input line 40.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 2.
+(babel)             in language  on input line 40.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 2.
+(babel)             in language  on input line 40.
  [5
 
-]
+]) (./document.bbl
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [6]
 chapter without number
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -1431,8 +1440,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--71
 12 https : / / neo4j . com / blog /
  []
 
+) (./declaration.tex
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [7
+
+]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--16
+
+ []
+
+! Undefined control sequence.
+<argument> \large \TOWN 
+                        ,
+l.20 &\textit{\large \TOWN,}
+                            &&& \\
+? 
 ) 
 AED: lastpage setting LastPage
+
+Overfull \hbox (3.09444pt too wide) in paragraph at lines 18--176
+ [][] 
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 176.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1441,7 +1482,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 176.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 176.
-[6
+[8
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -1454,36 +1495,33 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 47B27051FF811944286F9475E19BECC1;101.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 1DD200DDB559892270CD2D843713B2A0;165.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 176.
  ) 
 Here is how much of TeX's memory you used:
- 22907 strings out of 492995
- 410750 string characters out of 6132703
+ 22928 strings out of 492995
+ 410994 string characters out of 6132703
  624096 words of memory out of 5000000
- 25973 multiletter control sequences out of 15000+600000
- 49763 words of font info for 44 fonts, out of 8000000 for 9000
+ 25983 multiletter control sequences out of 15000+600000
+ 57015 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,13n,66p,8819b,591s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/
-texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/t
+ 64i,13n,66p,8819b,724s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
 1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-lm/lmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/loc
-al/texlive/2017/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/lm/lmtt12.pfb>
-Output written on document.pdf (6 pages, 833176 bytes).
+lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr12.pf
+b></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/
+2017/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2017/texmf-dist/fo
+nts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
+public/lm/lmtt12.pfb>
+Output written on document.pdf (8 pages, 862158 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
- 39 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 159 PDF objects out of 1000 (max. 8388607)
+ 135 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
+ 47 words of extra memory for PDF output out of 10000 (max. 10000000)
 
