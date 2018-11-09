@@ -1,14 +1,19 @@
 % Document
-\chapter*{Beispielgliederung}
+\chapter*{Gliederung - Entwurf}
 %    \section*{beispielgliederung}\markboth{beispielgliederung}{}
 %    \addcontentsline{toc}{chapter}{beispielgliederung}
     \begin{enumerate}
         \item Graph-Datenbanken - Grundlegende technologische Aspekte
         \begin{enumerate}[label*=\arabic*.]
             \item Einführung
-            \item Modell (Graph, Property Graphen, Hypergraphen)
+            \item Modell
+             \begin{enumerate}[label*=\arabic*.]
+            	\item Graph
+            	\item Property Graphen
+            	\item Hypergraphen
+            \end{enumerate}
         \end{enumerate}
-        \item Graph-Datenbanken und -Frameworks - PostgresSQL
+        \item PostgresSQL
         \begin{enumerate}[label*=\arabic*.]
             \item Allgemein
             \item Architektur
@@ -17,19 +22,24 @@
             \item Anfragemethoden
             \item Konsistenz
         \end{enumerate}
-        \item Graph-Datenbanken im praktischen Einsatz: OLTP
+        \item PostgresSQL : OLTP
             \begin{enumerate}[label*=\arabic*.]
                 \item Ausgewählte Use Cases
-                \item Weitere Zugriffstechniken
-                \item Vergleich mit relationalen Datenbanksystemen
                 \item Beurteilung
             \end{enumerate}
-        \item Graph-Datenbanken im praktischen Einsatz: OLAP
+        \item PostgresSQL: OLAP
         \begin{enumerate}[label*=\arabic*.]
             \item Benchmark
+            \begin{enumerate}[label*=\arabic*.]
+            	\item Standard SQL 
+            	\item Stored Procedures
+            	\item PL/SQL - Recursion
+            \end{enumerate}
             \item Datenbankzugriffe
-            \item Zugriffsart Aggregation
-            \item Zugriffsart Traversierung
+            \begin{enumerate}[label*=\arabic*.]
+            	\item Zugriffsart Aggregation
+            	\item Zugriffsart Traversierung
+            \end{enumerate}
             \item Interpretation der Ergebnisse
         \end{enumerate}
     \end{enumerate}
