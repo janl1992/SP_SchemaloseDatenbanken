@@ -1,0 +1,15 @@
+\chapter*{Graph}
+Ein Graph ist mathematisch folgendermaßen definiert: \\
+\begin{definition}
+    Ein $\text{Graph(graph)}G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
+    \begin{itemize}
+        \item $V$, einer nicht leeren Menge von Knoten(vertices)
+        \item $E$, einer Menge von Kanten (edges) und
+        \item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
+        $\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
+    \end{itemize}
+    Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn
+    $\exists e \in E: \gamma(e)=\{a,b\}$. \\
+    Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
+    genau dann wenn $a \in \gamma(e)$. \footnote{Vgl. \cite[Seite 21]{pbeck01}}
+\end{definition}

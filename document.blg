@@ -12,50 +12,47 @@ Warning--entry type for "grucia17" isn't style-file defined
 --line 25 of file bibliography.bib
 Warning--entry type for "sasaki18" isn't style-file defined
 --line 57 of file bibliography.bib
-I was expecting a `,' or a `}'---line 71 of file bibliography.bib
- :  
- :  address = {USA}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You've used 10 entries,
+Warning--entry type for "pbeck01" isn't style-file defined
+--line 73 of file bibliography.bib
+You've used 12 entries,
             4793 wiz_defined-function locations,
-            943 strings with 7805 characters,
-and the built_in function-call counts, 5512 in all, are:
-= -- 573
-> -- 141
-< -- 172
-+ -- 190
-- -- 51
-* -- 319
-:= -- 977
-add.period$ -- 12
-call.type$ -- 10
-change.case$ -- 48
-chr.to.int$ -- 10
-cite$ -- 10
-duplicate$ -- 171
-empty$ -- 394
-format.name$ -- 97
-if$ -- 1089
+            952 strings with 8052 characters,
+and the built_in function-call counts, 6692 in all, are:
+= -- 686
+> -- 180
+< -- 215
++ -- 241
+- -- 65
+* -- 389
+:= -- 1184
+add.period$ -- 15
+call.type$ -- 12
+change.case$ -- 59
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 205
+empty$ -- 471
+format.name$ -- 124
+if$ -- 1313
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 35
-newline$ -- 63
-num.names$ -- 30
-pop$ -- 70
+missing$ -- 45
+newline$ -- 74
+num.names$ -- 36
+pop$ -- 87
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 83
 quote$ -- 0
-skip$ -- 314
+skip$ -- 391
 stack$ -- 0
-substring$ -- 327
-swap$ -- 31
-text.length$ -- 28
-text.prefix$ -- 7
+substring$ -- 388
+swap$ -- 38
+text.length$ -- 34
+text.prefix$ -- 8
 top$ -- 0
-type$ -- 80
+type$ -- 96
 warning$ -- 0
-while$ -- 46
+while$ -- 56
 width$ -- 15
-write$ -- 132
-(There was 1 error message)
+write$ -- 156
+(There were 3 warnings)

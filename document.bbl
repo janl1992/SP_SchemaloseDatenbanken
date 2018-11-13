@@ -24,8 +24,15 @@
 \bibitem[AU95]{33444}
 \textsc{Aho}, Alfred~V. ; \textsc{Ullman}, Jeffrey~D.:
 \newblock \emph{Foundations of computer science}.
-\newblock Computer Science Press, 1995
+\newblock USA : Computer Science Press, 1995
   \url{http://infolab.stanford.edu/~ullman/focs.html}
+
+\bibitem[Bec18]{pbeck01}
+\textsc{Becker}, Peter:
+\newblock \emph{Graphentheorie}.
+\newblock
+  \url{http://www2.inf.h-brs.de/~pbecke2m/graphentheorie/einfuehrung.pdf}.
+\newblock \,Version:\,2018
 
 \bibitem[Eis03]{eisentraut01}
 \textsc{Eisentraut}, Peter:
@@ -68,5 +75,11 @@
 \newblock \emph{Graph Databases for Beginners: The Basics of Data Modeling}.
 \newblock \url{https://neo4j.com/blog/data-modeling-basics/}.
 \newblock \,Version:\,2018
+
+\bibitem[ZSHZ18]{zhang2018hypergraph}
+\textsc{Zhang}, Hongliang ; \textsc{Song}, Lingyang ; \textsc{Han}, Zhu  ;
+  \textsc{Zhang}, Yingjun:
+\newblock \emph{Hypergraph Theory in Wireless Communication Networks}.
+\newblock Springer, 2018
 
 \end{thebibliography}
