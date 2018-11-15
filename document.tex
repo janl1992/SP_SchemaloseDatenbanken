@@ -109,10 +109,25 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 % input the title
 \input{title}
 \nocite{*} %TODO: Show full bibliography remove for final version.  
+
+% Inhaltsverzeichnis
+
+	%\setcounter{tocdepth}{1}
+	%für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+\setcounter{tocdepth}{2}
+\tableofcontents
+\newpage
+
+
+%Inhalt
 \input{abstract}
 \input{beispielgliederung}
-\input{Graph.tex}
-\input{Hypergraph.tex}
+\input{content/01graph_model}
+\input{content/02postgres}
+\input{content/03oltp}
+\input{content/04olap}
+%\input{Graph.tex}
+%\input{Hypergraph.tex}
 % load the preamble
 %\input{preamble}
 %
