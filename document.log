@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.9)  25 NOV 2018 21:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.9)  26 NOV 2018 22:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1353,52 +1353,27 @@ Package babel Info: Redefining ngerman shorthand "~
 
 
 ]) (./document.toc
-Overfull \hbox (3.22041pt too wide) detected at line 23
+Overfull \hbox (3.22041pt too wide) detected at line 18
  []\T1/lmss/bx/n/12 VIII
  []
 
 
-Overfull \hbox (3.96545pt too wide) detected at line 24
+Overfull \hbox (3.96545pt too wide) detected at line 19
  []\T1/lmr/m/n/12 VIII
  []
 
 
-Overfull \hbox (3.96545pt too wide) detected at line 25
+Overfull \hbox (3.96545pt too wide) detected at line 20
  []\T1/lmr/m/n/12 VIII
  []
 
 
-Overfull \hbox (3.96545pt too wide) detected at line 26
+Overfull \hbox (3.96545pt too wide) detected at line 21
  []\T1/lmr/m/n/12 VIII
  []
 
 
-Overfull \hbox (3.96545pt too wide) detected at line 27
- []\T1/lmr/m/n/12 VIII
- []
-
-
-Overfull \hbox (3.96545pt too wide) detected at line 28
- []\T1/lmr/m/n/12 VIII
- []
-
-
-Overfull \hbox (3.96545pt too wide) detected at line 29
- []\T1/lmr/m/n/12 VIII
- []
-
-
-Overfull \hbox (3.96545pt too wide) detected at line 30
- []\T1/lmr/m/n/12 VIII
- []
-
-
-Overfull \hbox (3.96545pt too wide) detected at line 31
- []\T1/lmr/m/n/12 VIII
- []
-
-
-Overfull \hbox (3.96545pt too wide) detected at line 32
+Overfull \hbox (3.96545pt too wide) detected at line 22
  []\T1/lmr/m/n/12 VIII
  []
 
@@ -1514,21 +1489,21 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 4.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 5.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 5.
-Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 6.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 6.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 7.
+(babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 7.
+(babel)             in language  on input line 8.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 9.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 9.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 10.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 10.
 ) (./content/03oltp.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -1541,6 +1516,15 @@ Package babel Info: Redefining ngerman shorthand "~
  [6
 
 ]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 1.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 1.
+ [7]
 chapter 3.
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -1575,7 +1559,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [7
+ [8
 
 ]
 chapter 4.
@@ -1628,7 +1612,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 2.
- [8
+ [9
 
 ]
 chapter without number
@@ -1671,7 +1655,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 84.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 84.
-[9
+[10
 
 ]) (./declaration.tex
 Package babel Info: Redefining ngerman shorthand "|
@@ -1682,7 +1666,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [10]
+ [11]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1707,7 +1691,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 196.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 196.
-[11
+[12
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -1724,9 +1708,9 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 23603 strings out of 494871
- 416599 string characters out of 6178382
- 629646 words of memory out of 5000000
+ 23604 strings out of 494871
+ 416607 string characters out of 6178382
+ 629651 words of memory out of 5000000
  26388 multiletter control sequences out of 15000+600000
  83560 words of font info for 65 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1744,10 +1728,10 @@ e/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (11 pages, 962099 bytes).
+Output written on document.pdf (12 pages, 963090 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 307 compressed objects within 4 object streams
- 66 named destinations out of 1000 (max. 500000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 311 compressed objects within 4 object streams
+ 67 named destinations out of 1000 (max. 500000)
  279 words of extra memory for PDF output out of 10000 (max. 10000000)
 
