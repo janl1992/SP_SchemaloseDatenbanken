@@ -1,10 +1,11 @@
 \chapter{Graph-Datenbanken und -Frameworks - Ausgewählte Systeme }
 \section{PostgreSQL}
+PostgreSQL ist eine Objektrelationale Datenbank. Weiterentwicklungen wird von der PostgreSQL Global Development Group durchgeführt. PostgreSQL steht unter der PostgreSQL-Lizenz, welche sehr stark der GNU-Lizenz ähnelt. Auf Basis von PostgreSQL gibt es mehrere, zum Teil auch kommerzielle, Forks wie zum Beispiel Amazon Redshift oder EnterpriseDB.
 \section{Allgemein}
 \section{Architektur}
-Eine PostgreSQL-Instanz wird als Server Prozess mit eigenem Datenverzeichnis und einer eigenen Konfigurationsdatei sowie einem eigenen Transaktionslog.
+Eine einzelne PostgreSQL-Instanz mit einer oder mehreren Datenbanken wird auch Cluster genannt. Ein PostgreSQL-Cluster ist ein eigener Prozess mit einem eigenen Datenverzeichnis eigenen Konfigurationsdatei sowie einem eigenen Transaktionslog.
 \section{Datenmodell}
-PostgreSQL legt die Dateien im \$PGDATA-Verzeichnis ab. Wird kein Tablespace angegeben werden alle Daten im Verzeichnis Base abgelegt. Tablespaces sind in Postgres eigene Unterordner im \$PGDATA Verzeichnis.
+. Daten werden in Form von Tabellen abgelegt. Im Filesystem legt PostgreSQL Dateien im sogenannten \$PGDATA-Verzeichnis ab, dieses wird beim Start von PostgreSQL festgelegt. Alle Date werden im Verzeichnis Base unterhalb von \$PGDATA abgelegt. Einzelne Tabellen oder Indices können in Tablespaces ausgelagert werden. Für einen Tablespace wird ein neuer Unterordner im \$PGDATA-Verzeichnis angelegt. Es ist auch möglich einzelne Spalten einer Tabelle in einen anderen Tablespace zu verschieben.
 \section{Indexe}
 \section{Anfragemethoden}
 \section{Konsistenz}

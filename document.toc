@@ -12,9 +12,9 @@
 \contentsline {section}{\numberline {2.2}Allgemein}{VI}{section.2.2}
 \contentsline {section}{\numberline {2.3}Architektur}{VI}{section.2.3}
 \contentsline {section}{\numberline {2.4}Datenmodell}{VI}{section.2.4}
-\contentsline {section}{\numberline {2.5}Indexe}{VI}{section.2.5}
-\contentsline {section}{\numberline {2.6}Anfragemethoden}{VI}{section.2.6}
-\contentsline {section}{\numberline {2.7}Konsistenz}{VI}{section.2.7}
+\contentsline {section}{\numberline {2.5}Indexe}{VII}{section.2.5}
+\contentsline {section}{\numberline {2.6}Anfragemethoden}{VII}{section.2.6}
+\contentsline {section}{\numberline {2.7}Konsistenz}{VII}{section.2.7}
 \contentsline {chapter}{\numberline {3}Graph-Datenbanken im praktischen Einsatz: OLTP}{VIII}{chapter.3}
 \contentsline {section}{\numberline {3.1}PostgresSQL: OLTP}{VIII}{section.3.1}
 \contentsline {section}{\numberline {3.2}Ausgew\IeC {\"a}hlte Use Cases}{VIII}{section.3.2}
