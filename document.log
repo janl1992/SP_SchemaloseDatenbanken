@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.3)  27 NOV 2018 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.5.3)  27 NOV 2018 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1455,17 +1455,17 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 20.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 24.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 24.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 24.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 27.
+(babel)             in language  on input line 24.
  [4
 
 ])
@@ -1514,17 +1514,17 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 28.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 35.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 29.
+(babel)             in language  on input line 35.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 30.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 30.
+(babel)             in language  on input line 36.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 37.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 31.
+(babel)             in language  on input line 37.
 ) (./content/03oltp.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
@@ -1626,21 +1626,9 @@ LaTeX Font Info:    Try loading font information for T1+lmtt on input line 28.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
+Underfull \hbox (badness 10000) in paragraph at lines 59--63
 \T1/lmtt/m/n/12 cloudboost . io / postgresql-[]and-[]graphql-[]2da30c6cde26$[][
 ]\T1/lmr/m/n/12 .
- []
-
-
-Underfull \hbox (badness 3965) in paragraph at lines 80--84
-[]\T1/lmr/m/sc/12 Sasaki\T1/lmr/m/n/12 , Bry-ce M.:  \T1/lmr/m/it/12 Graph Da-t
-a-ba-ses for Be-gin-ners: The
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 80--84
-\T1/lmr/m/it/12 Ba-sics of Da-ta Mo-de-ling\T1/lmr/m/n/12 .  [][]$\T1/lmtt/m/n/
-12 https : / / neo4j . com / blog /
  []
 
 Package babel Info: Redefining ngerman shorthand "|
@@ -1653,7 +1641,19 @@ Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 84.
 [10
 
-]) (./declaration.tex
+]
+Underfull \hbox (badness 3965) in paragraph at lines 85--89
+[]\T1/lmr/m/sc/12 Sasaki\T1/lmr/m/n/12 , Bry-ce M.:  \T1/lmr/m/it/12 Graph Da-t
+a-ba-ses for Be-gin-ners: The
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--89
+\T1/lmr/m/it/12 Ba-sics of Da-ta Mo-de-ling\T1/lmr/m/n/12 .  [][]$\T1/lmtt/m/n/
+12 https : / / neo4j . com / blog /
+ []
+
+) (./declaration.tex
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1704,10 +1704,10 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 196.
  ) 
 Here is how much of TeX's memory you used:
- 22964 strings out of 493014
- 410679 string characters out of 6133352
+ 22968 strings out of 493014
+ 410744 string characters out of 6133352
  618678 words of memory out of 5000000
- 25964 multiletter control sequences out of 15000+600000
+ 25967 multiletter control sequences out of 15000+600000
  83560 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,13n,66p,8487b,547s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1728,10 +1728,10 @@ c/lm/lmri12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmri8
 exlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/201
 6/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/local/texlive/2016/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (12 pages, 960735 bytes).
+Output written on document.pdf (12 pages, 962211 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 63 named destinations out of 1000 (max. 500000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 309 compressed objects within 4 object streams
+ 64 named destinations out of 1000 (max. 500000)
  271 words of extra memory for PDF output out of 10000 (max. 10000000)
 

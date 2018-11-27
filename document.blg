@@ -16,45 +16,47 @@ Warning--entry type for "pbeck01" isn't style-file defined
 --line 73 of file bibliography.bib
 Warning--entry type for "postgresqldoc" isn't style-file defined
 --line 87 of file bibliography.bib
-You've used 13 entries,
+Warning--entry type for "postgres8" isn't style-file defined
+--line 92 of file bibliography.bib
+You've used 14 entries,
             4793 wiz_defined-function locations,
-            956 strings with 8207 characters,
-and the built_in function-call counts, 7283 in all, are:
-= -- 752
-> -- 188
-< -- 251
-+ -- 277
-- -- 68
-* -- 411
-:= -- 1278
-add.period$ -- 16
-call.type$ -- 13
-change.case$ -- 63
+            959 strings with 8296 characters,
+and the built_in function-call counts, 7874 in all, are:
+= -- 818
+> -- 196
+< -- 287
++ -- 314
+- -- 71
+* -- 433
+:= -- 1372
+add.period$ -- 17
+call.type$ -- 14
+change.case$ -- 67
 chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 219
-empty$ -- 502
-format.name$ -- 130
-if$ -- 1423
-int.to.chr$ -- 1
+cite$ -- 14
+duplicate$ -- 233
+empty$ -- 533
+format.name$ -- 136
+if$ -- 1533
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 51
-newline$ -- 79
-num.names$ -- 39
-pop$ -- 97
+missing$ -- 57
+newline$ -- 84
+num.names$ -- 42
+pop$ -- 107
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 95
 quote$ -- 0
-skip$ -- 440
+skip$ -- 488
 stack$ -- 0
-substring$ -- 436
-swap$ -- 40
-text.length$ -- 36
-text.prefix$ -- 9
+substring$ -- 484
+swap$ -- 42
+text.length$ -- 38
+text.prefix$ -- 10
 top$ -- 0
-type$ -- 106
+type$ -- 116
 warning$ -- 0
-while$ -- 59
-width$ -- 16
-write$ -- 167
-(There were 4 warnings)
+while$ -- 62
+width$ -- 17
+write$ -- 178
+(There were 5 warnings)

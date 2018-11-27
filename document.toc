@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {1.2}Modell}{IV}{section.1.2}
 \contentsline {subsection}{\numberline {1.2.1}Graph}{IV}{subsection.1.2.1}
 \contentsline {subsection}{\numberline {1.2.2}Property Graphen}{IV}{subsection.1.2.2}
-\contentsline {subsection}{\numberline {1.2.3}Hypegraphen}{IV}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.3}Hypegraphen}{V}{subsection.1.2.3}
 \contentsline {chapter}{\numberline {2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{VI}{chapter.2}
 \contentsline {section}{\numberline {2.1}PostgreSQL}{VI}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Allgemein}{VI}{subsection.2.1.1}

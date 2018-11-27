@@ -41,14 +41,19 @@
 
 \bibitem[Fro18]{froehlich01}
 \textsc{Froehlich}, Lutz:
-\newblock \emph{PostgresSQL}.
+\newblock \emph{PostgresSQL 10}.
 \newblock Carl Hanser Verlag München, 2018
 
-\bibitem[Gro]{postgresqldoc}
+\bibitem[Groa]{postgresqldoc}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 11.1 Documentation}.
 \newblock
   \url{https://www.postgresql.org/files/documentation/pdf/11/postgresql-11-A4.pdf}
+
+\bibitem[Grob]{postgres8}
+\textsc{Group}, The PostgreSQL Global~D.:
+\newblock \emph{PostgreSQL 8.4 Documentation}.
+\newblock \url{https://www.postgresql.org/docs/8.4/datatype.html}
 
 \bibitem[Gru17]{grucia17}
 \textsc{Grucia}, Jelena:
