@@ -2,7 +2,13 @@
 \section{PostgreSQL}
 \section{Allgemein}
 \section{Architektur}
+Eine PostgreSQL-Instanz wird als Server Prozess mit eigenem Datenverzeichnis und einer eigenen Konfigurationsdatei sowie einem eigenen Transaktionslog.
 \section{Datenmodell}
+PostgreSQL legt die Dateien im \$PGDATA-Verzeichnis ab. Wird kein Tablespace angegeben werden alle Daten im Verzeichnis Base abgelegt. Tablespaces sind in Postgres eigene Unterordner im \$PGDATA Verzeichnis.
 \section{Indexe}
 \section{Anfragemethoden}
 \section{Konsistenz}
+PostgreSQL schreibt einen Transaktionslog (Write-Ahead Log, WAL).
+Dieser wird als WAL-Buffer im Arbeitsspeicher und als WAL-Dateien auf der Festplatte geführt.
+Bei jedem Commit einer Transaktion wird zunächst das WAL aktualisiert bevor die Bestätigung an den Client gesendet wird.
+Der walwriter-Prozess schreibt periodisch die WAL-Buffer auf die Festplatte.

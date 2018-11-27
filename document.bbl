@@ -65,6 +65,12 @@
 \newblock \emph{Taschenbuc Datenbanken}.
 \newblock Fachbuchverlag Leipzig im Carl Hanser Verlag, 2015
 
+\bibitem[{Pos}18]{postgres2018}
+\textsc{{PostgreSQL Global Development Group}}:
+\newblock \emph{PostgreSQL 11.1 Documentation}.
+\newblock \url{https://www.postgresql.org/docs/11}.
+\newblock \,Version:\,2018
+
 \bibitem[Red12]{redmont01}
 \textsc{Redmond}, Eric:
 \newblock \emph{Sieben Wochen, sieben Datenbanken}.

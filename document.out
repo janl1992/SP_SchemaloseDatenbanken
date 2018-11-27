@@ -16,16 +16,17 @@
 \BOOKMARK [0][-]{chapter.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{}% 16
 \BOOKMARK [1][-]{section.3.1}{PostgresSQL: OLTP}{chapter.3}% 17
 \BOOKMARK [1][-]{section.3.2}{Ausgew\344hlte Use Cases}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.3}{Beurteilung}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 20
-\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{Benchmark}{chapter.4}% 22
-\BOOKMARK [2][-]{subsection.4.2.1}{Standard SQL}{section.4.2}% 23
-\BOOKMARK [2][-]{subsection.4.2.2}{Stored Procedures}{section.4.2}% 24
-\BOOKMARK [2][-]{subsection.4.2.3}{PL/SQL-Recursion}{section.4.2}% 25
-\BOOKMARK [1][-]{section.4.3}{Datenbankzugriffe}{chapter.4}% 26
-\BOOKMARK [2][-]{subsection.4.3.1}{Zugriffsart Aggregation}{section.4.3}% 27
-\BOOKMARK [2][-]{subsection.4.3.2}{Zugriffsart Traversierung}{section.4.3}% 28
-\BOOKMARK [1][-]{section.4.4}{Interpretation der Ergebnisse}{chapter.4}% 29
-\BOOKMARK [0][-]{chapter*.6}{Literaturverzeichnis}{}% 30
-\BOOKMARK [0][-]{chapter*.7}{Eidesstattliche Erkl\344rung}{}% 31
+\BOOKMARK [2][-]{subsection.3.2.1}{CSV-Import}{section.3.2}% 19
+\BOOKMARK [1][-]{section.3.3}{Beurteilung}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 21
+\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Benchmark}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.2.1}{Standard SQL}{section.4.2}% 24
+\BOOKMARK [2][-]{subsection.4.2.2}{Stored Procedures}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.3}{PL/SQL-Recursion}{section.4.2}% 26
+\BOOKMARK [1][-]{section.4.3}{Datenbankzugriffe}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.3.1}{Zugriffsart Aggregation}{section.4.3}% 28
+\BOOKMARK [2][-]{subsection.4.3.2}{Zugriffsart Traversierung}{section.4.3}% 29
+\BOOKMARK [1][-]{section.4.4}{Interpretation der Ergebnisse}{chapter.4}% 30
+\BOOKMARK [0][-]{chapter*.6}{Literaturverzeichnis}{}% 31
+\BOOKMARK [0][-]{chapter*.7}{Eidesstattliche Erkl\344rung}{}% 32
