@@ -9,6 +9,7 @@ Die Architektur von PostgresSQL ist in folgendem Bild gegeben:
 \begin{center}
     \includegraphics[width = \linewidth]{./images/PostgresSQLArchitektur.jpg}
 \end{center}
+Diese Architektur ergibt sich aus der Gegebenheit, dass alle Daten normalerweise nicht in den Shared Buffer passen. Ein Teil der Datenbank befindet sich im Datafile, aus der bei Bedarf gelesen werden kann, der andere Teil im Shared Buffer.
 Die Hauptaufgabe des Shared Buffer ist es, Input Output Operationen (I/O Operationen) auf das Datafile zu minimieren und möglichst viele Operationen im Speicher durchzuführen. Die Motivation möglichst viele Operation im Speicher durchzuführen
 besteht darin, dass Operationen im Speicher schneller ausgeführt werden. Werden Operationen im Speicher ausgeführt, so werden I/O Operationen auf das Datafile reduziert. Der Writer Prozess ist für die Synchronisation
 des Zustands des Shared Buffers und der Tablespaces verwantwortlich. Dieser Prozess schreibt Datenblöcke aus dem Shared Buffer auf die Tablespaces innerhalb des Datafile. Der Writer Checkpoint ist dafür verantwortlich,
