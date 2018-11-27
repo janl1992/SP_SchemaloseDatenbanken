@@ -44,6 +44,12 @@
 \newblock \emph{PostgresSQL}.
 \newblock Carl Hanser Verlag München, 2018
 
+\bibitem[Gro]{postgresqldoc}
+\textsc{Group}, The PostgreSQL Global~D.:
+\newblock \emph{PostgreSQL 11.1 Documentation}.
+\newblock
+  \url{https://www.postgresql.org/files/documentation/pdf/11/postgresql-11-A4.pdf}
+
 \bibitem[Gru17]{grucia17}
 \textsc{Grucia}, Jelena:
 \newblock \emph{PostgreSQL and GraphQL}.
