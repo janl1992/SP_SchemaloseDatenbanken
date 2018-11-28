@@ -93,6 +93,12 @@
 \newblock \url{https://neo4j.com/blog/data-modeling-basics/}.
 \newblock \,Version:\,2018
 
+\bibitem[TT16]{Theobald2016}
+
+\newblock \,{In:\,}\textsc{Thorsten~Theobald}, Sadik~I.:
+\newblock \emph{Graphen}.
+\newblock Springer Fachmedien Wiesbaden, 2016
+
 \bibitem[ZSHZ18]{zhang2018hypergraph}
 \textsc{Zhang}, Hongliang ; \textsc{Song}, Lingyang ; \textsc{Han}, Zhu  ;
   \textsc{Zhang}, Yingjun:
