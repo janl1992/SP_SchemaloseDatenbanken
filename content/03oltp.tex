@@ -1,4 +1,14 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLTP}
 \section{PostgresSQL: OLTP}
 \section{Ausgewählte Use Cases}
+\subsection{CSV-Import}
+Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
+Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet. \textbackslash copy liest Informationen aus einer Datei die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
+
+\begin{lstlisting}[language=SQL,caption=CSV Input,frame=single]
+\copy Beitraege 
+FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
+\end{lstlisting}
+
+
 \section{Beurteilung}
