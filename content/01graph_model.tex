@@ -2,24 +2,44 @@
 \section{Einführung}
 \section{Modell}
 \subsection{Graph}
-Ein Graph ist mathematisch folgendermaßen definiert: \\
-\begin{definition}
-	Ein $\text{Graph(graph)}G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
-	\begin{itemize}
-		\item $V$, einer nicht leeren Menge von Knoten(vertices)
-		\item $E$, einer Menge von Kanten (edges) und
-		\item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
-		$\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
-	\end{itemize}
-	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn
-	$\exists e \in E: \gamma(e)=\{a,b\}$. \\
-	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
-	genau dann wenn $a \in \gamma(e)$. \footnote{Vgl. \cite[Seite 21]{pbeck01}}
-\end{definition}
+Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E (G = (V,E)).
+Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
+In einem klassischen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
+Graphen können gerichtet oder ungerichtet sein. Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesen Richtung besitzen.
+Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten gewichten.
+In diesem Fall werden den Kannten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+Werden Kanten und Knoten eines Graphs vertauscht entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
+Zwei Graphen können isomorph sein.
+\\Verschiedene Graphen:
+\begin{itemize}
+	\item Planare Graphen
+	\subitem lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen\cite{Theobald2016}
+	\item Reguläre Graphen
+	\subitem alle Knoten haben den selben Knotengrad
+	\item Partite Graphen
+	\subitem die Knoten können in verschiedene Partitionen unterteilt werden
+	\item Multimodale Graphen
+\end{itemize}
+
+%\\Ein Graph ist mathematisch folgendermaßen definiert: \\
+%\begin{definition}
+%	Ein $\text{Graph(graph)}G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
+%	\begin{itemize}
+%		\item $V$, einer nicht leeren Menge von Knoten(vertices)
+%		\item $E$, einer Menge von Kanten (edges) und
+%		\item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
+%		$\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
+%	\end{itemize}
+%	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn
+%	$\exists e \in E: \gamma(e)=\{a,b\}$. \\
+%	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
+%	genau dann wenn $a \in \gamma(e)$. \footnote{Vgl. \cite[Seite 21]{pbeck01}}
+%\end{definition}
 \subsection{Property Graphen}
 Property Graphen zeichnen sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften auf.
 \subsection{Hypegraphen}
-Ein Hypergraph ist folgendermaßen definiert:
+Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
+\\Mathematisch ist ein Hypergraph ist folgendermaßen definiert:
 \begin{definition}
 	Let $X=\{x_{1}, x_{2},...,x_{n}\}$ be a finite set,
 	and let $E=\{e_{1},e_{2},...,e_{m}\}$ be a family of subsets of $X$ such that
