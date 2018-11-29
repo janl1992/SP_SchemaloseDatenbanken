@@ -13,7 +13,6 @@ Die Hauptaufgabe des Shared Buffer ist es, Input Output Operationen (I/O Operati
 besteht darin, dass Operationen im Speicher schneller ausgeführt werden. Werden Operationen im Speicher ausgeführt, so werden I/O Operationen auf das Datafile reduziert. Der Writer Prozess ist für die Synchronisation
 des Zustands des Shared Buffers und der Tablespaces verwantwortlich. Dieser Prozess schreibt Datenblöcke aus dem Shared Buffer auf die Tablespaces innerhalb des Datafile. Der Writer Checkpoint ist dafür verantwortlich,
 dass alle geänderten Datenblöcke innerhalb des Shared Buffer in das Datafile geschrieben werden. \footnote{Vgl. \cite[Seite 26]{froehlich01}} \\
-Eine PostgreSQL-Instanz wird als Server Prozess mit eigenem Datenverzeichnis und einer eigenen Konfigurationsdatei sowie einem eigenen Transaktionslog.
 \section{Datenmodell}
 . Daten werden in Form von Tabellen abgelegt. Im Filesystem legt PostgreSQL Dateien im sogenannten \$PGDATA-Verzeichnis ab, dieses wird beim Start von PostgreSQL festgelegt. Alle Date werden im Verzeichnis Base unterhalb von \$PGDATA abgelegt. Einzelne Tabellen oder Indices können in Tablespaces ausgelagert werden. Für einen Tablespace wird ein neuer Unterordner im \$PGDATA-Verzeichnis angelegt. Es ist auch möglich einzelne Spalten einer Tabelle in einen anderen Tablespace zu verschieben.
 \section{Indexe}
