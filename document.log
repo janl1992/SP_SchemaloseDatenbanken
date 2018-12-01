@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.9)  1 DEC 2018 12:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.11.9)  1 DEC 2018 13:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1354,13 +1354,13 @@ Package babel Info: Redefining ngerman shorthand "~
 
 ]) (./document.toc
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 39.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 38.
+(babel)             in language  on input line 39.
 
 [1
 
@@ -1624,33 +1624,33 @@ Package babel Info: Redefining ngerman shorthand "|
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 3.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 15.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 16.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 5.
+(babel)             in language  on input line 16.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 6.
+(babel)             in language  on input line 17.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 6.
+(babel)             in language  on input line 17.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 7.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 7.
+(babel)             in language  on input line 18.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 19.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 9.
+(babel)             in language  on input line 20.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 21.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 10.
+(babel)             in language  on input line 21.
 ) (./document.bbl
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -1663,6 +1663,15 @@ Package babel Info: Redefining ngerman shorthand "~
  [11
 
 ]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 2.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 2.
+ [12]
 chapter without number
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
@@ -1691,7 +1700,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 84.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 84.
-[12
+[13
 
 ]
 Underfull \hbox (badness 3965) in paragraph at lines 97--101
@@ -1714,7 +1723,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 1.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 1.
- [13]
+ [14]
 Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 2.
 Package babel Info: Redefining ngerman shorthand "~
@@ -1739,7 +1748,7 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 200.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 200.
-[14
+[15
 
 ]
 Package babel Info: Redefining ngerman shorthand "|
@@ -1752,12 +1761,12 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 200.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 200.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 200.
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: 68B1EFCD79B4CCAA60DFB2C49089FA89;2468.
+(rerunfilecheck)             Checksum: 0B2A902B5B0DE0AE4ED4E6738C3C9A28;2468.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
- 23650 strings out of 494871
- 417558 string characters out of 6178382
+ 23652 strings out of 494871
+ 417575 string characters out of 6178382
  629880 words of memory out of 5000000
  26415 multiletter control sequences out of 15000+600000
  89540 words of font info for 67 fonts, out of 8000000 for 9000
@@ -1776,10 +1785,10 @@ e/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msbm10.pfb>
-Output written on document.pdf (16 pages, 1231433 bytes).
+Output written on document.pdf (17 pages, 1232613 bytes).
 PDF statistics:
- 412 PDF objects out of 1000 (max. 8388607)
- 371 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
+ 417 PDF objects out of 1000 (max. 8388607)
+ 375 compressed objects within 4 object streams
+ 84 named destinations out of 1000 (max. 500000)
  321 words of extra memory for PDF output out of 10000 (max. 10000000)
 
