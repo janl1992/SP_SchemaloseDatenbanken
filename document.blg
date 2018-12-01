@@ -11,50 +11,57 @@ Database file #1: bibliography.bib
 Warning--entry type for "grucia17" isn't style-file defined
 --line 25 of file bibliography.bib
 Warning--entry type for "sasaki18" isn't style-file defined
---line 57 of file bibliography.bib
+--line 69 of file bibliography.bib
 Warning--entry type for "pbeck01" isn't style-file defined
---line 73 of file bibliography.bib
+--line 85 of file bibliography.bib
+Warning--entry type for "postgresqldoc" isn't style-file defined
+--line 99 of file bibliography.bib
+Warning--entry type for "postgres8" isn't style-file defined
+--line 104 of file bibliography.bib
 Warning--entry type for "postgres2018" isn't style-file defined
---line 88 of file bibliography.bib
-You've used 13 entries,
+--line 119 of file bibliography.bib
+Warning--empty chapter in Theobald2016
+You can't pop an empty literal stack for entry Theobald2016
+while executing---line 2205 of file alphadin.bst
+You've used 17 entries,
             4793 wiz_defined-function locations,
-            956 strings with 8164 characters,
-and the built_in function-call counts, 7057 in all, are:
-= -- 718
-> -- 188
-< -- 217
-+ -- 243
-- -- 67
-* -- 409
-:= -- 1246
-add.period$ -- 17
-call.type$ -- 13
-change.case$ -- 63
-chr.to.int$ -- 13
-cite$ -- 13
-duplicate$ -- 220
-empty$ -- 506
-format.name$ -- 130
-if$ -- 1394
-int.to.chr$ -- 1
+            973 strings with 8605 characters,
+and the built_in function-call counts, 9278 in all, are:
+= -- 954
+> -- 220
+< -- 314
++ -- 340
+- -- 78
+* -- 518
+:= -- 1601
+add.period$ -- 22
+call.type$ -- 17
+change.case$ -- 79
+chr.to.int$ -- 16
+cite$ -- 18
+duplicate$ -- 283
+empty$ -- 661
+format.name$ -- 153
+if$ -- 1831
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 51
-newline$ -- 80
-num.names$ -- 39
-pop$ -- 94
+missing$ -- 68
+newline$ -- 102
+num.names$ -- 51
+pop$ -- 132
 preamble$ -- 1
-purify$ -- 89
+purify$ -- 113
 quote$ -- 0
-skip$ -- 409
+skip$ -- 555
 stack$ -- 0
-substring$ -- 400
-swap$ -- 40
-text.length$ -- 36
-text.prefix$ -- 9
+substring$ -- 593
+swap$ -- 50
+text.length$ -- 45
+text.prefix$ -- 12
 top$ -- 0
-type$ -- 106
-warning$ -- 0
-while$ -- 59
-width$ -- 17
-write$ -- 169
-(There were 4 warnings)
+type$ -- 138
+warning$ -- 1
+while$ -- 72
+width$ -- 21
+write$ -- 217
+(There was 1 error message)

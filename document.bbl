@@ -41,7 +41,7 @@
 
 \bibitem[Fro18]{froehlich01}
 \textsc{Froehlich}, Lutz:
-\newblock \emph{PostgresSQL 10}.
+\newblock \emph{PostgreSQL 10}.
 \newblock Carl Hanser Verlag München, 2018
 
 \bibitem[Groa]{postgresqldoc}
@@ -81,6 +81,12 @@
 \newblock \emph{PostgreSQL 11.1 Documentation}.
 \newblock \url{https://www.postgresql.org/docs/11}.
 \newblock \,Version:\,2018
+
+\bibitem[Rah17]{rahm2017}
+\textsc{Rahman}, Saidur:
+\newblock \emph{Basic Graph Theory}.
+\newblock Berlin, Heidelberg : Springer, 2017. --
+\newblock ISBN 978--3--319--49475--3
 
 \bibitem[Red12]{redmont01}
 \textsc{Redmond}, Eric:
