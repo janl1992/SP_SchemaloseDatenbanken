@@ -1,0 +1,12 @@
+pgadmin:
+  container_name: pgadmin_team22_container
+  image: dpage/pgadmin4:latest
+  environment:
+    PGADMIN_DEFAULT_EMAIL: pgadmin@mail.com
+    PGADMIN_DEFAULT_PASSWORD: pgadmin
+  volumes:
+    - /data/team22/pgadmin:/root/.pgadmin
+  ports:
+    - "8121:5050"
+    - "8122:80"
+  restart: always
