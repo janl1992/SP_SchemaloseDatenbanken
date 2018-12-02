@@ -5,16 +5,16 @@
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
 Ein Graph ist mathematisch folgendermaßen definiert:
 \begin{definition}
-	Ein $\text{Graph}G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
+	Ein $\text{Graph} G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
 	\begin{itemize}
 		\item $V$, einer nicht leeren Menge von Knoten(vertices)
 		\item $E$, einer Menge von Kanten (edges) und
 		\item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
 		$\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
 	\end{itemize}
-	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn
+	Zwei Knoten $a,b \in V$ heißen adjazent genau dann wenn
 	$\exists e \in E: \gamma(e)=\{a,b\}$. \\
-	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
+	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident
 	genau dann wenn $a \in \gamma(e)$. \footnote{\cite[Seite 21]{pbeck01}}
 \end{definition}
 Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
@@ -22,15 +22,23 @@ In einem klassischen Graphen kann eine Kante immer nur jeweils zwei Knoten mitei
 Graphen können gerichtet oder ungerichtet sein. Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesen Richtung besitzen.
 Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten gewichten.
 In diesem Fall werden den Kannten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+
+%http://page.math.tu-berlin.de/~felsner/Lehre/GrTh05/Graphentheorie.pdf
+Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
+Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese Multikante.
+Schlingen und Multikanten dürfen in einem klassischen Graphen nicht auftauchen.\cite{}
+
 Werden Kanten und Knoten eines Graphs vertauscht entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
 Zwei Graphen können isomorph sein.
 
 \subsection{Reguläre Graphen}
 %@ToDo Bilder einfügen
 Bei Reguläre Graphen haben alle Knoten den selben Knotengrad.
+Als Knotengrad wir die Anzahl direkter Nachbarn, also alle Knoten die über eine Kante direkt mit dem betrachteten Knoten verbunden sind, bezeichnet.\cite{felsner2012geometric}
+
 \subsection{Planare Graphen}
 %@ToDo Bilder einfügen
-Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen\cite{Theobald2016}
+Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
 \subsection{Property Graphen}
 %@ToDo Bilder einfügen
 Property Graphen zeichnen sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften auf.
