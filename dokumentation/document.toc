@@ -1,5 +1,5 @@
-\select@language {ngerman}
-\select@language {ngerman}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
 \contentsline {chapter}{Zusammenfassung}{II}{section*.1}
 \contentsline {chapter}{\numberline {1}Graph-Datenbanken - Grundlegende technologische Aspekte}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Modell}{3}{section.1.1}
@@ -27,12 +27,13 @@
 \contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{11}{chapter.4}
 \contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{11}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Benchmark}{11}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{11}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{11}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{11}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{11}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{11}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{11}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{11}{subsection.4.1.8}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{12}{chapter*.6}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{14}{chapter*.7}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{11}{section*.6}
+\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{12}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{12}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{12}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{12}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{12}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{12}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{12}{subsection.4.1.8}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{13}{chapter*.7}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{15}{chapter*.8}
