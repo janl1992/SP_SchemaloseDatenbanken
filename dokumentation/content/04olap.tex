@@ -1,0 +1,19 @@
+\chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
+\section{PostgreSQL: OLAP}
+\subsection{Benchmark}
+Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von SQL-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die Anzahl der Transaktionen pro Sekunde.
+\subsubsection{Verwendung von pgbench}
+pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Parametern übergeben werden, mit denen das Verhalten von pgbench gesteuert werden kann.
+\begin{itemize}
+	\item -c clients  \\
+	Über das Flag -c wird die Anzahl der Clients bzw. die Anzahl der gleichzeitigen Datenbankverbindungen festgelegt. Wenn hier nichts angegeben ist wird nur ein Client verewendet.
+	\item -t transactions \\
+	Über das Flag -t wird festgelegt wieviele Transaktionen jeder Client durchführt. Die Anzahl aller Transaktionen ergibt sich durch das Produkt von Clients und Transactions.
+\end{itemize}
+\subsection{Standard SQL}
+\subsection{Stored Procedures}
+\subsection{PL/SQL-Recursion}
+\subsection{Datenbankzugriffe}
+\subsection{Zugriffsart Aggregation}
+\subsection{Zugriffsart Traversierung}
+\subsection{Interpretation der Ergebnisse}

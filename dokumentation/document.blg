@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: document.aux
+The style file: alphadin.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibliography.bib
+Warning--entry type for "grucia17" isn't style-file defined
+--line 25 of file bibliography.bib
+Warning--entry type for "sasaki18" isn't style-file defined
+--line 69 of file bibliography.bib
+Warning--entry type for "pbeck01" isn't style-file defined
+--line 85 of file bibliography.bib
+Warning--entry type for "postgresqldoc" isn't style-file defined
+--line 99 of file bibliography.bib
+Warning--entry type for "postgres8" isn't style-file defined
+--line 104 of file bibliography.bib
+Warning--entry type for "postgres2018" isn't style-file defined
+--line 116 of file bibliography.bib
+Warning--I didn't find a database entry for ""
+Warning--empty chapter in Theobald2016
+You can't pop an empty literal stack for entry Theobald2016
+while executing---line 2205 of file alphadin.bst
+You've used 18 entries,
+            4793 wiz_defined-function locations,
+            977 strings with 8750 characters,
+and the built_in function-call counts, 9677 in all, are:
+= -- 989
+> -- 228
+< -- 323
++ -- 349
+- -- 80
+* -- 537
+:= -- 1670
+add.period$ -- 23
+call.type$ -- 18
+change.case$ -- 83
+chr.to.int$ -- 17
+cite$ -- 19
+duplicate$ -- 300
+empty$ -- 700
+format.name$ -- 159
+if$ -- 1914
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 72
+newline$ -- 107
+num.names$ -- 54
+pop$ -- 140
+preamble$ -- 1
+purify$ -- 119
+quote$ -- 0
+skip$ -- 579
+stack$ -- 0
+substring$ -- 612
+swap$ -- 52
+text.length$ -- 47
+text.prefix$ -- 13
+top$ -- 0
+type$ -- 144
+warning$ -- 1
+while$ -- 75
+width$ -- 22
+write$ -- 228
+(There was 1 error message)
