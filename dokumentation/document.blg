@@ -24,45 +24,45 @@ Warning--I didn't find a database entry for ""
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 18 entries,
+You've used 19 entries,
             4793 wiz_defined-function locations,
-            977 strings with 8750 characters,
-and the built_in function-call counts, 9677 in all, are:
-= -- 989
-> -- 228
-< -- 323
-+ -- 349
-- -- 80
-* -- 537
-:= -- 1670
-add.period$ -- 23
-call.type$ -- 18
-change.case$ -- 83
-chr.to.int$ -- 17
-cite$ -- 19
-duplicate$ -- 300
-empty$ -- 700
-format.name$ -- 159
-if$ -- 1914
+            983 strings with 8916 characters,
+and the built_in function-call counts, 10325 in all, are:
+= -- 1057
+> -- 247
+< -- 334
++ -- 363
+- -- 86
+* -- 585
+:= -- 1779
+add.period$ -- 24
+call.type$ -- 19
+change.case$ -- 88
+chr.to.int$ -- 18
+cite$ -- 20
+duplicate$ -- 318
+empty$ -- 753
+format.name$ -- 170
+if$ -- 2050
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 72
-newline$ -- 107
-num.names$ -- 54
-pop$ -- 140
+missing$ -- 76
+newline$ -- 113
+num.names$ -- 57
+pop$ -- 146
 preamble$ -- 1
-purify$ -- 119
+purify$ -- 126
 quote$ -- 0
-skip$ -- 579
+skip$ -- 606
 stack$ -- 0
-substring$ -- 612
-swap$ -- 52
-text.length$ -- 47
+substring$ -- 671
+swap$ -- 56
+text.length$ -- 50
 text.prefix$ -- 13
 top$ -- 0
-type$ -- 144
+type$ -- 150
 warning$ -- 1
-while$ -- 75
-width$ -- 22
-write$ -- 228
+while$ -- 81
+width$ -- 23
+write$ -- 242
 (There was 1 error message)
