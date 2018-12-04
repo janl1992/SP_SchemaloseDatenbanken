@@ -1,39 +1,39 @@
-\babel@toc {ngerman}{}
-\babel@toc {ngerman}{}
+\select@language {ngerman}
+\select@language {ngerman}
 \contentsline {chapter}{Zusammenfassung}{II}{section*.1}
 \contentsline {chapter}{\numberline {1}Graph-Datenbanken - Grundlegende technologische Aspekte}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Modell}{3}{section.1.1}
 \contentsline {subsection}{\numberline {1.1.1}Graph}{3}{subsection.1.1.1}
 \contentsline {subsection}{\numberline {1.1.2}Regul\IeC {\"a}re Graphen}{4}{subsection.1.1.2}
 \contentsline {subsection}{\numberline {1.1.3}Planare Graphen}{4}{subsection.1.1.3}
-\contentsline {subsection}{\numberline {1.1.4}Property Graphen}{4}{subsection.1.1.4}
-\contentsline {subsection}{\numberline {1.1.5}k-Partite Graphen}{4}{subsection.1.1.5}
-\contentsline {subsection}{\numberline {1.1.6}Hypegraphen}{4}{subsection.1.1.6}
-\contentsline {subsection}{\numberline {1.1.7}Multimodale Graphen}{5}{subsection.1.1.7}
-\contentsline {chapter}{\numberline {2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}PostgreSQL}{6}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Allgemein}{6}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Architektur}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Datenmodell}{8}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}Konsistenz}{9}{subsection.2.1.4}
-\contentsline {subsection}{\numberline {2.1.5}Indexe}{9}{subsection.2.1.5}
-\contentsline {subsection}{\numberline {2.1.6}Anfragemethoden}{9}{subsection.2.1.6}
-\contentsline {subsection}{\numberline {2.1.7}Konsistenz}{9}{subsection.2.1.7}
-\contentsline {chapter}{\numberline {3}Graph-Datenbanken im praktischen Einsatz: OLTP}{10}{chapter.3}
-\contentsline {section}{\numberline {3.1}PostgresSQL: OLTP}{10}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Ausgew\IeC {\"a}hlte Use Cases}{10}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}CSV-Import}{10}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Beurteilung}{10}{subsection.3.1.3}
-\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{11}{chapter.4}
-\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{11}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Benchmark}{11}{subsection.4.1.1}
-\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{11}{section*.6}
-\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{12}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{12}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{12}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{12}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{12}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{12}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{12}{subsection.4.1.8}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{13}{chapter*.7}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{15}{chapter*.8}
+\contentsline {subsection}{\numberline {1.1.4}Property Graphen}{5}{subsection.1.1.4}
+\contentsline {subsection}{\numberline {1.1.5}k-Partite Graphen}{5}{subsection.1.1.5}
+\contentsline {subsection}{\numberline {1.1.6}Hypegraphen}{5}{subsection.1.1.6}
+\contentsline {subsection}{\numberline {1.1.7}Multimodale Graphen}{6}{subsection.1.1.7}
+\contentsline {chapter}{\numberline {2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}PostgreSQL}{7}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Allgemein}{7}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Architektur}{8}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.3}Datenmodell}{9}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.4}Konsistenz}{10}{subsection.2.1.4}
+\contentsline {subsection}{\numberline {2.1.5}Indexe}{10}{subsection.2.1.5}
+\contentsline {subsection}{\numberline {2.1.6}Anfragemethoden}{10}{subsection.2.1.6}
+\contentsline {subsection}{\numberline {2.1.7}Konsistenz}{10}{subsection.2.1.7}
+\contentsline {chapter}{\numberline {3}Graph-Datenbanken im praktischen Einsatz: OLTP}{11}{chapter.3}
+\contentsline {section}{\numberline {3.1}PostgresSQL: OLTP}{11}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Ausgew\IeC {\"a}hlte Use Cases}{11}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}CSV-Import}{11}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Beurteilung}{11}{subsection.3.1.3}
+\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{12}{chapter.4}
+\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{12}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Benchmark}{12}{subsection.4.1.1}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{12}{section*.6}
+\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{13}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{13}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{13}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{13}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{13}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{13}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{13}{subsection.4.1.8}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{14}{chapter*.7}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{16}{chapter*.8}
