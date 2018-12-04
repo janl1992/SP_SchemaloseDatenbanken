@@ -1,45 +1,76 @@
 \chapter{Graph-Datenbanken und -Frameworks - Ausgewählte Systeme }
 \section{PostgreSQL}
-\subsection{Allgemein}
+\subsection{Visitenkarte des Systems}
 %@ ToDo Quellen hinzufügen
     \begin{itemize}
         \item Allgemein
         \begin{itemize}
-            \item Name:
-            \item Kategorie / Modell: PostgreSQL ist ein Relationales Datenbank System \cite{postgresqldoc}
+            \item Name: PostgreSQL, umgangssprachlich Postgres
+            \item Kategorie / Modell: PostgreSQL ist ein Relationales Datenbank System
             \item Version: 11.1
             \item Historie: PostgreSQL ist aus dem POSTGRES projekt der University of California at Berkeley entstanden, welches unter der Leitung von  Professor Michael Stonebraker im Jahre 1986 began.
             \item Hersteller: PostgreSQL Global Development Group
             \item Lizenz: Open-Source
+%            @ToDo passt das so ?
+            \item Referenzen / Quellenangaben: \cite{froehlich01}, \cite{postgres2018}, \cite{postgresqldoc}, \cite{eisentraut01}
         \end{itemize}
         \item Architektur
         \begin{itemize}
             \item Programmiersprache: C
             \item Systemarchitektur: ACID
-            \item Betriebsart: Normalerweise Stand Alone, Cluster Betrieb für Replikation der Datenbank
-            \item Protokoll der Schnittstelle: TCP/IP \cite[Seite 28]{froehlich01}
-            \item API: libpq, psycopg, psqlODBC, pq, pgtclng, Npgsql, node-postgres, libpqxx, JDBC, DBD::Pg \cite{postgres2018}
+            \item Betriebsart: Stand Alone, Cluster Betrieb für Replikation der Datenbank
+            \item Protokoll der Schnittstelle: TCP/IP % \cite[Seite 28]{froehlich01}
+            \item API: libpq, psycopg, psqlODBC, pq, pgtclng, Npgsql, node-postgres
         \end{itemize}
         \item Datenmodell
         \begin{itemize}
-            \item Standardsprache: PL/pgSQL \cite[Seite 270]{froehlich01}
-            \item Objektbegriffe, Konzepte:
+            \item Standardsprache: PL/pgSQL % \cite[Seite 270]{froehlich01}
+%            \item Objektbegriffe, Konzepte:
             \item Sichten (Views): Ja
             \item Externe Dateien (BLOBs): Ja
             \item Schlüssel: Ja, in Postgres gibt es Primärschlüssel und Fremdschlüssel
+%            @ToDo Semantische unterschiedliche Beziehungen, Sonstige Contriants
         \end{itemize}
         \item Indexe
         \begin{itemize}
-            \item Triggermechanismen: Ja, es können Prozeduren definiert werden, die als Trigger aufgerufen werden \cite[Seite 610]{eisentraut01}
-            \item Versionierung: Ja die Versionierung erfolgt mit Hilfe von Transaktions-ID(XID) \cite[Seite 38]{froehlich01}
+%            @ToDo Sekundärindexe, Historische Daten
+            \item Gespeicherte Prozeduren: Ja
+            \item Triggermechanismen: Ja, Prozeduren , die als Trigger aufgerufen werden % \cite[Seite 610]{eisentraut01}
+            \item Versionierung: Ja, Versionierung mit Hilfe von Transaktions-ID(XID) % \cite[Seite 38]{froehlich01}
+        \end{itemize}
+        \item Anfragemethoden
+        \begin{itemize}
+            \item Kommunikation, Protokoll(HTTP/REST): TCP/IP
+            \item CRUD-Operationen: Ja
+            \item Ad-hoc-Anfragen: Ja
+%            \item Kopplungstechniken Programmiersprache:
+%            \item Map/Reduce:
+        \end{itemize}
+%        Horizontale Skalierbarkeit fällt weg
+        \item Konsistenz
+        \begin{itemize}
+            \item ACID/BASE: Ja
+            \item Transaktionen: Ja
+            \item Nebenläufigkeit (Synchronisation): Ja, durch Transaktionen
+%            \item Dauerhaftigkeit: Ja, weil ACID konform
+%            \item Konfliktbehandlung Replikation:
+        \end{itemize}
+        \item Administration
+        \begin{itemize}
+            \item Werkzeuge: pgAdmin
+            \item Massendatenimport: Ja
+%            @ToDo
+            \item Datensicherung:
+            \item Recovery: Ja
         \end{itemize}
     \end{itemize}
+\newpage
 PostgreSQL ist eine Objektrelationale Datenbank. Weiterentwicklungen wird von der PostgreSQL Global Development Group durchgeführt. PostgreSQL steht unter der PostgreSQL-Lizenz, welche sehr stark der GNU-Lizenz ähnelt. Auf Basis von PostgreSQL gibt es mehrere, zum Teil auch kommerzielle, Forks wie zum Beispiel Amazon Redshift oder EnterpriseDB.
 \subsection{Architektur}
     \begin{itemize}
         \item Programmiersprache des Systems
         \item Systemkomponenten, Systemarchitektur
-        \subitem client / server Architektur \cite{postgresqldoc}
+        \subitem client / server Architektur
         \item Betriebsart
             \subitem Cluster - Menge an Datenbanken, die von PostSQL-Server verwaltet werden \cite{froehlich01}
         \item Protokoll der Schnittstelle
@@ -63,7 +94,7 @@ PostgreSQL ist eine Objektrelationale Datenbank. Weiterentwicklungen wird von de
 \subsection{Datenmodell}
     \begin{itemize}
         \item Standardsprache: SQL
-        \item Objektbegriff, Konzepte: Relationale Datenbank - Abbildung in Tabellen
+%        \item Objektbegriff, Konzepte: Relationale Datenbank - Abbildung in Tabellen
         \item Datentypen:
         \subitem Sehr viele unterstützte Datentypen, es lassen sich aber auch eigene Datentypen mittesl des CREATE TYPE befehls erstellen.\cite{postgres8}
     \end{itemize}
