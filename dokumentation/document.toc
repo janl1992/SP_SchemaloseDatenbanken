@@ -1,5 +1,5 @@
-\babel@toc {ngerman}{}
-\babel@toc {ngerman}{}
+\select@language {ngerman}
+\select@language {ngerman}
 \contentsline {chapter}{Zusammenfassung}{II}{section*.1}
 \contentsline {chapter}{\numberline {1}Graph-Datenbanken - Grundlegende technologische Aspekte}{3}{chapter.1}
 \contentsline {section}{\numberline {1.1}Modell}{3}{section.1.1}
@@ -8,13 +8,13 @@
 \contentsline {subsection}{\numberline {1.1.3}Planare Graphen}{4}{subsection.1.1.3}
 \contentsline {subsection}{\numberline {1.1.4}Property Graphen}{4}{subsection.1.1.4}
 \contentsline {subsection}{\numberline {1.1.5}k-Partite Graphen}{4}{subsection.1.1.5}
-\contentsline {subsection}{\numberline {1.1.6}Hypegraphen}{5}{subsection.1.1.6}
+\contentsline {subsection}{\numberline {1.1.6}Hypegraphen}{4}{subsection.1.1.6}
 \contentsline {subsection}{\numberline {1.1.7}Multimodale Graphen}{5}{subsection.1.1.7}
 \contentsline {chapter}{\numberline {2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{6}{chapter.2}
 \contentsline {section}{\numberline {2.1}PostgreSQL}{6}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Allgemein}{6}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Architektur}{7}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Datenmodell}{8}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {2.1.3}Datenmodell}{9}{subsection.2.1.3}
 \contentsline {subsection}{\numberline {2.1.4}Konsistenz}{9}{subsection.2.1.4}
 \contentsline {subsection}{\numberline {2.1.5}Indexe}{9}{subsection.2.1.5}
 \contentsline {subsection}{\numberline {2.1.6}Anfragemethoden}{9}{subsection.2.1.6}
