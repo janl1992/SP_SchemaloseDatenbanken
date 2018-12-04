@@ -44,10 +44,15 @@ Als Knotengrad wir die Anzahl direkter Nachbarn, also alle Knoten die über eine
 \end{center}
 \subsection{Planare Graphen}
 %@ToDo Bilder einfügen
-Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
+Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\footnote{\cite{Theobald2016}}  Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenuberkreuzungen wird planare Einbettetung von $G$ genannt.
+
+Ein ungerichteter Graph heißt zusammenhängend, falls zwischen zwei beliebigen Knoten $a$ und $b$ aus $V$ einen ungerichteten Weg mit $a$ als Startknoten und $b$ als Endknoten gibt.\footnote{\cite[36-38]{krumke2012graphentheoretische}}
 \begin{center}
 	\includegraphics[scale = 0.5]{./images/planarer_graph.png}
 \end{center}
+\subsubsection{Eulerscher Polyedersatz}
+Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass die Anzahl der Knoten minus die Anzahl der Kanten plus die Anzahl der Gebiete zwei ergibt:
+\[ n - m + f = 2 \]
 \subsection{Property Graphen}
 %@ToDo Bilder einfügen
 Property Graphen zeichnen sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften aus.
