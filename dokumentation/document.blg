@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
 The style file: alphadin.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -11,59 +11,58 @@ Database file #1: bibliography.bib
 Warning--entry type for "grucia17" isn't style-file defined
 --line 25 of file bibliography.bib
 Warning--entry type for "sasaki18" isn't style-file defined
---line 68 of file bibliography.bib
+--line 69 of file bibliography.bib
 Warning--entry type for "pbeck01" isn't style-file defined
---line 84 of file bibliography.bib
+--line 85 of file bibliography.bib
 Warning--entry type for "postgresqldoc" isn't style-file defined
---line 98 of file bibliography.bib
+--line 99 of file bibliography.bib
 Warning--entry type for "postgres8" isn't style-file defined
---line 103 of file bibliography.bib
+--line 104 of file bibliography.bib
 Warning--entry type for "postgres2018" isn't style-file defined
---line 115 of file bibliography.bib
-Warning--entry type for "felsner01" isn't style-file defined
---line 127 of file bibliography.bib
+--line 116 of file bibliography.bib
+Warning--I didn't find a database entry for ""
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
 You've used 19 entries,
             4793 wiz_defined-function locations,
-            981 strings with 8876 characters,
-and the built_in function-call counts, 10243 in all, are:
-= -- 1050
-> -- 236
-< -- 352
-+ -- 378
-- -- 83
-* -- 563
-:= -- 1759
-add.period$ -- 25
+            983 strings with 8916 characters,
+and the built_in function-call counts, 10325 in all, are:
+= -- 1057
+> -- 247
+< -- 334
++ -- 363
+- -- 86
+* -- 585
+:= -- 1779
+add.period$ -- 24
 call.type$ -- 19
-change.case$ -- 87
+change.case$ -- 88
 chr.to.int$ -- 18
 cite$ -- 20
-duplicate$ -- 315
-empty$ -- 735
-format.name$ -- 164
-if$ -- 2024
+duplicate$ -- 318
+empty$ -- 753
+format.name$ -- 170
+if$ -- 2050
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 78
+missing$ -- 76
 newline$ -- 113
 num.names$ -- 57
 pop$ -- 146
 preamble$ -- 1
-purify$ -- 125
+purify$ -- 126
 quote$ -- 0
-skip$ -- 626
+skip$ -- 606
 stack$ -- 0
-substring$ -- 654
-swap$ -- 54
-text.length$ -- 49
+substring$ -- 671
+swap$ -- 56
+text.length$ -- 50
 text.prefix$ -- 13
 top$ -- 0
-type$ -- 154
+type$ -- 150
 warning$ -- 1
-while$ -- 78
+while$ -- 81
 width$ -- 23
-write$ -- 241
+write$ -- 242
 (There was 1 error message)
