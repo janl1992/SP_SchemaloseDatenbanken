@@ -1,13 +1,18 @@
 \chapter{Graph-Datenbanken - Grundlegende technologische Aspekte}
 %\section{Einführung}
 \section{Modell}
+Ein Modell ist eine vereinfachte bzw. abstrahierte Darstellung von realen Gegenständen, Sachverhalten oder Problemen.
+Durch die Modellierung soll die Realität auf die wichtigsten Einflussfaktoren reduziert werden.
+Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung von Problemen und Sachverhalten, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
+Aus diesem Grund haben Graphen in den letzten Jahren auch eine wichtige Rolle in der Datenbankwelt erhalten.
+
+Im folgenden sollen verschiedene Arten von Graphen kurz vorgestellt werden.
 \subsection{Graph}
 %@ToDo Motivation warum erklären wir Graphen?[Jenny]
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
-Graphen eignen sich um Probleme zu abstrahieren oder zu modellieren.
 Ein Graph ist mathematisch folgendermaßen definiert:
 \begin{definition}
-	Ein $\text{Graph} G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
+	Ein $\text{Graph } G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
 	\begin{itemize}
 		\item $V$, einer nicht leeren Menge von Knoten(vertices)
 		\item $E$, einer Menge von Kanten (edges) und
@@ -18,8 +23,7 @@ Ein Graph ist mathematisch folgendermaßen definiert:
 	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
 	genau dann wenn $a$ entweder Anfangs- oder Endecke von $e$ ist. Es gilt $a \in \gamma(e)$.
 	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
-	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.\footnote{\cite[Seite 21]{pbeck01}} \\
-
+	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.\footnote{\cite[Seite 21]{pbeck01}}
 \end{definition}
 Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
