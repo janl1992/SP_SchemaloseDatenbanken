@@ -1,5 +1,9 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLTP}
 \section{PostgresSQL: OLTP}
+\subsection{Installation}
+PostgreSQL kann unter Ubuntu über die Paketverwaltung APT installiert werden. Weiterhin wird eine Installation über die RPM-Paketverwaltung angeboten. Im Rahmen dieser Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. 
+Nach der Installation von PostgreSQL muss zunächst $initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden. In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt.
+Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter $/data/team22/postgresql/11/main$ installiert.
 \subsection{Ausgewählte Use Cases}
 \subsection{CSV-Import}
 Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
@@ -22,7 +26,7 @@ FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
         birth TEXT
     );
 \end{lstlisting}
-\newpage
+
 \begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook,frame=single]
     CREATE TABLE public.facebook
     (
