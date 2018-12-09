@@ -31,8 +31,8 @@ In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteina
 
 Graphen können gerichtet oder ungerichtet sein.
 Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesene Richtung besitzen.
-Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten gewichten.
-In diesem Fall werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+Um die Beziehung zwischen zwei Knoten genauer zu definieren, lassen sich die Kanten gewichten.
+Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
 Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
 Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese Multikante.
 Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\footnote{Vgl. \cite{felsner01}}
@@ -64,8 +64,13 @@ Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null u
 Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\footnote{\cite{Theobald2016}}
 Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
 
+In Abbildung \ref{fig:planar} sind die vollständigen Graphen $K_{4}$ und $K_{5}$ abgebildet, wobei es sich bei $K_{4}$ um einen planaren Graphen und bei $K_{5}$ um einen nicht planaren Graphen handelt.
+$K_{5}$ ist nicht planar, da sich dieser in der Ebene nicht ohne Überschneidungen der Kanten zeichnen lässt.
+Die Überschneidungen sind in der Abbildung rot markiert.
+%Anwendung finden planare Graphen vorallem in der Herstellung von Chips.
 \begin{center}
 	\includegraphics[scale = 0.5]{./images/planarer_graph.png}
+	\label{fig:planar}
 \end{center}
 \subsubsection{Eulerscher Polyedersatz}
 Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass die Anzahl der Knoten minus die Anzahl der Kanten plus die Anzahl der Gebiete zwei ergibt:
@@ -74,17 +79,26 @@ Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass d
 %@ToDo Bilder einfügen
 Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
 Gespeichert werden diese Eigenschaften als Key-Value-Paare.
+Label ermöglichen die Unterteilung von Knoten und Kanten in verschiedene Knoten- und Kantentypen.
+Attribute, Label und die Richtung der Kanten erlauben eine sehr detaillierte modellierung von realen Sachverhalten.
+Somit sind Property Graphen von sehr großer Bedeutung für Graphdatenbanken.
+
+Abbildung \ref{fig:property} zeigt einen Property Graphen.
+Die Knoten sind den drei Labeln Person, Unternehmen und Stadt zugeordnet.
+Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelnen Knoten her und können durch Attribute, wie beispielsweise der Information über die Dauer der bisherigen Beziehung, genauer definiert werden.
 \begin{center}
 	\includegraphics[scale = 0.65]{./images/Property_graph.png}
+	\label{fig:property}
 \end{center}
 \subsection{k-Partite Graphen}
 %@ToDo Bilder einfügen
 Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
-Für k = 2 werden diese Graphen Bipartite Graphen genammt.
-Das folgende Bild zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
+Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
+Das folgende Bild \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
 Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
 \begin{center}
 	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
+	\label{fig:partit}
 \end{center}
 \subsection{Hypegraphen}
 Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
@@ -103,7 +117,7 @@ Das folgende Bild zeigt einen Hypergraphen:
 \begin{center}
 	\includegraphics[scale = 0.5]{./images/Hypergraph2.png}
 \end{center}
-Im Vergleich zum normale Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben (siehe Definition Definition Graph Kapitel 1.2.1) . Beim normalen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$
+Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben (siehe Definition Definition Graph Kapitel 1.2.1) . Beim normalen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$
 haben. Die Hyperedges in einem Hypergraphen sind somit eine beliebige Menge von Knoten. In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
     \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
     \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} \text{ Kanten}\]
