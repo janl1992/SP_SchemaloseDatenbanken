@@ -32,9 +32,10 @@ Graphen können gerichtet oder ungerichtet sein.
 Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesen Richtung besitzen.
 Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten wichten.
 In diesem Fall werden den Kannten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
-Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
+Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge bzw. Schleife.
 Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese Multikante.
 Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\footnote{Vgl. \cite{felsner01}}
+Multigraphen hingegen erlauben Multikanten. In Pseudographen sind sowohl Multikanten als auch Schleifen möglich.
 
 Werden Kanten und Knoten eines Graphs vertauscht entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
 Zwei Graphen können isomorph sein.
@@ -60,7 +61,7 @@ Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null u
 \subsection{Planare Graphen}
 %@ToDo Bilder einfügen
 Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\footnote{\cite{Theobald2016}}
-Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenuberkreuzungen wird planare Einbettung von $G$ genannt.
+Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
 
 \begin{center}
 	\includegraphics[scale = 0.5]{./images/planarer_graph.png}
@@ -70,7 +71,11 @@ Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass d
 \[ n - m + f = 2 \]
 \subsection{Property Graphen}
 %@ToDo Bilder einfügen
-Property Graphen zeichnen sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften aus.
+Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
+Gespeichert werden diese Eigenschaften als Key-Value-Paare.
+\begin{center}
+	\includegraphics[scale = 0.65]{./images/Property_graph.png}
+\end{center}
 \subsection{k-Partite Graphen}
 %@ToDo Bilder einfügen
 Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
