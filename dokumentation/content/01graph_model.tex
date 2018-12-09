@@ -94,7 +94,7 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 %@ToDo Bilder einfügen
 Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
 Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
-Das folgende Bild \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
+Die folgende Abbildung \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
 Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
 \begin{center}
 	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
@@ -102,7 +102,7 @@ Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keine
 \end{center}
 \subsection{Hypegraphen}
 Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
-\\Mathematisch ist ein Hypergraph ist folgendermaßen definiert:
+\\Mathematisch ist ein Hypergraph folgendermaßen definiert:
 \begin{definition}
 	Let $X=\{v_{1}, v_{2},...,v_{n}\}$ be a finite set,
 	and let $E=\{e_{1},e_{2},...,e_{m}\}$ be a family of subsets of $X$ such that
@@ -113,12 +113,16 @@ Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Grap
 	and hyperedge set $E$. The elements $v_{1}, v_{2},...,v_{n}$ of $X$ are vertices
 	of hypergraph $H$, and the sets $e_{1}, e_{2},...,e_{m}$ are hyperedges of hypergraph $H$.\footnote{Vgl. \cite[Seite 2]{zhang2018hypergraph}}
 \end{definition}
-Das folgende Bild zeigt einen Hypergraphen:
+Abbildung \ref{fig:hyper} zeigt einen Hypergraphen.
+Die Kante $e_{4}$ verbindet in diesem Graphen die Knoten $v_{5}$, $v_{6}$ und $v_{7}$ miteinander.
 \begin{center}
 	\includegraphics[scale = 0.5]{./images/Hypergraph2.png}
+	\label{fig:hyper}
 \end{center}
-Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben (siehe Definition Definition Graph Kapitel 1.2.1) . Beim normalen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$
-haben. Die Hyperedges in einem Hypergraphen sind somit eine beliebige Menge von Knoten. In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
+Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben (siehe Definition Graph Kapitel 1.2.1).
+Beim normalen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$ haben.
+Die Hyperedges in einem Hypergraphen sind somit eine beliebige Menge von Knoten.
+In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
     \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
     \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} \text{ Kanten}\]
     \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} = \{\{v_{1}, v_{2}, v_{3}\}, \{v_{2}, v_{3}\}, \{v_{3}, v_{5}, v_{6}\}, \{v_{4}\}\} \]
