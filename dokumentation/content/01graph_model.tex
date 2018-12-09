@@ -1,4 +1,5 @@
 \chapter{Graph-Datenbanken - Grundlegende technologische Aspekte}
+%\newtheorem{definition}{Definition}
 %\section{Einführung}
 \section{Modell}
 Ein Modell ist eine vereinfachte bzw. abstrahierte Darstellung von realen Gegenständen, Sachverhalten oder Problemen.
@@ -29,29 +30,29 @@ Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
 
 Graphen können gerichtet oder ungerichtet sein.
-Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesen Richtung besitzen.
-Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten wichten.
-In diesem Fall werden den Kannten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
-Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge bzw. Schleife.
+Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesene Richtung besitzen.
+Um die Beziehung zwischen zwei Knoten genauer zu definieren lassen sich die Kanten gewichten.
+In diesem Fall werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
 Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese Multikante.
 Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\footnote{Vgl. \cite{felsner01}}
 Multigraphen hingegen erlauben Multikanten. In Pseudographen sind sowohl Multikanten als auch Schleifen möglich.
 
 Werden Kanten und Knoten eines Graphs vertauscht entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
 Zwei Graphen können isomorph sein.
-Der Grad eines eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
+Der Grad eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
 Dabei werden Schleifen doppelt gezählt.\footnote{Vgl. \cite[Seite 13]{rahm2017}}
 Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
 	\[K_{n}=\big([n],\begin{pmatrix}
 		[n] \\ 2
 	\end{pmatrix}\big)\]
 
-Ein ungerichteter Graph heißt zusammenhängend, falls zwischen zwei beliebigen Knoten $a$ und $b$ aus $V$ einen ungerichteten Weg mit $a$ als Startknoten und $b$ als Endknoten gibt.\footnote{\cite[36-38]{krumke2012graphentheoretische}}
+Ein ungerichteter Graph heißt zusammenhängend, falls zwischen zwei beliebigen Knoten $a$ und $b$ aus $V$ es einen ungerichteten Weg mit $a$ als Startknoten und $b$ als Endknoten gibt.\footnote{\cite[36-38]{krumke2012graphentheoretische}}
 
 \subsection{Reguläre Graphen}
 %@ToDo Bilder einfügen
-Bei Reguläre Graphen haben alle Knoten den selben Knotengrad.
-Als Knotengrad wir die Anzahl direkter Nachbarn, also alle Knoten die über eine Kante direkt mit dem betrachteten Knoten verbunden sind, bezeichnet.\footnote{\cite{felsner2012geometric}}
+Bei regulären Graphen haben alle Knoten den selben Knotengrad.
+Als Knotengrad wird die Anzahl direkter Nachbarn, also alle Knoten die über eine Kante direkt mit dem betrachteten Knoten verbunden sind, bezeichnet.\footnote{\cite{felsner2012geometric}}
 Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null und einen mit einem Grad von drei.
 \begin{center}
 	\includegraphics[scale = 0.4]{./images/Regulaerer_graph.png}
