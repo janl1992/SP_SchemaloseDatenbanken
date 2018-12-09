@@ -12,18 +12,19 @@
 \BOOKMARK [2][-]{subsection.2.1.1}{Visitenkarte des Systems}{section.2.1}% 12
 \BOOKMARK [0][-]{chapter.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{}% 13
 \BOOKMARK [1][-]{section.3.1}{PostgresSQL: OLTP}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Ausgew\344hlte Use Cases}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.2}{CSV-Import}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.3}{Beurteilung}{section.3.1}% 17
-\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 18
-\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.1.1}{Benchmark}{section.4.1}% 20
-\BOOKMARK [2][-]{subsection.4.1.2}{Standard SQL}{section.4.1}% 21
-\BOOKMARK [2][-]{subsection.4.1.3}{Stored Procedures}{section.4.1}% 22
-\BOOKMARK [2][-]{subsection.4.1.4}{PL/SQL-Recursion}{section.4.1}% 23
-\BOOKMARK [2][-]{subsection.4.1.5}{Datenbankzugriffe}{section.4.1}% 24
-\BOOKMARK [2][-]{subsection.4.1.6}{Zugriffsart Aggregation}{section.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Traversierung}{section.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.1.8}{Interpretation der Ergebnisse}{section.4.1}% 27
-\BOOKMARK [0][-]{chapter*.8}{Literaturverzeichnis}{}% 28
-\BOOKMARK [0][-]{chapter*.9}{Eidesstattliche Erkl\344rung}{}% 29
+\BOOKMARK [2][-]{subsection.3.1.1}{Installation}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.2}{Ausgew\344hlte Use Cases}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.3}{CSV-Import}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.4}{Beurteilung}{section.3.1}% 18
+\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 19
+\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Benchmark}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.2}{Standard SQL}{section.4.1}% 22
+\BOOKMARK [2][-]{subsection.4.1.3}{Stored Procedures}{section.4.1}% 23
+\BOOKMARK [2][-]{subsection.4.1.4}{PL/SQL-Recursion}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.5}{Datenbankzugriffe}{section.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.1.6}{Zugriffsart Aggregation}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Traversierung}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.8}{Interpretation der Ergebnisse}{section.4.1}% 28
+\BOOKMARK [0][-]{chapter*.8}{Literaturverzeichnis}{}% 29
+\BOOKMARK [0][-]{chapter*.9}{Eidesstattliche Erkl\344rung}{}% 30

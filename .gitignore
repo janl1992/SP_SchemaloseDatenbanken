@@ -1,4 +1,4 @@
 *.log
-document.pdf
-document.out
-document.aux
+**/document.pdf
+**/document.out
+**/document.aux
