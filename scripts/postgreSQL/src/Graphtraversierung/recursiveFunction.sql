@@ -17,7 +17,7 @@ BEGIN
   DROP TABLE intermDst1;
   -- As recursion depth is 5
   if iRecursionDepth > 1 THEN
-    return query SELECT * FROM recursivesearch(intermDst_, iRecursionDepth - 1);
+    return query SELECT * FROM recursivesearch(intermDst_, iRecursionDepth - 1, sTable);
   ELSE
     RETURN;
   END IF;
