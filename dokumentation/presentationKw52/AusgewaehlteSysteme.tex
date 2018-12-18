@@ -11,6 +11,8 @@
 \newcommand{\mergebnisse}{Messergebnisse pgBench}
 \newcommand{\storedproc}{Stored Procedure}
 \newcommand{\pgbench}{pgBench}
+\newcommand{\konzepte}{Konzepte für rekursive Anfragen}
+\newcommand{\fazit}{Fazit}
 \usepackage{pdfpages}
 \usepackage{tikz}
 \usepackage{fancybox}
@@ -101,6 +103,14 @@ x filter/.code={
 	\end{figure}
 \end{frame}
 
+\section{Konzepte für rekursive Anfragen}
+\begin{frame}
+    \frametitle{\konzepte}
+        \center
+            Nächste Seite
+
+\end{frame}
+
     {
     \setbeamercolor{background canvas}{bg=}
     \includepdf[pages=-,fitpaper]{RecursiveSelect.pdf}
@@ -162,35 +172,15 @@ x filter/.code={
 	\end{figure}
 \end{frame}
 
-%\begin{frame}
-%	\frametitle{\mergebnisse}
-%	\centering
-%	\begin{figure}
-%		\begin{tikzpicture}
-%			\begin{axis}[
-%			xbar,
-%			width=6cm, height=3.5cm,
-%			enlarge y limits=0.5,
-%			xlabel={Transaktions Per Second},
-%			symbolic y coords={selectWithUnion},
-%			ytick=data,
-%			nodes near coords
-%			]
-%				\addplot coordinates
-%				{()};
-%			\end{axis}
-%		\end{tikzpicture}
-%	\end{figure}
-%\end{frame}
-
-%\section{PostgreSQL Überblick}
-
-%\section{Rekursiver SQL Aufruf}
-%    \begin{frame}
-%        \frametitle{\rsql}
-%
-%    \end{frame}
-
+\section{Fazit}
+\begin{frame}
+    \frametitle{\fazit}
+    \begin{itemize}
+        \item Rekursives Select per Standard SQL ist am schnellsten
+        \item Rekursive Stored Procedures sind sehr langsam (kann aber auch an Implementierung liegen)
+        \item Reukrsives Traversieren mit Hilfe von StoredProcedures, InnerJoin und SubSelects nicht vergleichbar mit rekursiven Select per Standard SQL
+    \end{itemize}
+\end{frame}
 \end{document}
 
 
