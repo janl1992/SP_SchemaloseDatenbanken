@@ -17,6 +17,9 @@
 \usepackage{geometry}
 \usepackage{pdflscape}
 \usepackage{pgfplots}
+\usepackage{filecontents}
+%\usepackage{pgfplots}
+\usepackage{pgfplotstable}
 %\geometry{bottom=0.9in}
 \usepackage{fancyhdr}
 \setbeamertemplate{footline}[text line]{
@@ -28,9 +31,38 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \setcounter{tocdepth}{1}
- 
+
+\pgfplotsset{
+discard if/.style 2 args={
+    x filter/.code={
+    \edef\tempa{\thisrow{#1}}
+    \edef\tempb{#2}
+    \ifx\tempa\tempb
+    \def\pgfmathresult{inf}
+    \fi
+    }
+},
+discard if not/.style 2 args={
+x filter/.code={
+\edef\tempa{\thisrow{#1}}
+\edef\tempb{#2}
+\ifx\tempa\tempb
+\else
+\def\pgfmathresult{inf}
+\fi
+}
+}}
+
 
 \begin{document}
+
+\begin{filecontents}{data.csv}
+{Occurences}, {keyword}
+192, selectWithUnion
+15, StoredProcedure
+25, InnerJoin
+126, SubSelect
+\end{filecontents}
 \tikzstyle{node} = [text width=2em, text centered]
 %\lstset{language=Python}
 %\lstset{language=Python}
@@ -95,22 +127,61 @@
 	\frametitle{\mergebnisse}
 	\centering
 	\begin{figure}
+        \pgfplotstablegetrowsof{data.csv}
+        \edef\numberofrows{\pgfplotsretval}
 		\begin{tikzpicture}
-			\begin{axis}[
-			xbar,
-			width=6cm, height=3.5cm,
-			enlarge y limits=0.5,
-			xlabel={Transaktions Per Second},
-			symbolic y coords={SubSelect,InnerJoin,Stored Procedure},
-			ytick=data,
-            nodes near coords
-			]
-				\addplot coordinates
-				{(126,SubSelect) (25,InnerJoin) (15,Stored Procedure)};
-			\end{axis}
+            \begin{axis}[
+            /pgf/number format/.cd,1000 sep={},
+            width=0.8\linewidth,height=6cm,
+            xbar,/pgf/bar shift=0pt,
+            xmin=0, xmax=250,
+            xtick=\empty,
+            enlarge x limits={value=0.1, upper},
+            enlarge y limits=0.1,
+            ytick={0,...,\numberofrows},
+            y dir=reverse,
+            xlabel= {Transaktionen Pro Sekunde},
+%            ylabel = {Verfahren},
+            y tick label style={major tick length=0pt},
+            yticklabels from table={data.csv}{[index]1},
+            nodes near coords, nodes near coords align=horizontal
+            ]
+
+                \addplot [draw,fill=blue!50,discard if={keyword}{selectWithUnion}
+                ] table [
+                y expr=\coordindex,
+                x index=0,col sep=comma
+                ]{data.csv};
+
+                \addplot [draw,fill=orange,discard if not={keyword}{selectWithUnion}] table [
+                y expr=\coordindex,
+                x index=0,col sep=comma
+                ]{data.csv};
+            \end{axis}
 		\end{tikzpicture}
 	\end{figure}
 \end{frame}
+
+%\begin{frame}
+%	\frametitle{\mergebnisse}
+%	\centering
+%	\begin{figure}
+%		\begin{tikzpicture}
+%			\begin{axis}[
+%			xbar,
+%			width=6cm, height=3.5cm,
+%			enlarge y limits=0.5,
+%			xlabel={Transaktions Per Second},
+%			symbolic y coords={selectWithUnion},
+%			ytick=data,
+%			nodes near coords
+%			]
+%				\addplot coordinates
+%				{()};
+%			\end{axis}
+%		\end{tikzpicture}
+%	\end{figure}
+%\end{frame}
 
 %\section{PostgreSQL Überblick}
 
