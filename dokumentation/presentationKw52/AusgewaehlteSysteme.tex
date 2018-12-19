@@ -60,10 +60,12 @@ x filter/.code={
 
 \begin{filecontents}{data.csv}
 {Occurences}, {keyword}
-192, selectWithUnion
 15, StoredProcedure
 25, InnerJoin
+88, selectWithUnionAll
+124, SubSelectGeneriert
 126, SubSelect
+192, selectWithUnion
 \end{filecontents}
 \tikzstyle{node} = [text width=2em, text centered]
 %\lstset{language=Python}
@@ -157,13 +159,13 @@ x filter/.code={
             nodes near coords, nodes near coords align=horizontal
             ]
 
-                \addplot [draw,fill=blue!50,discard if={keyword}{selectWithUnion}
+                \addplot [draw,fill=blue!50,discard if={keyword}{test}
                 ] table [
                 y expr=\coordindex,
                 x index=0,col sep=comma
                 ]{data.csv};
 
-                \addplot [draw,fill=orange,discard if not={keyword}{selectWithUnion}] table [
+                \addplot [draw,fill=orange,discard if not={keyword}{test}] table [
                 y expr=\coordindex,
                 x index=0,col sep=comma
                 ]{data.csv};
@@ -178,7 +180,7 @@ x filter/.code={
     \begin{itemize}
         \item Rekursives Select per Standard SQL ist am schnellsten
         \item Rekursive Stored Procedures sind sehr langsam (kann aber auch an Implementierung liegen)
-        \item Reukrsives Traversieren mit Hilfe von StoredProcedures, InnerJoin und SubSelects nicht vergleichbar mit rekursiven Select per Standard SQL
+%        \item Reukrsives Traversieren mit Hilfe von StoredProcedures, InnerJoin und SubSelects nicht vergleichbar mit rekursiven Select per Standard SQL
     \end{itemize}
 \end{frame}
 \end{document}
