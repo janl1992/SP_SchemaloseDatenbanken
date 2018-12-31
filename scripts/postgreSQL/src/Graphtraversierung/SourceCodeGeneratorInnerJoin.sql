@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION innerJoinSourceCodeGenerator(iRecursionDepth integer, sTable text) RETURNS SETOF integer AS $$
+CREATE OR REPLACE FUNCTION innerJoinSourceCodeGenerator(iRecursionDepth integer, sTable text, integer iStart) RETURNS SETOF integer AS $$
 Declare
   intermDst_ integer[];
   iCount integer;
@@ -10,7 +10,6 @@ Declare
   tFinalStatement text;
 BEGIN
   iCount = 0;
---   iCount = iRecursionDepth;
   tSelectStatement = '';
   tWhereStatement = '';
   tConcatenateStatement := 'SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN(';
@@ -27,7 +26,6 @@ BEGIN
     RETURN;
   end if;
   WHILE iCount < iRecursionDepth LOOP
---     tStatement := tConcatenateStatement || tStatement ||')';
     if iCount = iRecursionDepth - 1 then
       tSelectStatement := tSelectStatement || tStatement  || iCount || ' ';
     else
@@ -40,10 +38,8 @@ BEGIN
         tWhereStatement := tWhereStatement || 'rf' || iCount || '.src = rf' || iCount - 1 || '.dst AND ';
       end if;
       else
-        tWhereStatement := 'rf' || iCount || '.src = 765 AND ' ;
+        tWhereStatement := 'rf' || iCount || '.src = '|| iStart || ' AND ' ;
     end if;
---     raise notice 'SelectStatement %', tSelectStatement;
---     raise notice 'WhereStatement %', tWhereStatement;
     iCount = iCount + 1;
   end loop;
   tWhereStatement := 'WHERE ' || tWhereStatement;
