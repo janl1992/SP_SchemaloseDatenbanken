@@ -26,5 +26,10 @@
 \BOOKMARK [2][-]{subsection.4.1.6}{Zugriffsart Aggregation}{section.4.1}% 26
 \BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Traversierung}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.8}{Interpretation der Ergebnisse}{section.4.1}% 28
-\BOOKMARK [0][-]{chapter*.8}{Literaturverzeichnis}{}% 29
-\BOOKMARK [0][-]{chapter*.9}{Eidesstattliche Erkl\344rung}{}% 30
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 29
+\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 30
+\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 31
+\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 32
+\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 33
+\BOOKMARK [0][-]{chapter*.8}{Literaturverzeichnis}{}% 34
+\BOOKMARK [0][-]{chapter*.9}{Eidesstattliche Erkl\344rung}{}% 35

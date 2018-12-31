@@ -9,38 +9,5 @@ Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter $/data/tea
 Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
 Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet. \textbackslash copy liest Informationen aus einer Datei die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
-\begin{lstlisting}[language=SQL,caption=CSV Input,frame=single]
-\copy Beitraege 
-FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
-\end{lstlisting}
-
-
-\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook-profiles,frame=single]
-    CREATE TABLE public."facebook-profiles"
-    (
-        id serial PRIMARY KEY,
-        first TEXT,
-        last TEXT,
-        gender TEXT,
-        country TEXT,
-        birth TEXT
-    );
-\end{lstlisting}
-
-\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook,frame=single]
-    CREATE TABLE public.facebook
-    (
-        src INT,
-        dst INT,
-        type TEXT,
-        date TEXT
-    );
-\end{lstlisting}
-
-\begin{lstlisting}[language=SQL,caption=Hinzufügen von Fremdschlüsseln,frame=single]
-    ALTER TABLE public.facebook
-    ADD CONSTRAINT "facebook_facebook-profiles_id_fk"
-    FOREIGN KEY (src) REFERENCES public."facebook-profiles" (id)
-\end{lstlisting}
 
 \subsection{Beurteilung}
