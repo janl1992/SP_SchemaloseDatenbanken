@@ -11,31 +11,31 @@ Appendix
 
 \end{figure}
 \section{Graph-Datenbanken im praktischen Einsatz: OLTP}
+\lstsetsql
 \begin{lstlisting}[language=SQL,caption=CSV Input,frame=single]
     \copy Beitraege
     FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
 \end{lstlisting}
 
-
 \begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook-profiles,frame=single]
     CREATE TABLE public."facebook-profiles"
     (
-    id serial PRIMARY KEY,
-    first TEXT,
-    last TEXT,
-    gender TEXT,
-    country TEXT,
-    birth TEXT
+        id serial PRIMARY KEY,
+        first TEXT,
+        last TEXT,
+        gender TEXT,
+        country TEXT,
+        birth TEXT
     );
 \end{lstlisting}
 
 \begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook,frame=single]
     CREATE TABLE public.facebook
     (
-    src INT,
-    dst INT,
-    type TEXT,
-    date TEXT
+        src INT,
+        dst INT,
+        type TEXT,
+        date TEXT
     );
 \end{lstlisting}
 
@@ -43,6 +43,52 @@ Appendix
     ALTER TABLE public.facebook
     ADD CONSTRAINT "facebook_facebook-profiles_id_fk"
     FOREIGN KEY (src) REFERENCES public."facebook-profiles" (id)
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption = Verschachteltes SELECT Statement,frame=single,label={SELECT} ]
+    SELECT DISTINCT(dst) FROM team22.relation_facebook WHERE src IN(
+        SELECT DISTINCT(dst) FROM team22.relation_facebook WHERE src IN(
+            SELECT DISTINCT(dst)FROM team22.relation_facebook WHERE src IN(1)
+        )
+    )
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption = Rekursiver JOIN,frame=single, label={JOIN} ]
+    SELECT DISTINCT(rf3.dst)
+    FROM public.relation_facebook rf1,
+    public.relation_facebook rf2,
+    public.relation_facebook rf3
+    WHERE rf2.src = rf1.dst
+    AND rf3.src = rf2.dst
+    AND rf1.src = 765;
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[language=SQL,caption = Selbstgeschriebenes Stored Procedure,frame=single, label={recursiveFunction} ]
+    CREATE OR REPLACE FUNCTION recursivesearch(tInput integer[], iRecursionDepth integer, sTable text) RETURNS SETOF integer AS $$
+    Declare
+    intermDst_ integer[];
+    iCount integer;
+    BEGIN
+    --iRecursionDepth = iRecursionDepth + 1;
+    CREATE TEMPORARY TABLE intermDst AS SELECT * FROM unnest(tInput);
+    EXECUTE 'CREATE TEMPORARY TABLE intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN (SELECT * FROM intermDst)';
+    -- Does not return from function!
+    return query SELECT * FROM intermDst1;
+    -- Does not return from function!
+    intermDst_ := ARRAY(SELECT * FROM intermDst1);
+    raise notice 'timestamp: %', clock_timestamp();
+    SELECT count(*) INTO iCount FROM intermDst;
+    raise notice 'Count Table: %', iCount;
+    DROP TABLE intermDst;
+    DROP TABLE intermDst1;
+    -- As recursion depth is 5
+    if iRecursionDepth > 1 THEN
+    return query SELECT * FROM recursivesearch(intermDst_, iRecursionDepth - 1, sTable);
+    ELSE
+    RETURN;
+    END IF;
+    END;
+    $$ LANGUAGE plpgsql;
 \end{lstlisting}
 
 \section{Graph-Datenbanken im praktischen Einsatz: OLAP}

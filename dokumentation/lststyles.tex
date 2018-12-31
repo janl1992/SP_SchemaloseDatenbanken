@@ -1,5 +1,5 @@
-\usepackage{listings}
-\lstloadlanguages{Java,sh,bash,Haskell,HTML,PHP,XML}
+%\usepackage{listings}
+\lstloadlanguages{Java,sh,bash,Haskell,HTML,PHP,XML,SQL}
 \lstdefinelanguage{console}{
   morekeywords={},
   otherkeywords={warumgehtdasnicht>,\$}
@@ -242,4 +242,18 @@
         %%linewidth=\textwidth,captionpos=b
         %numbers=left, stepnumber=5, numbersep=10pt
  }
+}
+\newcommand{\lstsetsql}{
+\lstset{language=SQL,
+%    keywordstyle=\color{RoyalBlue},
+    basicstyle=\scriptsize\ttfamily,
+    commentstyle=\ttfamily\itshape\color{gray},
+    stringstyle=\ttfamily,
+    showstringspaces=false,
+    breaklines=true,
+    frameround=ffff,
+    frame=single,
+    rulecolor=\color{black},
+    autogobble=true
+}
 }

@@ -3,7 +3,6 @@ Declare
   intermDst_ integer[];
   iCount integer;
 BEGIN
-  --iRecursionDepth = iRecursionDepth + 1;
   CREATE TEMPORARY TABLE intermDst AS SELECT * FROM unnest(tInput);
   EXECUTE 'CREATE TEMPORARY TABLE intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN (SELECT * FROM intermDst)';
   -- Does not return from function!
@@ -15,7 +14,6 @@ BEGIN
   raise notice 'Count Table: %', iCount;
   DROP TABLE intermDst;
   DROP TABLE intermDst1;
-  -- As recursion depth is 5
   if iRecursionDepth > 1 THEN
     return query SELECT * FROM recursivesearch(intermDst_, iRecursionDepth - 1, sTable);
   ELSE
