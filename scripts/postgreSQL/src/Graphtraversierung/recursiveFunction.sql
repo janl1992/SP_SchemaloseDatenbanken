@@ -4,8 +4,8 @@ Declare
   iCount integer;
 BEGIN
   --iRecursionDepth = iRecursionDepth + 1;
-  CREATE TABLE intermDst AS SELECT * FROM unnest(tInput);
-  EXECUTE 'CREATE TABLE intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN (SELECT * FROM intermDst)';
+  CREATE TEMPORARY TABLE intermDst AS SELECT * FROM unnest(tInput);
+  EXECUTE 'CREATE TEMPORARY TABLE intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN (SELECT * FROM intermDst)';
   -- Does not return from function!
   return query SELECT * FROM intermDst1;
   -- Does not return from function!
@@ -30,3 +30,5 @@ $$ LANGUAGE plpgsql;
 -- Der Grund dafür ist, dass sich die Funktion alle traversierten Knoten merkt:
 -- 93 (0. Rekursionsstufe) + 16 (1. Rekursionsstufe) = 109
 -- Das kaskadierende SELECT gibt jedoch nur die Zeilen der letzten Rekursionsstufe aus
+
+-- TemporaryTable 104 tps, Table 25 tps.

@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION selectSourceCodeGenerator(iRecursionDepth integer, sTable text) RETURNS SETOF integer AS $$
+CREATE OR REPLACE FUNCTION selectSourceCodeGenerator(iRecursionDepth integer, sTable text, iStart integer) RETURNS SETOF integer AS $$
 Declare
   intermDst_ integer[];
   iCount integer;
@@ -6,7 +6,7 @@ Declare
   tConcatenateStatement text;
 BEGIN
   tConcatenateStatement := 'SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN(';
-  tStatement := 'SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN(765)';
+  tStatement := 'SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN ' || '(' || iStart ||')';
   --   iCount = 0;
   if iRecursionDepth = 0 THEN
     return query EXECUTE tStatement;

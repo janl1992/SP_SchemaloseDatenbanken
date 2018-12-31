@@ -61,10 +61,11 @@ x filter/.code={
 \begin{filecontents}{data.csv}
 {Occurences}, {keyword}
 15, StoredProcedure
-25, InnerJoin
+25, InnerJoinGenerator
+25, InnerJoinHändisch
 88, selectWithUnionAll
-124, SubSelectGeneriert
-126, SubSelect
+125, SubSelectGenerator
+125, SubSelectHändisch
 192, selectWithUnion
 \end{filecontents}
 \tikzstyle{node} = [text width=2em, text centered]
@@ -174,15 +175,15 @@ x filter/.code={
 	\end{figure}
 \end{frame}
 
-\section{Fazit}
-\begin{frame}
-    \frametitle{\fazit}
-    \begin{itemize}
-        \item Rekursives Select per Standard SQL ist am schnellsten
-        \item Rekursive Stored Procedures sind sehr langsam (kann aber auch an Implementierung liegen)
-%        \item Reukrsives Traversieren mit Hilfe von StoredProcedures, InnerJoin und SubSelects nicht vergleichbar mit rekursiven Select per Standard SQL
-    \end{itemize}
-\end{frame}
+%\section{Fazit}
+%\begin{frame}
+%    \frametitle{\fazit}
+%    \begin{itemize}
+%        \item Rekursives Select per Standard SQL ist am schnellsten
+%        \item Rekursive Stored Procedures sind sehr langsam (kann aber auch an Implementierung liegen)
+%%        \item Reukrsives Traversieren mit Hilfe von StoredProcedures, InnerJoin und SubSelects nicht vergleichbar mit rekursiven Select per Standard SQL
+%    \end{itemize}
+%\end{frame}
 \end{document}
 
 
