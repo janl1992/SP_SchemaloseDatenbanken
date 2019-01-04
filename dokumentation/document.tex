@@ -80,7 +80,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 \newcommand{\PAGENUMBERS}[0]{\pagemark}
 \newcommand{\DATE}[0]{09.12.2018}
 
-\newcommand{\AUTHOR}[0]{Jennifer Wittling}
+\newcommand{\AUTHOR}[0]{Jennifer Wittling, Rolf Kimmelmann, Jan Löffelsender}
 %\newcommand{\MATNR}[0]{123456}
 %\newcommand{\STREET}[0]{Musterstraße 11}
 %\newcommand{\ZIP}[0]{12345}
@@ -152,7 +152,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %% # load the chapter from the files
 %% #
-%% # TODO: create new chapter
+%% #
 %% #####
 %\input{chapter1}
 %\input{chapter2}
@@ -183,12 +183,13 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %% # List of Abbreviations
 %% #####
+%@ToDo Abkürzungsverzeichnis erstellen
 %\phantomsection
-%\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
-%\renewcommand\refname{Abkürzungsverzeichnis}
-%\chapter*{Abkürzungsverzeichnis}
-%\input{abbreviations}
-%\newpage
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\renewcommand\refname{Abkürzungsverzeichnis}
+\chapter*{Abkürzungsverzeichnis}
+\input{abbreviations}
+\newpage
 
 % #####
 % # load the bibliography

@@ -12,7 +12,7 @@ Appendix
 \end{figure}
 \section{Graph-Datenbanken im praktischen Einsatz: OLTP}
 \lstsetsql
-\begin{lstlisting}[language=SQL,caption=CSV Input,frame=single]
+\begin{lstlisting}[language=SQL,caption=CSV Input,frame=single, label={copy}]
     \copy Beitraege
     FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
 \end{lstlisting}
@@ -39,10 +39,10 @@ Appendix
     );
 \end{lstlisting}
 
-\begin{lstlisting}[language=SQL,caption=Hinzufügen von Fremdschlüsseln,frame=single]
-    ALTER TABLE public.facebook
-    ADD CONSTRAINT "facebook_facebook-profiles_id_fk"
-    FOREIGN KEY (src) REFERENCES public."facebook-profiles" (id)
+\begin{lstlisting}[language=SQL,caption=Hinzufügen von Fremdschlüsseln,frame=single, label={foreignKey}]
+    \copy profiles_facebook_tmp(first,last,gender,birth,country) FROM '/data/WS2018/facebook-profiles' DELIMITER ',' CSV HEADER;
+    INSERT INTO profiles_facebook (ID, first, last, gender, birth, country)
+    SELECT ID-1, first, last, gender, birth, country from profiles_facebook_tmp;
 \end{lstlisting}
 
 \begin{lstlisting}[language=SQL,caption = Verschachteltes SELECT Statement,frame=single,label={SELECT} ]
@@ -87,6 +87,27 @@ Appendix
     ELSE
     RETURN;
     END IF;
+    END;
+    $$ LANGUAGE plpgsql;
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption = SQL Standard SQL Mittel,frame=single, label={StandardSQL} ]
+    CREATE OR REPLACE FUNCTION selectWithUnionSourceCodeGenerator_withStartingNode(sTable text, startingNode integer ) RETURNS SETOF integer AS $$
+    Declare
+    intermDst_ integer[];
+    tStatement text;
+    tSelectStatement text;
+    tWithStatement text;
+    tUnionStatement text;
+    tWithStatementClose text;
+    BEGIN
+    tWithStatement := 'WITH RECURSIVE graphtraverse AS(';
+    tSelectStatement := 'SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src ='||startingNode;
+    tUnionStatement := ' UNION SELECT DISTINCT(p.dst) FROM ' || sTable || ' p WHERE src IN (p.src)';
+    tWithStatementClose := ') SELECT * FROM graphtraverse';
+    tStatement := tWithStatement || tSelectStatement || tUnionStatement || tWithStatementClose;
+    raise notice 'Execute String %', tStatement;
+    return query EXECUTE tStatement;
     END;
     $$ LANGUAGE plpgsql;
 \end{lstlisting}
