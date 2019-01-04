@@ -1,15 +1,15 @@
-\chapter{Graph-Datenbanken im praktischen Einsatz: OLTP}
+\chapter{Graph-Datenbanken im praktischen Einsatz: \ac{OLTP}}
 \section{PostgresSQL: OLTP}
 \subsection{Ausgewählte Use Cases}
 Die Aufgabe ist es 5 Graphen mit Hilfe der Breitensuche zu traversieren. Hierfür soll keine Graphdatenbank verwendet werden, sondern eine objektrelationale Datenbank.
 Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich schnell ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
 Für die Graphtraversierung sind 5 Methoden vorgesehen:
 \begin{itemize}
-    \item Graphtraversierung mit Hilfe von Standard SQL (SELECT WITH UNION)
+    \item Graphtraversierung mit Hilfe von Standard \ac{SQL} (SELECT WITH UNION)
     \item Graphtraversierung mit Hilfe von verschachteltem SELECT Statement
     \item Graphtraversierung mit Hilfe von rekursiven INNER JOIN
     \item Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure
-    \item Graphtraversierung mit Hilfe von dynamisch generiertem SQL
+    \item Graphtraversierung mit Hilfe von dynamisch generiertem \ac{SQL}
 \end{itemize}
 %@ToDo für Installation und CSV-Import auf SQL Scripte referenzieren
 \subsection{Installation}
@@ -18,12 +18,25 @@ Nach der Installation von PostgreSQL muss zunächst $initdb$ ausgeführt werden.
 Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter $/data/team22/postgresql/11/main$ installiert.
 \subsection{CSV-Import}
 Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
-Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet. \textbackslash copy liest Informationen aus einer Datei die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
+Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
-\subsection{Graphtraversierung mit Hilfe von Standard SQL}
-Bei der Graphtraversierung mit Hilfe von Standard SQL
+\subsection{Erstellen von Fremdschlüsseln}
+Zwischen der profile Tabelle und der relation Tabelle wurde ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
+mit einem Index versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Index für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
+relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Index innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
+innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was den Index 0 hat. Hierfür wurde ein SQL Script geschrieben,
+was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus der temporären Tabelle
+in die endgültige Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles \ref{foreignKey}).
+
+
+\subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}). Es wurde sich dafür entschieden den
+UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen (\cite{postgresWithRecursive}). Für die Ergebnismenge der Abfrage auf der relation
+Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der Working Table
+nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
+
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
-Bei der Graphtraversierung mit Hilfe von Standard SQL wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).
 Auf der obersten Rekursionsstufe wird der Startknoten des Graphen mitgegeben (in diesem Beispiel ist der Startknoten = 1). Das Ergebnis dieser Abfrage wird als Eingabe
 für die nächst tiefere Rekursionstufe verwendet. In der WHERE Klausel wird für die Spalte src der IN Operator verwendet. Der IN Operator erlaubt es, mehrere Werte innerhalb
 der WHERE Klausel anzugeben. Das DISTINCT in der SELECT Klausel sorgt dafür, dass Duplikate in der Auswahl entfernt werden. Die Funktionsweise von DISTINCT ist in der folgenden
@@ -40,16 +53,18 @@ Zyklen in einem Graph nicht erkannt werden. Die Duplikatüberprüfung erfolgt ni
 
 \subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
 Bei der Graphtraversierung mit Hilfe von rekursiven INNER JOIN soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird. Hierbei
-wird das SQL Statement nicht automatisch generiert, sondern selbst geschrieben.
+wird das \ac{SQL} Statement nicht automatisch generiert, sondern selbst geschrieben.
 Die Ausgabe ist, ähnlich wie bei der Graphtraversierung mit Hilfe von verschachteltem SELECT Statement, die Nachbarn der Knoten, die sich auf der mitgegebenen Rekursionsstiefe
 befinden. Ein Beispielstatement für den rekursiven INNER JOIN ist im Anhang gegeben (siehe \ref{JOIN}).
 
 \subsection{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}
 Bei der Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure wird der Graph mit Hilfe eines selbst erstellten Stored Procedure, das sich selber bis
-zu einer mit gegebenen Rekursionstiefe wieder aufruft, traversiert (siehe \ref{recursiveFunction}). Die Abbruchbedingung wird dem Stored Procedure in Form einer Rekursionsstiefe mitgegeben. In jeder
-Rekursionsstufe erstellt das Script 2 temporäre Tabelle. Eine temporäre Tabelle wird auf Basis eines Eingabeparameter erstellt. Diese temporäre Tabelle besitzt eine Spalte.
-Diese Tabelle stellt die Spalte src der aktuellen Rekursionsstufe dar. Sie wird im IN Operator der WHERE Klausel verwendet um die 2. temporäre Tabelle zu erstellen. Die 2.
-temporäre Tabelle beinhaltet die Spalte dst der aktuellen Rekursionsstufe.
+zu einer mit gegebenen Rekursionstiefe wieder aufruft, traversiert (siehe \ref{recursiveFunction}). Die Abbruchbedingung wird dem Stored Procedure in Form einer
+Rekursionsstiefe mitgegeben. In jeder Rekursionsstufe erstellt das Script 2 temporäre Tabelle. Eine temporäre Tabelle wird auf Basis eines Eingabeparameter erstellt.
+Diese temporäre Tabelle besitzt eine Spalte. Diese Tabelle stellt die Spalte src der aktuellen Rekursionsstufe dar. Sie wird im IN Operator der WHERE Klausel verwendet
+um die 2. temporäre Tabelle zu erstellen. Die 2. temporäre Tabelle beinhaltet die Spalte dst der aktuellen Rekursionsstufe. Die 2. temporäre Tabelle wird als
+Aufrufparameter für die nächst tiefere Rekursionsstufe mitgegeben. In der nächst tieferen Rekursionsstufe dient die 2. temporäre Tabelle als die Tabelle, die alle
+src Spalten der aktuellen Rekursionsstufe beinhaltet.
 %\lstsetsql
 
 %\end{figure}

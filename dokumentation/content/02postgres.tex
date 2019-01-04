@@ -20,7 +20,7 @@
             \item Systemarchitektur: Objektrelationales Datenbankmanagementsystem
             \item Betriebsart: Stand Alone, Cluster Betrieb für Replikation der Datenbank
 %            \item Protokoll der Schnittstelle: TCP/IP % \cite[Seite 28]{froehlich01}
-            \item API: u.A. libpq, psycopg, psqlODBC, pq, pgtclng, Npgsql, node-postgres
+            \item \ac{API}: u.A. libpq, psycopg, psqlODBC, pq, pgtclng, Npgsql, node-postgres
         \end{itemize}
         \newpage
         \item Datenmodell
@@ -42,8 +42,8 @@
         \end{itemize}
         \item Anfragemethoden
         \begin{itemize}
-            \item Kommunikation, Protokoll(HTTP/REST): SQL über TCP/IP
-            \item CRUD-Operationen: Ja
+            \item Kommunikation: \ac{SQL} über \ac{TCP}/\ac{IP}
+            \item \ac{CRUD}-Operationen: Ja
             \item Ad-hoc-Anfragen: Ja
 %            \item Kopplungstechniken Programmiersprache:
 %            \item Map/Reduce:
@@ -51,7 +51,7 @@
 %        Horizontale Skalierbarkeit fällt weg
         \item Konsistenz
         \begin{itemize}
-            \item ACID/BASE: ACID, besoners MVCC(Multiversion Concurrency Control Modell)
+            \item \ac{ACID}, besoners \ac{MVCC}
             \item Transaktionen: Ja
             \item Nebenläufigkeit (Synchronisation): Ja
 %            \item Dauerhaftigkeit: Ja, weil ACID konform
@@ -67,7 +67,6 @@
         \end{itemize}
     \end{itemize}
 \newpage
-%@ToDo PostGres Architekturbild in Anhang packen
 %PostgreSQL ist eine Objektrelationale Datenbank. Weiterentwicklungen wird von der PostgreSQL Global Development Group durchgeführt. PostgreSQL steht unter der PostgreSQL-Lizenz, welche sehr stark der GNU-Lizenz ähnelt. Auf Basis von PostgreSQL gibt es mehrere, zum Teil auch kommerzielle, Forks wie zum Beispiel Amazon Redshift oder EnterpriseDB.
 %\subsection{Architektur}
 %    \begin{itemize}
