@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator_withStartingNode(4, 'relation_facebook',765);
+SELECT selectSourceCodeGenerator(4, 'relation_facebook',765);
 

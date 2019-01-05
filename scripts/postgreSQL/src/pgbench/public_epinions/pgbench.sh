@@ -1,5 +1,9 @@
 #!/bin/sh
-$PGSTATEMENT selectSourceCode_Generate_5.sql > pgbench.log
+date > pgbench.log
+ for f in *.sql; do  # or wget-*.sh instead of *.sh
+        $PGSTATEMENT "$f" >> pgbench.log  || break # if needed
+    done
+
 
 
 
