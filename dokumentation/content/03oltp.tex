@@ -1,5 +1,8 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: \ac{OLTP}}
 \section{PostgresSQL: OLTP}
+Im Vergleich zu den anderen Gruppen wurde sich bei diesem Thema dazu entschieden auf die Implementierung des Gästebuchs zu verzichten. Die OLTP Daten wurden nicht
+implementiert, anstattdessen wurden der Import der OLAP Daten vorgezogen. Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kapitel vorgestellt
+werden.
 \subsection{Ausgewählte Use Cases}
 Die Aufgabe ist es 5 Graphen mit Hilfe der Breitensuche zu traversieren. Hierfür soll keine Graphdatenbank verwendet werden, sondern eine objektrelationale Datenbank.
 Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich schnell ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
@@ -28,15 +31,21 @@ innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit
 was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus der temporären Tabelle
 in die endgültige Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles \ref{foreignKey}).
 
-
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
-Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}).
-%@ToDO Jan Hier weitermachen
-Es wurde sich dafür entschieden den
-UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen (\cite{postgresWithRecursive}). Für die Ergebnismenge der Abfrage auf der relation
-Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der Working Table
-nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle. Der SQL Befehl WITH RECURSIVE
-sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft.
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}). Der SQL Befehl WITH RECURSIVE
+sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Rekursion operiert hierzu auf 2 temporären Tabellen. Der Working Table und der Intermediate
+Table. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die Working Table geschrieben, es wird überprüft ob Duplikate
+vorhanden sind \footnote{Die Überprüfung von Duplikaten erfolgt bezogen auf alle vorherigen Rekursionsstufen} - Duplikate werden gelöscht, die Ergebissmenge wird in
+die Intermediate Table geschrieben, die Ergebnisse aus der Intermediate Table werden in die Working Table kopiert. Im Vergleich zu den restlichen Methoden garantiert
+das standard SQL, dass Kreise \footnote{Ein Weg, bei dem der Anfangsknoten gleich dem Endknoten ist \cite[S.48]{pbeck01}} aus dem Graphen entfernt werden.
+Die Abbruchbedingung für die Rekursion greift, sobald die Working Table keine Einträge mehr hat. Folgende Grafik beschreibt die Rekursion:
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{images/RecursiveSelect.jpg};
+    \caption{Traversierung Standard SQL}
+\end{figure}
+Es wurde sich dafür entschieden den UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen. Für die  Ergebnismenge der Abfrage auf der
+relation Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der
+Working Table nicht entfernt , eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.(\cite{postgresWithRecursive})
 
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).

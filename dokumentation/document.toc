@@ -20,28 +20,28 @@
 \contentsline {subsection}{\numberline {3.1.3}CSV-Import}{9}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Erstellen von Fremdschl\IeC {\"u}sseln}{9}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}Graphtraversierung mit Hilfe von Standard \ac {SQL}}{9}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{9}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{10}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.6}Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{10}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{11}{subsection.3.1.7}
 \contentsline {subsection}{\numberline {3.1.8}Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{11}{subsection.3.1.8}
-\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{12}{chapter.4}
-\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{12}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Benchmark}{12}{subsection.4.1.1}
-\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{12}{section*.16}
-\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{13}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{13}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{13}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{13}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{13}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{13}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{13}{subsection.4.1.8}
-\contentsline {chapter}{\numberline {A}Anhang}{14}{appendix.A}
-\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{14}{section.A.1}
-\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{14}{section.A.2}
-\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{14}{section.A.3}
-\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{16}{section.A.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{17}{section.A.4}
-\contentsline {chapter}{Tabellenverzeichnis}{18}{chapter*.17}
-\contentsline {chapter}{Listings}{19}{chapter*.18}
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{19}{section*.20}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{21}{chapter*.22}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{23}{chapter*.23}
+\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{13}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Benchmark}{13}{subsection.4.1.1}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{13}{section*.16}
+\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{14}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{14}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{14}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{14}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{14}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{14}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{14}{subsection.4.1.8}
+\contentsline {chapter}{\numberline {A}Anhang}{15}{appendix.A}
+\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{15}{section.A.1}
+\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{15}{section.A.2}
+\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{15}{section.A.3}
+\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{17}{section.A.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{18}{section.A.4}
+\contentsline {chapter}{Tabellenverzeichnis}{19}{chapter*.17}
+\contentsline {chapter}{Listings}{20}{chapter*.18}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{20}{section*.20}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{22}{chapter*.22}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{24}{chapter*.23}
