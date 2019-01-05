@@ -1,0 +1,1 @@
+SELECT recursivesearch(Array[510760], 1, 'relation_livejournal');
