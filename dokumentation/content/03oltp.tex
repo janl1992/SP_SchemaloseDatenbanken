@@ -30,10 +30,13 @@ in die endgültige Tabelle schreibt (siehe hierzu auch beispielhaft das Script f
 
 
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
-Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}). Es wurde sich dafür entschieden den
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}).
+%@ToDO Jan Hier weitermachen
+Es wurde sich dafür entschieden den
 UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen (\cite{postgresWithRecursive}). Für die Ergebnismenge der Abfrage auf der relation
 Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der Working Table
-nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
+nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle. Der SQL Befehl WITH RECURSIVE
+sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft.
 
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).
@@ -43,7 +46,7 @@ der WHERE Klausel anzugeben. Das DISTINCT in der SELECT Klausel sorgt dafür, da
 Grafik nochmal dargestellt:
 \begin{figure}[H]
     \includegraphics[width = \linewidth]{images/Distinct.jpg};
-    \caption{SELECT DISTINCT}
+    \caption{Löschen von Duplikaten in einer Rekursionsstufe}
 \end{figure}
 Hierbei liegt der Knoten 5 so, dass er in der 2. Rekursionsstufe 2 Mal in der Auswahl auftaucht. DISTINCT entfernt das Duplikat. Die Ergebnismenge, entfernt um die
 Duplikate, wird als Input für die nächste Rekursionsstufe verwendet.
@@ -60,7 +63,10 @@ befinden. Ein Beispielstatement für den rekursiven INNER JOIN ist im Anhang geg
 \subsection{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}
 Bei der Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure wird der Graph mit Hilfe eines selbst erstellten Stored Procedure, das sich selber bis
 zu einer mit gegebenen Rekursionstiefe wieder aufruft, traversiert (siehe \ref{recursiveFunction}). Die Abbruchbedingung wird dem Stored Procedure in Form einer
-Rekursionsstiefe mitgegeben. In jeder Rekursionsstufe erstellt das Script 2 temporäre Tabelle. Eine temporäre Tabelle wird auf Basis eines Eingabeparameter erstellt.
+Rekursionsstiefe mitgegeben. In jeder Rekursionsstufe erstellt das Script 2 temporäre Tabelle. Eine temporäre Tabelle \footnote{Zuerst wurde das Script mit Hilfe einer standard Tabelle
+erstellt. Dadurch war das Stored Procedure jedoch um den Faktor 7 langsamer. Es ist die Vermutung, dass durch die Anlage als temporäre Tabelle, die Tabelle im Shared Memory angelegt wird.
+Hierdurch wird der Performancegewinn erzielt ( \cite[S.26]{froehlich01})}
+wird auf Basis eines Eingabeparameter (Datenstruktur Array) erstellt.
 Diese temporäre Tabelle besitzt eine Spalte. Diese Tabelle stellt die Spalte src der aktuellen Rekursionsstufe dar. Sie wird im IN Operator der WHERE Klausel verwendet
 um die 2. temporäre Tabelle zu erstellen. Die 2. temporäre Tabelle beinhaltet die Spalte dst der aktuellen Rekursionsstufe. Die 2. temporäre Tabelle wird als
 Aufrufparameter für die nächst tiefere Rekursionsstufe mitgegeben. In der nächst tieferen Rekursionsstufe dient die 2. temporäre Tabelle als die Tabelle, die alle
