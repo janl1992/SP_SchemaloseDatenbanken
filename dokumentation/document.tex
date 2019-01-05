@@ -124,22 +124,17 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 
 %Inhalt
 \input{abstract}
+
+\input{fancyRegisterPart}
+\tableofcontents \newpage
 % set pagenumbering to arabic(1 2 3 4)
 \pagenumbering{arabic}
-\tableofcontents
 
-%\input{beispielgliederung}
-\input{content/01graph_model}
-\input{content/02postgres}
-\input{content/03oltp}
-\input{content/04olap}
-%\input{Graph.tex}
-%\input{Hypergraph.tex}
 % load the preamble
 %\input{preamble}
 %
 %% loads the fancy pagestyle for register part
-%\input{fancyRegisterPart}
+
 %
 %% create the registers
 %\tableofcontents\newpage
@@ -147,7 +142,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 
 %\pagenumbering{arabic}
 %% loads the fancy pagestyle for main part
-%\input{fancyMainPart}
+\input{fancyMainPart}
 %
 %% #####
 %% # load the chapter from the files
@@ -156,6 +151,10 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %\input{chapter1}
 %\input{chapter2}
+\input{content/01graph_model}
+\input{content/02postgres}
+\input{content/03oltp}
+\input{content/04olap}
 %
 %\newpage
 %
@@ -170,21 +169,21 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %% # list of table, list of figures, and list of listings in ToC
 %% #####
-%\newpage
-%\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
-%\listoffigures
-%\newpage
-%\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
-%\listoftables
-%\newpage
-%\addcontentsline{toc}{chapter}{Listings}
-%\lstlistoflistings
+\newpage
+\addcontentsline{toc}{chapter}{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+\addcontentsline{toc}{chapter}{Tabellenverzeichnis}
+\listoftables
+\newpage
+\addcontentsline{toc}{chapter}{Listings}
+\lstlistoflistings
 %
 %% #####
 %% # List of Abbreviations
 %% #####
 %@ToDo Abkürzungsverzeichnis erstellen
-%\phantomsection
+\phantomsection
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 \renewcommand\refname{Abkürzungsverzeichnis}
 \chapter*{Abkürzungsverzeichnis}

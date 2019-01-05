@@ -2,7 +2,9 @@
 \select@language {ngerman}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Eine Abbildung, die unten erscheint}}{8}{figure.2.1}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces L\IeC {\"o}schen von Duplikaten in einer Rekursionsstufe}}{10}{figure.3.1}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Postgres Architektur}}{14}{figure.A.1}
 \addvspace {10\p@ }
