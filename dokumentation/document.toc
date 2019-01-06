@@ -15,7 +15,7 @@
 \contentsline {subsection}{\numberline {2.1.1}Visitenkarte des Systems}{6}{subsection.2.1.1}
 \contentsline {chapter}{\numberline {3}Graph-Datenbanken im praktischen Einsatz: \ac {OLTP}}{8}{chapter.3}
 \contentsline {section}{\numberline {3.1}PostgresSQL: OLTP}{8}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Ausgew\IeC {\"a}hlte Use Cases}{8}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.1}Traversierung in PostgresSQL}{8}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}Installation}{8}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}CSV-Import}{9}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Erstellen von Fremdschl\IeC {\"u}sseln}{9}{subsection.3.1.4}
@@ -27,21 +27,22 @@
 \contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{13}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Benchmark}{13}{subsection.4.1.1}
 \contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{13}{section*.16}
-\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{14}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{14}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{14}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{14}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{14}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{14}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{14}{subsection.4.1.8}
-\contentsline {chapter}{\numberline {A}Anhang}{15}{appendix.A}
-\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{15}{section.A.1}
-\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{15}{section.A.2}
-\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{15}{section.A.3}
-\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{17}{section.A.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{18}{section.A.4}
-\contentsline {chapter}{Tabellenverzeichnis}{19}{chapter*.17}
-\contentsline {chapter}{Listings}{20}{chapter*.18}
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{20}{section*.20}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{22}{chapter*.22}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{24}{chapter*.23}
+\contentsline {subsubsection}{\nonumberline selectSourceCodeGenerator}{14}{section*.17}
+\contentsline {subsection}{\numberline {4.1.2}Standard SQL}{15}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.3}Stored Procedures}{15}{subsection.4.1.3}
+\contentsline {subsection}{\numberline {4.1.4}PL/SQL-Recursion}{15}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Datenbankzugriffe}{15}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}Zugriffsart Aggregation}{15}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Traversierung}{15}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Interpretation der Ergebnisse}{15}{subsection.4.1.8}
+\contentsline {chapter}{\numberline {A}Anhang}{16}{appendix.A}
+\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{16}{section.A.1}
+\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{16}{section.A.2}
+\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{16}{section.A.3}
+\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{18}{section.A.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{19}{section.A.4}
+\contentsline {chapter}{Tabellenverzeichnis}{20}{chapter*.18}
+\contentsline {chapter}{Listings}{21}{chapter*.19}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{21}{section*.21}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{23}{chapter*.23}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{25}{chapter*.24}

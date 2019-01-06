@@ -1,14 +1,17 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: \ac{OLTP}}
 \section{PostgresSQL: OLTP}
-Im Vergleich zu den anderen Gruppen wurde sich bei diesem Thema dazu entschieden auf die Implementierung des Gästebuchs zu verzichten. Die OLTP Daten wurden nicht
-implementiert, anstattdessen wurden der Import der OLAP Daten vorgezogen. Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kapitel vorgestellt
-werden.
-\subsection{Ausgewählte Use Cases}
-Die Aufgabe ist es 5 Graphen mit Hilfe der Breitensuche zu traversieren. Hierfür soll keine Graphdatenbank verwendet werden, sondern eine objektrelationale Datenbank.
-Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich schnell ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
+Die Implementierung von OLTP Anwendungsfällen ist eine klassische Aufgabe für relationale Datenbanken.
+Da statt einer Graphdatenbank eine relationale Datenbank verwendet wurde, ist die Implementierung des OLTP Anwendungsfalls (Gästebuch) uninteressant.
+Interessant ist jedoch die Traversierung in relationalen Datenbanken.
+Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kapitel vorgestellt werden.
+\subsection{Traversierung in PostgresSQL}
+%Das Ziel ist es 5 Graphen mit Hilfe einer objektrelationalen Datenbank zu traversieren.
+Da Graphdatenbanken für das Traversieren von Graphen entwickelt worden sind, sollten diese bei der Traversierung einen Performancegewinn gegenüber objektrelationalen Datenbanken haben.
+%Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich performant ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
+Ziel ist es mit Hilfe einer objektrelationalen Datenbank eine mit den Graphdatenbanken vergleichbar performante Abfrage eines Graphen zu implementieren.
 Für die Graphtraversierung sind 5 Methoden vorgesehen:
 \begin{itemize}
-    \item Graphtraversierung mit Hilfe von Standard \ac{SQL} (SELECT WITH UNION)
+    \item Graphtraversierung mit Hilfe von Standard \ac{SQL} (SELECT RECURSIVE WITH UNION)
     \item Graphtraversierung mit Hilfe von verschachteltem SELECT Statement
     \item Graphtraversierung mit Hilfe von rekursiven INNER JOIN
     \item Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure
@@ -16,15 +19,18 @@ Für die Graphtraversierung sind 5 Methoden vorgesehen:
 \end{itemize}
 %@ToDo für Installation und CSV-Import auf SQL Scripte referenzieren
 \subsection{Installation}
-PostgreSQL kann unter Ubuntu über die Paketverwaltung APT installiert werden. Weiterhin wird eine Installation über die RPM-Paketverwaltung angeboten. Im Rahmen dieser Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. 
-Nach der Installation von PostgreSQL muss zunächst $initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden. In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt.
-Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter $/data/team22/postgresql/11/main$ installiert.
+PostgreSQL kann unter Ubuntu über die Paketverwaltung APT installiert werden. Weiterhin wird eine Installation über die RPM-Paketverwaltung angeboten. Im Rahmen dieser
+Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. Nach der Installation von PostgreSQL muss zunächst
+$initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden.
+In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt. Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter
+$/data/team22/postgresql/11/main$ installiert.
 \subsection{CSV-Import}
 Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
-Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
+Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei
+die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
 \subsection{Erstellen von Fremdschlüsseln}
-Zwischen der profile Tabelle und der relation Tabelle wurde ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
+Zwischen der jeweiligen profile Tabelle und der zugehörigen relation Tabelle wurde ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
 mit einem Index versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Index für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
 relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Index innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
 innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was den Index 0 hat. Hierfür wurde ein SQL Script geschrieben,
@@ -45,7 +51,7 @@ Die Abbruchbedingung für die Rekursion greift, sobald die Working Table keine E
 \end{figure}
 Es wurde sich dafür entschieden den UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen. Für die  Ergebnismenge der Abfrage auf der
 relation Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der
-Working Table nicht entfernt , eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.(\cite{postgresWithRecursive})
+Working Table nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
 
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).
