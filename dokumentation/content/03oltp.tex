@@ -17,47 +17,54 @@ Für die Graphtraversierung sind 5 Methoden vorgesehen:
     \item Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure
     \item Graphtraversierung mit Hilfe von dynamisch generiertem \ac{SQL}
 \end{itemize}
-%@ToDo für Installation und CSV-Import auf SQL Scripte referenzieren
 \subsection{Installation}
-PostgreSQL kann unter Ubuntu über die Paketverwaltung APT installiert werden. Weiterhin wird eine Installation über die RPM-Paketverwaltung angeboten. Im Rahmen dieser
+PostgreSQL kann unter Ubuntu über die Paketverwaltung \ac{APT} installiert werden. Weiterhin wird eine Installation über die \ac{RPM}-Paketverwaltung angeboten. Im Rahmen dieser
 Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. Nach der Installation von PostgreSQL muss zunächst
 $initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden.
 In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt. Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter
 $/data/team22/postgresql/11/main$ installiert.
 \subsection{CSV-Import}
-Beim Import von (CSV)-Dateien wird zwischen import vom Clientsystem und  Import vom Serversystem unterschieden. 
-Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei
+Beim Import von (CSV)-Dateien wird zwischen Import vom Clientsystem und  Import vom Serversystem unterschieden.
+Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei,
+%@ToDo Hier Quelle genauer spezifizieren
 die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
+\subsection{Datenbankschema}
+Für die Performancemessung sind 5 Graphen vorgesehen. Ein Graph besteht aus einer profiles Tabelle und einer relation Tabelle. Die beiden Tabelle werden mit Hilfe der
+Spalte ID aus der jeweiligen profiles Tabelle verknüpft. Die Spalten src und dst aus der relation Tabelle sind Fremdschlüssel, sie verweisen auf die Spalte ID in der
+profiles Tabelle. ID hingegen ist in der profiles Tabelle ein Primärschlüssel (siehe \ref{relationFacebook}).
+
 \subsection{Erstellen von Fremdschlüsseln}
-Zwischen der jeweiligen profile Tabelle und der zugehörigen relation Tabelle wurde ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
-mit einem Index versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Index für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
-relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Index innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
-innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was den Index 0 hat. Hierfür wurde ein SQL Script geschrieben,
-was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus der temporären Tabelle
-in die endgültige Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles \ref{foreignKey}).
+Um die profile Tabelle und die relation Tabelle zu verknüpfen wurde zwischen den beiden Tabellen ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
+mit einem Zähler versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Zähler für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
+relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Zähler innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
+innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was die ID 0 hat. Hierfür wurde für die relation Tabelle ein
+SQL Script geschrieben, was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus
+der temporären Tabelle in die endgültige profile Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles (siehe \ref{foreignKey}).
 
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}). Der SQL Befehl WITH RECURSIVE
-sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Rekursion operiert hierzu auf 2 temporären Tabellen. Der Working Table und der Intermediate
-Table. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die Working Table geschrieben, es wird überprüft ob Duplikate
+sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Rekursion operiert hierzu auf 2 temporären Tabellen. Der Working Tabelle und der Intermediate
+Tabelle. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die Working Tabelle geschrieben, es wird überprüft ob Duplikate
 vorhanden sind \footnote{Die Überprüfung von Duplikaten erfolgt bezogen auf alle vorherigen Rekursionsstufen} - Duplikate werden gelöscht, die Ergebissmenge wird in
-die Intermediate Table geschrieben, die Ergebnisse aus der Intermediate Table werden in die Working Table kopiert. Im Vergleich zu den restlichen Methoden garantiert
-das standard SQL, dass Kreise \footnote{Ein Weg, bei dem der Anfangsknoten gleich dem Endknoten ist \cite[S.48]{pbeck01}} aus dem Graphen entfernt werden.
-Die Abbruchbedingung für die Rekursion greift, sobald die Working Table keine Einträge mehr hat. Folgende Grafik beschreibt die Rekursion:
+die Intermediate Tabelle geschrieben, die Ergebnisse aus der Intermediate Tabelle werden in die Working Tabelle kopiert. Im Vergleich zu den restlichen Methoden garantiert
+das standard SQL falls man den UNION Operator verwendet, dass Kreise \footnote{Ein Weg, bei dem der Anfangsknoten gleich dem Endknoten ist \cite[S.48]{pbeck01}} aus dem Graphen entfernt werden.
+Die Abbruchbedingung für die Rekursion greift, sobald die Working Tabelle keine Einträge mehr hat. Folgende Grafik beschreibt die Rekursion angewendet auf ein relation
+Tabelle:
 \begin{figure}[H]
     \includegraphics[width = \linewidth]{images/RecursiveSelect.jpg};
     \caption{Traversierung Standard SQL}
 \end{figure}
-Es wurde sich dafür entschieden den UNION Operator zu verwenden, um Duplikate innerhalb der Working Table auszuschließen. Für die  Ergebnismenge der Abfrage auf der
+Es wurde sich dafür entschieden den UNION Operator zu verwenden, um Duplikate innerhalb der Working Tabelle auszuschließen. Für die  Ergebnismenge der Abfrage auf der
 relation Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der
-Working Table nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
+Working Tabelle nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
 
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
-Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement befindet sich im Anhang (siehe \ref{SELECT}).
-Auf der obersten Rekursionsstufe wird der Startknoten des Graphen mitgegeben (in diesem Beispiel ist der Startknoten = 1). Das Ergebnis dieser Abfrage wird als Eingabe
-für die nächst tiefere Rekursionstufe verwendet. In der WHERE Klausel wird für die Spalte src der IN Operator verwendet. Der IN Operator erlaubt es, mehrere Werte innerhalb
-der WHERE Klausel anzugeben. Das DISTINCT in der SELECT Klausel sorgt dafür, dass Duplikate in der Auswahl entfernt werden. Die Funktionsweise von DISTINCT ist in der folgenden
+Bei der Graphtraversierung mit Hilfe von verschachteltem \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement
+befindet sich im Anhang (siehe \ref{SELECT}). Auf der obersten Rekursionsstufe wird der Startknoten des Graphen mitgegeben (in diesem Beispiel ist der Startknoten = 1).
+Das Ergebnis dieser Abfrage wird als Eingabe für die nächst tiefere Rekursionstufe verwendet. In der WHERE Klausel wird für die Spalte src der IN Operator verwendet.
+Der IN Operator erlaubt es, mehrere Werte innerhalb der WHERE Klausel anzugeben. Das DISTINCT in der SELECT Klausel sorgt dafür, dass Duplikate in der Ergebnissmenge
+der momentanen Rekursionnstufe entfernt werden. Die Funktionsweise von DISTINCT ist in der folgenden
 Grafik nochmal dargestellt:
 \begin{figure}[H]
     \includegraphics[width = \linewidth]{images/Distinct.jpg};
@@ -67,11 +74,10 @@ Hierbei liegt der Knoten 5 so, dass er in der 2. Rekursionsstufe 2 Mal in der Au
 Duplikate, wird als Input für die nächste Rekursionsstufe verwendet.
 Die Ausgabe des verschachtelten SELECT Statement sind die Nachbarn der Knoten, der angegebenen Rekursionstiefe. Wird zum Beispiel ein
 verschachteltes SELECT Statement der Tiefe 3 erstellt, so gibt dieses Statement alle Nachbarn 3. Grades ausgehend vom Startknoten an. Der Nachteil bei dieser Methode ist, dass
-Zyklen in einem Graph nicht erkannt werden. Die Duplikatüberprüfung erfolgt nicht über mehrere Rekursionsstufen hinweg, sondern immer nur zwischen zwei Rekursionsstufen.
+Kreise in einem Graph nicht erkannt werden. Die Duplikatüberprüfung erfolgt nicht über mehrere Rekursionsstufen hinweg, sondern immer nur zwischen zwei Rekursionsstufen.
 
 \subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
-Bei der Graphtraversierung mit Hilfe von rekursiven INNER JOIN soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird. Hierbei
-wird das \ac{SQL} Statement nicht automatisch generiert, sondern selbst geschrieben.
+Bei der Graphtraversierung mit Hilfe von rekursiven INNER JOIN soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird.
 Die Ausgabe ist, ähnlich wie bei der Graphtraversierung mit Hilfe von verschachteltem SELECT Statement, die Nachbarn der Knoten, die sich auf der mitgegebenen Rekursionsstiefe
 befinden. Ein Beispielstatement für den rekursiven INNER JOIN ist im Anhang gegeben (siehe \ref{JOIN}).
 
