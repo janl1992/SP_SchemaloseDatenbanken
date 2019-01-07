@@ -1,6 +1,5 @@
 \appendix
 \chapter{Anhang}
-Appendix
 \section{Graph-Datenbanken - Grundlegende technologische Aspekte}
 \section{Graph-Datenbanken und -Frameworks - Ausgewählte Systeme}
 \begin{figure}[H]
@@ -17,25 +16,23 @@ Appendix
     FROM './data/Beitraege.csv' DELIMITER ',' CSV HEADER;
 \end{lstlisting}
 
-\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook-profiles,frame=single]
-    CREATE TABLE public."facebook-profiles"
-    (
-        id serial PRIMARY KEY,
-        first TEXT,
-        last TEXT,
-        gender TEXT,
-        country TEXT,
-        birth TEXT
+\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook-profiles,frame=single, label={facebookProfiles}]
+    create TABLE IF NOT EXISTS profiles_facebook(
+        ID INTEGER PRIMARY KEY,
+        first VARCHAR(50),
+        last VARCHAR(50),
+        gender GENDER,
+        birth DATE,
+        country VARCHAR(50)
     );
 \end{lstlisting}
 
-\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook,frame=single]
-    CREATE TABLE public.facebook
-    (
-        src INT,
-        dst INT,
-        type TEXT,
-        date TEXT
+\begin{lstlisting}[language=SQL,caption=Anlegen der Tabelle facebook-relation,frame=single, label={relationFacebook}]
+    CREATE TABLE IF NOT EXISTS relation_facebook(
+        src INTEGER REFERENCES profiles_facebook(ID),
+        dst INTEGER REFERENCES profiles_facebook(ID),
+        type VARCHAR(50),
+        date DATE
     );
 \end{lstlisting}
 
