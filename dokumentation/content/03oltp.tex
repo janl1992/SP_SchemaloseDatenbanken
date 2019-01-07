@@ -4,20 +4,22 @@ Die Implementierung von OLTP Anwendungsfällen ist eine klassische Aufgabe für 
 Da statt einer Graphdatenbank eine relationale Datenbank verwendet wurde, ist die Implementierung des OLTP Anwendungsfalls (Gästebuch) uninteressant.
 Interessant ist jedoch die Traversierung in relationalen Datenbanken.
 Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kapitel vorgestellt werden.
-\subsection{Traversierung in PostgresSQL}
+%\subsection{Traversierung in PostgresSQL}
 %Das Ziel ist es 5 Graphen mit Hilfe einer objektrelationalen Datenbank zu traversieren.
 Da Graphdatenbanken für das Traversieren von Graphen entwickelt worden sind, sollten diese bei der Traversierung einen Performancegewinn gegenüber objektrelationalen Datenbanken haben.
 %Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich performant ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
 Ziel ist es mit Hilfe einer objektrelationalen Datenbank eine mit den Graphdatenbanken vergleichbar performante Abfrage eines Graphen zu implementieren.
-Für die Graphtraversierung sind 5 Methoden vorgesehen:
+Für die Graphtraversierung sind die folgenden 5 Methoden vorgesehen.
+
+Graphtraversierung mit Hilve von:
 \begin{itemize}
-    \item Graphtraversierung mit Hilfe von Standard \ac{SQL} (SELECT RECURSIVE WITH UNION)
-    \item Graphtraversierung mit Hilfe von verschachteltem SELECT Statement
-    \item Graphtraversierung mit Hilfe von rekursiven INNER JOIN
-    \item Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure
-    \item Graphtraversierung mit Hilfe von dynamisch generiertem \ac{SQL}
+    \item Rekursiven \ac{CTE}
+    \item Verschachteltem SELECT Statement
+    \item Rekursiven INNER JOIN
+    \item Selbstgeschriebenen Stored Procedure
+    \item Dynamisch generiertem \ac{SQL}
 \end{itemize}
-\subsection{Installation}
+\subsection{Installation von Postgres}
 PostgreSQL kann unter Ubuntu über die Paketverwaltung \ac{APT} installiert werden. Weiterhin wird eine Installation über die \ac{RPM}-Paketverwaltung angeboten. Im Rahmen dieser
 Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. Nach der Installation von PostgreSQL muss zunächst
 $initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden.
