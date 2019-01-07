@@ -1,7 +1,8 @@
 #!/bin/sh
-date > pgbench.log
+now=$(date +"%m_%d_%Y")
+date > pgbench_$now.log
  for f in *.sql; do  # or wget-*.sh instead of *.sh
-        $PGSTATEMENT "$f" >> pgbench.log  || break # if needed
+        $PGSTATEMENT "$f" >> pgbench_$now.log  || break # if needed
     done
 
 
