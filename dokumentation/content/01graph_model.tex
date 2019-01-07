@@ -26,8 +26,10 @@ Ein Knoten representiert ein Element in einem Graphen.
 Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
 
+%\subsection{Eigenschaften von Kanten}
 Graphen können gerichtet oder ungerichtet sein.
 Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesene Richtung besitzen.
+Grafisch werden gerichtete Kanten in der Regel durch Pfeile dargestellt.
 Um die Beziehung zwischen zwei Knoten genauer zu definieren, lassen sich die Kanten gewichten.
 Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
 Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
@@ -35,8 +37,8 @@ Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese M
 Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\cite{felsner01}
 Multigraphen hingegen erlauben Multikanten. In Pseudographen sind sowohl Multikanten als auch Schleifen möglich.
 
-Werden Kanten und Knoten eines Graphs vertauscht entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
-Zwei Graphen können isomorph sein.
+Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
+Sind zwei Graphen gleich, bezeichnet man diese als isomorph.\cite[Seite 22]{}
 Der Grad eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
 Dabei werden Schleifen doppelt gezählt.\cite[Seite 13]{rahm2017}
 Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
