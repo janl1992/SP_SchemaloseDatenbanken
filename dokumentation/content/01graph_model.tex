@@ -11,16 +11,15 @@ Ein Graph ist mathematisch folgendermaßen definiert:
 \begin{definition}
 	Ein $\text{Graph } G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
 	\begin{itemize}
-		\item $V$, einer nicht leeren Menge von Knoten(vertices)
-		\item $E$, einer Menge von Kanten (edges) und
+		\item $V$, einer nicht leeren, ungeordneten Menge von Knoten (vertices)
+		\item $E$, einer Menge von Kanten (edges)
 		\item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
 		$\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
 	\end{itemize}
-
-	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
-	genau dann wenn $a$ entweder Anfangs- oder Endecke von $e$ ist. Es gilt $a \in \gamma(e)$.
-	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
-	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.\cite[Seite 21]{pbeck01}
+%	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
+%	genau dann wenn $a$ entweder Anfangs- oder Endecke von $e$ ist. Es gilt $a \in \gamma(e)$.
+%	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
+%	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.\cite[Seite 21]{pbeck01}
 \end{definition}
 Ein Knoten representiert ein Element in einem Graphen.
 Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
@@ -38,7 +37,7 @@ Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\c
 Multigraphen hingegen erlauben Multikanten. In Pseudographen sind sowohl Multikanten als auch Schleifen möglich.
 
 Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
-Sind zwei Graphen gleich, bezeichnet man diese als isomorph.\cite[Seite 22]{}
+Sind zwei Graphen gleich, bezeichnet man diese als isomorph.\cite[Seite 22]{basicgraphtheory}
 Der Grad eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
 Dabei werden Schleifen doppelt gezählt.\cite[Seite 13]{rahm2017}
 Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
@@ -57,6 +56,10 @@ Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null u
 	\label{fig:regular}
 	%\caption{Regulärer Graph}
 \end{center}
+\subsection{Bäume}
+Ist ein Graph kreisfrei, es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
+Sind die Knoten eines Waldes zusammenhängend entsteht ein Baum.
+Knoten mit dem Grad $n=1$ werden als Blätter bezeichnet.
 \subsection{Planare Graphen}
 Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
 Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
@@ -73,10 +76,16 @@ Die Überschneidungen sind in der Abbildung rot markiert.
 \subsubsection{Eulerscher Polyedersatz}
 Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass die Anzahl der Knoten minus die Anzahl der Kanten plus die Anzahl der Gebiete zwei ergibt:
 \[ n - m + f = 2 \]
-\subsection{Bäume}
-Ist ein Graph kreisfrei, es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
-Sind die Knoten eines Waldes zusammenhängend entsteht ein Baum.
-Knoten mit dem Grad $n=1$ werden als Blätter bezeichnet.
+\subsection{k-Partite Graphen}
+Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
+Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
+Die folgende Abbildung \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
+Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
+\begin{center}
+	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
+	\label{fig:partit}
+	%\caption{k-Partiter Graph}
+\end{center}
 \subsection{Property Graphen}
 Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
 Gespeichert werden diese Eigenschaften als Key-Value-Paare.
@@ -92,16 +101,7 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 	\label{fig:property}
 	%\caption{Property Graph}
 \end{center}
-\subsection{k-Partite Graphen}
-Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
-Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
-Die folgende Abbildung \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
-Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
-\begin{center}
-	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
-	\label{fig:partit}
-	%\caption{k-Partiter Graph}
-\end{center}
+
 \subsection{Hypergraphen}
 Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
 \\Mathematisch ist ein Hypergraph folgendermaßen definiert:
