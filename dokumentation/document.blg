@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017)
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
 The style file: alphadin.bst
@@ -27,45 +27,45 @@ Warning--entry type for "felsner01" isn't style-file defined
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 21 entries,
+You've used 22 entries,
             4793 wiz_defined-function locations,
-            990 strings with 9136 characters,
-and the built_in function-call counts, 11482 in all, are:
-= -- 1184
-> -- 263
-< -- 399
-+ -- 429
-- -- 92
-* -- 633
-:= -- 1961
-add.period$ -- 27
-call.type$ -- 21
-change.case$ -- 96
+            993 strings with 9202 characters,
+and the built_in function-call counts, 11918 in all, are:
+= -- 1224
+> -- 271
+< -- 412
++ -- 443
+- -- 95
+* -- 655
+:= -- 2035
+add.period$ -- 28
+call.type$ -- 22
+change.case$ -- 100
 chr.to.int$ -- 19
-cite$ -- 22
-duplicate$ -- 347
-empty$ -- 819
-format.name$ -- 181
-if$ -- 2270
-int.to.chr$ -- 3
+cite$ -- 23
+duplicate$ -- 364
+empty$ -- 858
+format.name$ -- 187
+if$ -- 2358
+int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 88
-newline$ -- 124
-num.names$ -- 63
-pop$ -- 162
+missing$ -- 92
+newline$ -- 129
+num.names$ -- 66
+pop$ -- 170
 preamble$ -- 1
-purify$ -- 138
+purify$ -- 144
 quote$ -- 0
-skip$ -- 702
+skip$ -- 729
 stack$ -- 0
-substring$ -- 761
-swap$ -- 60
-text.length$ -- 54
-text.prefix$ -- 14
+substring$ -- 786
+swap$ -- 62
+text.length$ -- 56
+text.prefix$ -- 15
 top$ -- 0
-type$ -- 170
+type$ -- 176
 warning$ -- 1
-while$ -- 87
-width$ -- 25
-write$ -- 266
+while$ -- 90
+width$ -- 26
+write$ -- 277
 (There was 1 error message)
