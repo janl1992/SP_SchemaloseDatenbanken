@@ -10,6 +10,7 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 	\item -t transactions \\
 	Über das Flag -t wird festgelegt wieviele Transaktionen jeder Client durchführt. Die Anzahl aller Transaktionen ergibt sich durch das Produkt von Clients und Transactions.
 \end{itemize}
+\subsubsection{Antwortzeiten ohne Indices}
 \begin{figure}[H]
 \begin{tikzpicture}[y=.001cm, x=2cm,font=\sffamily]
 %axis
@@ -189,7 +190,129 @@ coordinates{(0, 0)
 	\end{tikzpicture}
 	\caption{ public\_facebook}
 \end{figure}
+\subsubsection{Antwortzeiten mit Indices}
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.00055cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,12000);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,1000,...,12000}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.231)
+		(2, 9.290)
+		(3, 36.244)
+		(4, 235.146)
+		(5, 504.793)
+	};
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 18.999)
+		(2, 23.549)
+		(3, 54.953)
+		(4, 287.319)
+		(5, 737.300)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.855)
+		(2, 10.304)
+		(3, 78.303)
+		(4,2024.069)
+		(5,12920.747)
+	};
+	\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
+		\textcolor{blue}{--- recursiveSearch}, 
+		\textcolor{red}{--- selectSourceCodeGenerator}};
+	\end{tikzpicture}
+	\caption{ public\_epinions}
+\end{figure}
 
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|}
+		\cline{2-4}
+		& \multicolumn{3}{l|}{Laufzeit in MS} \\ \hline
+		\multicolumn{1}{|l|}{Rerkusionstiefe} & selectSourceCodeGenerator  & recursiveSearch  & recursiveWithUnion    \\ \hline
+		\multicolumn{1}{|l|}{1}               & 8.231           & 	18.999  & 8.855    \\ \hline
+		\multicolumn{1}{|l|}{2}               & 9.290          & 	23.549 & 10.304   \\ \hline
+		\multicolumn{1}{|l|}{3}               & 36.244          &  54.953   &  78.303   \\ \hline
+		\multicolumn{1}{|l|}{4}               & 235.146          &  287.319     & 2024.069     \\ \hline
+		\multicolumn{1}{|l|}{5}               & 504.793          &  737.300   & 12920.747     \\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	
+	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,12);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y/\ytext in {
+		0/0,
+		1/2000,
+		2/4000,
+		3/6000,
+		4/8000,
+		5/10000,
+		6/12000,
+		7/14000,
+		8/16000,
+		9/18000,
+		10/20000,
+		11/22000,
+		12/24000,
+	}
+	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[red] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 0.004)%8.672/2000
+		(2,	15.240/2000)
+		(3, 6936.935/2000)
+		(4, 14137.544/2000)%
+		(5,	11.232)%22464.363/2000	
+	};
+	\draw[blue] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 42.010/2000)
+		(2,	69.129/2000)
+		(3, 114.466/2000)
+		(4, 484.914/2000)
+		(5,	3830.355/2000)
+	};
+	\draw[green] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 139.294/2000)
+		(2,	131.623/2000)
+		(3, 157.707/2000)
+		(4, 705.293/2000)
+		(5, 6140.824/2000)
+	};
+	\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
+		\textcolor{blue}{--- recursiveSearch}, 
+		\textcolor{red}{--- selectSourceCodeGenerator}};
+	\end{tikzpicture}
+	\caption{ public\_livejournal}
+\end{figure}
 
 \subsection{Standard SQL}
 \subsection{Stored Procedures}
