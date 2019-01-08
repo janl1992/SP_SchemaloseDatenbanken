@@ -1,6 +1,0 @@
-\beamer@sectionintoc {1}{PostgreSQL \IeC {\"U}berblick}{3}{0}{1}
-\beamer@sectionintoc {2}{Postgres Architektur}{4}{0}{2}
-\beamer@sectionintoc {3}{Konzepte f\IeC {\"u}r rekursive Anfragen}{5}{0}{3}
-\beamer@sectionintoc {4}{pgBench}{9}{0}{4}
-\beamer@sectionintoc {5}{Messergebnisse}{10}{0}{5}
-\beamer@sectionintoc {6}{Fazit}{11}{0}{6}

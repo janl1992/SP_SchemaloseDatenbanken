@@ -99,12 +99,7 @@
 \newblock \url{https://www.postgresql.org/docs/11}.
 \newblock \,Version:\,2018
 
-\bibitem[Rah17a]{basicgraphtheory}
-\textsc{Rahman}, Md.~S.:
-\newblock \emph{Basic Graph Theory}.
-\newblock Springer International Publishing, 2017
-
-\bibitem[Rah17b]{rahm2017}
+\bibitem[Rah17]{rahm2017}
 \textsc{Rahman}, Saidur:
 \newblock \emph{Basic Graph Theory}.
 \newblock Berlin, Heidelberg : Springer, 2017. --
