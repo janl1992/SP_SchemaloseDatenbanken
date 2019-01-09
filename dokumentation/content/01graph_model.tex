@@ -21,72 +21,99 @@ Ein Graph ist mathematisch folgendermaßen definiert:
 %	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
 %	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.\cite[Seite 21]{pbeck01}
 \end{definition}
-Ein Knoten representiert ein Element in einem Graphen.
-Die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
+Ein Knoten representiert ein Element in einem Graphen und die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
+Zwei Konten heißen adjazent, wenn diese über eine Kante direkt miteinander verbunden sind.
+Eine Kante die mit einem Knoten verbunden is wird als inzident zu diesem Knoten bezeichnet.\cite{knauer2015diskrete}
 
 %\subsection{Eigenschaften von Kanten}
 Graphen können gerichtet oder ungerichtet sein.
 Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesene Richtung besitzen.
 Grafisch werden gerichtete Kanten in der Regel durch Pfeile dargestellt.
+Für die Modellierung von realen Gegebenheiten ist das Konzept der gerichteten Graphen sehr entscheidend, da dieses die Darstellung einseitiger Beziehungen zwischen den Entitäten das Modells erlaubt.
+
 Um die Beziehung zwischen zwei Knoten genauer zu definieren, lassen sich die Kanten gewichten.
 Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+Durch die Wichtung von Kanten lassen sich beispielsweise Kosten oder Distanzen zwischen den Entitäten definieren.
+
+Ein Knoten ist isoliert, wenn er keine inzidenten Kanten und somit keine direkten Nachbarn hat.\cite{knauer2015diskrete}
+Ein ungerichteter Graph heißt zusammenhängend, falls es zwischen zwei beliebigen Knoten $a$ und $b$ aus $V$ einen ungerichteten Weg mit $a$ als Startknoten und $b$ als Endknoten gibt.\cite[36-38]{krumke2012graphentheoretische}
 Hat eine Kante als Start- und Endknoten den selben Knoten, verbindet also den Knoten mit sich selber, spricht man von einer Schlinge.
 Liegen zwischen zwei Knoten eines Graphen mehr als eine Kante, nennt man diese Multikante.
-Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\cite{felsner01}
-Multigraphen hingegen erlauben Multikanten. In Pseudographen sind sowohl Multikanten als auch Schleifen möglich.
+Enthält ein Graph Multikanten und Schlingen ist dies kein einfacher Graph mehr sondern ein Multigraph.\cite{felsner01}
+%Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\cite{felsner01}
 
-Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
-Sind zwei Graphen gleich, bezeichnet man diese als isomorph.\cite[Seite 22]{basicgraphtheory}
 Der Grad eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
 Dabei werden Schleifen doppelt gezählt.\cite[Seite 13]{rahm2017}
-Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
-	\[K_{n}=\big([n],\begin{pmatrix}
-		[n] \\ 2
-	\end{pmatrix}\big)\]
-
-Ein ungerichteter Graph heißt zusammenhängend, falls zwischen zwei beliebigen Knoten $a$ und $b$ aus $V$ es einen ungerichteten Weg mit $a$ als Startknoten und $b$ als Endknoten gibt.\cite[36-38]{krumke2012graphentheoretische}
-
-\subsection{Reguläre Graphen}
-Bei regulären Graphen haben alle Knoten den selben Knotengrad.
-Als Knotengrad wird die Anzahl direkter Nachbarn, also alle Knoten die über eine Kante direkt mit dem betrachteten Knoten verbunden sind, bezeichnet.\cite{felsner2012geometric}
+Ein Graph, bei dem alle Knoten den selben Knotengrad haben, wird als regulärer Graph bezeichnet.\cite{felsner2012geometric}
 Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null und einen mit einem Grad von drei.
 \begin{center}
 	\includegraphics[scale = 0.4]{./images/Regulaerer_graph.png}
 	\label{fig:regular}
 	%\caption{Regulärer Graph}
 \end{center}
+Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
+\[K_{n}=\big([n],\begin{pmatrix}
+					 [n] \\ 2
+\end{pmatrix}\big)\]
+
+%Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
+Da bei einem Graphen nur die Struktur definiert ist, also welcher Knoten über welche Kante mit den anderen Knoten verbunden ist, können Graphen auf unterschiedliche weisen gezeichnet werden und trotzdem gleich sein.
+Sind zwei Graphen gleich, bezeichnet man diese als isomorph.\cite[Seite 22]{basicgraphtheory}
+
+%Subgraphen
+%\subsection{Reguläre Graphen}
+%Bei regulären Graphen haben alle Knoten den selben Knotengrad.
+%Als Knotengrad wird die Anzahl direkter Nachbarn, also alle Knoten die über eine Kante direkt mit dem betrachteten Knoten verbunden sind, bezeichnet.\cite{felsner2012geometric}
+%Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null und einen mit einem Grad von drei.
+%\begin{center}
+%	\includegraphics[scale = 0.4]{./images/Regulaerer_graph.png}
+%	\label{fig:regular}
+%	%\caption{Regulärer Graph}
+%\end{center}
 \subsection{Bäume}
 Ist ein Graph kreisfrei, es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
 Sind die Knoten eines Waldes zusammenhängend entsteht ein Baum.
+Ein Baum mit $n$ Knoten hat immer $n-1$ Kanten.\cite{basicgraphtheory}
 Knoten mit dem Grad $n=1$ werden als Blätter bezeichnet.
-\subsection{Planare Graphen}
-Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
-Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
-
-In Abbildung \ref{fig:planar} sind die vollständigen Graphen $K_{4}$ und $K_{5}$ abgebildet, wobei es sich bei $K_{4}$ um einen planaren Graphen und bei $K_{5}$ um einen nicht planaren Graphen handelt.
-$K_{5}$ ist nicht planar, da sich dieser in der Ebene nicht ohne Überschneidungen der Kanten zeichnen lässt.
-Die Überschneidungen sind in der Abbildung rot markiert.
+Bäume können gerichtet und ungerichtet sein.
+Im Falle von gerichteten Bäumen spricht man auch von gewurzelten Bäumen, da der Ursprungsknoten als Wurzel bezeichnet wird.
+Abbildung \ref{fig:baum} zeigt einen gewurzelten Baum, die Blätter sind hier grün dargestellt und die Wurzel rot.
+In einem Baum gibt es zwischen zwei beliebigen Knoten immer nur einen Weg.
+Bei einem gewurzelten Baum werden die Ausgangsknoten als Eltern und die Zielknoten jeweils als Kinder der Ausgangsknoten bezeichnet.
+Hat in einem gewurzelten Baum jeder Knoten maximal zwei Kinder, wird dieser als Binärbaum bezeichnet.\cite{basicgraphtheory}
+\begin{center}
+	\includegraphics[scale = 0.3]{./images/baum.png}
+	\label{fig:baum}
+\end{center}
+%\subsection{Planare Graphen}
+%Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
+%Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
+%
+%In Abbildung \ref{fig:planar} sind die vollständigen Graphen $K_{4}$ und $K_{5}$ abgebildet, wobei es sich bei $K_{4}$ um einen planaren Graphen und bei $K_{5}$ um einen nicht planaren Graphen handelt.
+%$K_{5}$ ist nicht planar, da sich dieser in der Ebene nicht ohne Überschneidungen der Kanten zeichnen lässt.
+%Die Überschneidungen sind in der Abbildung rot markiert.
 %Anwendung finden planare Graphen vorallem in der Herstellung von Chips.
-\begin{center}
-	\includegraphics[scale = 0.5]{./images/planarer_graph.png}
-	\label{fig:planar}
-	%\caption{Planarer Graph}
-\end{center}
-\subsubsection{Eulerscher Polyedersatz}
-Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass die Anzahl der Knoten minus die Anzahl der Kanten plus die Anzahl der Gebiete zwei ergibt:
-\[ n - m + f = 2 \]
-\subsection{k-Partite Graphen}
-Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
-Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
-Die folgende Abbildung \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
-Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
-\begin{center}
-	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
-	\label{fig:partit}
+%\begin{center}
+%	\includegraphics[scale = 0.5]{./images/planarer_graph.png}
+%	\label{fig:planar}
+%	%\caption{Planarer Graph}
+%\end{center}
+%\subsubsection{Eulerscher Polyedersatz}
+%Für zusammenhängende planare Graphen besagt der Eulersche Polyedersatz, dass die Anzahl der Knoten minus die Anzahl der Kanten plus die Anzahl der Gebiete zwei ergibt:
+%\[ n - m + f = 2 \]
+%\subsection{k-Partite Graphen}
+%Die Knoten können in k Partitionen unterteilt werden, sodass die Knoten in einer Gruppe keine direkten Nachbarn sind.
+%Für $k=2$ werden diese Graphen Bipartite Graphen genammt.
+%Die folgende Abbildung \ref{fig:partit} zeigt zwei k-Partite Graphen, wobei die Partitionen durch die unterschiedlichen Farben der Knoten gekennzeichnet sind.
+%Die Darstellung verdeutlicht auch, dass die Anzahl der Knoten eines Graphs keinen direkten Einfluss auf die Anzahl der Partitionen hat.
+%\begin{center}
+%	\includegraphics[scale = 0.4]{./images/k_partiter_graph.png}
+%	\label{fig:partit}
 	%\caption{k-Partiter Graph}
-\end{center}
+%\end{center}
 \subsection{Property Graphen}
+Propertygraphen erweitern das Modell des einfachen Graphen.
 Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
 Gespeichert werden diese Eigenschaften als Key-Value-Paare.
 Label ermöglichen die Unterteilung von Knoten und Kanten in verschiedene Knoten- und Kantentypen.
@@ -103,7 +130,10 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 \end{center}
 
 \subsection{Hypergraphen}
+Hypergraphen stellen eine generalisierung von vormalen Graphen dar.
 Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
+Die Kanten des Hypergraphen werden auch als Hyperkanten bezeichnet.
+Im Falle eines gerichteten Hypergraphen verbindet die Hyperkante den Ausgangsknoten direkt mit allen Zielknoten.
 \\Mathematisch ist ein Hypergraph folgendermaßen definiert:
 \begin{definition}
 	Let $X=\{v_{1}, v_{2},...,v_{n}\}$ be a finite set,
@@ -125,10 +155,12 @@ Die Kante $e_{4}$ verbindet in diesem Graphen die Knoten $v_{5}$, $v_{6}$ und $v
 Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben (siehe Definition Graph Kapitel 1.2.1).
 Beim normalen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$ haben.
 Die Hyperedges in einem Hypergraphen sind somit eine beliebige Menge von Knoten.
-In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
-    \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
-    \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} \text{ Kanten}\]
-    \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} = \{\{v_{1}, v_{2}, v_{3}\}, \{v_{2}, v_{3}\}, \{v_{3}, v_{5}, v_{6}\}, \{v_{4}\}\} \]
+
+Da die Hypergraphen eine flexiblere Struktur als das einface Graphen-Modell bietet, werden diese oft zur Modellierung in Graphdatenbanken verwendet.\cite{flockdb}
+%In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
+%    \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
+%    \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} \text{ Kanten}\]
+%    \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} = \{\{v_{1}, v_{2}, v_{3}\}, \{v_{2}, v_{3}\}, \{v_{3}, v_{5}, v_{6}\}, \{v_{4}\}\} \]
 %Transversals
 %\subsection{Multimodale Graphen}
 %\subsection{Hypertree}
