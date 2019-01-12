@@ -50,6 +50,11 @@
 \newblock \emph{PostgreSQL 10}.
 \newblock Carl Hanser Verlag München, 2018
 
+\bibitem[Goe15]{flockdb}
+\textsc{Goebel}, Christopher:
+\newblock NoSQL - FlockDB.
+\newblock   (2015)
+
 \bibitem[Groa]{postgresqldoc}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 11.1 Documentation}.
@@ -82,6 +87,11 @@
   Computing and Communications (SustainCom)(BDCloud-SocialCom-SustainCom)}
   IEEE, 2016, S. 81--88
 
+\bibitem[KK15]{knauer2015diskrete}
+\textsc{Knauer}, U. ; \textsc{Knauer}, K.:
+\newblock \emph{Diskrete und algebraische Strukturen - kurz gefasst}.
+\newblock Springer Berlin Heidelberg, 2015
+
 \bibitem[KN12]{krumke2012graphentheoretische}
 \textsc{Krumke}, S.O. ; \textsc{Noltemeier}, H.:
 \newblock \emph{Graphentheoretische Konzepte und Algorithmen}.
@@ -99,7 +109,12 @@
 \newblock \url{https://www.postgresql.org/docs/11}.
 \newblock \,Version:\,2018
 
-\bibitem[Rah17]{rahm2017}
+\bibitem[Rah17a]{basicgraphtheory}
+\textsc{Rahman}, Md.~S.:
+\newblock \emph{Basic Graph Theory}.
+\newblock Springer International Publishing, 2017
+
+\bibitem[Rah17b]{rahm2017}
 \textsc{Rahman}, Saidur:
 \newblock \emph{Basic Graph Theory}.
 \newblock Berlin, Heidelberg : Springer, 2017. --

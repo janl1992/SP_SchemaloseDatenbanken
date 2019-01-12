@@ -12,44 +12,72 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 \end{itemize}
 \subsubsection{Antwortzeiten ohne Indices}
 \begin{figure}[H]
-\begin{tikzpicture}[y=.001cm, x=2cm,font=\sffamily]
+\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
 %axis
 \draw (0,0) -- coordinate (x axis mid) (5,0);
-\draw (0,0) -- coordinate (y axis mid) (0,9000);
+\draw (0,0) -- coordinate (y axis mid) (0,18);
     	%ticks
 \foreach \x in {0,...,5}
 \draw (\x,1pt) -- (\x,-3pt)
 node[anchor=north] {\x};
-\foreach \y in {0,1000,...,9000}
-\draw (1pt,\y) -- (-3pt,\y)
-node[anchor=east] {\y}; 
+	\foreach \y/\ytext in {
+	0/0,
+	1/5000,
+	2/10000,
+	3/15000,
+	4/20000,
+	5/25000,
+	6/30000,
+	7/35000,
+	8/40000,
+	9/45000,
+	10/50000,
+	11/55000,
+	12/60000,
+	13/65000,
+	14/70000,
+	15/75000,
+	16/80000,
+	17/85000,
+	18/90000
+}
+\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$}; 
 %labels      
 \node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
 \node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
 %plots
+\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+coordinates{(0, 0)
+	(1, 61.065/5000)
+	(2,231.850/5000)
+	(3,333.011/5000)
+	(4,3.5545)%17772.456/5000)
+	(5,16.2483)%81241.284/5000
+};
+
 \draw[red] plot[ mark=*, mark options={fill=white}] 
 coordinates{(0, 0)
-			(1, 63.636)
-			(2,139.225)
-			(3,229.997)
-			(4,432.297)
-			(5,677.420)
+			(1, 63.636/5000)
+			(2,139.225/5000)
+			(3,229.997/5000)
+			(4,432.297/5000)
+			(5,677.420/5000)
 		};
 \draw[blue] plot[ mark=*, mark options={fill=white}] 
 coordinates{(0, 0)
-	(1, 89.858)
-	(2,168.822)
-	(3,273.452)
-	(4,513.038)
-	(5,921.228)
+	(1, 89.858/5000)
+	(2,168.822/5000)
+	(3,273.452/5000)
+	(4,513.038/5000)
+	(5,921.228/5000)
 };
 \draw[green] plot[ mark=*, mark options={fill=white}] 
 coordinates{(0, 0)
-	(1, 59.275)
-	(2,143.367)
-	(3,277.766)
-	(4,1664.168)
-	(5,8335.513)
+	(1, 59.275/5000)
+	(2,143.367/5000)
+	(3,277.766/5000)
+	(4,1664.168/5000)
+	(5,8335.513/5000)
 };
 \draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
 	\textcolor{blue}{--- recursiveSearch}, 
@@ -59,17 +87,21 @@ coordinates{(0, 0)
 \end{figure}
 
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
 \begin{table}[H]
-	\centering
-	\begin{tabular}{l|l|l|l|}
-		\cline{2-4}
-		& \multicolumn{3}{l|}{Laufzeit in MS} \\ \hline
-		\multicolumn{1}{|l|}{Rerkusionstiefe} & selectSourceCodeGenerator  & recursiveSearch  & recursiveWithUnion    \\ \hline
-		\multicolumn{1}{|l|}{1}               & 63.636           & 	89.858  & 59.275    \\ \hline
-		\multicolumn{1}{|l|}{2}               & 139.225          & 	168.822 & 143.367   \\ \hline
-		\multicolumn{1}{|l|}{3}               & 229.997          & 273.452   &  277.766   \\ \hline
-		\multicolumn{1}{|l|}{4}               & 432.297          & 513.038     & 1664.168     \\ \hline
-		\multicolumn{1}{|l|}{5}               & 677.420          &  921.228   & 8335.513     \\ \hline
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+	\multicolumn{1}{|l|}{1}               & \multicolumn{2}{l|}{63.636}                                     & 89.858                           & 59.275                              & 61.065                                    \\ \hline
+	\multicolumn{1}{|l|}{2}               & \multicolumn{2}{l|}{139.225}                                    & 168.822                          & 143.367                             & 231.850                                   \\ \hline
+	\multicolumn{1}{|l|}{3}               & \multicolumn{2}{l|}{229.997}                                    & 273.452                          & 277.766                             & 333.011                                   \\ \hline
+	\multicolumn{1}{|l|}{4}               & \multicolumn{2}{l|}{432.297}                                    & 513.038                          & 1664.168                            & 17772.456                                 \\ \hline
+	\multicolumn{1}{|l|}{5}               & \multicolumn{2}{l|}{677.420}                                    & 921.228                          & 8335.513                            & 81241.284                                 \\ \hline
+	
 	\end{tabular}
 \end{table}
 \begin{figure}[H]
@@ -113,6 +145,14 @@ coordinates{(0, 0)
 	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
 	%plots
+	\draw[darkgray] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 0.9819)%4909.862/5000)
+		(2,	4.8836)%24417.787/5000)
+		(3, 6.3127)%31563.339/5000)
+		(4, 7.5570)%37785.200/5000)
+		(5,	11.3202)%56601.185/5000)
+	};
 	\draw[red] plot[mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
 		(1, 4761.733/5000)
@@ -137,29 +177,68 @@ coordinates{(0, 0)
 	(4, 17.487)%87434.075/5000)	
 	(5,	23.086)%115432.071/5000)	
 };
-\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
-	\textcolor{blue}{--- recursiveSearch}, 
-	\textcolor{red}{--- selectSourceCodeGenerator}};
+	\draw (0,-3) -- (5,-3) 
+(0,-3) -- (0,-6)
+(0,-6) -- (5,-6)
+(5,-3) -- (5,-6);
+\draw[draw=none] (0,0) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{darkgray}{--- selectWithInnerJoin}
+	\textcolor{green}{--- recursiveWithUnion} 
+	
+};
+\draw[draw=none] (0,-3) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{blue}{--- recursiveSearch} 
+	\textcolor{red}{--- selectSourceCodeGenerator}
+};
 	\end{tikzpicture}
 	\caption{ public\_livejournal}
 \end{figure}
+\begin{table}[H]
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+		\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{4761.733}                                    & 7075.399                                              & 4695.466                                                  & 4909.862                                                        \\ \hline
+		\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{11589.219}                                   & 13702.381                                             & 41616.216                                                 & 24417.787                                                       \\ \hline
+		\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{24971}                                       & 20773.831                                             & 64577.873                                                 & 31563.339                                                       \\ \hline
+		\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{44625.935}                                   & 28048.866                                             & 87434.075                                                 & 37785.200                                                       \\ \hline
+		\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{65632.972}                                   & 53825.401                                             & 115432.071                                                & 56601.185                                                       \\ \hline
+		
+	\end{tabular}
+\end{table}
+
 
 \begin{figure}[H]
-	\begin{tikzpicture}[y=.05cm, x=2cm,font=\sffamily]
+	\begin{tikzpicture}[y=.025cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
-	\draw (0,0) -- coordinate (y axis mid) (0,120);
+	\draw (0,0) -- coordinate (y axis mid) (0,330);
 	%ticks
 	\foreach \x in {0,...,5}
 	\draw (\x,1pt) -- (\x,-3pt)
 	node[anchor=north] {\x};
-	\foreach \y in {0,10,...,120}
+	\foreach \y in {0,30,...,330}
 	\draw (1pt,\y) -- (-3pt,\y)
 	node[anchor=east] {\y}; 
 	%labels      
 	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
 	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 10.825)
+		(2, 11.119)
+		(3, 17.613)
+		(4, 61.089)
+		(5, 304.821)
+	};
+	
 	\draw[blue] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
 		(1, 29.595)
@@ -184,13 +263,30 @@ coordinates{(0, 0)
 		(4,84.295)
 		(5,110.000)
 	};
-	\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
-		\textcolor{blue}{--- recursiveSearch}, 
-		\textcolor{red}{--- selectSourceCodeGenerator}};
+
+	\draw (0,-60) -- (5,-60) 
+		  (0,-60) -- (0,-120)
+          (0,-120) -- (5,-120)
+          (5,-60) -- (5,-120);
+\draw[draw=none] (0,0) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{darkgray}{--- selectWithInnerJoin}
+	\textcolor{green}{--- recursiveWithUnion} 
+	
+};
+\draw[draw=none] (0,-60) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{blue}{--- recursiveSearch} 
+	\textcolor{red}{--- selectSourceCodeGenerator}
+};
 	\end{tikzpicture}
 	\caption{ public\_facebook}
 \end{figure}
 \subsubsection{Antwortzeiten mit Indices}
+
+
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.00055cm, x=2cm,font=\sffamily]
 	%axis
@@ -258,7 +354,7 @@ coordinates{(0, 0)
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
-	\draw (0,0) -- coordinate (y axis mid) (0,12);
+	\draw (0,0) -- coordinate (y axis mid) (0,16);
 	%ticks
 	\foreach \x in {0,...,5}
 	\draw (\x,1pt) -- (\x,-3pt)
@@ -277,12 +373,25 @@ coordinates{(0, 0)
 		10/20000,
 		11/22000,
 		12/24000,
+		13/26000,
+		14/28000,
+		15/30000,
+		16/32000,
 	}
 	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
 	%labels      
 	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
 	%plots
+	
+	\draw[darkgray] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 9.165/2000)
+		(2,	11.862/2000)
+		(3, 8042.794/2000)
+		(4, 14865.814/2000)
+		(5,	 15.995)%31990.436/2000)
+	};	
 	\draw[red] plot[mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
 		(1, 0.004)%8.672/2000
@@ -307,14 +416,196 @@ coordinates{(0, 0)
 		(4, 705.293/2000)
 		(5, 6140.824/2000)
 	};
-	\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
-		\textcolor{blue}{--- recursiveSearch}, 
-		\textcolor{red}{--- selectSourceCodeGenerator}};
+	\draw (0,-3) -- (5,-3) 
+(0,-3) -- (0,-6)
+(0,-6) -- (5,-6)
+(5,-3) -- (5,-6);
+\draw[draw=none] (0,0) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{darkgray}{--- selectWithInnerJoin}
+	\textcolor{green}{--- recursiveWithUnion} 
+	
+};
+\draw[draw=none] (0,-3) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{blue}{--- recursiveSearch} 
+	\textcolor{red}{--- selectSourceCodeGenerator}
+};
+	\end{tikzpicture}
+	\caption{ public\_livejournal}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.025cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,300);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,30,...,300}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.585)
+		(2, 9.565)
+		(3, 15.738)
+		(4, 60.976)
+		(5, 297.115)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 20.674)
+		(2, 22.639)
+		(3, 27.788)
+		(4, 32.804)
+		(5, 37.706)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.594)
+		(2, 9.239)
+		(3, 26.683)
+		(4, 43.610)
+		(5, 64.882)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 11.672)
+		(2, 11.787)
+		(3, 19.625)
+		(4, 32.817)
+		(5, 48.580)
+	};
+	
+	\draw (0,-60) -- (5,-60) 
+	(0,-60) -- (0,-120)
+	(0,-120) -- (5,-120)
+	(5,-60) -- (5,-120);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-60) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_facebook}
+\end{figure}
+
+ 
+
+\subsection{Antwortzeiten mit partitionierten Tabellen und Indices}
+\begin{figure}[H]
+	
+	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,16);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y/\ytext in {
+		0/0,
+		1/500,
+		2/1000,
+		3/1500,
+		4/2000,
+		5/2500,
+		6/3000,
+		7/3500,
+		8/4000,
+		9/4500,
+		10/5000,
+		11/5500,
+		12/6000,
+		13/6500,
+		14/7000,
+		15/7500,
+		16/8000
+	}
+	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	%InnerJoin
+	\draw[darkgray] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 11.849/500)
+		(2,	13.616/500)
+		(3, 72.842/500)
+		(4, 792.107/500)
+		(5,	7888.135/500)
+	};
+	%SelectGenerator
+	\draw[red] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 0.018)%8.945/500
+		(2,	9.875/500)
+		(3, 29.855/500)
+		(4, 317.921/500)%
+		(5,	2802.370/500)	
+	};
+	%RecursiveSearch
+	\draw[blue] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 24.721/500)
+		(2,	25.354/500)
+		(3, 53.544/500)
+		(4, 449.968/500)
+		(5,	4022.937/500)
+	};
+	%SelectWithUnion
+	\draw[green] plot[mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 500.063/500)
+		(2,	507.950/500)
+		(3, 532.557/500)
+		(4, 1062.957/500)
+		(5, 6995.607/500)
+	};
+	
+	\draw (0,-3) -- (5,-3) 
+		  (0,-3) -- (0,-6)
+		  (0,-6) -- (5,-6)
+		  (5,-3) -- (5,-6);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	 {
+	 	\textcolor{darkgray}{--- selectWithInnerJoin}
+	 	\textcolor{green}{--- recursiveWithUnion} 
+	
+	};
+	\draw[draw=none] (0,-3) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+
 	\end{tikzpicture}
 	\caption{ public\_livejournal}
 \end{figure}
 
 \subsection{Standard SQL}
+
 \subsection{Stored Procedures}
 \subsection{PL/SQL-Recursion}
 \subsection{Datenbankzugriffe}

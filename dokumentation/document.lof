@@ -1,5 +1,5 @@
-\select@language {ngerman}
-\select@language {ngerman}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -8,6 +8,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces public\_epinions}}{14}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces public\_livejournal}}{15}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces public\_facebook}}{16}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces public\_epinions}}{17}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces public\_livejournal}}{18}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces public\_facebook}}{19}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces public\_livejournal}}{20}{figure.4.7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Postgres Architektur}}{16}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Postgres Architektur}}{21}{figure.A.1}
 \addvspace {10\p@ }
