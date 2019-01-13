@@ -93,7 +93,9 @@ wird auf Basis eines Eingabeparameter (Datenstruktur Array) erstellt.
 Diese temporäre Tabelle besitzt eine Spalte. Diese Tabelle stellt die Spalte src der aktuellen Rekursionsstufe dar. Sie wird im IN Operator der WHERE Klausel verwendet
 um die 2. temporäre Tabelle zu erstellen. Die 2. temporäre Tabelle beinhaltet die Spalte dst der aktuellen Rekursionsstufe. Die 2. temporäre Tabelle wird als
 Aufrufparameter für die nächst tiefere Rekursionsstufe mitgegeben. In der nächst tieferen Rekursionsstufe dient die 2. temporäre Tabelle als die Tabelle, die alle
-src Spalten der aktuellen Rekursionsstufe beinhaltet.
+src Spalten der aktuellen Rekursionsstufe beinhaltet. Die 2. temporäre Tabelle wird mit Hilfe von dynamischen \ac{SQL} \footnote{"Dynamisches SQL wird gerne verwendet,
+da zur Zeit der Erstellung des Programms häufig nicht alle Parameter bekannt sind. Die Vervollständigung wird auf den Ausführungszeitpunkt verlagert. Darüber hinaus
+ust es möglich, Programme zu erstellen, die in gewisser Weise generisch oder allgemeingültig sind."\cite[S.316 - 317]{froehlich01}} erstellt.
 %\lstsetsql
 
 %\end{figure}

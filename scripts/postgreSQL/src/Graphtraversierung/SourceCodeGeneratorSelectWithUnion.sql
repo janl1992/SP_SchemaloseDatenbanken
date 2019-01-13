@@ -16,4 +16,3 @@ BEGIN
   return query EXECUTE tStatement;
 END;
 $$ LANGUAGE plpgsql;
-
