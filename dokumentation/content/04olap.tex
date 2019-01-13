@@ -1013,6 +1013,219 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{ public\_livejournal}
 \end{figure}
 
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,700);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,50,...,700}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 9.097)
+		(2, 10.898)
+		(3, 18.393)
+		(4, 102.515)
+		(5, 675.363)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 20.057)
+		(2, 25.119)
+		(3, 30.430)
+		(4, 39.050)
+		(5, 38.354)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 9.550)
+		(2, 9.838)
+		(3, 35.418)
+		(4, 59.112)
+		(5, 77.279)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 16.339)
+		(2, 16.807)
+		(3, 24.669)
+		(4, 39.953)
+		(5, 58.086)
+	};
+	
+	\draw (0,-120) -- (5,-120) 
+	(0,-120) -- (0,-240)
+	(0,-240) -- (5,-240)
+	(5,-120) -- (5,-240);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-120) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_facebook}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,4600);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,200,...,4600}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.882)
+		(2, 9.694)
+		(3, 20.019)
+		(4, 160.368)
+		(5, 4505.545)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 23.059)
+		(2, 24.221)
+		(3, 29.832)
+		(4, 67.963)
+		(5, 115.465)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 9.169)
+		(2, 9.538)
+		(3, 37.563)
+		(4, 80.343)
+		(5, 127.839)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 16.152)
+		(2, 16.649)
+		(3, 25.806)
+		(4, 216.439)
+		(5,1615.686)
+	};
+	
+	\draw (0,-600) -- (5,-600) 
+	(0,-600) -- (0,-1200)
+	(0,-1200) -- (5,-1200)
+	(5,-600) -- (5,-1200);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-600) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_wiki\_vote}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,500);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,50,...,500}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 10.423)
+		(2, 9.162)
+		(3, 9.909)
+		(4, 11.589)
+		(5, 21.320)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 22.322)
+		(2, 24.235)
+		(3, 26.731)
+		(4, 29.409)
+		(5, 33.586)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.505)
+		(2, 9.090)
+		(3, 9.629)
+		(4, 11.286)
+		(5, 13.694)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 492.834)
+		(2, 490.843)
+		(3, 500.531)
+		(4, 510.964)
+		(5, 497.172)
+	};
+	
+	\draw (0,-120) -- (5,-120) 
+	(0,-120) -- (0,-240)
+	(0,-240) -- (5,-240)
+	(5,-120) -- (5,-240);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-120) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_youtube}
+\end{figure}
+
 \subsection{Standard SQL}
 
 \subsection{Stored Procedures}
