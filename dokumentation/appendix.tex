@@ -42,6 +42,141 @@
     SELECT ID-1, first, last, gender, birth, country from profiles_facebook_tmp;
 \end{lstlisting}
 
+\begin{lstlisting}[language=SQL,caption=Erstellen von partitionierten Tabellen mit Index facebook,frame=single, label={parttableindexfacebook}]
+    CREATE TABLE IF NOT EXISTS relation_facebook_partitioned(
+        src INTEGER REFERENCES profiles_facebook(ID),
+        dst INTEGER REFERENCES profiles_facebook(ID),
+        type VARCHAR(50),
+        date DATE
+    )PARTITION BY RANGE(src);
+
+    CREATE INDEX fb_part_src ON relation_facebook_partitioned (src);
+    CREATE INDEX fb_part_dst ON relation_facebook_partitioned (dst);
+
+    CREATE TABLE relation_facebook_partitioned_0 PARTITION OF relation_facebook_partitioned
+    FOR VALUES FROM (0) TO (23000);
+    CREATE TABLE relation_facebook_partitioned_1 PARTITION OF relation_facebook_partitioned
+    FOR VALUES FROM (23000) TO (46000);
+    CREATE TABLE relation_facebook_partitioned_2 PARTITION OF relation_facebook_partitioned
+    FOR VALUES FROM (46000) TO (69000);
+    CREATE TABLE relation_facebook_partitioned_3 PARTITION OF relation_facebook_partitioned
+    FOR VALUES FROM (69000) TO (92000);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von Indexen auf relation Tabelle facebook,frame=single, label={indexfacebook}]
+    CREATE INDEX fb_dst ON relation_facebook_with_index (dst);
+    CREATE INDEX fb_src ON relation_facebook_with_index (src);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von partitionierten Tabellen mit Index youtube,frame=single, label={parttableindexyoutube}]
+    CREATE TABLE IF NOT EXISTS relation_youtube_partitioned(
+        src INTEGER REFERENCES profiles_youtube(ID),
+        dst INTEGER REFERENCES profiles_youtube(ID),
+        type VARCHAR(50),
+        date DATE
+    )PARTITION BY RANGE(src);
+
+    CREATE INDEX yt_part_src ON relation_youtube_partitioned (src);
+    CREATE INDEX yt_part_dst ON relation_youtube_partitioned (dst);
+
+    CREATE TABLE relation_youtube_partitioned_0 PARTITION OF relation_youtube_partitioned
+    FOR VALUES FROM (0) TO (800000);
+    CREATE TABLE relation_youtube_partitioned_1 PARTITION OF relation_youtube_partitioned
+    FOR VALUES FROM (800001) TO (1600000);
+    CREATE TABLE relation_youtube_partitioned_2 PARTITION OF relation_youtube_partitioned
+    FOR VALUES FROM (1600001) TO (2400000);
+    CREATE TABLE relation_youtube_partitioned_3 PARTITION OF relation_youtube_partitioned
+    FOR VALUES FROM (2400001) TO (3200000);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von Indexen auf relation Tabelle youtube,frame=single, label={indexyoutube}]
+    CREATE INDEX yt_dst ON relation_youtube_with_index (dst);
+    CREATE INDEX yt_src ON relation_youtube_with_index (src);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von partitionierten Tabellen mit Index livejournal,frame=single, label={parttableindexlivejournal}]
+    CREATE TABLE IF NOT EXISTS relation_livejournal_partitioned(
+        src INTEGER REFERENCES profiles_livejournal(ID),
+        dst INTEGER REFERENCES profiles_livejournal(ID),
+        type VARCHAR(50),
+        date DATE
+    )PARTITION BY RANGE(src);
+
+    CREATE INDEX lj_part_src ON relation_livejournal_partitioned (src);
+    CREATE INDEX lj_part_dst ON relation_livejournal_partitioned (dst);
+
+    CREATE TABLE relation_livejournal_partitioned_0 PARTITION OF relation_livejournal_partitioned
+    FOR VALUES FROM (0) TO (10000000);
+    CREATE TABLE relation_livejournal_partitioned_1 PARTITION OF relation_livejournal_partitioned
+    FOR VALUES FROM (10000000) TO (20000000);
+    CREATE TABLE relation_livejournal_partitioned_2 PARTITION OF relation_livejournal_partitioned
+    FOR VALUES FROM (20000000) TO (30000000);
+    CREATE TABLE relation_livejournal_partitioned_3 PARTITION OF relation_livejournal_partitioned
+    FOR VALUES FROM (30000000) TO (40000000);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von Indexen auf relation Tabelle livejournal,frame=single, label={indexlivejournal}]
+    CREATE INDEX lj_src ON relation_livejournal_with_index (src);
+    CREATE INDEX lj_dst ON relation_livejournal_with_index (dst);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von partitionierten Tabellen mit Index epinion,frame=single, label={parttableindexepinion}]
+    CREATE TABLE IF NOT EXISTS relation_epinions_partitioned(
+        src INTEGER REFERENCES profiles_epinions(ID),
+        dst INTEGER REFERENCES profiles_epinions(ID),
+        type VARCHAR(50),
+        date DATE
+    )PARTITION BY RANGE(src);
+
+    CREATE INDEX ep_part_src ON relation_epinions_partitioned (src);
+    CREATE INDEX ep_part_dst ON relation_epinions_partitioned (dst);
+
+    CREATE TABLE relation_epinions_partitioned_0 PARTITION OF relation_epinions_partitioned
+    FOR VALUES FROM (0) TO (102000);
+    CREATE TABLE relation_epinions_partitioned_1 PARTITION OF relation_epinions_partitioned
+    FOR VALUES FROM (102000) TO (204000);
+    CREATE TABLE relation_epinions_partitioned_2 PARTITION OF relation_epinions_partitioned
+    FOR VALUES FROM (204000) TO (306000);
+    CREATE TABLE relation_epinions_partitioned_3 PARTITION OF relation_epinions_partitioned
+    FOR VALUES FROM (306000) TO (408000);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von Indexen auf relation Tabelle epinion,frame=single, label={indexepinion}]
+    CREATE INDEX ep_dst ON relation_epinions_with_index (dst);
+    CREATE INDEX ep_src ON relation_epinions_with_index (src);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von partitionierten Tabellen mit wikivote epinion,frame=single, label={parttableindexwikivote}]
+    CREATE TABLE IF NOT EXISTS relation_wiki_vote_partitioned(
+        src INTEGER REFERENCES profiles_wiki_vote(ID),
+        dst INTEGER REFERENCES profiles_wiki_vote(ID),
+        type VARCHAR(50),
+        date DATE
+    )PARTITION BY RANGE(src);
+
+    CREATE INDEX wv_part_src ON relation_wiki_vote_partitioned (src);
+    CREATE INDEX wv_part_dst ON relation_wiki_vote_partitioned (dst);
+
+    CREATE TABLE relation_wiki_vote_partitioned_0 PARTITION OF relation_wiki_vote_partitioned
+    FOR VALUES FROM (0) TO (30000);
+    CREATE TABLE relation_wiki_vote_partitioned_1 PARTITION OF relation_wiki_vote_partitioned
+    FOR VALUES FROM (30000) TO (60000);
+    CREATE TABLE relation_wiki_vote_partitioned_2 PARTITION OF relation_wiki_vote_partitioned
+    FOR VALUES FROM (60000) TO (90000);
+    CREATE TABLE relation_wiki_vote_partitioned_3 PARTITION OF relation_wiki_vote_partitioned
+    FOR VALUES FROM (90000) TO (120000);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen von Indexen auf relation Tabelle wikivote,frame=single, label={indexwikivote}]
+    CREATE INDEX wv_src ON relation_wiki_vote_with_index (src);
+    CREATE INDEX wv_dst ON relation_wiki_vote_with_index (dst);
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption=Erstellen der Indexe für die relation Tabelle facebook,frame=single, label={indexfacebook}]
+    CREATE INDEX fb_dst ON relation_facebook_with_index (dst);
+    CREATE INDEX fb_src ON relation_facebook_with_index (src);
+\end{lstlisting}
+
 \begin{lstlisting}[language=SQL,caption = Verschachteltes SELECT Statement,frame=single,label={SELECT} ]
     SELECT DISTINCT(dst) FROM team22.relation_facebook WHERE src IN(
         SELECT DISTINCT(dst) FROM team22.relation_facebook WHERE src IN(
@@ -88,7 +223,7 @@
     $$ LANGUAGE plpgsql;
 \end{lstlisting}
 
-\begin{lstlisting}[language=SQL,caption = SQL Standard SQL Mittel,frame=single, label={StandardSQL} ]
+\begin{lstlisting}[language=SQL,caption = SQL Standard Generisch,frame=single, label={StandardSQLGenerisch} ]
     CREATE OR REPLACE FUNCTION selectWithUnionSourceCodeGenerator_withDepth(sTable text, startingNode integer, depth integer ) RETURNS SETOF integer AS $$
     Declare
     intermDst_ integer[];
@@ -107,6 +242,14 @@
     return query EXECUTE tStatement;
     END;
     $$ LANGUAGE plpgsql;
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption = SQL Standard,frame=single, label={StandardSQL} ]
+    WITH RECURSIVE graphtraverse(src, dst, lvl) AS(
+    SELECT src ,dst, 1 as lvl FROM public.relation_facebook WHERE src =765
+    UNION
+    SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation_facebook p1 WHERE p1.src IN ( p.dst ) and lvl<5
+    ) SELECT DISTINCT(dst) FROM graphtraverse order by dst;
 \end{lstlisting}
 
 \section{Graph-Datenbanken im praktischen Einsatz: OLAP}

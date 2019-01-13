@@ -9,7 +9,7 @@
 \usepackage[ngerman]{babel}
 \usepackage{lmodern}
 \usepackage{listings}
-%% ToDo amsthm packages sind nicht in der Standardlatexvorlage vorhanden
+%% ToDo amsthm, lstautogobble packages sind nicht in der Standardlatexvorlage vorhanden
 \usepackage{amsthm}
 \usepackage{lstautogobble}
 %\usepackage{amssymb}
@@ -126,6 +126,8 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %Inhalt
 \input{abstract}
 
+\input{preamble}
+
 \input{fancyRegisterPart}
 \tableofcontents \newpage
 % set pagenumbering to arabic(1 2 3 4)
@@ -156,11 +158,12 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 \input{content/02postgres}
 \input{content/03oltp}
 \input{content/04olap}
+\input{content/05fazit}
 %
-%\newpage
+\newpage
 %
 %% loads the fancy pagestyle for register part
-%\input{fancyRegisterPart}
+\input{fancyRegisterPart}
 %
 %% #####
 %% # load the appendix from the files
@@ -183,7 +186,6 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %% # List of Abbreviations
 %% #####
-%@ToDo Abkürzungsverzeichnis erstellen
 \phantomsection
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 \renewcommand\refname{Abkürzungsverzeichnis}
