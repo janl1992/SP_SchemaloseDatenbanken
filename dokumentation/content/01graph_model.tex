@@ -1,12 +1,19 @@
 \chapter{Graph-Datenbanken - Grundlegende technologische Aspekte}
 \section{Modell}
-Ein Modell ist eine vereinfachte bzw. abstrahierte Darstellung von realen Gegenständen, Sachverhalten oder Problemen.
+Allgemein betrachtet ist ein Modell eine vereinfachte bzw. abstrahierte Darstellung von realen Gegenständen, Sachverhalten oder Problemen.
 Durch die Modellierung soll die Realität auf die wichtigsten Einflussfaktoren reduziert werden.
-Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung von Problemen und Sachverhalten, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
-Da eine effiziente verarbeitung von großen vernetzten Datenmangen immer wichtiger wird, haben Graphen in den letzten Jahren auch eine bedeutende Rolle in der Datenbankwelt erhalten.
+In der Datenbankwelt beschreibt das Modell die Struktur der Daten, Operationen zum manipulieren der Daten und Integritätsbedingungen \cite{efcodd}.
+Das derzeit am häufigsten verwendete Modell ist das relationale Datenbankmodell, bei dem die Daten in Tabellen gespeichert werden und in der Regel die standardisierte Abfragesprache \ac{SQL} eingesetzt wird.
+Der Schwachpunkt des relationalen Datenbankmodells liegt jedoch bei der Verarbeitung von Daten mit einer hohen Anzahl an Beziehungen \cite{vicknair2010comparison}.
+
+%Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
+Da eine effiziente Verarbeitung von großen vernetzten Datenmengen immer wichtiger wird, haben Graphenmodelle in den letzten Jahren im Datenbankbereich stark an Bedeutung gewonnen.
+Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspezifische Operation zur effizienten Verarbeitung vernetzter Daten zurück \cite{angles2008survey}.
+Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
 Im folgenden sollen verschiedene Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
 \subsection{Graph}
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
+Der simpelste Graphdatenbankmodell ist ein einfacher Graph.
 Ein Graph ist mathematisch folgendermaßen definiert:
 \begin{definition}
 	Ein $\text{Graph } G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
@@ -24,7 +31,7 @@ Ein Graph ist mathematisch folgendermaßen definiert:
 Ein Knoten representiert ein Element in einem Graphen und die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
 Zwei Konten heißen adjazent, wenn diese über eine Kante direkt miteinander verbunden sind.
-Eine Kante die mit einem Knoten verbunden is wird als inzident zu diesem Knoten bezeichnet.\cite{knauer2015diskrete}
+Eine Kante die mit einem Knoten verbunden is wird als inzident zu diesem Knoten bezeichnet \cite{knauer2015diskrete}.
 
 %\subsection{Eigenschaften von Kanten}
 Graphen können gerichtet oder ungerichtet sein.
