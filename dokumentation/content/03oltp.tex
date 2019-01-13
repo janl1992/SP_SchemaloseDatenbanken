@@ -28,7 +28,7 @@ $/data/team22/postgresql/11/main$ installiert.
 \subsection{CSV-Import}
 Beim Import von (CSV)-Dateien wird zwischen Import vom Clientsystem und  Import vom Serversystem unterschieden.
 Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei,
-%@ToDo Hier Quelle genauer spezifizieren
+%@ToDo Hier online Quelle Link genauer spezifizieren
 die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
 \subsection{Datenbankschema}
@@ -36,30 +36,48 @@ Für die Performancemessung sind 5 Graphen vorgesehen. Ein Graph besteht aus ein
 Spalte ID aus der jeweiligen profiles Tabelle verknüpft. Die Spalten src und dst aus der relation Tabelle sind Fremdschlüssel, sie verweisen auf die Spalte ID in der
 profiles Tabelle. ID hingegen ist in der profiles Tabelle ein Primärschlüssel (siehe \ref{relationFacebook}).
 
-\subsection{Erstellen von Fremdschlüsseln}
+\subsection{Erstellen von Fremdschlüsseln, Indexen und Partitionen}
 Um die profile Tabelle und die relation Tabelle zu verknüpfen wurde zwischen den beiden Tabellen ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
 mit einem Zähler versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Zähler für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
 relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Zähler innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
 innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was die ID 0 hat. Hierfür wurde für die relation Tabelle ein
 SQL Script geschrieben, was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus
 der temporären Tabelle in die endgültige profile Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles (siehe \ref{foreignKey}).
+Für die einzelnen relation Tabellen wurden ebenfalls Indexe erstellt, damit die Performance verbessert wird. Die Messung der Performance wurde durchgeführt auf
+den relation Tabellen ohne Index , auf den relation Tabellen mit Index und auf den partitionierten Tabellen mit Index. Partitionierung bezeichnet das Aufteilen einer
+großen Tabelle in mehrere kleine Tabellen \cite{postgrespartitioning} . Die Motivation hinter der Erstellung von Indexen und der Partitionierung von Tabellen besteht darin,
+einen Performancegewinn bei der Graphtraversierung zu erzielen. Dies wird genauer im 4. Kapitel disuktiert.
+Im Anhang befinden sich Scripte für die Erstellung des Index für alle relation Tabellen, sowie die Erstellung von partitionierten Tabellen
+mit Index für alle relation Tabellen.
 
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
-Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet (siehe \ref{StandardSQL}). Der SQL Befehl WITH RECURSIVE
-sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Rekursion operiert hierzu auf 2 temporären Tabellen. Der Working Tabelle und der Intermediate
-Tabelle. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die Working Tabelle geschrieben, es wird überprüft ob Duplikate
-vorhanden sind \footnote{Die Überprüfung von Duplikaten erfolgt bezogen auf alle vorherigen Rekursionsstufen} - Duplikate werden gelöscht, die Ergebissmenge wird in
-die Intermediate Tabelle geschrieben, die Ergebnisse aus der Intermediate Tabelle werden in die Working Tabelle kopiert. Im Vergleich zu den restlichen Methoden garantiert
-das standard SQL falls man den UNION Operator verwendet, dass Kreise \footnote{Ein Weg, bei dem der Anfangsknoten gleich dem Endknoten ist \cite[S.48]{pbeck01}} aus dem Graphen entfernt werden.
-Die Abbruchbedingung für die Rekursion greift, sobald die Working Tabelle keine Einträge mehr hat. Folgende Grafik beschreibt die Rekursion angewendet auf ein relation
-Tabelle:
-\begin{figure}[H]
-    \includegraphics[width = \linewidth]{images/RecursiveSelect.jpg};
-    \caption{Traversierung Standard SQL}
-\end{figure}
-Es wurde sich dafür entschieden den UNION Operator zu verwenden, um Duplikate innerhalb der Working Tabelle auszuschließen. Für die  Ergebnismenge der Abfrage auf der
-relation Tabelle bedeutet dies, dass die Ergebnismenge ungefähr die Anzahl an Profilen haben sollte. Wohingegen die Abfrage mit UNION ALL, das Duplikate aus der
-Working Tabelle nicht entfernt (\cite{postgresWithRecursive}), eine Ergebnismenge zurückliefert, die genauso viele Elemente hat wie die jeweilige relation Tabelle.
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet. Im Anhang befindet sich ein SQL
+Script, was die Tabelle relation$\_$facebook bis zur Rekursionsstufe 5 traversiert (siehe \ref{StandardSQL}), sowie ein Script, welches den Standard SQL Source Code
+dynamisch generiert (siehe \ref{StandardSQLGenerisch}).
+Der SQL Befehl WITH RECURSIVE sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Struktur einer WITH Query sieht folgedermaßen aus:
+Zuerst wird der \textcolor{blue}{nicht rekursive Teil} der Query angegeben, anschließend wird der \textcolor{orange}{rekursive Teil} beschrieben:
+\lstset{escapeinside={<@}{@>}}
+\lstsetsql
+\begin{lstlisting}[language=SQL,caption = Rekursiver und nicht rekursiver Teil,frame=single, label={StrukturderQuery} ]
+    WITH RECURSIVE graphtraverse(src, dst, lvl) AS(
+        <@\textcolor{blue}{SELECT src ,dst, 1 as lvl FROM public.relation$\_$facebook WHERE src =765} @>
+        UNION
+        <@\textcolor{orange}{SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation$\_$facebook p1 WHERE p1.src IN ( p.dst ) and lvl<5} @>
+    ) SELECT DISTINCT(dst) FROM graphtraverse order by dst;
+\end{lstlisting}
+Die Rekursion operiert hierzu auf 2 temporären Tabellen
+. Der Working Tabelle und der Intermediate Tabelle. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die
+Working Tabelle geschrieben, es wird mit Hilfe des UNION Operators überprüft ob Duplikate vorhanden sind. Die Überprüfung erfolgt bezogen auf eine Rekursionsstufe.
+Duplikate werden gelöscht, die Ergebissmenge wird in die Intermediate Tabelle geschrieben, die Ergebnisse aus der Intermediate Tabelle werden in die Working Tabelle
+kopiert (\cite{postgreswithrecursive}). Die Abbruchbedingung für die Rekursion wird innerhalb der Funktion definiert. Ob die Abbruchbedingung erreicht ist, wird im rekursiven Teil der Funktion \textcolor{red}{überprüft}:
+\begin{lstlisting}[language=SQL,caption = Überprüfen der Abbruchbedingung,frame=single, label={Abbruchbedingung} ]
+    SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation_facebook p1 WHERE p1.src IN ( p.dst ) and <@\textcolor{red}{lvl<5} @>
+\end{lstlisting}
+%Tabelle:
+%\begin{figure}[H]
+%    \includegraphics[width = \linewidth]{images/RecursiveSelect.jpg};
+%    \caption{Traversierung Standard SQL}
+%\end{figure}
 
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
 Bei der Graphtraversierung mit Hilfe von verschachteltem \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement
@@ -93,7 +111,9 @@ wird auf Basis eines Eingabeparameter (Datenstruktur Array) erstellt.
 Diese temporäre Tabelle besitzt eine Spalte. Diese Tabelle stellt die Spalte src der aktuellen Rekursionsstufe dar. Sie wird im IN Operator der WHERE Klausel verwendet
 um die 2. temporäre Tabelle zu erstellen. Die 2. temporäre Tabelle beinhaltet die Spalte dst der aktuellen Rekursionsstufe. Die 2. temporäre Tabelle wird als
 Aufrufparameter für die nächst tiefere Rekursionsstufe mitgegeben. In der nächst tieferen Rekursionsstufe dient die 2. temporäre Tabelle als die Tabelle, die alle
-src Spalten der aktuellen Rekursionsstufe beinhaltet.
+src Spalten der aktuellen Rekursionsstufe beinhaltet. Die 2. temporäre Tabelle wird mit Hilfe von dynamischen \ac{SQL} \footnote{"Dynamisches SQL wird gerne verwendet,
+da zur Zeit der Erstellung des Programms häufig nicht alle Parameter bekannt sind. Die Vervollständigung wird auf den Ausführungszeitpunkt verlagert. Darüber hinaus
+ist es möglich, Programme zu erstellen, die in gewisser Weise generisch oder allgemeingültig sind."\cite[S.316 - 317]{froehlich01}} erstellt.
 %\lstsetsql
 
 %\end{figure}
