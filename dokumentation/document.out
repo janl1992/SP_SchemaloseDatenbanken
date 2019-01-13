@@ -2,43 +2,41 @@
 \BOOKMARK [0][-]{chapter.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{}% 2
 \BOOKMARK [1][-]{section.1.1}{Modell}{chapter.1}% 3
 \BOOKMARK [2][-]{subsection.1.1.1}{Graph}{section.1.1}% 4
-\BOOKMARK [2][-]{subsection.1.1.2}{Regul\344re Graphen}{section.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.1.3}{Planare Graphen}{section.1.1}% 6
-\BOOKMARK [2][-]{subsection.1.1.4}{Property Graphen}{section.1.1}% 7
-\BOOKMARK [2][-]{subsection.1.1.5}{k-Partite Graphen}{section.1.1}% 8
-\BOOKMARK [2][-]{subsection.1.1.6}{Hypergraphen}{section.1.1}% 9
-\BOOKMARK [0][-]{chapter.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{}% 10
-\BOOKMARK [1][-]{section.2.1}{PostgreSQL}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.1.1}{Visitenkarte des Systems}{section.2.1}% 12
-\BOOKMARK [0][-]{chapter.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{}% 13
-\BOOKMARK [1][-]{section.3.1}{PostgresSQL: OLTP}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.1.1}{Traversierung in PostgresSQL}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.2}{Installation}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.3}{CSV-Import}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.4}{Datenbankschema}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.5}{Erstellen von Fremdschl\374sseln}{section.3.1}% 19
-\BOOKMARK [2][-]{subsection.3.1.6}{Graphtraversierung mit Hilfe von Standard SQL}{section.3.1}% 20
-\BOOKMARK [2][-]{subsection.3.1.7}{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.8}{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{section.3.1}% 22
-\BOOKMARK [2][-]{subsection.3.1.9}{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{section.3.1}% 23
-\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 24
-\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 25
-\BOOKMARK [2][-]{subsection.4.1.1}{Benchmark}{section.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.1.2}{Standard SQL}{section.4.1}% 27
-\BOOKMARK [2][-]{subsection.4.1.3}{Stored Procedures}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.4}{PL/SQL-Recursion}{section.4.1}% 29
-\BOOKMARK [2][-]{subsection.4.1.5}{Datenbankzugriffe}{section.4.1}% 30
-\BOOKMARK [2][-]{subsection.4.1.6}{Zugriffsart Aggregation}{section.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Traversierung}{section.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.1.8}{Interpretation der Ergebnisse}{section.4.1}% 33
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 34
-\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 35
-\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 36
-\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 37
-\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 38
-\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 39
-\BOOKMARK [0][-]{chapter*.20}{Tabellenverzeichnis}{}% 40
-\BOOKMARK [0][-]{chapter*.21}{Listings}{}% 41
-\BOOKMARK [0][-]{section*.23}{Abk\374rzungsverzeichnis}{}% 42
-\BOOKMARK [0][-]{chapter*.25}{Literaturverzeichnis}{}% 43
-\BOOKMARK [0][-]{chapter*.26}{Eidesstattliche Erkl\344rung}{}% 44
+\BOOKMARK [2][-]{subsection.1.1.2}{B\344ume}{section.1.1}% 5
+\BOOKMARK [2][-]{subsection.1.1.3}{Property Graphen}{section.1.1}% 6
+\BOOKMARK [2][-]{subsection.1.1.4}{Hypergraphen}{section.1.1}% 7
+\BOOKMARK [0][-]{chapter.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{}% 8
+\BOOKMARK [1][-]{section.2.1}{PostgreSQL}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.1.1}{Visitenkarte des Systems}{section.2.1}% 10
+\BOOKMARK [0][-]{chapter.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{}% 11
+\BOOKMARK [1][-]{section.3.1}{PostgresSQL: OLTP}{chapter.3}% 12
+\BOOKMARK [2][-]{subsection.3.1.1}{Installation von Postgres}{section.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.1.2}{CSV-Import}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.3}{Datenbankschema}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.4}{Erstellen von Fremdschl\374sseln}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.5}{Graphtraversierung mit Hilfe von Standard SQL}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.6}{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.7}{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.8}{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{section.3.1}% 20
+\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 21
+\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 22
+\BOOKMARK [2][-]{subsection.4.1.1}{Benchmark}{section.4.1}% 23
+\BOOKMARK [2][-]{subsection.4.1.2}{Antwortzeiten mit partitionierten Tabellen und Indices}{section.4.1}% 24
+\BOOKMARK [2][-]{subsection.4.1.3}{Standard SQL}{section.4.1}% 25
+\BOOKMARK [2][-]{subsection.4.1.4}{Stored Procedures}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.5}{PL/SQL-Recursion}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.6}{Datenbankzugriffe}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Aggregation}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.8}{Zugriffsart Traversierung}{section.4.1}% 30
+\BOOKMARK [2][-]{subsection.4.1.9}{Interpretation der Ergebnisse}{section.4.1}% 31
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 32
+\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 35
+\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 36
+\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.18}{Tabellenverzeichnis}{}% 38
+\BOOKMARK [0][-]{chapter*.19}{Listings}{}% 39
+\BOOKMARK [0][-]{section*.21}{Abk\374rzungsverzeichnis}{}% 40
+\BOOKMARK [0][-]{chapter*.23}{Literaturverzeichnis}{}% 41
+\BOOKMARK [0][-]{chapter*.24}{Eidesstattliche Erkl\344rung}{}% 42
