@@ -24,12 +24,13 @@ Warning--entry type for "postgres2018" isn't style-file defined
 --line 120 of file bibliography.bib
 Warning--entry type for "felsner01" isn't style-file defined
 --line 132 of file bibliography.bib
+Warning--I didn't find a database entry for "postgrespartitioning"
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
 You've used 24 entries,
             4793 wiz_defined-function locations,
-            1000 strings with 9362 characters,
+            1000 strings with 9361 characters,
 and the built_in function-call counts, 12844 in all, are:
 = -- 1315
 > -- 298

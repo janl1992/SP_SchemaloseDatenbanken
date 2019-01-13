@@ -3,8 +3,7 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Traversierung Standard SQL}}{10}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces L\IeC {\"o}schen von Duplikaten in einer Rekursionsstufe}}{11}{figure.3.2}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces L\IeC {\"o}schen von Duplikaten in einer Rekursionsstufe}}{11}{figure.3.1}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces public\_epinions}}{14}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces public\_livejournal}}{15}{figure.4.2}
@@ -18,6 +17,9 @@
 \contentsline {figure}{\numberline {4.10}{\ignorespaces public\_youtube}}{22}{figure.4.10}
 \contentsline {figure}{\numberline {4.11}{\ignorespaces public\_epinions}}{23}{figure.4.11}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces public\_livejournal}}{23}{figure.4.12}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces public\_facebook}}{24}{figure.4.13}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces public\_wiki\_vote}}{25}{figure.4.14}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces public\_youtube}}{26}{figure.4.15}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Postgres Architektur}}{25}{figure.A.1}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Postgres Architektur}}{27}{figure.A.1}
 \addvspace {10\p@ }
