@@ -1,0 +1,1 @@
+SELECT recursivesearch(Array[765], 2, 'relation_facebook_with_index');
