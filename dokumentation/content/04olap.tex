@@ -134,11 +134,11 @@ coordinates{(0, 0)
 		16/80000,
 		17/85000,
 		18/90000,
-		19/100000,
-		20/105000,
-		21/110000,
-		22/115000,
-		23/120000,
+		19/95000,
+		20/100000,
+		21/105000,
+		22/110000,
+		23/115000
 	}
 	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
 	%labels      
@@ -284,52 +284,235 @@ node[draw=none, midway, yshift=-4.5em]
 	\end{tikzpicture}
 	\caption{ public\_facebook}
 \end{figure}
-\subsubsection{Antwortzeiten mit Indices}
-
 
 \begin{figure}[H]
-	\begin{tikzpicture}[y=.00055cm, x=2cm,font=\sffamily]
+	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
-	\draw (0,0) -- coordinate (y axis mid) (0,12000);
+	\draw (0,0) -- coordinate (y axis mid) (0,3000);
 	%ticks
 	\foreach \x in {0,...,5}
 	\draw (\x,1pt) -- (\x,-3pt)
 	node[anchor=north] {\x};
-	\foreach \y in {0,1000,...,12000}
+	\foreach \y in {0,200,...,3000}
 	\draw (1pt,\y) -- (-3pt,\y)
 	node[anchor=east] {\y}; 
 	%labels      
 	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
 	%plots
-	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
-		(1, 8.231)
-		(2, 9.290)
-		(3, 36.244)
-		(4, 235.146)
-		(5, 504.793)
+		(1, 21.182)
+		(2, 62.066)
+		(3, 86.128)
+		(4, 171.283)
+		(5, 2787.659)
 	};
+	
 	\draw[blue] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
-		(1, 18.999)
-		(2, 23.549)
-		(3, 54.953)
-		(4, 287.319)
-		(5, 737.300)
+		(1, 34.365)
+		(2, 60.394)
+		(3, 80.454)
+		(4, 130.866)
+		(5, 180.301)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 20.774)
+		(2, 40.090)
+		(3, 63.405)
+		(4, 99.210)
+		(5, 144.089)
 	};
 	\draw[green] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
-		(1, 8.855)
-		(2, 10.304)
-		(3, 78.303)
-		(4,2024.069)
-		(5,12920.747)
+		(1, 21.490)
+		(2, 41.234)
+		(3, 70.961)
+		(4, 215.687)
+		(5,1034.360)
 	};
-	\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
-		\textcolor{blue}{--- recursiveSearch}, 
-		\textcolor{red}{--- selectSourceCodeGenerator}};
+	
+	\draw (0,-600) -- (5,-600) 
+	(0,-600) -- (0,-1200)
+	(0,-1200) -- (5,-1200)
+	(5,-600) -- (5,-1200);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-600) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_wiki\_vote}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.00125cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,6000);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,400,...,6000}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 421.124)
+		(2, 1615.843)
+		(3, 2229.214)
+		(4, 4082.179)
+		(5, 5839.987)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 592.063)
+		(2, 1192.278)
+		(3, 1793.281)
+		(4, 2383.885)
+		(5, 2964.950)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 421.464)
+		(2, 986.995)
+		(3, 1591.391)
+		(4, 2250.832)
+		(5, 2905.167)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 418.105)
+		(2, 1585.836)
+		(3, 1654.011)
+		(4, 1615.986)
+		(5, 1681.231)
+	};
+	
+	\draw (0,-1200) -- (5,-1200) 
+	(0,-1200) -- (0,-2400)
+	(0,-2400) -- (5,-2400)
+	(5,-1200) -- (5,-2400);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-1200) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_youtube}
+\end{figure}
+
+\subsubsection{Antwortzeiten mit Indices}
+
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,16);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y/\ytext in {
+		0/0,
+		1/5000,
+		2/10000,
+		3/15000,
+		4/20000,
+		5/25000,
+		6/30000,
+		7/35000,
+		8/40000,
+		9/45000,
+		10/50000,
+		11/55000,
+		12/60000,
+		13/65000,
+		14/70000,
+		15/75000,
+		16/80000
+	}
+		\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 10.596/5000)
+		(2, 10.739/5000)
+		(3, 41.171/5000)
+		(4, 0.3696)%1898.726/5000
+		(5, 16.2872)%81436.561/5000
+	};
+	
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.231/5000)
+		(2, 9.290/5000)
+		(3, 36.244/5000)
+		(4, 235.146/5000)
+		(5, 504.793/5000)
+	};
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 18.999/5000)
+		(2, 23.549/5000)
+		(3, 54.953/5000)
+		(4, 287.319/5000)
+		(5, 737.300/5000)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.855/5000)
+		(2, 10.304/5000)
+		(3, 78.303/5000)
+		(4, 2024.069/5000)
+		(5, 12920.747/5000)
+	};
+	\draw (0,-3) -- (5,-3) 
+(0,-3) -- (0,-6)
+(0,-6) -- (5,-6)
+(5,-3) -- (5,-6);
+\draw[draw=none] (0,0) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{darkgray}{--- selectWithInnerJoin}
+	\textcolor{green}{--- recursiveWithUnion} 
+	
+};
+\draw[draw=none] (0,-3) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{blue}{--- recursiveSearch} 
+	\textcolor{red}{--- selectSourceCodeGenerator}
+};
 	\end{tikzpicture}
 	\caption{ public\_epinions}
 \end{figure}
@@ -508,9 +691,235 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{ public\_facebook}
 \end{figure}
 
- 
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,3000);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,200,...,3000}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.481)
+		(2, 9.903)
+		(3, 18.657)
+		(4, 130.842)
+		(5, 2722.908)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 34.144)
+		(2, 54.617)
+		(3, 85.721)
+		(4, 130.150)
+		(5, 183.301)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.716)
+		(2, 8.868)
+		(3, 32.682)
+		(4, 68.856)
+		(5, 114.462)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 10.474)
+		(2, 30.212)
+		(3, 58.762)
+		(4, 210.655)
+		(5, 1031.234)
+	};
+	
+	\draw (0,-600) -- (5,-600) 
+	(0,-600) -- (0,-1200)
+	(0,-1200) -- (5,-1200)
+	(5,-600) -- (5,-1200);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-600) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_wiki\_vote}
+\end{figure}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,2000);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+	\foreach \y in {0,200,...,2000}
+	\draw (1pt,\y) -- (-3pt,\y)
+	node[anchor=east] {\y}; 
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 10.213)
+		(2, 10.587)
+		(3, 12.858)
+		(4, 1355.866)
+		(5, 2003.275)
+	};
+	
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 25.508)
+		(2, 34.273)
+		(3, 40.852)
+		(4, 51.285)
+		(5, 62.037)
+	};
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.370)
+		(2, 8.528)
+		(3, 618.336)
+		(4, 1209.513)
+		(5, 1829.757)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 11.801)
+		(2, 12.265)
+		(3, 11.832)
+		(4, 13.644)
+		(5, 16.362)
+	};
+	
+	\draw (0,-600) -- (5,-600) 
+	(0,-600) -- (0,-1200)
+	(0,-1200) -- (5,-1200)
+	(5,-600) -- (5,-1200);
+	\draw[draw=none] (0,0) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{darkgray}{--- selectWithInnerJoin}
+		\textcolor{green}{--- recursiveWithUnion} 
+		
+	};
+	\draw[draw=none] (0,-600) -- (5,0) 
+	node[draw=none, midway, yshift=-4.5em]
+	{
+		\textcolor{blue}{--- recursiveSearch} 
+		\textcolor{red}{--- selectSourceCodeGenerator}
+	};
+	\end{tikzpicture}
+	\caption{ public\_youtube}
+\end{figure}
+
 
 \subsection{Antwortzeiten mit partitionierten Tabellen und Indices}
+
+\begin{figure}[H]
+	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
+	%axis
+	\draw (0,0) -- coordinate (x axis mid) (5,0);
+	\draw (0,0) -- coordinate (y axis mid) (0,5);
+	\draw[dotted] (0,5) -- (0,6);
+	\draw (0,6) -- (0,9);
+	%ticks
+	\foreach \x in {0,...,5}
+	\draw (\x,1pt) -- (\x,-3pt)
+	node[anchor=north] {\x};
+		\foreach \y/\ytext in {
+		0/0,
+		1/5000,
+		2/10000,
+		3/15000,
+		4/20000,
+		5/25000,
+		6/120000,
+		7/125000,
+		8/130000,
+		9/135000
+	}
+	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
+	%labels      
+	\node[below=0.8cm] at (x axis mid) {Rekursionstiefe};
+	\node[rotate=90, above=1.5cm] at (y axis mid) {Laufzeit in ms};
+	%plots
+	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 0.002)%8.846/5000)
+		(2, 0.002)%9.924/5000)
+		(3, 43.439/5000)
+		(4, 2021.028/5000)
+		(5, 9.082)%136242.608/15000)
+	};
+	
+	\draw[red] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 0.002)%8.231/5000)
+		(2, 0.002)%9.290/5000)
+		(3, 36.244/5000)
+		(4, 235.146/5000)
+		(5, 504.793/5000)
+	};
+	\draw[blue] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 18.999/5000)
+		(2, 23.549/5000)
+		(3, 54.953/5000)
+		(4, 287.319/5000)
+		(5, 737.300/5000)
+	};
+	\draw[green] plot[ mark=*, mark options={fill=white}] 
+	coordinates{(0, 0)
+		(1, 8.855/5000)
+		(2, 10.304/5000)
+		(3, 78.303/5000)
+		(4,2024.069/5000)
+		(5,12920.747/5000)
+	};
+\draw (0,-3) -- (5,-3) 
+(0,-3) -- (0,-6)
+(0,-6) -- (5,-6)
+(5,-3) -- (5,-6);
+\draw[draw=none] (0,0) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{darkgray}{--- selectWithInnerJoin}
+	\textcolor{green}{--- recursiveWithUnion} 
+	
+};
+\draw[draw=none] (0,-3) -- (5,0) 
+node[draw=none, midway, yshift=-4.5em]
+{
+	\textcolor{blue}{--- recursiveSearch} 
+	\textcolor{red}{--- selectSourceCodeGenerator}
+};
+	\end{tikzpicture}
+	\caption{ public\_epinions}
+\end{figure}
+
+
+
 \begin{figure}[H]
 	
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
