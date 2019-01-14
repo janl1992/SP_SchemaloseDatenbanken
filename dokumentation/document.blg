@@ -16,56 +16,61 @@ Warning--entry type for "pbeck01" isn't style-file defined
 --line 84 of file bibliography.bib
 Warning--entry type for "postgresqldoc" isn't style-file defined
 --line 98 of file bibliography.bib
-Warning--entry type for "postgres8" isn't style-file defined
+Warning--entry type for "postgrespartitioning" isn't style-file defined
 --line 103 of file bibliography.bib
-Warning--entry type for "postgreswithrecursive" isn't style-file defined
+Warning--entry type for "postgres8" isn't style-file defined
 --line 108 of file bibliography.bib
+Warning--entry type for "postgreswithrecursive" isn't style-file defined
+--line 113 of file bibliography.bib
 Warning--entry type for "postgres2018" isn't style-file defined
---line 120 of file bibliography.bib
+--line 125 of file bibliography.bib
 Warning--entry type for "felsner01" isn't style-file defined
---line 132 of file bibliography.bib
+--line 137 of file bibliography.bib
+Warning--empty chapter in anglesintro
+You can't pop an empty literal stack for entry anglesintro
+while executing---line 2205 of file alphadin.bst
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 24 entries,
+You've used 30 entries,
             4793 wiz_defined-function locations,
-            1000 strings with 9362 characters,
-and the built_in function-call counts, 12844 in all, are:
-= -- 1315
-> -- 298
-< -- 434
-+ -- 469
-- -- 103
-* -- 703
-:= -- 2198
-add.period$ -- 30
-call.type$ -- 24
-change.case$ -- 109
-chr.to.int$ -- 21
-cite$ -- 25
-duplicate$ -- 397
-empty$ -- 933
-format.name$ -- 204
-if$ -- 2546
-int.to.chr$ -- 4
+            1025 strings with 10087 characters,
+and the built_in function-call counts, 16735 in all, are:
+= -- 1724
+> -- 411
+< -- 588
++ -- 644
+- -- 144
+* -- 939
+:= -- 2869
+add.period$ -- 37
+call.type$ -- 30
+change.case$ -- 141
+chr.to.int$ -- 26
+cite$ -- 32
+duplicate$ -- 504
+empty$ -- 1173
+format.name$ -- 276
+if$ -- 3284
+int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 99
-newline$ -- 139
-num.names$ -- 72
-pop$ -- 186
+missing$ -- 123
+newline$ -- 170
+num.names$ -- 90
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 201
 quote$ -- 0
-skip$ -- 788
+skip$ -- 1033
 stack$ -- 0
-substring$ -- 828
-swap$ -- 66
-text.length$ -- 60
-text.prefix$ -- 16
+substring$ -- 1079
+swap$ -- 92
+text.length$ -- 79
+text.prefix$ -- 18
 top$ -- 0
-type$ -- 192
-warning$ -- 1
-while$ -- 98
-width$ -- 28
-write$ -- 300
-(There was 1 error message)
+type$ -- 244
+warning$ -- 2
+while$ -- 132
+width$ -- 33
+write$ -- 373
+(There were 2 error messages)
