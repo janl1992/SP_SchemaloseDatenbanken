@@ -8,6 +8,17 @@
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
+\bibitem[AG08]{angles2008survey}
+\textsc{Angles}, Renzo ; \textsc{Gutierrez}, Claudio:
+\newblock Survey of graph database models.
+\newblock {In: }\emph{ACM Computing Surveys (CSUR)} 40 (2008), Nr. 1, S.~1
+
+\bibitem[AG18]{anglesintro}
+
+\newblock \,{In:\,}\textsc{Angles}, Renzo ; \textsc{Gutierrez}, Claudio:
+\newblock \emph{An Introduction to Graph Data Mangement}.
+\newblock Springer International Publishing, 2018
+
 \bibitem[Ang12]{angles2012comparison}
 \textsc{Angles}, Renzo:
 \newblock A comparison of current graph database models.
@@ -34,6 +45,11 @@
   \url{http://www2.inf.h-brs.de/~pbecke2m/graphentheorie/einfuehrung.pdf}.
 \newblock \,Version:\,2018
 
+\bibitem[Cod81]{efcodd}
+\textsc{Codd}, Edgar~F.:
+\newblock Data models in database management.
+\newblock {In: }\emph{ACM Sigmod Record} 11 (1981), Nr. 2, S. 112--114
+
 \bibitem[Eis03]{eisentraut01}
 \textsc{Eisentraut}, Peter:
 \newblock \emph{PostgreSQL Das Offizielle Handbuch}.
@@ -50,6 +66,12 @@
 \newblock \emph{PostgreSQL 10}.
 \newblock Carl Hanser Verlag München, 2018
 
+\bibitem[GFLP18]{graphdatam}
+\textsc{George~Fletcher}, Jan~H. ; \textsc{Larriba-Pey}, Josep~L.:
+\newblock \emph{Graph Data Management - Fundamental Issues and Recent
+  Developments}.
+\newblock Springer International Publishing, 2018
+
 \bibitem[Goe15]{flockdb}
 \textsc{Goebel}, Christopher:
 \newblock NoSQL - FlockDB.
@@ -61,12 +83,17 @@
 \newblock
   \url{https://www.postgresql.org/files/documentation/pdf/11/postgresql-11-A4.pdf}
 
-\bibitem[Grob]{postgreswithrecursive}
+\bibitem[Grob]{postgrespartitioning}
+\textsc{Group}, The PostgreSQL Global~D.:
+\newblock \emph{PostgreSQL 11.1 Documentation}.
+\newblock \url{url = https://www.postgresql.org/docs/10/ddl-partitioning.html}
+
+\bibitem[Groc]{postgreswithrecursive}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 11.1 Documentation}.
 \newblock \url{https://www.postgresql.org/docs/11/queries-with.html}
 
-\bibitem[Groc]{postgres8}
+\bibitem[Grod]{postgres8}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 8.4 Documentation}.
 \newblock \url{https://www.postgresql.org/docs/8.4/datatype.html}
@@ -143,6 +170,14 @@
 \newblock \,{In:\,}\textsc{Thorsten~Theobald}, Sadik~I.:
 \newblock \emph{Graphen}.
 \newblock Springer Fachmedien Wiesbaden, 2016
+
+\bibitem[VMZ{\etalchar{+}}10]{vicknair2010comparison}
+\textsc{Vicknair}, Chad ; \textsc{Macias}, Michael ; \textsc{Zhao}, Zhendong ;
+  \textsc{Nan}, Xiaofei ; \textsc{Chen}, Yixin  ; \textsc{Wilkins}, Dawn:
+\newblock A comparison of a graph database and a relational database: a data
+  provenance perspective.
+\newblock {In: }\emph{Proceedings of the 48th annual Southeast regional
+  conference} ACM, 2010, S.~42
 
 \bibitem[ZSHZ18]{zhang2018hypergraph}
 \textsc{Zhang}, Hongliang ; \textsc{Song}, Lingyang ; \textsc{Han}, Zhu  ;
