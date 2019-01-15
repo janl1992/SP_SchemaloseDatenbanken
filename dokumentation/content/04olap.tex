@@ -1181,8 +1181,30 @@ node[draw=none, midway, yshift=-4.5em]
 	};
 
 	\end{tikzpicture}
-	\caption{ public\_livejournal}
+	\caption{ relation\_livejournal\_partitioned}
 \end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+		
+		\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{8.9415}                                      & 24.721                                                & 500.063                                                   & 11.849                                                          \\ \hline
+		\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.875}                                       & 25.354                                                & 507.950                                                   & 13.616                                                          \\ \hline
+		\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{29.855}                                      & 53.544                                                & 532.557                                                   & 72.842                                                          \\ \hline
+		\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{317.921}                                     & 449.968                                               & 1062.957                                                  & 792.107                                                         \\ \hline
+		\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{2802.370}                                    & 4022.937                                              & 6995.607                                                  & 7888.135                                                        \\ \hline
+		
+		
+		
+	\end{tabular}
+	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal\_partitioned}
+\end{table}
+
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
@@ -1255,6 +1277,30 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{ public\_facebook}
 \end{figure}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+		
+\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{9.550}                                       & 20.057                                                & 16.339                                                    & 9.097                                                           \\ \hline
+\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.838}                                       & 25.119                                                & 16.807                                                    & 10.898                                                          \\ \hline
+\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{35.418}                                      & 30.430                                                & 24.669                                                    & 18.393                                                          \\ \hline
+\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{59.112}                                      & 39.050                                                & 39.953                                                    & 102.515                                                         \\ \hline
+\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{77.279}                                      & 38.354                                                & 58.086                                                    & 675.363                                                         \\ \hline
+
+		
+		
+	\end{tabular}
+	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal\_partitioned}
+\end{table}
+
+
+
+
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
 	%axis
@@ -1326,6 +1372,30 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{ public\_wiki\_vote}
 \end{figure}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+		
+\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{9.169}                                       & 23.059                                                & 16.152                                                    & 8.882                                                           \\ \hline
+\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.538}                                       & 24.221                                                & 16.649                                                    & 9.694                                                           \\ \hline
+\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{37.563}                                      & 29.832                                                & 25.806                                                    & 20.019                                                          \\ \hline
+\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{80.343}                                      & 67.963                                                & 216.439                                                   & 160.368                                                         \\ \hline
+\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{127.839}                                     & 115.465                                               & 1615.686                                                  & 4505.545                                                        \\ \hline
+
+		
+		
+	\end{tabular}
+	\caption{Laufzeit der SQLs für Tabelle relation\_wiki\_vote\_partitioned}
+\end{table}
+
+
+
+
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
 	%axis
@@ -1394,8 +1464,29 @@ node[draw=none, midway, yshift=-4.5em]
 		\textcolor{red}{--- selectSourceCodeGenerator}
 	};
 	\end{tikzpicture}
-	\caption{ public\_youtube}
+	\caption{ relation\_youtube\_with\_index}
 \end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|}
+		\cline{2-6}
+		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{}
+		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
+		
+		\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{8.505}                                       & 22.322                                                & 492.834                                                   & 10.423                                                          \\ \hline
+		\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.090}                                       & 24.235                                                & 490.843                                                   & 9.162                                                           \\ \hline
+		\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{9.629}                                       & 26.731                                                & 500.531                                                   & 9.909                                                           \\ \hline
+		\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{11.286}                                      & 29.409                                                & 510.964                                                   & 11.589                                                          \\ \hline
+		\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{13.694}                                      & 33.586                                                & 497.172                                                   & 21.320                                                          \\ \hline
+		
+	\end{tabular}
+	\caption{Laufzeit der SQLs für Tabelle relation\_youtube\_partitioned}
+\end{table}
+
+
 
 \subsection{Standard SQL}
 
