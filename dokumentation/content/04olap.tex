@@ -9,7 +9,48 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 	Über das Flag -c wird die Anzahl der Clients bzw. die Anzahl der gleichzeitigen Datenbankverbindungen festgelegt. Wenn hier nichts angegeben ist wird nur ein Client verewendet.
 	\item -t transactions \\
 	Über das Flag -t wird festgelegt wieviele Transaktionen jeder Client durchführt. Die Anzahl aller Transaktionen ergibt sich durch das Produkt von Clients und Transactions.
+	\item -h hostname \\
+	Der Hostname des Datenbankservers.
+	\item -p Port \\
+	Der Port auf dem die Datenbank hört.
+	\item -U login \\
+	Der Nutzername mit dem sich pgbench anmeldet. Hier kann kein Passwort angegeben werden. Das Datenbankpasswort kann in die Systemvariable PGPASSWORD geschrieben werden. Diese Varibale wird von pgbench dann ausgwewertet.
+	\item -d Database \\
+	Die Datenbank gegen die sich pgbench verbindet
+	\item -f File \\ 
+	Über -f kann jeweils eine Datei mit mehreren SQL-Statements übergeben werden. Eine Transaktion entspricht dabei der Abarbeitung aller SQL-Befehle innerhalb der Datei.
+	Wird keine Datei angegeben führt pgbench ein Default-Benchmarking aus.
+
 \end{itemize}
+\subsubsection{Testaufbau}
+Für die Benchmarktests wurde auf dem Master-Node der Order pgbench angelegt. Im Ordner pgbench sind eine Reihe von Unterordnern angelegt sowie das Skript pgbench.sh. Dieses Skript setzt eine Reihe von Variablen und ruft Sequenziel alle Shell-Skripte auf die sich in den Unterordnern befinden.
+\begin{figure}[H]
+\tikzstyle{every node}=[draw=black,thick,anchor=west]
+\usetikzlibrary{trees}
+\tikzstyle{file}=[draw=none]
+\begin{tikzpicture}[%
+grow via three points={one child at (0.5,-0.8) and
+	two children at (0.5,-0.8) and (0.5,-1.6)},
+edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
+\node {pgbench}
+child{ node[file]{pgbench.sh}}
+child { node {public\_epinions}
+	child{ node[file]{pgbench.sh}}
+}
+child [missing] {}		
+child { node {public\_epinions\_with\_index}
+child{ node[file]{pgbench.sh}}
+}
+child [missing] {}	
+child { node {public\_epinions\_partitioned}
+child{ node[file]{pgbench.sh}}
+child [missing] {}	};
+\end{tikzpicture}
+%Reset Configuration
+\tikzstyle{every node}=[]
+\caption{Ordnerstruktur Benchmarktest}
+\end{figure}
+Jedes pgbench.sh-Skript startet sequenziell einen pgbench-Benchmarktest mit jeder SQL-Datei im selben Ordner.
 \subsubsection{Antwortzeiten ohne Indices}
 \begin{figure}[H]
 \begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
