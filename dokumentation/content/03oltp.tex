@@ -37,9 +37,9 @@ Spalte ID aus der jeweiligen profiles Tabelle verknüpft. Die Spalten src und ds
 profiles Tabelle. ID hingegen ist in der profiles Tabelle ein Primärschlüssel (siehe \ref{relationFacebook}).
 
 \subsection{Erstellen von Fremdschlüsseln, Indexen und Partitionen}
-Um die profile Tabelle und die relation Tabelle zu verknüpfen wurde zwischen den beiden Tabellen ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
+Um die profile Tabelle und die relation Tabelle zu verknüpfen, wurde zwischen den beiden Tabellen ein Fremdschlüssel erstellt. Bei der Erstellung wurde die profile Tabelle
 mit einem Zähler versehen. Hierbei wurde der postgres Befehl serial verwendet, der einen Zähler für jede Zeile der Tabelle erstellt und bei 1 startet . Damit die Tabellen
-relation und profile mit Hilfe eines Fremdschlüssel verknüpft werden können, muss der Zähler innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
+relation und profile mit Hilfe eines Fremdschlüssels verknüpft werden können, muss der Zähler innerhalb der profile Tabelle jedoch bei 0 starten. Der Grund dafür ist, dass
 innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit auf ein Profil verweisen, was die ID 0 hat. Hierfür wurde für die relation Tabelle ein
 SQL Script geschrieben, was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus
 der temporären Tabelle in die endgültige profile Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles (siehe \ref{foreignKey}).
@@ -47,14 +47,16 @@ Für die einzelnen relation Tabellen wurden ebenfalls Indexe erstellt, damit die
 den relation Tabellen ohne Index , auf den relation Tabellen mit Index und auf den partitionierten Tabellen mit Index. Partitionierung bezeichnet das Aufteilen einer
 großen Tabelle in mehrere kleine Tabellen \cite{postgrespartitioning} . Die Motivation hinter der Erstellung von Indexen und der Partitionierung von Tabellen besteht darin,
 einen Performancegewinn bei der Graphtraversierung zu erzielen. Dies wird genauer im 4. Kapitel disuktiert.
-Im Anhang befinden sich Scripte für die Erstellung des Index für alle relation Tabellen, sowie die Erstellung von partitionierten Tabellen
-mit Index für alle relation Tabellen.
+%Im Anhang befinden sich Scripte für die Erstellung von Indexen auf partitionierten Tabellen und auf nicht partitionierten Tabellen für alle relation Tabellen .
+
+\subsection{Query Plan}
 
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet. Im Anhang befindet sich ein SQL
-Script, was die Tabelle relation$\_$facebook bis zur Rekursionsstufe 5 traversiert (siehe \ref{StandardSQL}), sowie ein Script, welches den Standard SQL Source Code
-dynamisch generiert (siehe \ref{StandardSQLGenerisch}).
-Der SQL Befehl WITH RECURSIVE sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Struktur einer WITH Query sieht folgedermaßen aus:
+Script, was die Tabelle relation$\_$facebook mit Hilfe des WITH RECURSIVE Befehl bis zur Rekursionsstufe 5 traversiert (siehe \ref{StandardSQL}),
+sowie ein Script, welches den Standard SQL Source Code dynamisch generiert (siehe \ref{StandardSQLGenerisch}).
+Der WITH Befehl erstellt eine temporäre Tabelle, die nur für die angegebene Query existiert. Diese werden oft auch als \ac{CTE} bezeichnet
+Der SQL Befehl RECURSIVE sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft. Die Struktur einer RECURSIVE Query sieht folgedermaßen aus:
 Zuerst wird der \textcolor{blue}{nicht rekursive Teil} der Query angegeben, anschließend wird der \textcolor{orange}{rekursive Teil} beschrieben:
 \lstset{escapeinside={<@}{@>}}
 \lstsetsql
@@ -69,16 +71,41 @@ Die Rekursion operiert hierzu auf 2 temporären Tabellen
 . Der Working Tabelle und der Intermediate Tabelle. Ein Rekursionsschritt sieht folgendermaßen aus: Die Ergebnisse innerhalb einer Rekursionsstufe werden in die
 Working Tabelle geschrieben, es wird mit Hilfe des UNION Operators überprüft ob Duplikate vorhanden sind. Die Überprüfung erfolgt bezogen auf eine Rekursionsstufe.
 Duplikate werden gelöscht, die Ergebissmenge wird in die Intermediate Tabelle geschrieben, die Ergebnisse aus der Intermediate Tabelle werden in die Working Tabelle
-kopiert (\cite{postgreswithrecursive}). Die Abbruchbedingung für die Rekursion wird innerhalb der Funktion definiert. Ob die Abbruchbedingung erreicht ist, wird im rekursiven Teil der Funktion \textcolor{red}{überprüft}:
+kopiert (\cite{postgreswithrecursive}). Die Abbruchbedingung für die Rekursion wird innerhalb der Funktion definiert. Ob die Abbruchbedingung erreicht ist, wird im
+rekursiven Teil der Funktion \textcolor{red}{überprüft}:
 \begin{lstlisting}[language=SQL,caption = Überprüfen der Abbruchbedingung,frame=single, label={Abbruchbedingung} ]
     SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation_facebook p1 WHERE p1.src IN ( p.dst ) and <@\textcolor{red}{lvl<5} @>
 \end{lstlisting}
-%Tabelle:
-%\begin{figure}[H]
-%    \includegraphics[width = \linewidth]{images/RecursiveSelect.jpg};
-%    \caption{Traversierung Standard SQL}
-%\end{figure}
-
+Der Ausführungsplan für die relation Tabelle facebook für den WITH RECURSIVE Operator befindet sich im Anhang (siehe \ref{AusführungsplanCTEFacebook})).
+Die Überprüfung der WHERE Bedingung innerhalb des rekursiven Teil der Query erfolgt in einem Nested Loop Join. Die Gleichheitsüberprüfung (src = p.dst) wird mit Hilfe
+eines Index Scans gemacht, die Überprüfung ob das Level erreicht worden ist erfolgt mit Hilfe eines Scans über die Working Table.
+\footnote{Ein Nested Loop Join besteht aus 2 Tabellen über die iteriert wird. Die erste Tabelle (Outer Table) wird einmal durchlaufen. Die zweite
+Tabelle (Inner Table) wird mehrfach durchlaufen. Der Vergleich wird über eine Indexsuche gebildet \cite[Seite 213]{froehlich01}}:
+\newpage
+\begin{lstlisting}[language=SQL,caption = Überprüfung der WHERE Bedingung,frame=single, label={WhereConditionCTE} ]
+    ->  Nested Loop  (cost=0.29..1434.82 rows=2111 width=12) (actual time=0.018..2.174 rows=8173 loops=5)
+        ->  WorkTable Scan on graphtraverse p  (cost=0.00..5.17 rows=77 width=8) (actual time=0.016..0.065 rows=729 loops=5)
+        Filter: (lvl < 5)
+        Rows Removed by Filter: 482
+        ->  Index Scan using indexsrc on relation_facebook p1  (cost=0.29..18.23 rows=27 width=8) (actual time=0.001..0.002 rows=11 loops=3645)
+        Index Cond: (src = p.dst)
+\end{lstlisting}
+Der RECURSIVE Operator und der UNION Operator finden sich in der Zeile Recursive Union wieder. Dieser Teil der Ausführung dauert am längsten (16,071 milli Sekunden).
+\begin{lstlisting}[language=SQL,caption = Überprüfung der WHERE Bedingung,frame=single, label={WhereConditionCTE} ]
+    ->  Recursive Union  (cost=0.29..14814.87 rows=21133 width=12) (actual time=0.014..16.085 rows=6056 loops=1)
+\end{lstlisting}
+Der Aufruf der graphtraverse Funktion:
+\begin{lstlisting}[language=SQL,caption = Aufruf der graphtraverse Funktion,frame=single, label={WhereConditionCTE} ]
+    SELECT <@\textcolor{red}{DISTINCT(dst)}@> FROM <@\textcolor{blue}{graphtraverse}@> order by dst
+\end{lstlisting}
+findet sich in der letzten Zeile des Ausführungsplan:
+\begin{lstlisting}[language=SQL,caption = Aufruf der graphtraverse Funktion im Ausführungsplan,frame=single, label={functionCallGraphtraverse} ]
+    ->  CTE Scan on <@\textcolor{blue}{graphtraverse}@>  (cost=0.00..422.66 rows=21133 width=4) (actual time=0.015..16.921 rows=6056 loops=1)
+\end{lstlisting}
+Die DISTINCT Funktion wird in ein Hash Aggregate übersetzt:
+\begin{lstlisting}[language=SQL,caption = Aufruf der DISTINCT Funktion,frame=single, label={WhereConditionCTE} ]
+    ->  <@\textcolor{red} {HashAggregate}@> (cost=475.49..477.49 rows=200 width=4) (actual time=17.694..17.716 rows=321 loops=1)
+\end{lstlisting}
 \subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
 Bei der Graphtraversierung mit Hilfe von verschachteltem \ac{SQL} wird ein selbsterstelltes verschachteltest SELECT Statement verwendet. Ein Beispielstatement
 befindet sich im Anhang (siehe \ref{SELECT}). Auf der obersten Rekursionsstufe wird der Startknoten des Graphen mitgegeben (in diesem Beispiel ist der Startknoten = 1).
@@ -95,7 +122,20 @@ Duplikate, wird als Input für die nächste Rekursionsstufe verwendet.
 Die Ausgabe des verschachtelten SELECT Statement sind die Nachbarn der Knoten, der angegebenen Rekursionstiefe. Wird zum Beispiel ein
 verschachteltes SELECT Statement der Tiefe 3 erstellt, so gibt dieses Statement alle Nachbarn 3. Grades ausgehend vom Startknoten an. Der Nachteil bei dieser Methode ist, dass
 Kreise in einem Graph nicht erkannt werden. Die Duplikatüberprüfung erfolgt nicht über mehrere Rekursionsstufen hinweg, sondern immer nur zwischen zwei Rekursionsstufen.
-
+Der Ausführungsplan für ein verschachteltes SELECT der Tiefe 5 befindet sich im Anhang (siehe \ref{AusführungsplanCascadeSELECT}). Für die DISTINCT Überprüfung
+wird auf jeder Rekursionsebene ein HashAggregate herangezogen. Die Zugehörigkeitsüberprüfung zu IN Klausel in der WHERE Bedingung:
+\begin{lstlisting}[language=SQL,caption = IN Klausel,frame=single, label={INKlauselFacebook} ]
+    SELECT DISTINCT(dst) FROM relation_facebook WHERE src <@\textcolor{red}{IN}@> ()
+\end{lstlisting}
+erfolgt auf allen Rekursionsstufen, ausgenommen der ersten Rekursionsstufe , mit Hilfe eines Hash Join:
+\begin{lstlisting}[language=SQL,caption = Aufruf der DISTINCT Funktion,frame=single, label={WhereConditionCTE} ]
+    ->  <@\textcolor{red}{Hash Join}@>  (cost=2713.40..4389.64 rows=88234 width=4) (actual time=11.821..17.797 rows=1709 loops=1)
+\end{lstlisting}
+ Auf der ersten Rekursionsstufe erfolgt die Überprüfung der IN Klausel mit Hilfe eines Nested Join. // Bei diesem Ausführungsplan wird der Index Scan nur auf der ersten
+Rekursionsstufe verwendet. Auf den tieferen Rekursionsstufen wird immer ein sequential scan vollzogen. Der Grund dafür ist, dass nur auf der ersten Rekursionsstufe auf
+einer Tabelle operiert wird auf der ein Index erstellt worden ist. In den tieferen Rekursionsstufen werden mit Hilfe der IN Klausel Zwischentabellen erstellt, auf denen kein Index existiert.
+ Auf diesen Tabelle operiert das verschachtelte SELECT Statement jedoch die meiste Zeit, wesshalb die meiste Zeit ein sequential Scan verwendet wird.
+%@ToDo Hier weitermachen
 \subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
 Bei der Graphtraversierung mit Hilfe von rekursiven INNER JOIN soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird.
 Die Ausgabe ist, ähnlich wie bei der Graphtraversierung mit Hilfe von verschachteltem SELECT Statement, die Nachbarn der Knoten, die sich auf der mitgegebenen Rekursionsstiefe

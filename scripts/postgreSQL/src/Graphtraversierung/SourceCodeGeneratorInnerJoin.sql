@@ -8,7 +8,9 @@ Declare
   tAlternativeStatement text;
   tWhereStatement text;
   tFinalStatement text;
+  tSetOffMergeJoin text;
 BEGIN
+  tSetOffMergeJoin = 'set enable_mergejoin=off;'
   iCount = 0;
   tSelectStatement = '';
   tWhereStatement = '';
@@ -48,6 +50,7 @@ BEGIN
   raise notice 'FROM Statement: %', tSelectStatement;
   raise notice 'Where Statement: %', tWhereStatement;
   raise notice 'Finale Statement: %', tFinalStatement;
+  EXECUTE tSetOffMergeJoin;
   return query EXECUTE tFinalStatement;
 END;
 $$ LANGUAGE plpgsql;
