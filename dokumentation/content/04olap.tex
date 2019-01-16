@@ -206,39 +206,28 @@ Bei der relation\_epinions Tabelle zeigen sich ab der 3. Rekursionstufe deutlich
 
 \paragraph{relation\_livejournal}\mbox{}\\
 
-	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
+	\begin{tikzpicture}[y=.25cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
-	\draw (0,0) -- coordinate (y axis mid) (0,23);
+	\draw (0,0) -- coordinate (y axis mid) (0,24);
 	%ticks
 	\foreach \x in {0,...,5}
 	\draw (\x,1pt) -- (\x,-3pt)
 	node[anchor=north] {\x};
 	\foreach \y/\ytext in {
-		0/0,
-		1/5000,
+		0/0,	
 		2/10000,
-		3/15000,
 		4/20000,
-		5/25000,
 		6/30000,
-		7/35000,
 		8/40000,
-		9/45000,
 		10/50000,
-		11/55000,
 		12/60000,
-		13/65000,
 		14/70000,
-		15/75000,
 		16/80000,
-		17/85000,
 		18/90000,
-		19/95000,
 		20/100000,
-		21/105000,
 		22/110000,
-		23/115000
+		24/120000
 	}
 	\draw (1pt,\y) -- (-3pt,\y) node[anchor=east] {$\ytext$};
 	%labels      
@@ -277,10 +266,10 @@ coordinates{(0, 0)
 	(4, 17.487)%87434.075/5000)	
 	(5,	23.086)%115432.071/5000)	
 };
-	\draw (0,-3) -- (5,-3) 
-(0,-3) -- (0,-6)
-(0,-6) -- (5,-6)
-(5,-3) -- (5,-6);
+	\draw (0,-6) -- (5,-6) 
+(0,-6) -- (0,-12)
+(0,-12) -- (5,-12)
+(5,-6) -- (5,-12);
 \draw[draw=none] (0,0) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
@@ -288,7 +277,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\textcolor{green}{--- recursiveWithUnion} 
 	
 };
-\draw[draw=none] (0,-3) -- (5,0) 
+\draw[draw=none] (0,-6) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
@@ -319,15 +308,15 @@ Bei der relation\_livejournal Tabelle sind die Laufzeiten am längsten. Hier sch
 \paragraph{relation\_facebook}\mbox{}\\
 
 \begin{figure}[H]
-	\begin{tikzpicture}[y=.025cm, x=2cm,font=\sffamily]
+	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
-	\draw (0,0) -- coordinate (y axis mid) (0,330);
+	\draw (0,0) -- coordinate (y axis mid) (0,300);
 	%ticks
 	\foreach \x in {0,...,5}
 	\draw (\x,1pt) -- (\x,-3pt)
 	node[anchor=north] {\x};
-	\foreach \y in {0,30,...,330}
+	\foreach \y in {0,50,...,300}
 	\draw (1pt,\y) -- (-3pt,\y)
 	node[anchor=east] {\y}; 
 	%labels      
@@ -368,10 +357,10 @@ Bei der relation\_livejournal Tabelle sind die Laufzeiten am längsten. Hier sch
 		(5,110.000)
 	};
 
-	\draw (0,-60) -- (5,-60) 
-		  (0,-60) -- (0,-120)
-          (0,-120) -- (5,-120)
-          (5,-60) -- (5,-120);
+	\draw (0,-120) -- (5,-120) 
+		  (0,-120) -- (0,-240)
+          (0,-240) -- (5,-240)
+          (5,-120) -- (5,-240);
 \draw[draw=none] (0,0) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
@@ -379,7 +368,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\textcolor{green}{--- recursiveWithUnion} 
 	
 };
-\draw[draw=none] (0,-60) -- (5,0) 
+\draw[draw=none] (0,-120) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
@@ -407,7 +396,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_facebook}
 \end{table}
 
-
+Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, der rekursiven Funktion und dem Standard SQL gleich. Die Unterschiede in der Latenz sind im Verhältnis zur Latenz gering. Einen SOnderfall bildet das innerJoin hier ist ab der dritten Rekursionsstufe ein exponentieller Anstieg der Laufzeit zu beobachten.
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
 	%axis
