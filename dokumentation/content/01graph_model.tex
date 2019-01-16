@@ -12,6 +12,7 @@ Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspez
 Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
 Dennoch sind die kleinen Unterschiede in der Datenmodellierung oft entscheidend und es können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
 Im folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
+\newpage
 \subsection{Graph}
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
 %Ein Graph ist mathematisch folgendermaßen definiert:
@@ -23,7 +24,7 @@ Die Grundlage aller Graphdatenbankmodelle bietet die Definition eines einfachen 
 		\item $E$, einer Menge von Kanten (edges)
 		\item $\gamma$ , einer Inzidenzabbildung (incidence relation), mit\\
 		$\gamma : E \longrightarrow \{X | X \subseteq V, 1 \leq |X| \leq 2\}$
-	\end{itemize}\cite[Seite 21]{pbeck01}
+	\end{itemize}\cite{pbeck01}
 %	Ein Knoten $a \in V$ und eine Kante $e \in E$ heißen inzident (incident)
 %	genau dann wenn $a$ entweder Anfangs- oder Endecke von $e$ ist. Es gilt $a \in \gamma(e)$.
 %	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
@@ -54,7 +55,7 @@ Enthält ein Graph Multikanten und Schlingen ist dies kein einfacher Graph mehr 
 %Schlingen und Multikanten dürfen in einem einfachen Graphen nicht auftauchen.\cite{felsner01}
 
 Der Grad eines Knoten bezeichnet die Anzahl der inzidenten Kanten des Knoten.
-Dabei werden Schleifen doppelt gezählt \cite[Seite 13]{rahm2017}.
+Dabei werden Schleifen doppelt gezählt \cite{rahm2017}.
 Ein Graph, bei dem alle Knoten den selben Knotengrad haben, wird als regulärer Graph bezeichnet \cite{felsner2012geometric}.
 %Abbildung \ref{fig:regular} zeigt einen regulären Graphen mit Knotengrad null und einen mit einem Grad von drei.
 %\begin{center}
@@ -68,8 +69,8 @@ Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht m
 \end{pmatrix}\big)\]
 
 %Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
-Da bei einem Graphen nur die Struktur definiert ist, also welcher Knoten über welche Kante mit den anderen Knoten verbunden ist, können Graphen auf unterschiedliche weisen gezeichnet werden und trotzdem gleich sein.
-Sind zwei Graphen gleich, bezeichnet man diese als isomorph \cite[Seite 22]{basicgraphtheory}.
+%Da bei einem Graphen nur die Struktur definiert ist, also welcher Knoten über welche Kante mit den anderen Knoten verbunden ist, können Graphen auf unterschiedliche weisen gezeichnet werden und trotzdem gleich sein.
+%Sind zwei Graphen gleich, bezeichnet man diese als isomorph \cite[Seite 22]{basicgraphtheory}.
 %
 %Das simpelste Graphdatenbankmodell ist ein einfacher gelabelter Graph.
 %
@@ -86,14 +87,14 @@ Sind zwei Graphen gleich, bezeichnet man diese als isomorph \cite[Seite 22]{basi
 \subsection{Bäume}
 Ist ein Graph kreisfrei, es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
 Sind die Knoten eines Waldes zusammenhängend entsteht ein Baum.
-Ein Baum mit $n$ Knoten hat immer $n-1$ Kanten \cite{basicgraphtheory}.
+%Ein Baum mit $n$ Knoten hat immer $n-1$ Kanten \cite{basicgraphtheory}.
 Knoten mit dem Grad $n=1$ werden als Blätter bezeichnet.
 Bäume können gerichtet und ungerichtet sein.
 Im Falle von gerichteten Bäumen spricht man auch von gewurzelten Bäumen, da der Ursprungsknoten als Wurzel bezeichnet wird.
 Abbildung \ref{fig:baum} zeigt einen gewurzelten Baum, die Blätter sind hier grün dargestellt und die Wurzel rot.
-In einem Baum gibt es zwischen zwei beliebigen Knoten immer nur einen Weg.
-Bei einem gewurzelten Baum werden die Ausgangsknoten als Eltern und die Zielknoten jeweils als Kinder der Ausgangsknoten bezeichnet.
-Hat in einem gewurzelten Baum jeder Knoten maximal zwei Kinder, wird dieser als Binärbaum bezeichnet \cite{basicgraphtheory}.
+In einem Baum gibt es zwischen zwei beliebigen Knoten immer nur einen Weg \cite{basicgraphtheory}.
+%Bei einem gewurzelten Baum werden die Ausgangsknoten als Eltern und die Zielknoten jeweils als Kinder der Ausgangsknoten bezeichnet.
+%Hat in einem gewurzelten Baum jeder Knoten maximal zwei Kinder, wird dieser als Binärbaum bezeichnet \cite{basicgraphtheory}.
 \begin{figure}[H]
 	\begin{center}
 	\includegraphics[scale = 0.3]{./images/baum.png}
@@ -150,11 +151,13 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 \end{center}
 \end{figure}
 
+
 Der Vorteil von Property Graphen ist, dass diese eine sehr detailierte Modellierung der Daten ermöglichen.
 Nachteilig ist jedoch, dass eine komplexere Datenstruktur zu einer komplizierteren Realisierung führt.
+Derzeit sind Propertygraphen das am häufigsten verwendete Datenmodell für Graphdatenbanken.
 
 \subsection{Hypergraphen}
-Hypergraphen stellen eine generalisierung von Graphen dar und ermöglichen die modelierung komplexer Beziehungen \cite{anglesintro}.
+Hypergraphen stellen eine generalisierung von Graphen dar und ermöglichen die Modelierung komplexer Beziehungen \cite{anglesintro}.
 %Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
 %Die Kanten des Hypergraphen werden auch als Hyperkanten bezeichnet.
 Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben.
@@ -181,7 +184,7 @@ Die Kante $e_{4}$ verbindet in diesem Graphen die Knoten $v_{5}$, $v_{6}$ und $v
 	\caption{Hypergraph}
 \end{center}
 \end{figure}
-
+Hypergraphen ermöglichen die direkte Darstellung rekursiver Beziehungen \cite{iordanov2010hypergraphdb}.
 Da die Hypergraphen eine flexiblere Struktur als das einfache Graphen-Modell bietet, werden diese oft zur Modellierung in Graphdatenbanken verwendet \cite{flockdb}.
 %In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
 %    \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
@@ -194,14 +197,15 @@ Da die Hypergraphen eine flexiblere Struktur als das einfache Graphen-Modell bie
 \subsection{Verschachtelte Graphen}
 %Hypernodes ermöglichen die Verschachtelung von Graphen, was bedeutet, dass ein Knoten wiederum ein Graph sein kann
 In einem verschachtelten Graphen kann ein Knoten wiederum ein Graph sein. Diese Knoten werden als Hypernodes bezeichnet.
-Das Konzept von Hypernodes erlaubt eine beliebig große Komplexität des Modells \cite{poulovassilis1994nested}.
+Das Konzept von Hypernodes erlaubt eine beliebig große Komplexität des Modells.
 Das Hypernode Modell nutzt gerichtete Kanten.
 Jeder Knoten des verschachtelten Graphen bekommt ein eindeutiges Label.
-Um die Knoten in verschiedene Kathegorien zu unterteilen werden Tags vergeben.
+Um die Knoten in verschiedene Kategorien zu unterteilen werden Tags vergeben \cite{poulovassilis1994nested}.
 
 Abbildung \ref{fig:hypernode} stellt einen Teil des in \ref{fig:property} dargestellten Propertygraphen als Hypernodes dar.
 Alle Knoten haben ein eindeutiges Label und es wurden zwei Tags vergeben - Unternehmen und Person.
 Durch gerichtete Kanten werden die Beziehungen zwischen den einzelnen Hypernodes hergestellt.
+Die Attributer, die im Propertygraphen als Key-Vaule Paare gespeichert werden, werden im verschachtelten Graphen als Knoten einer Hypernode gespeichert.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.5]{./images/Hypernode.png}
@@ -209,3 +213,6 @@ Durch gerichtete Kanten werden die Beziehungen zwischen den einzelnen Hypernodes
 		\caption{Hypernode}
 	\end{center}
 \end{figure}
+
+Hypergraphen lassen sich durch Hypernodes darstellen, indem man die durch eine Hyperedge verbundenen Konten in einer Hypernode darstell.
+Andersrum lassen sich Hypernodes jedoch nicht unbedingt in einem Hypergraphen realisieren \cite{poulovassilis1994nested}.
