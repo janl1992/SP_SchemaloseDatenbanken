@@ -1,31 +1,9 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
 \section{PostgreSQL: OLAP}
-\subsection{Benchmark}
-Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von \ac{SQL}-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die Anzahl der Transaktionen pro Sekunde.
-\subsubsection{Verwendung von pgbench}
-pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Parametern übergeben werden, mit denen das Verhalten von pgbench gesteuert werden kann.
-\begin{itemize}
-	\item -c clients  \\
-	Über das Flag -c wird die Anzahl der Clients bzw. die Anzahl der gleichzeitigen Datenbankverbindungen festgelegt. Wenn hier nichts angegeben ist wird nur ein Client verewendet.
-	\item -t transactions \\
-	Über das Flag -t wird festgelegt wieviele Transaktionen jeder Client durchführt. Die Anzahl aller Transaktionen ergibt sich durch das Produkt von Clients und Transactions.
-	\item -h hostname \\
-	Der Hostname des Datenbankservers.
-	\item -p Port \\
-	Der Port auf dem die Datenbank hört.
-	\item -U login \\
-	Der Nutzername mit dem sich pgbench anmeldet. Hier kann kein Passwort angegeben werden. Das Datenbankpasswort kann in die Systemvariable PGPASSWORD geschrieben werden. Diese Varibale wird von pgbench dann ausgwewertet.
-	\item -d Database \\
-	Die Datenbank gegen die sich pgbench verbindet
-	\item -f File \\ 
-	Über -f kann jeweils eine Datei mit mehreren SQL-Statements übergeben werden. Eine Transaktion entspricht dabei der Abarbeitung aller SQL-Befehle innerhalb der Datei.
-	Wird keine Datei angegeben führt pgbench ein Default-Benchmarking aus.
+\subsection{Indexe und Partionierte Tabellen}
+Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den ''Default'' --Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
 
-\end{itemize}
-\subsubsection{Indexe und Partionierte Tabellen}
-Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den "Default"-Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
-
-Die erste Tabelle hat das Suffix "\_with\_index". Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz "youtube" dargestellt:
+Die erste Tabelle hat das Suffix ''\_with\_index''. Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz ''youtube'' dargestellt:
 
 \lstsetsql
 \begin{lstlisting}
@@ -39,10 +17,10 @@ CREATE INDEX yt_dst ON relation_youtube_with_index (dst);
 CREATE INDEX yt_src ON relation_youtube_with_index (src);
 \end{lstlisting}
 
-Im Unterschied zur "public\_youtube"--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. 
+Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. 
 
 
-Neben der den "\_with\_index"--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die "\_with\_index"--Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
+Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
 
 \begin{lstlisting}
 
@@ -67,6 +45,29 @@ FOR VALUES FROM (2400001) TO (3200000);
 Da die Datensätze unterschiedlich groß sind wurden die Partionsgrößen entsprechend angepasst. Jeder Datensatz wurde auf 4 Partitonen verteilt. Damit ergibt sich für den Datensatz youtube eine Partitonsgröße von 800.000.
 
 
+
+\subsection{Benchmark}
+Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von \ac{SQL}-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die Anzahl der Transaktionen pro Sekunde.
+\subsubsection{Verwendung von pgbench}
+pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Parametern übergeben werden, mit denen das Verhalten von pgbench gesteuert werden kann.
+\begin{itemize}
+	\item -c clients  \\
+	Über das Flag -c wird die Anzahl der Clients bzw. die Anzahl der gleichzeitigen Datenbankverbindungen festgelegt. Wenn hier nichts angegeben ist wird nur ein Client verewendet.
+	\item -t transactions \\
+	Über das Flag -t wird festgelegt wieviele Transaktionen jeder Client durchführt. Die Anzahl aller Transaktionen ergibt sich durch das Produkt von Clients und Transactions.
+	\item -h hostname \\
+	Der Hostname des Datenbankservers.
+	\item -p Port \\
+	Der Port auf dem die Datenbank hört.
+	\item -U login \\
+	Der Nutzername mit dem sich pgbench anmeldet. Hier kann kein Passwort angegeben werden. Das Datenbankpasswort kann in die Systemvariable PGPASSWORD geschrieben werden. Diese Varibale wird von pgbench dann ausgwewertet.
+	\item -d Database \\
+	Die Datenbank gegen die sich pgbench verbindet
+	\item -f File \\ 
+	Über -f kann jeweils eine Datei mit mehreren SQL-Statements übergeben werden. Eine Transaktion entspricht dabei der Abarbeitung aller SQL-Befehle innerhalb der Datei.
+	Wird keine Datei angegeben führt pgbench ein Default-Benchmarking aus.
+
+\end{itemize}
 \subsubsection{Testaufbau}
 Für die Benchmarktests wurde auf dem Master-Node der Order pgbench angelegt. Im Ordner pgbench sind eine Reihe von Unterordnern angelegt sowie das Skript pgbench.sh. Dieses Skript setzt eine Reihe von Variablen und ruft Sequenziel alle Shell-Skripte auf die sich in den Unterordnern befinden.
 \begin{figure}[H]
@@ -85,18 +86,26 @@ child { node {public\_epinions}
 child [missing] {}		
 child { node {public\_epinions\_with\_index}
 child{ node[file]{pgbench.sh}}
+child{node[file]{Select\_innerjoinsourcecodegenerator\_1.sql}}
+child{node[file]{...}}
 }
+child [missing] {}
+child [missing] {}
 child [missing] {}	
 child { node {public\_epinions\_partitioned}
 child{ node[file]{pgbench.sh}}
-child [missing] {}	};
+child{node[file]{Select\_innerjoinsourcecodegenerator\_1.sql}}
+child{node[file]{...}}
+};
 \end{tikzpicture}
 %Reset Configuration
 \tikzstyle{every node}=[]
 \caption{Ordnerstruktur Benchmarktest}
 \end{figure}
-Jedes pgbench.sh-Skript startet sequenziell einen pgbench-Benchmarktest mit jeder SQL-Datei im selben Ordner. . Jeder Ordner steht dabei für eine der relations-Tabellen. Für jede Kombination aus Rekursionstiefe und SQL-Statement gibt es eine SQL-Datei, welche genau ein Statement enthält.
+Jedes pgbench.sh-Skript startet sequenziell einen pgbench-Benchmarktest mit jeder SQL-Datei im selben Ordner. Jeder Ordner steht dabei für eine der relations-Tabellen. Für jede Kombination aus Rekursionstiefe und SQL-Statement gibt es eine SQL-Datei, welche genau ein Statement enthält.
 \subsubsection{Antwortzeiten ohne Indices}
+In diesem Abschnitt sind die Laufzeiten der verschiedenen SQLs auf den ''Default’’-Tabellen dargestellt.
+\paragraph{relation\_epinions}\mbox{}\\
 \begin{figure}[H]
 \begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
 %axis
@@ -172,7 +181,6 @@ coordinates{(0, 0)
 	\caption{ relation\_epinions}
 \end{figure}
 
-
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
 \begin{table}[H]
@@ -192,7 +200,12 @@ coordinates{(0, 0)
 	\caption{Laufzeit der SQLs für Tabelle relation\_epions}
 \end{table}
 \begin{figure}[H]
-	
+
+Bei der relation\_epinions Tabelle zeigen sich ab der 3. Rekursionstufe deutliche Unterschiede in den Laufzeiten der einzelnen Statements. In der Rekursionsstufe 55 schneidet das Innerjoin-Statement mit 81 Sekunden am schlechtesten ab. Das verschachtelte Select ist mit 677 Millisekunden am schnellsten und benötigt dabei nur 
+0.8\% der Laufzeit des Innerjoin Statements.
+
+\paragraph{relation\_livejournal}\mbox{}\\
+
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
 	%axis
 	\draw (0,0) -- coordinate (x axis mid) (5,0);
@@ -301,6 +314,9 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal}
 \end{table}
 
+Bei der relation\_livejournal Tabelle sind die Laufzeiten am längsten. Hier schneidet das Standard-SQL am schlechtesten ab. Die Rekursive Stored Procedure ist hier am schnellsten. Jedoch sind die Laufzeiten in der fünften Rekursionsstufe mit im besten Fall 53 Sekunden und im schlechtesten Fall 115 Sekunden sehr lange. Selbst in 9der ersten Rekursionstufe benötigt eine Abfrage mindestens 4,6 Sekunden.
+
+\paragraph{relation\_facebook}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.025cm, x=2cm,font=\sffamily]
@@ -688,6 +704,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_epinions\_with\_index}
 \end{table}
 
+\paragraph{relation\_livejournal\_with\_index}\mbox{}\\
 \begin{figure}[H]
 	
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -773,7 +790,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\textcolor{red}{--- selectSourceCodeGenerator}
 };
 	\end{tikzpicture}
-	\caption{ relation\_livejournal}
+	\caption{ relation\_livejournal\_with\_index}
 \end{figure}
 
 \begin{table}[H]
@@ -794,7 +811,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\end{tabular}
 	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal\_with\_index}
 \end{table}
-
+Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufzeit in der ersten Rekursionsstufe verbessert sich von von mindestens 4,7 Sekunden auf im besten Fall 8.7 Millisekunden. Auch in der fünften Rekursionsstufe verkürtzt sich die Laufzeit deutlich.
 
 
 \begin{figure}[H]
@@ -1176,7 +1193,7 @@ node[draw=none, midway, yshift=-4.5em]
 
 
 
-
+\paragraph{relation\_livejournal\_with\_index}\mbox{}\\
 \begin{figure}[H]
 	
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -1269,7 +1286,6 @@ node[draw=none, midway, yshift=-4.5em]
 	\end{tikzpicture}
 	\caption{ relation\_livejournal\_partitioned}
 \end{figure}
-
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|}
@@ -1290,6 +1306,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\end{tabular}
 	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal\_partitioned}
 \end{table}
+Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance. So verringert sich die Laufzeit in der fünften Rekursionsstufe um nochmal eine Sekunde. Auffällig ist auch, dass in der partionierten Tabelle das verschachtelte Select die geringste Latenz aufweist. In den beiden anderen livejournal-Tabellen war die rekursive Stored Proceduere am schnellsten. Aufällig ist auch, dass die Partitionierung nur beim verschachtelten Select und beim InnerJoin-Select zu einer verbesserung geführt hat. Bei den beiden anderen Statements hat sich keine Verbesserung der Latenz ergeben.
 
 
 \begin{figure}[H]

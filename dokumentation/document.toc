@@ -18,36 +18,42 @@
 \contentsline {subsection}{\numberline {3.1.2}CSV-Import}{10}{subsection.3.1.2}
 \contentsline {subsection}{\numberline {3.1.3}Datenbankschema}{10}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}Erstellen von Fremdschl\IeC {\"u}sseln, Indexen und Partitionen}{10}{subsection.3.1.4}
-\contentsline {subsection}{\numberline {3.1.5}Graphtraversierung mit Hilfe von Standard \ac {SQL}}{11}{subsection.3.1.5}
-\contentsline {subsection}{\numberline {3.1.6}Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{11}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{12}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{12}{subsection.3.1.8}
-\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{14}{chapter.4}
-\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{14}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Benchmark}{14}{subsection.4.1.1}
-\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{14}{section*.16}
-\contentsline {subsubsection}{\nonumberline Indexe und Partionierte Tabellen}{15}{section*.17}
-\contentsline {subsubsection}{\nonumberline Testaufbau}{16}{section*.18}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten ohne Indices}{17}{section*.19}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{22}{section*.20}
-\contentsline {subsection}{\numberline {4.1.2}Antwortzeiten mit partitionierten Tabellen und Indices}{27}{subsection.4.1.2}
-\contentsline {subsection}{\numberline {4.1.3}Standard SQL}{32}{subsection.4.1.3}
-\contentsline {subsection}{\numberline {4.1.4}Stored Procedures}{32}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}PL/SQL-Recursion}{32}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}Datenbankzugriffe}{32}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Zugriffsart Aggregation}{32}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Zugriffsart Traversierung}{32}{subsection.4.1.8}
-\contentsline {subsection}{\numberline {4.1.9}Interpretation der Ergebnisse}{32}{subsection.4.1.9}
-\contentsline {chapter}{\numberline {5}Fazit}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Fazit}{33}{section.5.1}
-\contentsline {chapter}{\numberline {A}Anhang}{34}{appendix.A}
-\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{34}{section.A.1}
-\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{34}{section.A.2}
-\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{34}{section.A.3}
-\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{39}{section.A.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{40}{section.A.4}
-\contentsline {chapter}{Tabellenverzeichnis}{41}{chapter*.21}
-\contentsline {chapter}{Listings}{42}{chapter*.22}
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{42}{section*.24}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{44}{chapter*.26}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{47}{chapter*.27}
+\contentsline {subsection}{\numberline {3.1.5}Query Plan}{11}{subsection.3.1.5}
+\contentsline {subsection}{\numberline {3.1.6}Graphtraversierung mit Hilfe von Standard \ac {SQL}}{11}{subsection.3.1.6}
+\contentsline {subsection}{\numberline {3.1.7}Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{12}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{14}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.9}Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{14}{subsection.3.1.9}
+\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{15}{chapter.4}
+\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{15}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Indexe und Partionierte Tabellen}{15}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Benchmark}{16}{subsection.4.1.2}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{16}{section*.16}
+\contentsline {subsubsection}{\nonumberline Testaufbau}{17}{section*.17}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten ohne Indices}{18}{section*.18}
+\contentsline {paragraph}{\nonumberline relation\_epinions}{18}{section*.19}
+\contentsline {paragraph}{\nonumberline relation\_livejournal}{19}{section*.20}
+\contentsline {paragraph}{\nonumberline relation\_facebook}{20}{section*.21}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{23}{section*.22}
+\contentsline {paragraph}{\nonumberline relation\_livejournal\_with\_index}{23}{section*.23}
+\contentsline {subsection}{\numberline {4.1.3}Antwortzeiten mit partitionierten Tabellen und Indices}{28}{subsection.4.1.3}
+\contentsline {paragraph}{\nonumberline relation\_livejournal\_with\_index}{28}{section*.24}
+\contentsline {subsection}{\numberline {4.1.4}Standard SQL}{33}{subsection.4.1.4}
+\contentsline {subsection}{\numberline {4.1.5}Stored Procedures}{33}{subsection.4.1.5}
+\contentsline {subsection}{\numberline {4.1.6}PL/SQL-Recursion}{33}{subsection.4.1.6}
+\contentsline {subsection}{\numberline {4.1.7}Datenbankzugriffe}{33}{subsection.4.1.7}
+\contentsline {subsection}{\numberline {4.1.8}Zugriffsart Aggregation}{33}{subsection.4.1.8}
+\contentsline {subsection}{\numberline {4.1.9}Zugriffsart Traversierung}{33}{subsection.4.1.9}
+\contentsline {subsection}{\numberline {4.1.10}Interpretation der Ergebnisse}{33}{subsection.4.1.10}
+\contentsline {chapter}{\numberline {5}Fazit}{34}{chapter.5}
+\contentsline {section}{\numberline {5.1}Fazit}{34}{section.5.1}
+\contentsline {chapter}{\numberline {A}Anhang}{35}{appendix.A}
+\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{35}{section.A.1}
+\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{35}{section.A.2}
+\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{35}{section.A.3}
+\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{40}{section.A.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{41}{section.A.4}
+\contentsline {chapter}{Tabellenverzeichnis}{42}{chapter*.25}
+\contentsline {chapter}{Listings}{43}{chapter*.26}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{43}{section*.28}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{45}{chapter*.30}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{48}{chapter*.31}

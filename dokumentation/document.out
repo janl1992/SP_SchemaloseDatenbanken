@@ -16,31 +16,33 @@
 \BOOKMARK [2][-]{subsection.3.1.2}{CSV-Import}{section.3.1}% 16
 \BOOKMARK [2][-]{subsection.3.1.3}{Datenbankschema}{section.3.1}% 17
 \BOOKMARK [2][-]{subsection.3.1.4}{Erstellen von Fremdschl\374sseln, Indexen und Partitionen}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.5}{Graphtraversierung mit Hilfe von Standard SQL}{section.3.1}% 19
-\BOOKMARK [2][-]{subsection.3.1.6}{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{section.3.1}% 20
-\BOOKMARK [2][-]{subsection.3.1.7}{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{section.3.1}% 21
-\BOOKMARK [2][-]{subsection.3.1.8}{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{section.3.1}% 22
-\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 23
-\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.1.1}{Benchmark}{section.4.1}% 25
-\BOOKMARK [2][-]{subsection.4.1.2}{Antwortzeiten mit partitionierten Tabellen und Indices}{section.4.1}% 26
-\BOOKMARK [2][-]{subsection.4.1.3}{Standard SQL}{section.4.1}% 27
-\BOOKMARK [2][-]{subsection.4.1.4}{Stored Procedures}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.5}{PL/SQL-Recursion}{section.4.1}% 29
-\BOOKMARK [2][-]{subsection.4.1.6}{Datenbankzugriffe}{section.4.1}% 30
-\BOOKMARK [2][-]{subsection.4.1.7}{Zugriffsart Aggregation}{section.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.1.8}{Zugriffsart Traversierung}{section.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.1.9}{Interpretation der Ergebnisse}{section.4.1}% 33
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 34
-\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 35
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 36
-\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 37
-\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 38
-\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 39
-\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 40
-\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 41
-\BOOKMARK [0][-]{chapter*.21}{Tabellenverzeichnis}{}% 42
-\BOOKMARK [0][-]{chapter*.22}{Listings}{}% 43
-\BOOKMARK [0][-]{section*.24}{Abk\374rzungsverzeichnis}{}% 44
-\BOOKMARK [0][-]{chapter*.26}{Literaturverzeichnis}{}% 45
-\BOOKMARK [0][-]{chapter*.27}{Eidesstattliche Erkl\344rung}{}% 46
+\BOOKMARK [2][-]{subsection.3.1.5}{Query Plan}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.6}{Graphtraversierung mit Hilfe von Standard SQL}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.7}{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.8}{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.9}{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{section.3.1}% 23
+\BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 24
+\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 25
+\BOOKMARK [2][-]{subsection.4.1.1}{Indexe und Partionierte Tabellen}{section.4.1}% 26
+\BOOKMARK [2][-]{subsection.4.1.2}{Benchmark}{section.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.1.3}{Antwortzeiten mit partitionierten Tabellen und Indices}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.4}{Standard SQL}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.5}{Stored Procedures}{section.4.1}% 30
+\BOOKMARK [2][-]{subsection.4.1.6}{PL/SQL-Recursion}{section.4.1}% 31
+\BOOKMARK [2][-]{subsection.4.1.7}{Datenbankzugriffe}{section.4.1}% 32
+\BOOKMARK [2][-]{subsection.4.1.8}{Zugriffsart Aggregation}{section.4.1}% 33
+\BOOKMARK [2][-]{subsection.4.1.9}{Zugriffsart Traversierung}{section.4.1}% 34
+\BOOKMARK [2][-]{subsection.4.1.10}{Interpretation der Ergebnisse}{section.4.1}% 35
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 36
+\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 37
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 38
+\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 39
+\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 40
+\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 41
+\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 42
+\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 43
+\BOOKMARK [0][-]{chapter*.25}{Tabellenverzeichnis}{}% 44
+\BOOKMARK [0][-]{chapter*.26}{Listings}{}% 45
+\BOOKMARK [0][-]{section*.28}{Abk\374rzungsverzeichnis}{}% 46
+\BOOKMARK [0][-]{chapter*.30}{Literaturverzeichnis}{}% 47
+\BOOKMARK [0][-]{chapter*.31}{Eidesstattliche Erkl\344rung}{}% 48
