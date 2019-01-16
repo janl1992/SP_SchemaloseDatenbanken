@@ -26,51 +26,65 @@ Warning--entry type for "postgres2018" isn't style-file defined
 --line 125 of file bibliography.bib
 Warning--entry type for "felsner01" isn't style-file defined
 --line 137 of file bibliography.bib
+Repeated entry---line 238 of file bibliography.bib
+ : @inproceedings{angles2012comparison
+ :                                    ,
+I'm skipping whatever remains of this entry
+Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
+while executing---line 2132 of file alphadin.bst
+Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
+while executing---line 2132 of file alphadin.bst
 Warning--empty chapter in anglesintro
 You can't pop an empty literal stack for entry anglesintro
+while executing---line 2205 of file alphadin.bst
+Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
+while executing---line 2205 of file alphadin.bst
+Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
+while executing---line 2205 of file alphadin.bst
+Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
 while executing---line 2205 of file alphadin.bst
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 30 entries,
+You've used 33 entries,
             4793 wiz_defined-function locations,
-            1025 strings with 10087 characters,
-and the built_in function-call counts, 16735 in all, are:
-= -- 1724
-> -- 411
-< -- 588
-+ -- 644
-- -- 144
-* -- 939
-:= -- 2869
-add.period$ -- 37
-call.type$ -- 30
-change.case$ -- 141
-chr.to.int$ -- 26
-cite$ -- 32
-duplicate$ -- 504
-empty$ -- 1173
-format.name$ -- 276
-if$ -- 3284
+            1042 strings with 10528 characters,
+and the built_in function-call counts, 18559 in all, are:
+= -- 1933
+> -- 457
+< -- 646
++ -- 709
+- -- 159
+* -- 1047
+:= -- 3172
+add.period$ -- 40
+call.type$ -- 33
+change.case$ -- 155
+chr.to.int$ -- 29
+cite$ -- 35
+duplicate$ -- 557
+empty$ -- 1296
+format.name$ -- 304
+if$ -- 3651
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 123
-newline$ -- 170
-num.names$ -- 90
-pop$ -- 238
+missing$ -- 135
+newline$ -- 185
+num.names$ -- 99
+pop$ -- 257
 preamble$ -- 1
-purify$ -- 201
+purify$ -- 221
 quote$ -- 0
-skip$ -- 1033
+skip$ -- 1145
 stack$ -- 0
-substring$ -- 1079
-swap$ -- 92
-text.length$ -- 79
-text.prefix$ -- 18
+substring$ -- 1206
+swap$ -- 104
+text.length$ -- 87
+text.prefix$ -- 19
 top$ -- 0
-type$ -- 244
+type$ -- 274
 warning$ -- 2
-while$ -- 132
-width$ -- 33
-write$ -- 373
-(There were 2 error messages)
+while$ -- 149
+width$ -- 36
+write$ -- 411
+(There were 8 error messages)
