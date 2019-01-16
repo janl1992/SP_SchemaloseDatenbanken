@@ -104,6 +104,12 @@
 \newblock \url{https://blog.cloudboost.io/postgresql-and-graphql-2da30c6cde26}.
 \newblock \,Version:\,2017
 
+\bibitem[Ior10]{iordanov2010hypergraphdb}
+\textsc{Iordanov}, Borislav:
+\newblock HyperGraphDB: a generalized graph database.
+\newblock {In: }\emph{International conference on web-age information
+  management} Springer, 2010, S. 25--36
+
 \bibitem[KHA{\etalchar{+}}16]{kucuk2016pg}
 \textsc{Kucuk}, Ahmet ; \textsc{Hamdi}, Shah~M. ; \textsc{Aydin}, Berkay ;
   \textsc{Schuh}, Michael~A.  ; \textsc{Angryk}, Rafal~A.:
@@ -125,10 +131,22 @@
 \newblock Vieweg+Teubner Verlag, 2012 (Leitf{\"a}den der Informatik). --
 \newblock ISBN 9783834822642
 
+\bibitem[KS96]{datamodels}
+\textsc{Korth}, A. Silberschatz; H.~F. ; \textsc{Sudarshan}, S.:
+\newblock Data Models.
+\newblock {In: }\emph{ACM Computing Surveys}  (1996)
+
 \bibitem[Kud15]{kudrass01}
 \textsc{Kudraß}, Thomas:
 \newblock \emph{Taschenbuc Datenbanken}.
 \newblock Fachbuchverlag Leipzig im Carl Hanser Verlag, 2015
+
+\bibitem[PL94]{poulovassilis1994nested}
+\textsc{Poulovassilis}, Alexandra ; \textsc{Levene}, Mark:
+\newblock A nested-graph model for the representation and manipulation of
+  complex objects.
+\newblock {In: }\emph{ACM Transactions on Information Systems (TOIS)} 12
+  (1994), Nr. 1, S. 35--68
 
 \bibitem[{Pos}18]{postgres2018}
 \textsc{{PostgreSQL Global Development Group}}:
