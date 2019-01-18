@@ -17,7 +17,7 @@
 \contentsline {table}{\numberline {4.10}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_youtube\_with\_index}}{27}{table.4.10}
 \contentsline {table}{\numberline {4.11}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_epinions\_partitioned}}{28}{table.4.11}
 \contentsline {table}{\numberline {4.12}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_livejournal\_partitioned}}{29}{table.4.12}
-\contentsline {table}{\numberline {4.13}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_livejournal\_partitioned}}{30}{table.4.13}
+\contentsline {table}{\numberline {4.13}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_facebook\_partitioned}}{30}{table.4.13}
 \contentsline {table}{\numberline {4.14}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_wiki\_vote\_partitioned}}{31}{table.4.14}
 \contentsline {table}{\numberline {4.15}{\ignorespaces Laufzeit der SQLs f\IeC {\"u}r Tabelle relation\_youtube\_partitioned}}{32}{table.4.15}
 \addvspace {10\p@ }
