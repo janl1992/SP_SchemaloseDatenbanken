@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(3, 'relation_youtube',270898);
+SELECT selectCascadingGenerator(4, 'relation_youtube',270898);
 

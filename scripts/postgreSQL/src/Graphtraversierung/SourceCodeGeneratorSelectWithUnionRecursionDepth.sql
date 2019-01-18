@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION selectWithUnionSourceCodeGenerator_withDepth(sTable text, startingNode integer, depth integer ) RETURNS SETOF integer AS $$
+CREATE OR REPLACE FUNCTION selectUnionGenerator(sTable text, startingNode integer, depth integer ) RETURNS SETOF integer AS $$
 Declare
   intermDst_ integer[];
   tStatement text;

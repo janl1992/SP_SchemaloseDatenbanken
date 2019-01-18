@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_facebook',765,3);
+SELECT selectUnionGenerator('relation_facebook',765,3);

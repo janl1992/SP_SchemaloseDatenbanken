@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_epinions',5197,4);
+SELECT selectUnionGenerator('relation_epinions',5197,4);

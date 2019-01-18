@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(3, 'relation_facebook_partitioned',765);
+SELECT selectCascadingGenerator(4, 'relation_facebook_partitioned',765);
 

@@ -1,1 +1,1 @@
-SELECT innerjoinsourcecodegenerator(3, 'relation_youtube',270898);
+SELECT innerJoinGenerator(3, 'relation_youtube',270898);

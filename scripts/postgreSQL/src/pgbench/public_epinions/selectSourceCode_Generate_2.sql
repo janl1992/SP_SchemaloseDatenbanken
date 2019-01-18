@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(1, 'relation_epinions',5197);
+SELECT selectCascadingGenerator(2, 'relation_epinions',5197);
 
