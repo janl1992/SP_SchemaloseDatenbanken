@@ -26,23 +26,17 @@
 \BOOKMARK [2][-]{subsection.4.1.1}{Indexe und Partionierte Tabellen}{section.4.1}% 26
 \BOOKMARK [2][-]{subsection.4.1.2}{Benchmark}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.3}{Antwortzeiten mit partitionierten Tabellen und Indices}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.4}{Standard SQL}{section.4.1}% 29
-\BOOKMARK [2][-]{subsection.4.1.5}{Stored Procedures}{section.4.1}% 30
-\BOOKMARK [2][-]{subsection.4.1.6}{PL/SQL-Recursion}{section.4.1}% 31
-\BOOKMARK [2][-]{subsection.4.1.7}{Datenbankzugriffe}{section.4.1}% 32
-\BOOKMARK [2][-]{subsection.4.1.8}{Zugriffsart Aggregation}{section.4.1}% 33
-\BOOKMARK [2][-]{subsection.4.1.9}{Zugriffsart Traversierung}{section.4.1}% 34
-\BOOKMARK [2][-]{subsection.4.1.10}{Interpretation der Ergebnisse}{section.4.1}% 35
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 36
-\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 37
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 38
-\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 39
-\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 40
-\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 41
-\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 42
-\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 43
-\BOOKMARK [0][-]{chapter*.31}{Tabellenverzeichnis}{}% 44
-\BOOKMARK [0][-]{chapter*.32}{Listings}{}% 45
-\BOOKMARK [0][-]{section*.34}{Abk\374rzungsverzeichnis}{}% 46
-\BOOKMARK [0][-]{chapter*.36}{Literaturverzeichnis}{}% 47
-\BOOKMARK [0][-]{chapter*.37}{Eidesstattliche Erkl\344rung}{}% 48
+\BOOKMARK [2][-]{subsection.4.1.4}{Interpretation der Ergebnisse}{section.4.1}% 29
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 30
+\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 31
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 32
+\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 35
+\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 36
+\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.31}{Tabellenverzeichnis}{}% 38
+\BOOKMARK [0][-]{chapter*.32}{Listings}{}% 39
+\BOOKMARK [0][-]{section*.34}{Abk\374rzungsverzeichnis}{}% 40
+\BOOKMARK [0][-]{chapter*.36}{Literaturverzeichnis}{}% 41
+\BOOKMARK [0][-]{chapter*.37}{Eidesstattliche Erkl\344rung}{}% 42

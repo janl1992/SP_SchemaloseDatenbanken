@@ -27,29 +27,23 @@
 \contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{15}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Indexe und Partionierte Tabellen}{15}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Benchmark}{16}{subsection.4.1.2}
-\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{16}{section*.16}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{17}{section*.16}
 \contentsline {subsubsection}{\nonumberline Testaufbau}{17}{section*.17}
 \contentsline {subsubsection}{\nonumberline Antwortzeiten ohne Indices}{18}{section*.18}
 \contentsline {paragraph}{\nonumberline relation\_epinions}{18}{section*.19}
-\contentsline {paragraph}{\nonumberline relation\_livejournal}{19}{section*.20}
-\contentsline {paragraph}{\nonumberline relation\_facebook}{20}{section*.21}
+\contentsline {paragraph}{\nonumberline relation\_livejournal}{20}{section*.20}
+\contentsline {paragraph}{\nonumberline relation\_facebook}{21}{section*.21}
 \contentsline {paragraph}{\nonumberline relation\_wiki\_vote}{21}{section*.22}
 \contentsline {paragraph}{\nonumberline relation\_youtube}{22}{section*.23}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{23}{section*.24}
-\contentsline {paragraph}{\nonumberline relation\_epinions\_with\_index}{23}{section*.25}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{24}{section*.24}
+\contentsline {paragraph}{\nonumberline relation\_epinions\_with\_index}{24}{section*.25}
 \contentsline {paragraph}{\nonumberline relation\_livejournal\_with\_index}{25}{section*.26}
 \contentsline {paragraph}{\nonumberline relation\_facebook\_with\_index}{26}{section*.27}
 \contentsline {paragraph}{\nonumberline relation\_wiki\_vote\_with\_index}{27}{section*.28}
 \contentsline {paragraph}{\nonumberline relation\_youtube\_with\_index}{28}{section*.29}
 \contentsline {subsection}{\numberline {4.1.3}Antwortzeiten mit partitionierten Tabellen und Indices}{29}{subsection.4.1.3}
 \contentsline {paragraph}{\nonumberline relation\_livejournal\_partitioned}{29}{section*.30}
-\contentsline {subsection}{\numberline {4.1.4}Standard SQL}{34}{subsection.4.1.4}
-\contentsline {subsection}{\numberline {4.1.5}Stored Procedures}{34}{subsection.4.1.5}
-\contentsline {subsection}{\numberline {4.1.6}PL/SQL-Recursion}{34}{subsection.4.1.6}
-\contentsline {subsection}{\numberline {4.1.7}Datenbankzugriffe}{34}{subsection.4.1.7}
-\contentsline {subsection}{\numberline {4.1.8}Zugriffsart Aggregation}{34}{subsection.4.1.8}
-\contentsline {subsection}{\numberline {4.1.9}Zugriffsart Traversierung}{34}{subsection.4.1.9}
-\contentsline {subsection}{\numberline {4.1.10}Interpretation der Ergebnisse}{34}{subsection.4.1.10}
+\contentsline {subsection}{\numberline {4.1.4}Interpretation der Ergebnisse}{34}{subsection.4.1.4}
 \contentsline {chapter}{\numberline {5}Fazit}{35}{chapter.5}
 \contentsline {section}{\numberline {5.1}Fazit}{35}{section.5.1}
 \contentsline {chapter}{\numberline {A}Anhang}{36}{appendix.A}

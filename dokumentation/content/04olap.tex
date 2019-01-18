@@ -1,6 +1,16 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
 \section{PostgreSQL: OLAP}
-Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung 
+Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung wurden vier verschiedene Stored Procedures angelegt:
+\begin{itemize}
+	\item innerJoinGenerator
+	\item recursivesearch
+	\item selectCascadingGenerator
+	\item selectUnionGenerator
+\end{itemize}
+Der Aufruf der Statements funktioniert gleich, es werden die Rekursionstiefe, der Startknoten und die Tabelle, auf welcher die Stored Procedure ausgeführt wird, übergeben.
+
+Die Funktionen innerJoinGenerator, selectCascadingGenerator und selectWithUnionSourceCodeGenerator generieren die entsprechenden Statements und führen diese aus. Die Funktion innerJoinGenerator erzeugt ein Select Statement in der die Abfrage, wie in Abschnitt \ref{postgresInnerJoin} beschrieben, erzeugt und ausgeführt wird. Entsprechend erzeugt selectCascadingGenerator eine verschachtelte Select-Abfrage. Die Funktion ist in Listing \ref{StandardSQLGenerisch} abgebildet. Die Funktion selectUnionGenerator erzeugt eine Abfrage wie in Abschnitt \ref{postgresStandardSQL} beschrieben. Bei der Funktion recursivesearch handelt es sich um die Funktion wie sie in Abschnitt \ref{postgresRecursiveFunction} beschrieben.
+
 \subsection{Indexe und Partionierte Tabellen}
 Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den ''Default'' --Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
 
@@ -87,7 +97,7 @@ child { node {public\_epinions}
 child [missing] {}		
 child { node {public\_epinions\_with\_index}
 child{ node[file]{pgbench.sh}}
-child{node[file]{Select\_innerjoinsourcecodegenerator\_1.sql}}
+child{node[file]{Select\_innerJoinGenerator\_1.sql}}
 child{node[file]{...}}
 }
 child [missing] {}
@@ -95,7 +105,7 @@ child [missing] {}
 child [missing] {}	
 child { node {public\_epinions\_partitioned}
 child{ node[file]{pgbench.sh}}
-child{node[file]{Select\_innerjoinsourcecodegenerator\_1.sql}}
+child{node[file]{Select\_innerJoinGenerator\_1.sql}}
 child{node[file]{...}}
 };
 \end{tikzpicture}
@@ -177,9 +187,9 @@ coordinates{(0, 0)
 	(4,1664.168/5000)
 	(5,8335.513/5000)
 };
-\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- recursiveWithUnion},
+\draw[draw=none] (0,0) -- (6,0) node[draw, midway, yshift=-4.5em] {\textcolor{green}{--- selectUnionGenerator},
 	\textcolor{blue}{--- recursiveSearch}, 
-	\textcolor{red}{--- selectSourceCodeGenerator}};
+	\textcolor{red}{--- selectCascadingGenerator}};
 \end{tikzpicture}
 	\caption{ relation\_epinions}
 \end{figure}
@@ -190,7 +200,7 @@ coordinates{(0, 0)
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 	\multicolumn{1}{|l|}{1}               & \multicolumn{2}{l|}{63.636}                                     & 89.858                           & 59.275                              & 61.065                                    \\ \hline
@@ -277,14 +287,14 @@ coordinates{(0, 0)
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	\textcolor{green}{--- recursiveWithUnion} 
+	\textcolor{green}{--- selectUnionGenerator} 
 	
 };
 \draw[draw=none] (0,-6) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
-	\textcolor{red}{--- selectSourceCodeGenerator}
+	\textcolor{red}{--- selectCascadingGenerator}
 };
 	\end{tikzpicture}
 	\caption{ relation\_livejournal}
@@ -293,7 +303,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{4761.733}                                    & 7075.399                                              & 4695.466                                                  & 4909.862                                                        \\ \hline
@@ -368,14 +378,14 @@ Bei der relation\_livejournal Tabelle sind die Laufzeiten am längsten. Hier sch
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	\textcolor{green}{--- recursiveWithUnion} 
+	\textcolor{green}{--- selectUnionGenerator} 
 	
 };
 \draw[draw=none] (0,-120) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
-	\textcolor{red}{--- selectSourceCodeGenerator}
+	\textcolor{red}{--- selectCascadingGenerator}
 };
 	\end{tikzpicture}
 	\caption{ relation\_facebook}
@@ -385,7 +395,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{19.528}                                      & 29.595                                                & 20.716                                                    & 10.825                                                          \\ \hline
@@ -461,14 +471,14 @@ Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, de
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-600) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_wiki\_vote}
@@ -478,7 +488,7 @@ Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, de
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -556,14 +566,14 @@ Bei den Wikipedia-Daten zeigt sich ein ähnliches Laufzeitverhalten wie bei den 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-1200) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_youtube}
@@ -573,7 +583,7 @@ Bei den Wikipedia-Daten zeigt sich ein ähnliches Laufzeitverhalten wie bei den 
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -671,14 +681,14 @@ Im Folgenden sind die Laufzeiten der SQL-Staments auf den Tabellen mit den Indic
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	\textcolor{green}{--- recursiveWithUnion} 
+	\textcolor{green}{--- selectUnionGenerator} 
 	
 };
 \draw[draw=none] (0,-3) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
-	\textcolor{red}{--- selectSourceCodeGenerator}
+	\textcolor{red}{--- selectCascadingGenerator}
 };
 	\end{tikzpicture}
 	\caption{ relation\_epinions\_with\_index}
@@ -689,7 +699,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -782,14 +792,14 @@ Bei den Epinions-Daten wirkt sich das Einführen der Indices gering aus. Beim in
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	\textcolor{green}{--- recursiveWithUnion} 
+	\textcolor{green}{--- selectUnionGenerator} 
 	
 };
 \draw[draw=none] (0,-3) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
-	\textcolor{red}{--- selectSourceCodeGenerator}
+	\textcolor{red}{--- selectCascadingGenerator}
 };
 	\end{tikzpicture}
 	\caption{ relation\_livejournal\_with\_index}
@@ -800,7 +810,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -875,14 +885,14 @@ Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufze
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-60) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_facebook\_with\_index}
@@ -893,7 +903,7 @@ Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufze
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -968,14 +978,14 @@ Bei den Facebook Daten lässt sich durch die Indices in fast allen Fällen eine 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-600) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_wiki\_vote}
@@ -988,7 +998,7 @@ Bei den Facebook Daten lässt sich durch die Indices in fast allen Fällen eine 
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1064,14 +1074,14 @@ Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Lauf
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-600) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_youtube\_with\_index}
@@ -1082,7 +1092,7 @@ Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Lauf
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1170,14 +1180,14 @@ Die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	\textcolor{green}{--- recursiveWithUnion} 
+	\textcolor{green}{--- selectUnionGenerator} 
 	
 };
 \draw[draw=none] (0,-3) -- (5,0) 
 node[draw=none, midway, yshift=-4.5em]
 {
 	\textcolor{blue}{--- recursiveSearch} 
-	\textcolor{red}{--- selectSourceCodeGenerator}
+	\textcolor{red}{--- selectCascadingGenerator}
 };
 	\end{tikzpicture}
 	\caption{ relation\_epinions\_partitioned}
@@ -1188,7 +1198,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1286,14 +1296,14 @@ Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der L
 	node[draw=none, midway, yshift=-4.5em]
 	 {
 	 	\textcolor{darkgray}{--- selectWithInnerJoin}
-	 	\textcolor{green}{--- recursiveWithUnion} 
+	 	\textcolor{green}{--- selectUnionGenerator} 
 	
 	};
 	\draw[draw=none] (0,-3) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 
 	\end{tikzpicture}
@@ -1304,7 +1314,7 @@ Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der L
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1380,14 +1390,14 @@ Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-120) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_facebook}
@@ -1398,7 +1408,7 @@ Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1474,14 +1484,14 @@ Durch die Partitionierung der Tabellen ergibt sich keine weitere Verbesserung ge
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-600) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ public\_wiki\_vote}
@@ -1492,7 +1502,7 @@ Durch die Partitionierung der Tabellen ergibt sich keine weitere Verbesserung ge
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1569,14 +1579,14 @@ Durch die Partitionierung der relation\_wiki\_vote Tabelle verschlechtern sich i
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{darkgray}{--- selectWithInnerJoin}
-		\textcolor{green}{--- recursiveWithUnion} 
+		\textcolor{green}{--- selectUnionGenerator} 
 		
 	};
 	\draw[draw=none] (0,-120) -- (5,0) 
 	node[draw=none, midway, yshift=-4.5em]
 	{
 		\textcolor{blue}{--- recursiveSearch} 
-		\textcolor{red}{--- selectSourceCodeGenerator}
+		\textcolor{red}{--- selectCascadingGenerator}
 	};
 	\end{tikzpicture}
 	\caption{ relation\_youtube\_with\_index}
@@ -1587,7 +1597,7 @@ Durch die Partitionierung der relation\_wiki\_vote Tabelle verschlechtern sich i
 	\begin{tabular}{l|l|l|l|l|l|}
 		\cline{2-6}
 		& \multicolumn{5}{|l|}{Laufzeit in MS}                                                                                                                                                  \\ \hline
-		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectSource CodeGenerator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{recursive WithUnion} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
+		\multicolumn{1}{|l|}{\multirow{2}{2cm}{Rerkusions-tiefe}} & \multicolumn{2}{|l|}{\multirow{2}{3cm}{selectCascading Generator}} & \multirow{2}{2.8cm}{recursiveSearch} & \multirow{2}{2.5cm}{selectUnion Generator} & \multirow{2}{2.5cm}{selectInner JoinGenerator} \\
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
@@ -1603,11 +1613,15 @@ Durch die Partitionierung der relation\_wiki\_vote Tabelle verschlechtern sich i
 
 Durch die Partitionierung ergeben sich weitere Verbesserungen in der Laufzeit. Das verschachtelte Select sowie der InnerJoin verbessern sich deutlich. Lediglich das Standard-SQL verschlechtert sich deutlich. Jeoch bleibt die Latenz über alle Rekursionss mit ungefähr 500 Millisekunden Stufen ungefähr konstant.  Mit 13.6 Millisekdunden ist das verschachtelte Select in der fünften Rekursionstufe am schnellsten.   
 
-\subsection{Standard SQL}
+%\subsection{Standard SQL}
 
-\subsection{Stored Procedures}
-\subsection{PL/SQL-Recursion}
-\subsection{Datenbankzugriffe}
-\subsection{Zugriffsart Aggregation}
-\subsection{Zugriffsart Traversierung}
+%\subsection{Stored Procedures}
+%\subsection{PL/SQL-Recursion}
+%\subsection{Datenbankzugriffe}
+%\subsection{Zugriffsart Aggregation}
+%\subsection{Zugriffsart Traversierung}
 \subsection{Interpretation der Ergebnisse}
+
+Es ist auffallend das die Laufzeit der Statements sehr stark an der Anzahl der Eingabeknoten abhängig ist. So ist die relations\_youtube Tabelle deutlich größer als die relation\_epinions Tabelle, jedoch ist die Latenz der Statements in der fünften Rekursion für die relations\_youtube Tabelle deutlich besser als für die der relation\_epinions Tabelle. 
+
+Bei der relation\_epinions Tabelle werden in der vierten Iteration 29184 Zeilen zurückgegeben, die dann in der fünften Iteration als Input benutzt werden. Bei der relations\_youtube Tabelle sind es nur 760.
