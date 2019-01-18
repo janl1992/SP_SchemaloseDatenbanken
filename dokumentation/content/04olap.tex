@@ -1,5 +1,6 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
 \section{PostgreSQL: OLAP}
+Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung 
 \subsection{Indexe und Partionierte Tabellen}
 Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den ''Default'' --Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
 
@@ -592,6 +593,9 @@ Bei den Youtube-Daten zeigen die Verschiedenen SQL-Statements ein sehr unterschi
 
 \subsubsection{Antwortzeiten mit Indices}
 
+Im Folgenden sind die Laufzeiten der SQL-Staments auf den Tabellen mit den Indices dargestellt.
+
+\paragraph{relation\_epinions\_with\_index}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -680,7 +684,6 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{ relation\_epinions\_with\_index}
 \end{figure}
 
-
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|}
@@ -700,6 +703,8 @@ node[draw=none, midway, yshift=-4.5em]
 	\end{tabular}
 	\caption{Laufzeit der SQLs für Tabelle relation\_epinions\_with\_index}
 \end{table}
+
+Bei den Epinions-Daten wirkt sich das Einführen der Indices gering aus. Beim innerJoin ist praktisch kein Unterschied zu messbar. Beim StandardSQL führte es sogar zu einer deutlichen Verschlechterung in der fünften Rekursionstufe. Beim verschachtelten Select und bei der rekursieven Funktion gab es eine Verbesserung, diese viel jedoch verhältnismäßig gering aus. Im besten Fall verbesserte sich die fünfte Rekursionstufe von 677 Millisekunden auf 505 Millisekunden.
 
 \paragraph{relation\_livejournal\_with\_index}\mbox{}\\
 \begin{figure}[H]
@@ -810,6 +815,7 @@ node[draw=none, midway, yshift=-4.5em]
 \end{table}
 Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufzeit in der ersten Rekursionsstufe verbessert sich von von mindestens 4,7 Sekunden auf im besten Fall 8.7 Millisekunden. Auch in der fünften Rekursionsstufe verkürtzt sich die Laufzeit deutlich.
 
+\paragraph{relation\_facebook\_with\_index}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.025cm, x=2cm,font=\sffamily]
@@ -900,6 +906,10 @@ Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufze
 	\caption{Laufzeit der SQLs für Tabelle relation\_facebook\_with\_index}
 \end{table}
 
+Bei den Facebook Daten lässt sich durch die Indices in fast allen Fällen eine Verbesserung der Latenz erreichen. Außnahme ist hier der InnerJoin, hier ist keine wirkliche Verbesserung erkannbar. In der fünften Rekursionsstufe liegt die Latenz im besten Fall bei 38 Millisekunden mit der rekursiven Funktion. Ohne Indices liegt dieser Wert bei 89 Millisekunden und wird durch das verschachtelte SQL erreicht. 
+
+\paragraph{relation\_wiki\_vote\_with\_index}\mbox{}\\
+
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
 	%axis
@@ -971,6 +981,8 @@ Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufze
 	\caption{ relation\_wiki\_vote}
 \end{figure}
 
+
+
 \begin{table}[H]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|}
@@ -991,6 +1003,8 @@ Die Verwendung der Indices führt zu einer erheblich besseren Latenz. Die Laufze
 \end{table}
 
 Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Laufzeiten der verschienden SQLs. Zwar gibt es realativ gesehen deutliche Verbesserungen in den ersten beiden Rekursionsstufen. In der fünften Rekursionsstufe  verbessert sich jedoch nur das verschachtelte Select um knapp 21\% gegenüber der Tabelle ohne Indices. Für die anderen Statements ergaben sich hier keine Verbesserungen.
+
+\paragraph{relation\_youtube\_with\_index}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
@@ -1190,9 +1204,9 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_epinions\_partitioned}
 \end{table}
 
+Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der Latenz. Das gilt für alle Statements. Die Laufzeit beim InnerJoin verschlechtert sich sogar deutlich gegenüber der Tabelle bei der nur Indices verwendet wurden.
 
-
-\paragraph{relation\_livejournal\_with\_index}\mbox{}\\
+\paragraph{relation\_livejournal\_partitioned}\mbox{}\\
 \begin{figure}[H]
 	
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -1400,8 +1414,7 @@ Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance
 	\caption{Laufzeit der SQLs für Tabelle relation\_facebook\_partitioned}
 \end{table}
 
-
-
+Durch die Partitionierung der Tabellen ergibt sich keine weitere Verbesserung gegenüber der Tabelle mit den Indices. Der InnerJoin weißt mit einer Latenz von 675 Millisekunden sogar einen deutlich schlechteren Wert auf.
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0025cm, x=2cm,font=\sffamily]
