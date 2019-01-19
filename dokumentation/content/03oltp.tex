@@ -2,7 +2,7 @@
 \section{PostgresSQL: OLTP}
 Die Implementierung von OLTP Anwendungsfällen ist eine klassische Aufgabe für relationale Datenbanken.
 Da statt einer Graphdatenbank eine relationale Datenbank verwendet wurde, ist die Implementierung des OLTP Anwendungsfalls (Gästebuch) uninteressant.
-Interessant ist jedoch die Traversierung in relationalen Datenbanken.
+Interessant ist jedoch die Umsetzung der Traversierung von Graphen in relationalen Datenbanken.
 Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kapitel vorgestellt werden.
 %\subsection{Traversierung in PostgresSQL}
 %Das Ziel ist es 5 Graphen mit Hilfe einer objektrelationalen Datenbank zu traversieren.
@@ -11,7 +11,7 @@ Da Graphdatenbanken für das Traversieren von Graphen entwickelt worden sind, so
 Ziel ist es mit Hilfe einer objektrelationalen Datenbank eine mit den Graphdatenbanken vergleichbar performante Abfrage eines Graphen zu implementieren.
 Für die Graphtraversierung sind die folgenden 5 Methoden vorgesehen.
 
-Graphtraversierung mit Hilve von:
+Graphtraversierung mit Hilfe von:
 \begin{itemize}
     \item Rekursiven \ac{CTE}
     \item Verschachteltem SELECT Statement
@@ -20,14 +20,19 @@ Graphtraversierung mit Hilve von:
     \item Dynamisch generiertem \ac{SQL}
 \end{itemize}
 \subsection{Installation von Postgres}
-PostgreSQL kann unter Ubuntu über die Paketverwaltung \ac{APT} installiert werden. Weiterhin wird eine Installation über die \ac{RPM}-Paketverwaltung angeboten. Im Rahmen dieser
-Arbeit wird PostgreSQL Version 11 verwendet. Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich. Nach der Installation von PostgreSQL muss zunächst
-$initdb$ ausgeführt werden. Über $initdb$ wird ein PostgreSQL-Cluster angelegt. Als Parameter kann ein Directory-Pfad angegeben werden.
-In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt. Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter
-$/data/team22/postgresql/11/main$ installiert.
+PostgreSQL kann unter Ubuntu über die Paketverwaltung \ac{APT} installiert werden.
+Weiterhin wird eine Installation über die \ac{RPM}-Paketverwaltung angeboten.
+Im Rahmen dieser Arbeit wird PostgreSQL Version 11 verwendet.
+Ein Parallelbetrieb verschiedener PostgreSQL Versionen ist möglich.
+Nach der Installation von PostgreSQL muss zunächst der Befehl $initdb$ ausgeführt werden.
+Über $initdb$ wird ein PostgreSQL-Cluster angelegt.
+Als Parameter kann ein Directory-Pfad angegeben werden.
+In diesem Pfad wird der PostgreSQL-Cluster von $initdb$ angelegt.
+Gemäß der Vorgaben dieser Arbeit wurde das PostgreSQL-Cluster unter $/data/team22/postgresql/11/main$ installiert.
 \subsection{CSV-Import}
 Beim Import von (CSV)-Dateien wird zwischen Import vom Clientsystem und  Import vom Serversystem unterschieden.
-Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}). \textbackslash copy liest Informationen aus einer Datei,
+Für den Import vom Client wird das psql-Statement \textbackslash copy verwendet (siehe SQL Script \ref{copy}).
+\textbackslash copy liest Informationen aus einer Datei,
 %@ToDo Hier online Quelle Link genauer spezifizieren
 die vom psql-Client aus erreichbar sein muss. \cite{postgres2018}
 
