@@ -8,7 +8,7 @@ Der Schwachpunkt des relationalen Datenbankmodells liegt jedoch bei der Verarbei
 
 %Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
 Da eine effiziente Verarbeitung von großen vernetzten Datenmengen immer wichtiger wird, haben Graphenmodelle in den letzten Jahren im Datenbankbereich stark an Bedeutung gewonnen.
-Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspezifische Operation zur effizienten Verarbeitung vernetzter Daten zurück \cite{angles2008survey}.
+Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspezifische Operationen zur effizienten Verarbeitung vernetzter Daten zurück \cite{angles2008survey}.
 Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
 Dennoch sind die kleinen Unterschiede in der Datenmodellierung oft entscheidend und es können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
 Im folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
@@ -41,7 +41,7 @@ Eine Kante die mit einem Knoten verbunden ist wird als inzident zu diesem Knoten
 Graphen können gerichtet oder ungerichtet sein.
 Gerichtete Graphen zeichnen sich dardurch aus, dass die Kanten eine zugewiesene Richtung besitzen.
 Grafisch werden gerichtete Kanten in der Regel durch Pfeile dargestellt.
-Für die Modellierung von realen Gegebenheiten ist das Konzept der gerichteten Graphen sehr entscheidend, da dieses die Darstellung einseitiger Beziehungen zwischen den Entitäten das Modells erlaubt.
+Für die Modellierung von realen Gegebenheiten ist das Konzept der gerichteten Graphen sehr entscheidend, da dieses die Darstellung einseitiger Beziehungen zwischen den Entitäten des Modells erlaubt.
 
 Um die Beziehung zwischen zwei Knoten genauer zu definieren, lassen sich die Kanten gewichten.
 Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
@@ -135,9 +135,9 @@ Das Netzwerkdatenbankmodell versucht dieses Problem zu lösen.
 Propertygraphen erweitern das Modell des einfachen Graphen.
 Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
 Gespeichert werden diese Eigenschaften als Key-Value-Paare.
-Das hinzufügen von Attributen an einen Knoten oder eine Kante soll zusammengehörige Daten schneller abrufbar machen \cite{angles2012comparison}.
+Das Hinzufügen von Attributen an einen Knoten oder eine Kante soll zusammengehörige Daten schneller abrufbar machen \cite{angles2012comparison}.
 Label ermöglichen die Unterteilung von Knoten und Kanten in verschiedene Knoten- und Kantentypen.
-Attribute, Label und die Richtung der Kanten erlauben eine sehr detaillierte modellierung von realen Sachverhalten.
+Attribute, Label und die Richtung der Kanten erlauben eine sehr detaillierte Modellierung von realen Sachverhalten.
 Somit sind Property Graphen von sehr großer Bedeutung für die Modellierung von Graphdatenbanken.
 
 Abbildung \ref{fig:property} zeigt einen Property Graphen.
@@ -157,7 +157,7 @@ Nachteilig ist jedoch, dass eine komplexere Datenstruktur zu einer komplizierter
 Derzeit sind Propertygraphen das am häufigsten verwendete Datenmodell für Graphdatenbanken.
 
 \subsection{Hypergraphen}
-Hypergraphen stellen eine generalisierung von Graphen dar und ermöglichen die Modelierung komplexer Beziehungen \cite{anglesintro}.
+Hypergraphen stellen eine Generalisierung von Graphen dar und ermöglichen die Modelierung komplexer Beziehungen \cite{anglesintro}.
 %Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
 %Die Kanten des Hypergraphen werden auch als Hyperkanten bezeichnet.
 Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben.
@@ -214,5 +214,5 @@ Die Attributer, die im Propertygraphen als Key-Vaule Paare gespeichert werden, w
 	\end{center}
 \end{figure}
 
-Hypergraphen lassen sich durch Hypernodes darstellen, indem man die durch eine Hyperedge verbundenen Konten in einer Hypernode darstell.
-Andersrum lassen sich Hypernodes jedoch nicht unbedingt in einem Hypergraphen realisieren \cite{poulovassilis1994nested}.
+Hypergraphen lassen sich durch Hypernodes darstellen, indem man die im Hypergraph durch eine Hyperedge verbundenen Knoten in einer Hypernode modelliert.
+Umgekehrt lassen sich Hypernodes jedoch nicht unbedingt in einem Hypergraphen realisieren \cite{poulovassilis1994nested}.
