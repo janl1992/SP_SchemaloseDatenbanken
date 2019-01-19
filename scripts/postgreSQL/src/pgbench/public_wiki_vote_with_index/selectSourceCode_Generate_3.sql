@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(2, 'relation_wiki_vote_with_index',158);
+SELECT selectCascadingGenerator(3, 'relation_wiki_vote_with_index',158);
 

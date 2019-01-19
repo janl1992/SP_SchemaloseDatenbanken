@@ -1,5 +1,5 @@
-\select@language {ngerman}
-\select@language {ngerman}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces gewurzelter Baum}}{3}{figure.1.1}
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Property Graph}}{4}{figure.1.2}
@@ -22,7 +22,7 @@
 \contentsline {figure}{\numberline {4.11}{\ignorespaces relation\_youtube\_with\_index}}{28}{figure.4.11}
 \contentsline {figure}{\numberline {4.12}{\ignorespaces relation\_epinions\_partitioned}}{29}{figure.4.12}
 \contentsline {figure}{\numberline {4.13}{\ignorespaces relation\_livejournal\_partitioned}}{30}{figure.4.13}
-\contentsline {figure}{\numberline {4.14}{\ignorespaces public\_facebook}}{31}{figure.4.14}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces relation\_facebook}}{31}{figure.4.14}
 \contentsline {figure}{\numberline {4.15}{\ignorespaces public\_wiki\_vote}}{32}{figure.4.15}
 \contentsline {figure}{\numberline {4.16}{\ignorespaces relation\_youtube\_with\_index}}{33}{figure.4.16}
 \addvspace {10\p@ }

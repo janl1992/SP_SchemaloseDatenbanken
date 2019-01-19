@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_youtube',270898,1);
+SELECT selectUnionGenerator('relation_youtube',270898,1);

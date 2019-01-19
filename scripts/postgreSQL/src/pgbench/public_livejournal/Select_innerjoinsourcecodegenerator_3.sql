@@ -1,1 +1,1 @@
-SELECT innerjoinsourcecodegenerator(3, 'relation_livejournal',510760);
+SELECT innerJoinGenerator(3, 'relation_livejournal',510760);

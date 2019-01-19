@@ -1,1 +1,1 @@
-SELECT innerjoinsourcecodegenerator(3, 'relation_wiki_vote_partitioned',158);
+SELECT innerJoinGenerator(3, 'relation_wiki_vote_partitioned',158);

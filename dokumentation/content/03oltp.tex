@@ -62,6 +62,7 @@ Zeit zum Starten und zum Ausführen des Knoten angegeben, die geschätze Anzahl 
 in bytes der zurückgegebenen Zeilen. Innerhalb der zweiten Klammern wird die tatsächliche Zeit angegeben \cite{postgresQueryPlan}.
 
 \subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
+\label{postgresStandardSQL}
 Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH RECURSIVE und UNION verwendet. Im Anhang befindet sich ein SQL
 Script, was die Tabelle relation$\_$facebook mit Hilfe des WITH RECURSIVE Befehl bis zur Rekursionsstufe 5 traversiert (siehe \ref{StandardSQL}),
 sowie ein Script, welches den Standard SQL Source Code dynamisch generiert (siehe \ref{StandardSQLGenerisch}).
@@ -152,6 +153,7 @@ einer Tabelle operiert wird auf der ein Index erstellt worden ist. In den tiefer
  Auf diesen Tabelle operiert das verschachtelte SELECT Statement jedoch die meiste Zeit, wesshalb die meiste Zeit ein sequential Scan verwendet wird.
 %@ToDo Hier weitermachen
 \subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
+\label{postgresInnerJoin}
 Bei der Graphtraversierung mit Hilfe von rekursiven INNER JOIN soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird.
 Die Ausgabe ist, ähnlich wie bei der Graphtraversierung mit Hilfe von verschachteltem SELECT Statement, die Nachbarn der Knoten, die sich auf der mitgegebenen Rekursionsstiefe
 befinden. Ein Beispielstatement für den rekursiven INNER JOIN ist im Anhang gegeben (siehe \ref{JOIN}). Der Ausführungsplan für die relation$\_$facebook Tabelle befindet sich
@@ -161,6 +163,7 @@ im Anhang (\ref{AusführungsplanINNERJOIN}). Fast alle Verknüpfungen werden mit
 \end{lstlisting}
 
 \subsection{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}
+\label{postgresRecursiveFunction}
 Bei der Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure wird der Graph mit Hilfe eines selbst erstellten Stored Procedure, das sich selber bis
 zu einer mit gegebenen Rekursionstiefe wieder aufruft, traversiert (siehe \ref{recursiveFunction}). Die Abbruchbedingung wird dem Stored Procedure in Form einer
 Rekursionsstiefe mitgegeben. In jeder Rekursionsstufe erstellt das Script 2 temporäre Tabelle. Eine temporäre Tabelle \footnote{Zuerst wurde das Script mit Hilfe einer standard Tabelle

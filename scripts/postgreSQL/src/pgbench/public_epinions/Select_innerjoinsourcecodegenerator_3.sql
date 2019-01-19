@@ -1,1 +1,1 @@
-SELECT innerjoinsourcecodegenerator(3, 'relation_epinions',5197);
+SELECT innerJoinGenerator(3, 'relation_epinions',5197);

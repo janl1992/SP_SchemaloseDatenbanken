@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(3, 'relation_livejournal_partitioned', 510760);
+SELECT selectCascadingGenerator(4, 'relation_livejournal_partitioned', 510760);
 

@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_wiki_vote_partitioned',158,4);
+SELECT selectUnionGenerator('relation_wiki_vote_partitioned',158,4);

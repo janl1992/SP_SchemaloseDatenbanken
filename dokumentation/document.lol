@@ -1,17 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {lstlisting}{\numberline {3.1}Zeile im Ausf\IeC {\"u}hrungsplan}{11}{lstlisting.3.1}
-\contentsline {lstlisting}{\numberline {3.2}Rekursiver und nicht rekursiver Teil}{11}{lstlisting.3.2}
-\contentsline {lstlisting}{\numberline {3.3}\IeC {\"U}berpr\IeC {\"u}fen der Abbruchbedingung}{12}{lstlisting.3.3}
+\contentsline {lstlisting}{\numberline {3.1}Rekursiver und nicht rekursiver Teil}{11}{lstlisting.3.1}
+\contentsline {lstlisting}{\numberline {3.2}\IeC {\"U}berpr\IeC {\"u}fen der Abbruchbedingung}{11}{lstlisting.3.2}
+\contentsline {lstlisting}{\numberline {3.3}\IeC {\"U}berpr\IeC {\"u}fung der WHERE Bedingung}{12}{lstlisting.3.3}
 \contentsline {lstlisting}{\numberline {3.4}\IeC {\"U}berpr\IeC {\"u}fung der WHERE Bedingung}{12}{lstlisting.3.4}
-\contentsline {lstlisting}{\numberline {3.5}\IeC {\"U}berpr\IeC {\"u}fung der WHERE Bedingung}{12}{lstlisting.3.5}
-\contentsline {lstlisting}{\numberline {3.6}Aufruf der graphtraverse Funktion}{12}{lstlisting.3.6}
-\contentsline {lstlisting}{\numberline {3.7}Aufruf der graphtraverse Funktion im Ausf\IeC {\"u}hrungsplan}{12}{lstlisting.3.7}
-\contentsline {lstlisting}{\numberline {3.8}Aufruf der DISTINCT Funktion}{13}{lstlisting.3.8}
-\contentsline {lstlisting}{\numberline {3.9}IN Klausel}{14}{lstlisting.3.9}
-\contentsline {lstlisting}{\numberline {3.10}Aufruf der DISTINCT Funktion}{14}{lstlisting.3.10}
-\contentsline {lstlisting}{\numberline {3.11}Merge JOIN}{14}{lstlisting.3.11}
+\contentsline {lstlisting}{\numberline {3.5}Aufruf der graphtraverse Funktion}{12}{lstlisting.3.5}
+\contentsline {lstlisting}{\numberline {3.6}Aufruf der graphtraverse Funktion im Ausf\IeC {\"u}hrungsplan}{12}{lstlisting.3.6}
+\contentsline {lstlisting}{\numberline {3.7}Aufruf der DISTINCT Funktion}{12}{lstlisting.3.7}
+\contentsline {lstlisting}{\numberline {3.8}IN Klausel}{13}{lstlisting.3.8}
+\contentsline {lstlisting}{\numberline {3.9}Aufruf der DISTINCT Funktion}{13}{lstlisting.3.9}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
@@ -35,7 +33,4 @@
 \contentsline {lstlisting}{\numberline {A.18}Selbstgeschriebenes Stored Procedure}{40}{lstlisting.A.18}
 \contentsline {lstlisting}{\numberline {A.19}SQL Standard Generisch}{40}{lstlisting.A.19}
 \contentsline {lstlisting}{\numberline {A.20}SQL Standard}{40}{lstlisting.A.20}
-\contentsline {lstlisting}{\numberline {A.21}Ausf\IeC {\"u}hrungsplan Standard SQL}{40}{lstlisting.A.21}
-\contentsline {lstlisting}{\numberline {A.22}Ausf\IeC {\"u}hrungsplan verschachteltes SELECT}{41}{lstlisting.A.22}
-\contentsline {lstlisting}{\numberline {A.23}Ausf\IeC {\"u}hrungsplan INNER JOIN}{42}{lstlisting.A.23}
 \addvspace {10\p@ }
