@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_facebook_partitioned',765,4);
+SELECT selectUnionGenerator('relation_facebook_partitioned',765,4);

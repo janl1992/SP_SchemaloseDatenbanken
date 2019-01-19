@@ -1,2 +1,2 @@
-SELECT selectSourceCodeGenerator(4, 'relation_facebook',765);
+SELECT selectCascadingGenerator(5, 'relation_facebook',765);
 

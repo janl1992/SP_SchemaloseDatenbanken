@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION selectSourceCodeGenerator_withStartingNode(iRecursionDepth integer, sTable text, startingNode integer ) RETURNS SETOF integer AS $$
+CREATE OR REPLACE FUNCTION selectCascadingGenerator(iRecursionDepth integer, sTable text, startingNode integer ) RETURNS SETOF integer AS $$
 Declare
   intermDst_ integer[];
   --  iCount integer;

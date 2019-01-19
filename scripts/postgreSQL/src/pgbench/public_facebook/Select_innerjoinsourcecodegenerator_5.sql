@@ -1,1 +1,1 @@
-SELECT innerjoinsourcecodegenerator(5, 'relation_facebook',765);
+SELECT innerJoinGenerator(5, 'relation_facebook',765);

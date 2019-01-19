@@ -1,1 +1,1 @@
-SELECT selectWithUnionSourceCodeGenerator_withDepth('relation_livejournal',510760,4);
+SELECT selectUnionGenerator('relation_livejournal',510760,4);

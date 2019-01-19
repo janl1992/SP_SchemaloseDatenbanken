@@ -5,6 +5,7 @@ Declare
 BEGIN
   CREATE TEMPORARY TABLE intermDst AS SELECT * FROM unnest(tInput);
   EXECUTE 'CREATE TEMPORARY TABLE intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || ' WHERE src IN (SELECT * FROM intermDst)';
+
   -- Does not return from function!
   return query SELECT * FROM intermDst1;
   -- Does not return from function!
