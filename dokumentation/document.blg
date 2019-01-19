@@ -1,4 +1,4 @@
-This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2017)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: document.aux
 The style file: alphadin.bst
@@ -10,23 +10,30 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliography.bib
 Warning--entry type for "grucia17" isn't style-file defined
 --line 25 of file bibliography.bib
+You're missing a field name---line 62 of file bibliography.bib
+ : 
+ : % EDITION = {},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--entry type for "sasaki18" isn't style-file defined
 --line 68 of file bibliography.bib
 Warning--entry type for "pbeck01" isn't style-file defined
 --line 84 of file bibliography.bib
 Warning--entry type for "postgresqldoc" isn't style-file defined
 --line 98 of file bibliography.bib
-Warning--entry type for "postgrespartitioning" isn't style-file defined
+Warning--entry type for "postgresQueryPlan" isn't style-file defined
 --line 103 of file bibliography.bib
-Warning--entry type for "postgres8" isn't style-file defined
+Warning--entry type for "postgrespartitioning" isn't style-file defined
 --line 108 of file bibliography.bib
-Warning--entry type for "postgreswithrecursive" isn't style-file defined
+Warning--entry type for "postgres8" isn't style-file defined
 --line 113 of file bibliography.bib
+Warning--entry type for "postgreswithrecursive" isn't style-file defined
+--line 118 of file bibliography.bib
 Warning--entry type for "postgres2018" isn't style-file defined
---line 125 of file bibliography.bib
+--line 130 of file bibliography.bib
 Warning--entry type for "felsner01" isn't style-file defined
---line 137 of file bibliography.bib
-Repeated entry---line 238 of file bibliography.bib
+--line 142 of file bibliography.bib
+Repeated entry---line 243 of file bibliography.bib
  : @inproceedings{angles2012comparison
  :                                    ,
 I'm skipping whatever remains of this entry
@@ -46,45 +53,45 @@ while executing---line 2205 of file alphadin.bst
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 33 entries,
+You've used 34 entries,
             4793 wiz_defined-function locations,
-            1042 strings with 10528 characters,
-and the built_in function-call counts, 18559 in all, are:
-= -- 1933
-> -- 457
-< -- 646
-+ -- 709
-- -- 159
-* -- 1047
-:= -- 3172
-add.period$ -- 40
-call.type$ -- 33
-change.case$ -- 155
+            1043 strings with 10581 characters,
+and the built_in function-call counts, 18950 in all, are:
+= -- 1973
+> -- 465
+< -- 681
++ -- 746
+- -- 162
+* -- 1045
+:= -- 3244
+add.period$ -- 41
+call.type$ -- 34
+change.case$ -- 159
 chr.to.int$ -- 29
-cite$ -- 35
-duplicate$ -- 557
-empty$ -- 1296
-format.name$ -- 304
-if$ -- 3651
-int.to.chr$ -- 5
+cite$ -- 36
+duplicate$ -- 569
+empty$ -- 1308
+format.name$ -- 310
+if$ -- 3711
+int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 135
-newline$ -- 185
-num.names$ -- 99
-pop$ -- 257
+missing$ -- 141
+newline$ -- 189
+num.names$ -- 102
+pop$ -- 268
 preamble$ -- 1
-purify$ -- 221
+purify$ -- 227
 quote$ -- 0
-skip$ -- 1145
+skip$ -- 1193
 stack$ -- 0
-substring$ -- 1206
-swap$ -- 104
-text.length$ -- 87
-text.prefix$ -- 19
+substring$ -- 1203
+swap$ -- 105
+text.length$ -- 88
+text.prefix$ -- 20
 top$ -- 0
-type$ -- 274
+type$ -- 284
 warning$ -- 2
-while$ -- 149
-width$ -- 36
-write$ -- 411
-(There were 8 error messages)
+while$ -- 151
+width$ -- 37
+write$ -- 420
+(There were 9 error messages)

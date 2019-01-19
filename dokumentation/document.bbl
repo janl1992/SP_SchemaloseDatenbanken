@@ -83,17 +83,22 @@
 \newblock
   \url{https://www.postgresql.org/files/documentation/pdf/11/postgresql-11-A4.pdf}
 
-\bibitem[Grob]{postgrespartitioning}
+\bibitem[Grob]{postgresQueryPlan}
+\textsc{Group}, The PostgreSQL Global~D.:
+\newblock \emph{PostgreSQL 11.1 Documentation}.
+\newblock \url{https://www.postgresql.org/docs/9.4/using-explain.html}
+
+\bibitem[Groc]{postgrespartitioning}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 11.1 Documentation}.
 \newblock \url{url = https://www.postgresql.org/docs/10/ddl-partitioning.html}
 
-\bibitem[Groc]{postgreswithrecursive}
+\bibitem[Grod]{postgreswithrecursive}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 11.1 Documentation}.
 \newblock \url{https://www.postgresql.org/docs/11/queries-with.html}
 
-\bibitem[Grod]{postgres8}
+\bibitem[Groe]{postgres8}
 \textsc{Group}, The PostgreSQL Global~D.:
 \newblock \emph{PostgreSQL 8.4 Documentation}.
 \newblock \url{https://www.postgresql.org/docs/8.4/datatype.html}
@@ -162,8 +167,7 @@
 \bibitem[Rah17b]{rahm2017}
 \textsc{Rahman}, Saidur:
 \newblock \emph{Basic Graph Theory}.
-\newblock Berlin, Heidelberg : Springer, 2017. --
-\newblock ISBN 978--3--319--49475--3
+\newblock 2017
 
 \bibitem[Red12]{redmont01}
 \textsc{Redmond}, Eric:
