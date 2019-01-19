@@ -28,7 +28,7 @@ CREATE INDEX yt_dst ON relation_youtube_with_index (dst);
 CREATE INDEX yt_src ON relation_youtube_with_index (src);
 \end{lstlisting}
 
-Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. 
+Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. Dabei wurde ein index auf die src-Spalte angelegt, der andere auf die dst-Spalte.
 
 
 Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
@@ -79,12 +79,12 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 	Wird keine Datei angegeben führt pgbench ein Default-Benchmarking aus.
 
 \end{itemize}
-Für die Benchmarktests wurde sollten zehn Clients parallel gestartet werden, die jeweils fünf Transaktionen durchführen sollten. Aus dem Mittelwert dieser 50 Transaktionen wurden bestimmt pgbench Latenz und Transaktionen pro Sekunde.
+Für die Benchmarktests wurden zehn Clients parallel gestartet werden, die jeweils fünf Transaktionen durchführen sollten. Aus dem Mittelwert dieser 50 Transaktionen wurden bestimmt pgbench Latenz und Transaktionen pro Sekunde.
 
 \begin{lstlisting}[language=bash,caption = pgbench Statment,frame=single, label={lineInQueryPlan} ]
-/usr/lib/postgresql/11/bin/pgbench		\ 
--h 10.20.110.43 -p 5413				\ 
--U postgres -d team22 				\ 
+/usr/lib/postgresql/11/bin/pgbench \ 
+-h 10.20.110.43 -p 5413 \ 
+-U postgres -d team22 \ 
 -c 10 -t 5 -f Select_innerjoinsourcecodegenerator_1.sql
 \end{lstlisting}
 Pgbench kann kein Passwort übergeben werden. Als Workaround kann das Passwort in die Umgebungsvariable PGPASSWORD gespeichert werden. Die Variable wird dann von pgbench ausgewertet. 
@@ -124,11 +124,31 @@ child{node[file]{...}}
 \end{figure}
 Jedes pgbench.sh-Skript startet sequenziell einen pgbench-Benchmarktest mit jeder SQL-Datei im selben Ordner. Jeder Ordner steht dabei für eine der relations-Tabellen. Für jede Kombination aus Rekursionstiefe und SQL-Statement gibt es eine SQL-Datei, welche genau ein Statement enthält.
 
+Nach jedem Durchlauf von pgbench wird folgende Ausgabe erzeugt:
 
+\begin{lstlisting}[caption= Ausgabe pgbench]
+pghost: 10.20.110.43 pgport: 5413 nclients: 10 nxacts: 5 dbName: team22
+transaction type: Select_innerjoinsourcecodegenerator_1.sql
+scaling factor: 1
+query mode: simple
+number of clients: 10
+number of threads: 1
+number of transactions per client: 5
+number of transactions actually processed: 50/50
+latency average = 9.899 ms
+tps = 1010.157069 (including connections establishing)
+tps = 1104.908743 (excluding connections establishing)
+\end{lstlisting}
+
+Der Output von pgbench wird mit Hilfe der pgbench.sh Skripte in eine Logdatei geschrieben. Die Logdatei wird innerhalb jedes Ordners unterhalb von pgbench angelegt.
+Für jeden Testlauf wird eine neue Logdatei angelegt. Damit die Logdateien nicht überschrieben werden, wird die Logdatei mit einem Zeitstempel angelegt. So steht zum Beispiel in der Datei unter dem Pfad
+ \texttt{/pgbench/public\_epinions\_with\_index /pgbench\_2019\_01\_12\_15\_26.log} die Ausgabe des Benchmarktests für die Tabelle \texttt{public\_epionions\_with\_index} vom 12.1.2019.
+ 
+ In den folgenden drei Abschnitten sind die durchschnittlichen Latenzen aller Tabellen dargestellt. Die Unterteilung erfolgt hierbei nach Tabellen ohne Indices, Tabellen mit Incides und  Partionierte Tabellen mit Indices. 
 
 \newpage
 \subsubsection{Antwortzeiten ohne Indices}
-In diesem Abschnitt sind die Laufzeiten der verschiedenen SQLs auf den ''Default’’-Tabellen dargestellt.
+In diesem Abschnitt sind die Laufzeiten der verschiedenen SQLs auf den Tabellen ohne Indices dargestellt.
 \paragraph{relation\_epinions}\mbox{}\\
 \begin{figure}[H]
 \begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -238,7 +258,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_epions}
 \end{table}
 
-Bei der relation\_epinions Tabelle zeigen sich ab der 3. Rekursionstufe deutliche Unterschiede in den Laufzeiten der einzelnen Statements. In der Rekursionsstufe 55 schneidet das Innerjoin-Statement mit 81 Sekunden am schlechtesten ab. Das verschachtelte Select ist mit 677 Millisekunden am schnellsten und benötigt dabei nur 
+Bei der relation\_epinions Tabelle zeigen sich ab der 3. Rekursionstufe deutliche Unterschiede in den Laufzeiten der einzelnen Statements. In der Rekursionsstufe 5 schneidet das Innerjoin-Statement mit 81 Sekunden am schlechtesten ab. Das verschachtelte Select ist mit 677 Millisekunden am schnellsten und benötigt dabei nur 
 0.8\% der Laufzeit des Innerjoin Statements.
 
 \paragraph{relation\_livejournal}\mbox{}\\
@@ -435,7 +455,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_facebook}
 \end{table}
 
-Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, der rekursiven Funktion und dem Standard SQL gleich. Die Unterschiede in der Latenz sind im Verhältnis zur Latenz gering. Einen Sonderfall bildet das innerJoin hier ist ab der dritten Rekursionsstufe ein exponentieller Anstieg der Laufzeit zu beobachten.
+Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, der rekursiven Funktion und dem Standard SQL gleich. Die Unterschiede in der Latenz sind im Verhältnis zur Latenz gering. Einen Sonderfall bildet das innerJoin hier ist ab der dritten Rekursionsstufe ein exponentieller Anstieg der Laufzeit zu beobachten. Ab der ersten bis zur einschlieĺich vierten Rekursionstufe ist das innerJoin jedoch am Performantesten.
 
 \newpage
 
@@ -1141,7 +1161,7 @@ Die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten
 
 \subsubsection{Antwortzeiten mit partitionierten Tabellen und Indices}
 Im Folgenden sind die Laufzeiten der SQL-Statements auf den partitionierten Tabellen dargestellt.
-\paragraph{relation\_epinions\_partitioned}\mbox{}\\
+\paragraph{relation\_facebook\_partitioned}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -1660,6 +1680,8 @@ Durch die Partitionierung ergeben sich weitere Verbesserungen in der Laufzeit. D
 %\subsection{Zugriffsart Traversierung}
 \subsection{Interpretation der Ergebnisse}
 
-Es ist auffallend das die Laufzeit der Statements sehr stark an der Anzahl der Eingabeknoten abhängig ist. So ist die relations\_youtube Tabelle deutlich größer als die relation\_epinions Tabelle, jedoch ist die Latenz der Statements in der fünften Rekursion für die relations\_youtube Tabelle deutlich geringer als für die der relation\_epinions Tabelle. 
+Es ist auffallend das die Laufzeit der Statements sehr stark an der Anzahl der Eingabeknoten abhängig ist und die größe der Tabellen eher nachrangig ist. So ist die relations\_youtube Tabelle deutlich größer als die relation\_epinions Tabelle, jedoch ist die Latenz der Statements in der fünften Rekursion für die relations\_youtube Tabelle deutlich geringer als für die der relation\_epinions Tabelle.  
 
-Bei der relation\_epinions Tabelle werden in der vierten Iteration 29184 Zeilen zurückgegeben, die dann in der fünften Iteration als Input benutzt werden. Bei der relations\_youtube Tabelle sind es nur 760.
+Bei der relation\_epinions Tabelle werden in der vierten Iteration 29184 Zeilen zurückgegeben, die dann in der fünften Iteration als Input benutzt werden. Bei der relations\_youtube Tabelle sind es nur 760. Entsprechend sind die Unterschiede in der Latenz in der fünften Rekursionsstufe. Für die Youtube-Daten werden im besten Fall nur 14 Millisekunden benötigt, bei den Epinions-Daten sind es 505 Millisekunden.
+
+Weiterhin zeigt sich, dass das InnerJoin-Statement in fast allen Fällen in der fünften Rekursionsstufe die schlechteste Wahl darstellt. Besonders bei den Wikipedia und Epinions-Daten wird dies sehr deutlich.
