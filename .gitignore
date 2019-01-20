@@ -18,3 +18,8 @@
 *.cb2
 .*.lb
 
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
