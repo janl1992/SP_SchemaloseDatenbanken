@@ -10,7 +10,7 @@ Declare
   tFinalStatement text;
   tSetOffMergeJoin text;
 BEGIN
-  tSetOffMergeJoin = 'set enable_mergejoin=off;';
+  tSetOffMergeJoin = 'set enable_mergejoin=on;';
   iCount = 0;
   tSelectStatement = '';
   tWhereStatement = '';
