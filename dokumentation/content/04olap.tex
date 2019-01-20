@@ -1161,7 +1161,7 @@ Die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten
 
 \subsubsection{Antwortzeiten mit partitionierten Tabellen und Indices}
 Im Folgenden sind die Laufzeiten der SQL-Statements auf den partitionierten Tabellen dargestellt.
-\paragraph{relation\_facebook\_partitioned}\mbox{}\\
+\paragraph{relation\_epinions\_partitioned}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -1384,7 +1384,7 @@ Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der L
 Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance. So verringert sich die Laufzeit in der fünften Rekursionsstufe um nochmal eine Sekunde. Auffällig ist auch, dass in der partionierten Tabelle das verschachtelte Select die geringste Latenz aufweist. In den beiden anderen livejournal-Tabellen war die rekursive Stored Proceduere am schnellsten. Aufällig ist auch, dass die Partitionierung nur beim verschachtelten Select und beim InnerJoin-Select zu einer verbesserung geführt hat. Bei den beiden anderen Statements hat sich keine Verbesserung der Latenz ergeben.
 
 
-\paragraph{relation\_epinions\_partitioned}\mbox{}\\
+\paragraph{relation\_facebook\_partitioned}\mbox{}\\
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
 	%axis
