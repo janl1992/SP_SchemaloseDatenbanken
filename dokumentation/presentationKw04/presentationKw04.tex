@@ -86,8 +86,10 @@ x filter/.code={
 	\section{pgbench}
 	\begin{frame}
 	\frametitle{pgbench}
-	\begin{itemize}
-		\item 
+    \begin{itemize}
+			\item Tool zur Durchführung von Benchmark-Tests
+			\item Bei einem Benchmark-Test wird eine Menge von SQL-Statements beliebig oftwiederholt.
+			\item pgBench berechnet Anzahl der Transaktionen pro Sekunde sowie die Latenz
 	\end{itemize}	
 	\end{frame}
 
@@ -161,6 +163,21 @@ x filter/.code={
 			%labels      
 			\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
 			\node[rotate=90, above=1cm] at (y axis mid) {Laufzeit in ms};
+			
+			\draw[above=4cm, right=0.2cm ]
+			node[draw=none]
+			{
+				\tiny Bester Wert 5. Rekursion:
+				
+				
+			};
+			\draw[above=3.8cm, right=0.2cm ]
+			node[draw=none]
+			{
+				\tiny recursiveSearch 53825.401 ms
+				
+				
+			};
 			%plots
 			\draw[darkgray] plot[mark=*, mark options={fill=white}] 
 			coordinates{(0, 0)
@@ -247,6 +264,22 @@ x filter/.code={
 	%labels      
 	\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1.2cm] at (y axis mid) {Laufzeit in ms};
+	
+	\draw[above=4cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny Bester Wert 5. Rekursion:
+		
+		
+	};
+	\draw[above=3.8cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny recursiveSearch 3830.355 ms
+		
+		
+	};
+	
 	%plots
 	
 	\draw[darkgray] plot[mark=*, mark options={fill=white}] 
@@ -294,6 +327,7 @@ x filter/.code={
 		\textcolor{blue}{--- recursiveSearch} 
 		\textcolor{red}{--- selectCascadingGenerator}
 	};
+	
 	\end{tikzpicture}
 \end{figure}
 \end{frame}
@@ -334,6 +368,20 @@ x filter/.code={
 	\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1cm] at (y axis mid) {Laufzeit in ms};
 	%plots
+	\draw[above=4cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny Bester Wert 5. Rekursion:
+		
+		
+	};
+	\draw[above=3.8cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny selectCascadingGenerator 2802.370 ms
+		
+		
+	};
 	%InnerJoin
 	\draw[darkgray] plot[mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
@@ -426,6 +474,20 @@ x filter/.code={
  		%labels      
  		\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
  		\node[rotate=90, above=1cm] at (y axis mid) {Laufzeit in ms};
+ 		\draw[above=4cm, right=0.2cm ]
+ 		node[draw=none]
+ 		{
+ 			\tiny Bester Wert 5. Rekursion:
+ 			
+ 			
+ 		};
+ 		\draw[above=3.8cm, right=0.2cm ]
+ 		node[draw=none]
+ 		{
+ 			\tiny selectCascadingGenerator 677.420 ms
+ 			
+ 			
+ 		};
  		%plots
  		\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
  		coordinates{(0, 0)
@@ -513,6 +575,20 @@ x filter/.code={
 	%labels      
 	\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1cm] at (y axis mid) {Laufzeit in ms};
+	\draw[above=4cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny Bester Wert 5. Rekursion:
+		
+		
+	};
+	\draw[above=3.8cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny selectCascadingGenerator 504.793 ms
+		
+		
+	};
 	%plots
 	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
@@ -598,6 +674,20 @@ x filter/.code={
 	\node[below=0.6cm] at (x axis mid) {Rekursionstiefe};
 	\node[rotate=90, above=1cm] at (y axis mid) {Laufzeit in ms};
 	%plots
+	\draw[above=4cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny Bester Wert 5. Rekursion:
+		
+		
+	};
+	\draw[above=3.8cm, right=0.2cm ]
+	node[draw=none]
+	{
+		\tiny selectCascadingGenerator 619.476 ms
+		
+		
+	};
 	\draw[darkgray] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
 		(1, 0.002)%8.846/5000)
@@ -608,12 +698,12 @@ x filter/.code={
 	};
 	
 	\draw[red] plot[ mark=*, mark options={fill=white}] 
-	coordinates{(0, 0)
-		(1, 0.002)%8.231/5000)
-		(2, 0.002)%9.290/5000)
-		(3, 36.244/5000)
-		(4, 235.146/5000)
-		(5, 504.793/5000)
+		coordinates{(0, 0)
+		(1, 0.002)%8.730/5000)
+		(2, 0.002)%9.787/5000)
+		(3, 38.955/5000)
+		(4, 253.813/5000)
+		(5, 619.476/5000)
 	};
 	\draw[blue] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
