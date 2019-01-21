@@ -87,9 +87,10 @@ x filter/.code={
 	\begin{frame}
 	\frametitle{pgbench}
     \begin{itemize}
-			\item Tool zur Durchführung von Benchmark-Tests
-			\item Bei einem Benchmark-Test wird eine Menge von SQL-Statements beliebig oftwiederholt.
-			\item pgBench berechnet Anzahl der Transaktionen pro Sekunde sowie die Latenz
+			\item Kommandozeilentool zur Durchführung von Benchmark-Tests.
+			\item Bei einem Benchmark-Test wird eine Menge von SQL-Statements beliebig oft wiederholt.
+			\item Mit pgBench können mehrere Clients parallel gestartet werden.
+			\item pgBench berechnet Anzahl der Transaktionen pro Sekunde sowie die Latenz.
 	\end{itemize}	
 	\end{frame}
 
@@ -742,8 +743,9 @@ x filter/.code={
 \begin{frame}
 \frametitle{Fazit}
 	\begin{itemize}
+	\item Fünfte Rekursionsstufe wird für alle Datensätze erreicht
 	\item InnerJoin-Statements in der fünften Rekursionsstufe in fast allen Fällen am schlechtesten
-	\item Laufzeit steigt Stark bei großem Input
+	\item Latenz steigt stark bei hoher Anzahl an Input
 	\item Indices und Partionierte Tabellen helfen vor allem bei großen Tabellen
 \end{itemize}	
 \end{frame}
