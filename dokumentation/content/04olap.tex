@@ -1161,7 +1161,7 @@ Die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten
 
 \subsubsection{Antwortzeiten mit partitionierten Tabellen und Indices}
 Im Folgenden sind die Laufzeiten der SQL-Statements auf den partitionierten Tabellen dargestellt.
-\paragraph{relation\_facebook\_partitioned}\mbox{}\\
+\paragraph{relation\_epinions\_partitioned}\mbox{}\\
 
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.5cm, x=2cm,font=\sffamily]
@@ -1202,11 +1202,11 @@ Im Folgenden sind die Laufzeiten der SQL-Statements auf den partitionierten Tabe
 	
 	\draw[red] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
-		(1, 0.002)%8.231/5000)
-		(2, 0.002)%9.290/5000)
-		(3, 36.244/5000)
-		(4, 235.146/5000)
-		(5, 504.793/5000)
+		(1, 0.002)%8.730/5000)
+		(2, 0.002)%9.787/5000)
+		(3, 38.955/5000)
+		(4, 253.813/5000)
+		(5, 619.476/5000)
 	};
 	\draw[blue] plot[ mark=*, mark options={fill=white}] 
 	coordinates{(0, 0)
@@ -1254,11 +1254,11 @@ node[draw=none, midway, yshift=-4.5em]
 		\multicolumn{1}{|l|}{}
 		& \multicolumn{2}{|l|}{}                                           &                                  &                                     &                                           \\ \hline
 		
-	\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{8.231}                                       & 18.999                                                & 8.855                                                     & 8.846                                                           \\ \hline
-	\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.290}                                       & 23.549                                                & 10.304                                                    & 9.924                                                           \\ \hline
-	\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{36.244}                                      & 54.953                                                & 78.303                                                    & 43.439                                                          \\ \hline
-	\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{235.146}                                     & 287.319                                               & 2024.069                                                  & 2021.028                                                        \\ \hline
-	\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{504.793}                                     & 737.300                                               & 12920.747                                                 & 136242.608                                                      \\ \hline
+	\multicolumn{1}{|l|}{1}                                 & \multicolumn{2}{l|}{8.730}                                       & 18.999                                                & 8.855                                                     & 8.846                                                           \\ \hline
+	\multicolumn{1}{|l|}{2}                                 & \multicolumn{2}{l|}{9.787}                                       & 23.549                                                & 10.304                                                    & 9.924                                                           \\ \hline
+	\multicolumn{1}{|l|}{3}                                 & \multicolumn{2}{l|}{38.955}                                      & 54.953                                                & 78.303                                                    & 43.439                                                          \\ \hline
+	\multicolumn{1}{|l|}{4}                                 & \multicolumn{2}{l|}{253.813}                                     & 287.319                                               & 2024.069                                                  & 2021.028                                                        \\ \hline
+	\multicolumn{1}{|l|}{5}                                 & \multicolumn{2}{l|}{619.476}                                     & 737.300                                               & 12920.747                                                 & 136242.608                                                      \\ \hline
 	
 		
 		
@@ -1266,7 +1266,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\caption{Laufzeit der SQLs für Tabelle relation\_epinions\_partitioned}
 \end{table}
 
-Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der Latenz. Das gilt für alle Statements. Die Laufzeit beim InnerJoin verschlechtert sich sogar deutlich gegenüber der Tabelle bei der nur Indices verwendet wurden.
+Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der Latenz. Die Laufzeit des verschachtelten Selects verschlechtert sich ein weing. Beim Innerjoin verschlechtert sich die Laufzeit sogar deutlich gegenüber der Tabelle bei der nur Indices verwendet wurden. 
 
 \paragraph{relation\_livejournal\_partitioned}\mbox{}\\
 \begin{figure}[H]
@@ -1384,7 +1384,7 @@ Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der L
 Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance. So verringert sich die Laufzeit in der fünften Rekursionsstufe um nochmal eine Sekunde. Auffällig ist auch, dass in der partionierten Tabelle das verschachtelte Select die geringste Latenz aufweist. In den beiden anderen livejournal-Tabellen war die rekursive Stored Proceduere am schnellsten. Aufällig ist auch, dass die Partitionierung nur beim verschachtelten Select und beim InnerJoin-Select zu einer verbesserung geführt hat. Bei den beiden anderen Statements hat sich keine Verbesserung der Latenz ergeben.
 
 
-\paragraph{relation\_epinions\_partitioned}\mbox{}\\
+\paragraph{relation\_facebook\_partitioned}\mbox{}\\
 \begin{figure}[H]
 	\begin{tikzpicture}[y=.0125cm, x=2cm,font=\sffamily]
 	%axis
