@@ -1,5 +1,5 @@
-\babel@toc {ngerman}{}
-\babel@toc {ngerman}{}
+\select@language {ngerman}
+\select@language {ngerman}
 \contentsline {chapter}{Zusammenfassung}{II}{section*.1}
 \contentsline {chapter}{Vorwort}{III}{section*.3}
 \contentsline {chapter}{\numberline {1}Graph-Datenbanken - Grundlegende technologische Aspekte}{1}{chapter.1}
