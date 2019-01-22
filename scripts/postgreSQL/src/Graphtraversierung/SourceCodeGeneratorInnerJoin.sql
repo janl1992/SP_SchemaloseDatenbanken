@@ -24,6 +24,7 @@ BEGIN
   end if;
   if iRecursionDepth = 1 THEN
     tConcatenateStatement = tConcatenateStatement || iStart || ')';
+    raise notice 'STATEMENT: %', tConcatenateStatement;
     return query EXECUTE tConcatenateStatement;
     RETURN;
   end if;
