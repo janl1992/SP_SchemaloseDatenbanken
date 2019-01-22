@@ -23,7 +23,7 @@ BEGIN
     RETURN ;
   end if;
   if iRecursionDepth = 1 THEN
-    tConcatenateStatement = tConcatenateStatement || '765' || ')';
+    tConcatenateStatement = tConcatenateStatement || iStart || ')';
     return query EXECUTE tConcatenateStatement;
     RETURN;
   end if;
