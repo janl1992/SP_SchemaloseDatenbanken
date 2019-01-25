@@ -1,5 +1,5 @@
-\select@language {ngerman}
-\select@language {ngerman}
+\babel@toc {ngerman}{}
+\babel@toc {ngerman}{}
 \contentsline {chapter}{Zusammenfassung}{II}{section*.1}
 \contentsline {chapter}{Vorwort}{III}{section*.3}
 \contentsline {chapter}{\numberline {1}Graph-Datenbanken - Grundlegende technologische Aspekte}{1}{chapter.1}
@@ -23,41 +23,41 @@
 \contentsline {subsection}{\numberline {3.1.7}Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}{13}{subsection.3.1.7}
 \contentsline {subsection}{\numberline {3.1.8}Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{14}{subsection.3.1.8}
 \contentsline {subsection}{\numberline {3.1.9}Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{15}{subsection.3.1.9}
-\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{16}{chapter.4}
-\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{16}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Indexe und Partionierte Tabellen}{16}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Benchmark}{17}{subsection.4.1.2}
-\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{18}{section*.17}
-\contentsline {subsubsection}{\nonumberline Testaufbau}{19}{section*.18}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten ohne Indices}{21}{section*.19}
-\contentsline {paragraph}{\nonumberline relation\_epinions}{21}{section*.20}
-\contentsline {paragraph}{\nonumberline relation\_livejournal}{22}{section*.21}
-\contentsline {paragraph}{\nonumberline relation\_facebook}{23}{section*.22}
-\contentsline {paragraph}{\nonumberline relation\_wiki\_vote}{24}{section*.23}
-\contentsline {paragraph}{\nonumberline relation\_youtube}{25}{section*.24}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{26}{section*.25}
-\contentsline {paragraph}{\nonumberline relation\_epinions\_with\_index}{26}{section*.26}
-\contentsline {paragraph}{\nonumberline relation\_livejournal\_with\_index}{27}{section*.27}
-\contentsline {paragraph}{\nonumberline relation\_facebook\_with\_index}{28}{section*.28}
-\contentsline {paragraph}{\nonumberline relation\_wiki\_vote\_with\_index}{29}{section*.29}
-\contentsline {paragraph}{\nonumberline relation\_youtube\_with\_index}{30}{section*.30}
-\contentsline {subsubsection}{\nonumberline Antwortzeiten mit partitionierten Tabellen und Indices}{31}{section*.31}
-\contentsline {paragraph}{\nonumberline relation\_facebook\_partitioned}{31}{section*.32}
-\contentsline {paragraph}{\nonumberline relation\_livejournal\_partitioned}{31}{section*.33}
-\contentsline {paragraph}{\nonumberline relation\_epinions\_partitioned}{33}{section*.34}
-\contentsline {paragraph}{\nonumberline relation\_wiki\_vote\_partitioned}{34}{section*.35}
-\contentsline {paragraph}{\nonumberline relation\_youtube\_partitioned}{35}{section*.36}
-\contentsline {subsection}{\numberline {4.1.3}Interpretation der Ergebnisse}{36}{subsection.4.1.3}
-\contentsline {chapter}{\numberline {5}Fazit}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Fazit}{37}{section.5.1}
-\contentsline {chapter}{\numberline {A}Anhang}{38}{appendix.A}
-\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{38}{section.A.1}
-\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{38}{section.A.2}
-\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{38}{section.A.3}
-\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{45}{section.A.4}
-\contentsline {chapter}{Abbildungsverzeichnis}{46}{section.A.4}
-\contentsline {chapter}{Tabellenverzeichnis}{47}{chapter*.37}
-\contentsline {chapter}{Listings}{48}{chapter*.38}
-\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{49}{section*.40}
-\contentsline {chapter}{\nonumberline Literaturverzeichnis}{51}{chapter*.42}
-\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{54}{chapter*.43}
+\contentsline {chapter}{\numberline {4}Graph-Datenbanken im praktischen Einsatz: OLAP}{17}{chapter.4}
+\contentsline {section}{\numberline {4.1}PostgreSQL: OLAP}{17}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Indexe und Partionierte Tabellen}{17}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Benchmark}{18}{subsection.4.1.2}
+\contentsline {subsubsection}{\nonumberline Verwendung von pgbench}{19}{section*.17}
+\contentsline {subsubsection}{\nonumberline Testaufbau}{20}{section*.18}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten ohne Indices}{22}{section*.19}
+\contentsline {paragraph}{\nonumberline relation\_epinions}{22}{section*.20}
+\contentsline {paragraph}{\nonumberline relation\_livejournal}{23}{section*.21}
+\contentsline {paragraph}{\nonumberline relation\_facebook}{24}{section*.22}
+\contentsline {paragraph}{\nonumberline relation\_wiki\_vote}{25}{section*.23}
+\contentsline {paragraph}{\nonumberline relation\_youtube}{26}{section*.24}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten mit Indices}{27}{section*.25}
+\contentsline {paragraph}{\nonumberline relation\_epinions\_with\_index}{27}{section*.26}
+\contentsline {paragraph}{\nonumberline relation\_livejournal\_with\_index}{28}{section*.27}
+\contentsline {paragraph}{\nonumberline relation\_facebook\_with\_index}{29}{section*.28}
+\contentsline {paragraph}{\nonumberline relation\_wiki\_vote\_with\_index}{30}{section*.29}
+\contentsline {paragraph}{\nonumberline relation\_youtube\_with\_index}{31}{section*.30}
+\contentsline {subsubsection}{\nonumberline Antwortzeiten mit partitionierten Tabellen und Indices}{32}{section*.31}
+\contentsline {paragraph}{\nonumberline relation\_epinions\_partitioned}{32}{section*.32}
+\contentsline {paragraph}{\nonumberline relation\_livejournal\_partitioned}{33}{section*.33}
+\contentsline {paragraph}{\nonumberline relation\_facebook\_partitioned}{34}{section*.34}
+\contentsline {paragraph}{\nonumberline relation\_wiki\_vote\_partitioned}{35}{section*.35}
+\contentsline {paragraph}{\nonumberline relation\_youtube\_partitioned}{36}{section*.36}
+\contentsline {subsection}{\numberline {4.1.3}Interpretation der Ergebnisse}{37}{subsection.4.1.3}
+\contentsline {chapter}{\numberline {5}Fazit}{38}{chapter.5}
+\contentsline {section}{\numberline {5.1}Fazit}{38}{section.5.1}
+\contentsline {chapter}{\numberline {A}Anhang}{39}{appendix.A}
+\contentsline {section}{\numberline {A.1}Graph-Datenbanken - Grundlegende technologische Aspekte}{39}{section.A.1}
+\contentsline {section}{\numberline {A.2}Graph-Datenbanken und -Frameworks - Ausgew\IeC {\"a}hlte Systeme}{39}{section.A.2}
+\contentsline {section}{\numberline {A.3}Graph-Datenbanken im praktischen Einsatz: OLTP}{39}{section.A.3}
+\contentsline {section}{\numberline {A.4}Graph-Datenbanken im praktischen Einsatz: OLAP}{48}{section.A.4}
+\contentsline {chapter}{Abbildungsverzeichnis}{49}{section.A.4}
+\contentsline {chapter}{Tabellenverzeichnis}{50}{chapter*.37}
+\contentsline {chapter}{Listings}{51}{chapter*.38}
+\contentsline {chapter}{Abk\IeC {\"u}rzungsverzeichnis}{52}{section*.40}
+\contentsline {chapter}{\nonumberline Literaturverzeichnis}{54}{chapter*.42}
+\contentsline {chapter}{Eidesstattliche Erkl\IeC {\"a}rung}{57}{chapter*.43}
