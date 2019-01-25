@@ -58,7 +58,7 @@ Da die Datensätze unterschiedlich groß sind wurden die Partionsgrößen entspr
 
 
 \subsection{Benchmark}
-Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von \ac{SQL}-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die durchschnittliche Latenz aller Requests, sowie die Transaktionen pro Sekunde.
+Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von \ac{SQL}-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die durchschnittliche Latenz aller Requests, sowie die Transaktionen pro Sekunde \cite{postgres2018}.
 \subsubsection{Verwendung von pgbench}
 pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Parametern übergeben werden, mit denen das Verhalten von pgbench gesteuert werden kann.
 \begin{itemize}
@@ -102,7 +102,11 @@ edge from parent path={(\tikzparentnode.south) |- (\tikzchildnode.west)}]
 child{ node[file]{pgbench.sh}}
 child { node {public\_epinions}
 	child{ node[file]{pgbench.sh}}
+	child{node[file]{Select\_innerJoinGenerator\_1.sql}}
+	child{node[file]{...}}
 }
+child [missing] {}
+child [missing] {}
 child [missing] {}		
 child { node {public\_epinions\_with\_index}
 child{ node[file]{pgbench.sh}}
