@@ -25,18 +25,17 @@
 \BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 25
 \BOOKMARK [2][-]{subsection.4.1.1}{Indexe und Partionierte Tabellen}{section.4.1}% 26
 \BOOKMARK [2][-]{subsection.4.1.2}{Benchmark}{section.4.1}% 27
-\BOOKMARK [2][-]{subsection.4.1.3}{Antwortzeiten mit partitionierten Tabellen und Indices}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.4}{Interpretation der Ergebnisse}{section.4.1}% 29
-\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 30
-\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 31
-\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 32
-\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 33
-\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 34
-\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 35
-\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 36
-\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 37
-\BOOKMARK [0][-]{chapter*.32}{Tabellenverzeichnis}{}% 38
-\BOOKMARK [0][-]{chapter*.33}{Listings}{}% 39
-\BOOKMARK [0][-]{section*.35}{Abk\374rzungsverzeichnis}{}% 40
-\BOOKMARK [0][-]{chapter*.37}{Literaturverzeichnis}{}% 41
-\BOOKMARK [0][-]{chapter*.38}{Eidesstattliche Erkl\344rung}{}% 42
+\BOOKMARK [2][-]{subsection.4.1.3}{Interpretation der Ergebnisse}{section.4.1}% 28
+\BOOKMARK [0][-]{chapter.5}{Fazit}{}% 29
+\BOOKMARK [1][-]{section.5.1}{Fazit}{chapter.5}% 30
+\BOOKMARK [0][-]{appendix.A}{Anhang}{}% 31
+\BOOKMARK [1][-]{section.A.1}{Graph-Datenbanken - Grundlegende technologische Aspekte}{appendix.A}% 32
+\BOOKMARK [1][-]{section.A.2}{Graph-Datenbanken und -Frameworks - Ausgew\344hlte Systeme}{appendix.A}% 33
+\BOOKMARK [1][-]{section.A.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{appendix.A}% 34
+\BOOKMARK [1][-]{section.A.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{appendix.A}% 35
+\BOOKMARK [0][-]{section.A.4}{Abbildungsverzeichnis}{}% 36
+\BOOKMARK [0][-]{chapter*.37}{Tabellenverzeichnis}{}% 37
+\BOOKMARK [0][-]{chapter*.38}{Listings}{}% 38
+\BOOKMARK [0][-]{section*.40}{Abk\374rzungsverzeichnis}{}% 39
+\BOOKMARK [0][-]{chapter*.42}{Literaturverzeichnis}{}% 40
+\BOOKMARK [0][-]{chapter*.43}{Eidesstattliche Erkl\344rung}{}% 41
