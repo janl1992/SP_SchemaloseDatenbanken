@@ -2,6 +2,7 @@
 **/document.pdf
 **/document.out
 **/document.aux
+./.idea
 
 ### TeX ###
 ## Core latex/pdflatex auxiliary files:
