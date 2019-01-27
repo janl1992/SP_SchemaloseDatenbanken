@@ -184,6 +184,7 @@ Dieser wird nur auf der ersten Rekursionsstufe verwendet, weil nur hier auf eine
 Auf den tieferen Rekursionsstufen wird immer ein Sequential Scan vollzogen (vergleiche \ref{2.AusführungsplanCascadeSELECT.listing}).
 Hier wird immer auf einer Zwischentabelle operiert, die mit Hilfe des $IN$ Operators erstellet wird.
 Auf diesen Tabellen operiert das verschachtelte $SELECT$ Statement jedoch die meiste Zeit, weshalb die meiste Zeit ein sequential Scan verwendet wird.
+
 \subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
 \label{2.postgresInnerJoin.subsection}
 Bei der Graphtraversierung mit Hilfe von rekursiven $INNER JOIN$ soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird.

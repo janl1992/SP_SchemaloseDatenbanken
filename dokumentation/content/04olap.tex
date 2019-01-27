@@ -79,7 +79,7 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 	Wird keine Datei angegeben führt pgbench ein Default-Benchmarking aus.
 
 \end{itemize}
-Für die Benchmarktests wurden zehn Clients parallel gestartet werden, die jeweils fünf Transaktionen durchführen sollten. Aus dem Mittelwert dieser 50 Transaktionen wurden bestimmt pgbench Latenz und Transaktionen pro Sekunde.
+Für die Benchmarktests wurden zehn Clients parallel gestartet werden, die jeweils fünf Transaktionen durchführen sollten. Aus dem Mittelwert dieser 50 Transaktionen bestimmt pgbench Latenz und Transaktionen pro Sekunde.
 
 \begin{lstlisting}[language=bash,caption = pgbench Statment,frame=single, label={2.pgbench.listing} ]
 /usr/lib/postgresql/11/bin/pgbench \ 
@@ -466,7 +466,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\label{2.relationfacebook.table}
 \end{table}
 
-Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, der rekursiven Funktion und dem Standard SQL gleich. Die Unterschiede in der Latenz sind im Verhältnis zur Latenz gering. Einen Sonderfall bildet das innerJoin hier ist ab der dritten Rekursionsstufe ein exponentieller Anstieg der Laufzeit zu beobachten. Ab der ersten bis zur einschlieĺich vierten Rekursionstufe ist das innerJoin jedoch am Performantesten.
+Bei den facebook-Daten ist das Laufzeitverhalten des verschachtelten Selects, der rekursiven Funktion und dem Standard SQL gleich. Die Unterschiede in der Latenz sind im Verhältnis zur Gesamtlaufzeit gering. Einen Sonderfall bildet das innerJoin hier ist ab der dritten Rekursionsstufe ein exponentieller Anstieg der Laufzeit zu beobachten. Ab der ersten bis zur einschließĺich vierten Rekursionstufe ist das innerJoin jedoch am Performantesten.
 
 \newpage
 
@@ -664,7 +664,7 @@ Bei den Wikipedia-Daten zeigt sich ein ähnliches Laufzeitverhalten wie bei den 
 	\label{2.relationyoutube.table}
 \end{table}
 
-Bei den Youtube-Daten zeigen die Verschiedenen SQL-Statements ein sehr unterschiedliches Verhalten. Beim Standard-SQL gibt es einen deutlichen Anstieg zwischen von der ersten auf die zweite Rekursionstiefe. Für die weiteren Rekursionstiefen bleibt die Laufzeit dann ungefähr konstant. Das verschachtelte Select und die rekursive Funktion sind in ihrem Laufzeitverhalten sehr ähnlich. Beide steigen linear. Das InnerJoin zweigt bei steigender Rekursionstiefe das schlechteste Laufzeitverhalten.
+Bei den Youtube-Daten zeigen die verschiedenen SQL-Statements ein sehr unterschiedliches Verhalten. Beim Standard-SQL gibt es einen deutlichen Anstieg zwischen von der ersten auf die zweite Rekursionstiefe. Für die weiteren Rekursionstiefen bleibt die Laufzeit dann ungefähr konstant. Das verschachtelte Select und die rekursive Funktion sind in ihrem Laufzeitverhalten sehr ähnlich. Beide steigen linear. Das InnerJoin zeigt bei steigender Rekursionstiefe das schlechteste Laufzeitverhalten.
 
 \subsubsection{Antwortzeiten mit Indices}
 
@@ -781,7 +781,7 @@ node[draw=none, midway, yshift=-4.5em]
 	\label{2.relationepinionsindex.table}
 \end{table}
 
-Bei den Epinions-Daten wirkt sich das Einführen der Indices gering aus. Beim innerJoin ist praktisch kein Unterschied zu messbar. Beim StandardSQL führte es sogar zu einer deutlichen Verschlechterung in der fünften Rekursionstufe. Beim verschachtelten Select und bei der rekursieven Funktion gab es eine Verbesserung, diese viel jedoch verhältnismäßig gering aus. Im besten Fall verbesserte sich die fünfte Rekursionstufe von 677 Millisekunden auf 505 Millisekunden.
+Bei den Epinions-Daten wirkt sich das Einführen der Indices gering aus. Beim innerJoin ist praktisch kein Unterschied zu vorher messbar. Beim StandardSQL führte es sogar zu einer deutlichen Verschlechterung in der fünften Rekursionstufe. Beim verschachtelten Select und bei der rekursiven Funktion gab es eine Verbesserung, diese fiel jedoch verhältnismäßig gering aus. Im besten Fall verbesserte sich die fünfte Rekursionstufe von 677 Millisekunden auf 505 Millisekunden.
 
 \paragraph{relation\_livejournal\_with\_index}\mbox{}\\
 \begin{figure}[H]
@@ -1085,7 +1085,7 @@ Bei den Facebook Daten lässt sich durch die Indices in fast allen Fällen eine 
 	\label{2.relationwikivoteindex.table}
 \end{table}
 
-Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Laufzeiten der verschienden SQLs. Zwar gibt es realativ gesehen deutliche Verbesserungen in den ersten beiden Rekursionsstufen. In der fünften Rekursionsstufe  verbessert sich jedoch nur das verschachtelte Select um knapp 21\% gegenüber der Tabelle ohne Indices. Für die anderen Statements ergaben sich hier keine Verbesserungen.
+Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Laufzeiten der verschienden SQLs. Zwar gibt es relativ gesehen deutliche Verbesserungen in den ersten beiden Rekursionsstufen. In der fünften Rekursionsstufe  verbessert sich jedoch nur das verschachtelte Select um knapp 21\% gegenüber der Tabelle ohne Indices. Für die anderen Statements ergaben sich hier keine Verbesserungen.
 
 \paragraph{relation\_youtube\_with\_index}\mbox{}\\
 
@@ -1182,7 +1182,7 @@ Das Einführen der Indices hat eine vergleichsweise geringe Wirkung auf die Lauf
 	\label{2.relationyoutubeindex.table}
 \end{table}
 
-Die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten. Alle Statements weißen eine deutlich geringere Latenz auf. Die größte Veränderung zeigt hierbei das Standard-SQL Statement. Hier verringert sich die Latenz von 1,6 Sekunden auf 16 Millisekunden. Auch die Laufzeit der rekursiven Funktion verbessert sich von knapp 3 Sekunden auf 62 Millisekunden deutlich. 
+Durch die Verwendung von Indices zeigt sich eine deutliche Verbesserung der Laufzeiten. Alle Statements weißen eine deutlich geringere Latenz auf. Die größte Veränderung zeigt hierbei das Standard-SQL Statement. Hier verringert sich die Latenz von 1,6 Sekunden auf 16 Millisekunden. Auch die Laufzeit der rekursiven Funktion verbessert sich von knapp 3 Sekunden auf 62 Millisekunden deutlich.
 
 \subsubsection{Antwortzeiten mit partitionierten Tabellen und Indices}
 Im Folgenden sind die Laufzeiten der SQL-Statements auf den partitionierten Tabellen dargestellt.
@@ -1410,7 +1410,7 @@ Durch die Partitionierung der Tabelle ergeben sich keine Verbesserungen in der L
 	\caption{Laufzeit der SQLs für Tabelle relation\_livejournal\_partitioned}
 	\label{2.relationlivejournalpartion.table}
 \end{table}
-Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance. So verringert sich die Laufzeit in der fünften Rekursionsstufe um nochmal eine Sekunde. Auffällig ist auch, dass in der partionierten Tabelle das verschachtelte Select die geringste Latenz aufweist. In den beiden anderen livejournal-Tabellen war die rekursive Stored Proceduere am schnellsten. Aufällig ist auch, dass die Partitionierung nur beim verschachtelten Select und beim InnerJoin-Select zu einer verbesserung geführt hat. Bei den beiden anderen Statements hat sich keine Verbesserung der Latenz ergeben.
+Durch die Partitionierung ergeben sich weitere Verbesserungen in der Performance. So verringert sich die Laufzeit in der fünften Rekursionsstufe um nochmal eine Sekunde. Auffällig ist auch, dass in der partionierten Tabelle das verschachtelte Select die geringste Latenz aufweist. In den beiden anderen livejournal-Tabellen war die rekursive Stored Proceduere am schnellsten. Aufällig ist auch, dass die Partitionierung nur beim verschachtelten Select und beim InnerJoin-Select zu einer Verbesserung geführt hat. Bei den beiden anderen Statements hat sich keine Verbesserung der Latenz ergeben.
 
 
 \paragraph{relation\_facebook\_partitioned}\mbox{}\\
@@ -1704,7 +1704,7 @@ Durch die Partitionierung der relation\_wiki\_vote Tabelle verschlechtern sich i
 	\label{2.youtubepartion.table}
 \end{table}
 
-Durch die Partitionierung ergeben sich weitere Verbesserungen in der Laufzeit. Das verschachtelte Select sowie der InnerJoin verbessern sich deutlich. Lediglich das Standard-SQL verschlechtert sich deutlich. Jeoch bleibt die Latenz über alle Rekursionss mit ungefähr 500 Millisekunden Stufen ungefähr konstant.  Mit 13.6 Millisekdunden ist das verschachtelte Select in der fünften Rekursionstufe am schnellsten.   
+Durch die Partitionierung ergeben sich weitere Verbesserungen in der Laufzeit. Das verschachtelte Select sowie der InnerJoin verbessern sich deutlich. Lediglich das Standard-SQL verschlechtert sich deutlich. Jedoch bleibt die Latenz über alle Rekursionsstufen  mit ungefähr 500 Millisekunden ungefähr konstant.  Mit 13.6 Millisekunden ist das verschachtelte Select in der fünften Rekursionstufe am schnellsten.
 
 %\subsection{Standard SQL}
 

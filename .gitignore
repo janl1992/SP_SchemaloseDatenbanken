@@ -6,13 +6,15 @@
 
 ### TeX ###
 ## Core latex/pdflatex auxiliary files:
-*.aux
-*.lof
+/dokumentation/document.aux
+/dokumentation/*.lof
 *.log
-*.lot
+/dokumentation/*.lot
+/dokumentation/.synctex.gz
+
 *.fls
 *.out
-*.toc
+/dokumentation/*.toc
 *.fmt
 *.fot
 *.cb

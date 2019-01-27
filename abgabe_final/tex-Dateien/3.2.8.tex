@@ -1,0 +1,45 @@
+\subsection{Graphtraversierung mit Hilfe von verschachteltem SELECT Statement}
+Bei der Graphtraversierung mit Hilfe von verschachteltem \ac{SQL} wird ein selbsterstelltes verschachteltes $SELECT$ Statement verwendet.
+Ein Beispielstatement befindet sich im Anhang (siehe \ref{2.SELECT.listing}).
+Auf der obersten Rekursionsstufe wird der Startknoten des Graphen mitgegeben (in diesem Beispiel ist der Startknoten = 1).
+Das Ergebnis dieser Abfrage wird als Eingabe für die nächst tiefere Rekursionsstufe verwendet.
+In der $WHERE$ Klausel wird für die Spalte $src$ der $IN$ Operator verwendet.
+Der $IN$ Operator erlaubt es, mehrere Werte innerhalb der $WHERE$ Klausel anzugeben.
+Das $DISTINCT$ in der $SELECT$ Klausel sorgt dafür, dass Duplikate in der Ergebnismenge der momentanen Rekursionsstufe entfernt werden.
+Die Funktionsweise von $DISTINCT$ ist in der folgenden Grafik nochmal dargestellt:
+\begin{figure}[H]
+    \includegraphics[width = \linewidth]{images/{2.Distinct}.jpg};
+    %    \label{2.duplikate.image}
+    \caption{Löschen von Duplikaten in einer Rekursionsstufe}
+\end{figure}
+Hierbei liegt der Knoten fünf so, dass er in der zweiten Rekursionsstufe zwei Mal in der Auswahl auftaucht.
+$DISTINCT$ entfernt das Duplikat.
+Die Ergebnismenge, entfernt um die Duplikate, wird als Input für die nächste Rekursionsstufe verwendet.
+Die Ausgabe des verschachtelten $SELECT$ Statement sind die Nachbarn der Knoten, der angegebenen Rekursionstiefe.
+Wird zum Beispiel ein verschachteltes $SELECT$ Statement der Tiefe drei erstellt, so gibt dieses Statement alle Nachbarn dritten Grades ausgehend vom Startknoten an.
+Der Nachteil bei dieser Methode ist, dass Kreise in einem Graph nicht erkannt werden.
+Die Duplikatüberprüfung erfolgt nicht über mehrere Rekursionsstufen hinweg, sondern immer nur zwischen zwei Rekursionsstufen.
+Der Ausführungsplan für ein verschachteltes $SELECT$ der Tiefe fünf befindet sich im Anhang (siehe \ref{2.AusführungsplanCascadeSELECT.listing}).
+Für die $DISTINCT$ Überprüfung wird auf jeder Rekursionsebene ein HashAggregate herangezogen.
+Die \textcolor{red}{Zugehörigkeitsüberprüfung} zur $IN$ Klausel in der $WHERE$ Bedingung ist in folgendem Listing gegeben:
+\begin{lstlisting}[language=SQL,caption = IN Klausel,frame=single, label={2.INKlauselFacebook.listing} ]
+    SELECT DISTINCT(dst) FROM relation_facebook WHERE src <@\textcolor{red}{IN}@> ()
+\end{lstlisting}
+Die Zugehörigkeitsüberprüfung erfolgt auf allen Rekursionsstufen, ausgenommen der ersten Rekursionsstufe, mit Hilfe eines \textcolor{red}{Hash Join}.
+Bevor der Hash Join durchgeführt wird, wird zuerst der \textcolor{blue}{Hash} gebildet und anschließend ein \textcolor{orange}{Sequential Scan} durchgeführt:
+\begin{lstlisting}[language=SQL,caption = Aufruf der DISTINCT Funktion,frame=single, label={2.WhereConditionCTE.listing} ]
+    ->  <@\textcolor{red}{Hash Join}@>  (cost=2713.40..4389.64 rows=88234 width=4) (actual time=11.821..17.797 rows=1709 loops=1)
+    ->  <@\textcolor{orange}{Seq Scan}@> on relation_facebook relation_facebook_1  (cost=10000000000.00..10000001649.62 rows=100762 width=8) (actual time=0.004..4.822 rows=100762 loops=1)
+    ->  <@\textcolor{blue}{Hash}@>  (cost=60.87..60.87 rows=19 width=4) (actual time=0.022..0.022 rows=4 loops=1)
+\end{lstlisting}
+Auf der ersten Rekursionsstufe erfolgt die Überprüfung der $IN$ Klausel mit Hilfe eines \textcolor{red}{Index Scans}:
+\begin{lstlisting}[language=SQL,caption = IndexScanFacebookRelation,frame=single, label={2.indexScanFacebookRelation.listing} ]
+    <@\textcolor{red}{Index Scan}@> using indexsrc on
+    relation_facebook relation_facebook_4 (cost =0.29..44.00 rows =23 width =4) ( actual time =0.009..0.012 rows =27 loops =1)
+    Index Cond: (src = 765)
+\end{lstlisting}
+Dieser wird nur auf der ersten Rekursionsstufe verwendet, weil nur hier auf einer physischen Tabelle operiert wird.
+Auf den tieferen Rekursionsstufen wird immer ein Sequential Scan vollzogen (vergleiche \ref{2.AusführungsplanCascadeSELECT.listing}).
+Hier wird immer auf einer Zwischentabelle operiert, die mit Hilfe des $IN$ Operators erstellet wird.
+Auf diesen Tabellen operiert das verschachtelte $SELECT$ Statement jedoch die meiste Zeit, weshalb die meiste Zeit ein sequential Scan verwendet wird.
+

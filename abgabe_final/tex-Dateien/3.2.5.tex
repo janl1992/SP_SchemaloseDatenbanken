@@ -1,0 +1,14 @@
+\subsection{Erstellen von Fremdschlüsseln, Indexen und Partitionen}
+Um die $profile$ Tabelle und die $relation$ Tabelle zu verknüpfen, wurde zwischen den beiden Tabellen ein Fremdschlüssel erstellt.
+Bei der Erstellung wurde die $profile$ Tabelle mit einem Zähler versehen.
+Hierbei wurde der postgres Befehl $serial$ verwendet, der einen Zähler für jede Zeile der Tabelle erstellt und bei eins startet.
+Damit die Tabellen $relation$ und $profile$ mit Hilfe eines Fremdschlüssels verknüpft werden können, muss der Zähler innerhalb der $profile$ Tabelle jedoch bei null starten.
+Der Grund dafür ist, dass innerhalb der $relation$ Tabelle die $src$ und die $dst$ Spalte bei null anfangen - somit auf ein Profil verweisen, was die ID null hat.
+Um diese Problematik zu lösen wurde für die $relation$ Tabelle ein SQL-Skript geschrieben.
+Dieses Skript schreibt die Daten zuerst in eine temporäre Tabelle und subtrahiert von jeder Zeile innerhalb der Spalte $ID$ eins.
+Anschließend werden die Werte aus der temporären Tabelle in die endgültige $profile$ Tabelle geschrieben (siehe hierzu beispielhaft das Skript für die Tabelle $facebook-profiles$ \ref{2.foreignKey.listing}).
+Für die einzelnen $relation$ Tabellen wurden ebenfalls Indexe erstellt.
+Die Messung der Performance wurde jeweil auf den $relation$ Tabellen ohne Index, auf den $relation$ Tabellen mit Index und auf den partitionierten Tabellen mit Index durchgeführt.
+Partitionierung bezeichnet das Aufteilen einer großen Tabelle in mehrere kleine Tabellen \cite{postgrespartitioning}.
+Die Motivation hinter der Erstellung von Indexen und der Partitionierung von Tabellen besteht darin, einen Performancegewinn bei der Graphtraversierung zu erzielen.
+Dies wird genauer im 4. Kapitel disuktiert.

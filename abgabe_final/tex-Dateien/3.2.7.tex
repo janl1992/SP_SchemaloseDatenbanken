@@ -1,0 +1,62 @@
+\subsection{Graphtraversierung mit Hilfe von Standard \ac{SQL}}
+\label{2.postgresStandardSQL.subsection}
+Bei der Graphtraversierung mit Hilfe von Standard \ac{SQL} wird der Befehl WITH $RECURSIVE$ und $UNION$ verwendet.
+Im Anhang befindet sich ein SQL-Skript, welches die Tabelle relation$\_$facebook mit Hilfe des $WITH RECURSIVE$ Befehls bis zur Rekursionsstufe fünf traversiert (siehe \ref{2.StandardSQL.listing}),
+sowie ein Skript, welches den Standard SQL Source Code dynamisch generiert (siehe \ref{2.StandardSQLGenerisch.listing}).
+Der $WITH$ Befehl erstellt eine temporäre Tabelle, die nur für die angegebene Query existiert.
+Diese werden oft auch als \ac{CTE} bezeichnet.
+Der SQL Befehl $RECURSIVE$ sorgt dafür, dass die Abfrage sich mit der Ergebnismenge wieder selber aufruft.
+Die Struktur einer $RECURSIVE$ Query sieht folgedermaßen aus:
+Zuerst wird der \textcolor{blue}{nicht rekursive Teil} der Query angegeben, anschließend wird der \textcolor{orange}{rekursive Teil} beschrieben.
+\lstset{escapeinside={<@}{@>}}
+\lstsetsql
+\begin{lstlisting}[language=SQL,caption = Rekursiver und nicht rekursiver Teil,frame=single, label={2.StrukturderQuery.listing} ]
+    WITH RECURSIVE graphtraverse(src, dst, lvl) AS(
+    <@\textcolor{blue}{SELECT src ,dst, 1 as lvl FROM public.relation$\_$facebook WHERE src =765} @>
+    UNION
+    <@\textcolor{orange}{SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation$\_$facebook p1 WHERE p1.src IN ( p.dst ) and lvl<5} @>
+    ) SELECT DISTINCT(dst) FROM graphtraverse order by dst;
+\end{lstlisting}
+Die Rekursion operiert hierzu auf zwei temporären Tabellen.
+Der $Working$ Tabelle und der $Intermediate$ Tabelle.
+Ein Rekursionsschritt sieht folgendermaßen aus:
+Die Ergebnisse innerhalb einer Rekursionsstufe werden in die $Working$ Tabelle geschrieben, es wird mit Hilfe des $UNION$ Operators überprüft ob Duplikate vorhanden sind.
+Die Überprüfung erfolgt bezogen auf eine Rekursionsstufe.
+Duplikate werden gelöscht, die Ergebissmenge wird in die Intermediate Tabelle geschrieben, die Ergebnisse aus der Intermediate Tabelle werden in die $Working$ Tabelle kopiert, die $Intermediate$ Tabelle wird gelöscht \cite{postgreswithrecursive}.
+Die Abbruchbedingung für die Rekursion wird innerhalb der Funktion definiert.
+Ob die Abbruchbedingung erreicht ist, wird im rekursiven Teil der Funktion \textcolor{red}{überprüft}:
+\begin{lstlisting}[language=SQL,caption = Überprüfen der Abbruchbedingung,frame=single, label={2.Abbruchbedingung.listing} ]
+    SELECT p1.src,p1.dst,p.lvl+1 as lvl FROM graphtraverse p, relation$\_$facebook p1 WHERE p1.src IN ( p.dst ) and <@\textcolor{red}{lvl<5} @>
+\end{lstlisting}
+Der Ausführungsplan für die Tabelle relation$\_$facebook für den $WITH RECURSIVE$ Operator befindet sich im Anhang (siehe \ref{2.AusführungsplanCTEFacebook.listing}).
+Das Verknüpfen der zurückgegebenen Ergebnismenge von der graphtraverse Funktion mit der relation$\_$facebook Tabelle erfolgt in einem \textcolor{blue}{Nested Loop Join}.
+Ein Nested Loop Join besteht aus zwei Tabellen über die iteriert wird.
+Die erste Tabelle (Outer Table) wird einmal durchlaufen.
+Die zweite Tabelle (Inner Table) wird mehrfach durchlaufen.
+Der Vergleich wird über eine Indexsuche gebildet \cite[Seite 213]{froehlich01}.
+Die \textcolor{red}{Gleichheitsüberprüfung} (src = p.dst) wird mit Hilfe eines Index Scans gemacht.
+%\footnote{Bei einem Index-Scan ist die Index-Zugriffsmethode dafür verantwortlich, die \ac{TID}s aller Tupel, von denen ihr mitgeteilt wurde, dass sie mit den Scan-Schlüsseln übereinstimmen, wiederherzustellen.}
+Die Überprüfung ob das Rekursionslevel erreicht worden ist, erfolgt mit Hilfe eines \textcolor{green}{Scans} über die $Working$ Table:
+%\newpage
+\begin{lstlisting}[language=SQL,caption = Überprüfung der WHERE Bedingung,frame=single, label={2.WhereConditionCTE.listing} ]
+    ->  <@\textcolor{blue}{Nested Loop}@>  (cost=0.29..1434.82 rows=2111 width=12) (actual time=0.018..2.174 rows=8173 loops=5)
+    ->  WorkTable <@\textcolor{green}{Scan}@> on graphtraverse p  (cost=0.00..5.17 rows=77 width=8) (actual time=0.016..0.065 rows=729 loops=5)
+    Filter: (lvl < 5)
+    Rows Removed by Filter: 482
+    ->  Index Scan using indexsrc on relation_facebook p1  (cost=0.29..18.23 rows=27 width=8) (actual time=0.001..0.002 rows=11 loops=3645)
+    <@\textcolor{red}{Index Cond: (src = p.dst)}@>
+\end{lstlisting}
+Der $RECURSIVE$ Operator und der $UNION$ Operator finden sich in der Zeile Recursive Union wieder.
+Dieser Teil der Ausführung dauert am längsten (16,071 ms).
+\begin{lstlisting}[language=SQL,caption = Aufruf RECURSIVE und UNION Operator,frame=single, label={2.WhereConditionCTE.listing} ]
+    ->  Recursive Union  (cost=0.29..14814.87 rows=21133 width=12) (actual time=0.014..16.085 rows=6056 loops=1)
+\end{lstlisting}
+\newpage
+Der Aufruf der graphtraverse Funktion findet sich in der letzten Zeile des Ausführungsplan:
+\begin{lstlisting}[language=SQL,caption = Aufruf der graphtraverse Funktion,frame=single, label={2.WhereConditionCTE.listing} ]
+    SELECT DISTINCT(dst) FROM <@\textcolor{blue}{graphtraverse}@> order by dst
+\end{lstlisting}
+
+\begin{lstlisting}[language=SQL,caption = Aufruf der graphtraverse Funktion im Ausführungsplan,frame=single, label={2.functionCallGraphtraverse.listing} ]
+    ->  CTE Scan on <@\textcolor{blue}{graphtraverse}@>  (cost=0.00..422.66 rows=21133 width=4) (actual time=0.015..16.921 rows=6056 loops=1)
+\end{lstlisting}

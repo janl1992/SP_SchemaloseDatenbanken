@@ -1,0 +1,38 @@
+\subsection{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}
+\label{2.postgresRecursiveFunction.subsection}
+Der Graph wird durch eine selbst erstellte Stored Procedure, die sich selber bis zu einer mitgegebenen Rekursionstiefe wieder aufruft, traversiert (siehe \ref{2.recursiveFunction.listing}).
+Die \textcolor{red}{Abbruchbedingung} wird dem Stored Procedure in Form einer Rekursionsstiefe mitgegeben.
+\begin{lstlisting}[language=SQL,caption = Abbruchbedingung recursiveSearch,frame=single, label={2.AbbruchbedingungRecursiveSearch.listing} ]
+    CREATE OR REPLACE FUNCTION recursivesearch(tInput integer[], <@\textcolor{red}{iRecursionDepth integer} @>, sTable text) RETURNS SETOF integer AS
+\end{lstlisting}
+In jeder Rekursionsstufe erstellt das Skript zwei temporäre Tabelle.
+Eine \textcolor{blue}{temporäre Tabelle} wird auf Basis eines \textcolor{red}{Eingabeparameters} (Datenstruktur Array) mit Hilfe des \textcolor{orange}{unnest Operators} erstellt.
+\begin{lstlisting}[language=SQL,caption = Signatur recursiveSearch,frame=single, label={2.AbbruchbedingungRecursiveSearch.listing} ]
+    <@\textcolor{blue}{CREATE TEMPORARY TABLE} @> intermDst AS SELECT * FROM <@\textcolor{orange} {unnest} @> <@\textcolor{red}{(tInput)}@>;
+\end{lstlisting}
+Diese temporäre Tabelle besitzt nur eine Spalte.
+Diese Tabelle stellt die Spalte $src$ der aktuellen Rekursionsstufe dar.
+Sie wird im \textcolor{red}{$IN$} Operator der $WHERE$ Klausel verwendet, um die \textcolor{blue}{zweite temporäre Tabelle} zu erstellen.
+\begin{lstlisting}[language=SQL,caption = Erstellen 2. temporäre Tabelle,frame=single, label={2.AbbruchbedingungRecursiveSearch.listing} ]
+    <@\textcolor{blue}{EXECUTE 'CREATE TEMPORARY TABLE} @> intermDst1 AS SELECT DISTINCT(dst) FROM ' || sTable || '
+    WHERE src <@\textcolor{red} {IN (SELECT * FROM intermDst)}'@>;
+\end{lstlisting}
+Die \textcolor{blue}{zweite temporäre Tabelle} beinhaltet die Spalte $dst$ der aktuellen Rekursionsstufe.
+Diese wird anschließend in ein \textcolor{red}{Array} umgewandelt.
+\begin{lstlisting}[language=SQL,caption = Erstellen des Aufrufarray,frame=single, label={2.AbbruchbedingungRecursiveSearch.listing} ]
+    intermDst_ := <@\textcolor{red}{ARRAY}@>(SELECT * FROM <@\textcolor{blue}{intermDst1}@>);
+\end{lstlisting}
+$intermDst$\_ wird als \textcolor{red}{Aufrufparameter} für die nächste Rekursionsstufe mitgegeben. Darüber hinaus wird die nächst \textcolor{purple}{niedrigere Rekursionsstufe} und die
+\textcolor{blue}{Tabelle} als Aufrufparameter an die \textcolor{orange}{Funktion} übergeben:
+\begin{lstlisting}[language=SQL,caption = Aufrufen der nächst tieferen Rekursionsstufe,frame=single, label={2.AbbruchbedingungRecursiveSearch.listing} ]
+    return query SELECT * FROM <@\textcolor{orange}{recursivesearch}@>(<@\textcolor{red}{intermDst\_}@>, <@\textcolor{purple}{iRecursionDepth - 1}@>, <@\textcolor{blue}{sTable}@>);
+\end{lstlisting}
+In der nächst tieferen Rekursionsstufe dient die zweite temporäre Tabelle als die Tabelle, die alle $src$ Spalten der aktuellen Rekursionsstufe beinhaltet.
+Die zweite temporäre Tabelle wird mit Hilfe von dynamischen \ac{SQL} erstellt.
+Es wird Dynamisches SQL verwendet, da das \ac{SQL} auf jeder Rekursionsstufe mit anderen Parametern neu generiert wird.
+Dynamisches SQL ermöglicht die Erstellung von Programmen, die in gewisser Weise generisch oder allgemeingültig sind und somit die wechselnden Parameter der verschiedenen Rekursionsstufen verarbeiten können.\cite[S.316 - 317]{froehlich01}
+
+Zuerst wurde zur Erstellung des Skriptes anstelle einer temporären Tabelle eine standard Tabelle verwendet.
+Dadurch war das Stored Procedure jedoch um den Faktor sieben langsamer.
+Es ist die Vermutung, dass durch die Anlage als temporäre Tabelle, die Tabelle im Shared Memory angelegt wird und so ein Performancegewinn erzielt wird \cite[S.26]{froehlich01}
+%\lstsetsql

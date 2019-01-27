@@ -1,0 +1,7 @@
+\subsection{Datenbankschema}
+Für die Performancemessung sind fünf Graphen vorgesehen.
+Für jenden Graph sind zwei Tabellen gegeben, die Tabelle $profile$ und die Tabelle $relation$.
+%Ein Graph besteht aus einer $profiles$ Tabelle und einer $relation$ Tabelle.
+Die beiden Tabelle werden mit Hilfe der Spalte $ID$ aus der jeweiligen $profiles$ Tabelle verknüpft.
+Die Spalten $src$ und $dst$ aus der $relation$ Tabelle sind Fremdschlüssel, sie verweisen auf die Spalte $ID$ in der $profiles$ Tabelle.
+$ID$ hingegen ist in der $profiles$ Tabelle ein Primärschlüssel (siehe \ref{2.facebookProfiles.listing}).

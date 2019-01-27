@@ -1,0 +1,13 @@
+\subsection{Ausführungsplan}
+Zur Erklärung der Skripte wird in diesem Kapitel der Ausführungsplan verwendet.
+Postgres erstellt für jede Query einen Ausführungsplan,der mit Hilfe des Kommandos $EXPLAIN$ angezeigt werden kann.
+Eine Zeile im Ausführungsplan sieht beispielsweise folgendermaßen aus:
+\lstsetsql
+\begin{lstlisting}[language=SQL,caption = Zeile im Ausführungsplan,frame=single, label={2.lineInQueryPlan.listing} ]
+    ->  Seq Scan on relation_wiki_vote relation_wiki_vote_1  (cost=10000000000.00..10000001649.62 rows=100762 width=8) (actual time=0.002..4.758 rows=100762 loops=1)
+\end{lstlisting}
+Zuerst wird die Operation angegeben. In diesem Fall ein Sequential Scan\footnote{Der Sequential Scan liest alle Datenblöcke sequenziell\cite[S.211]{froehlich01}.}.
+Anschließend wird die Tabelle angegeben, diese wird jedoch nicht bei jeder Operation genannt.
+Innerhalb der ersten Klammern wird die geschätzte Zeit zum Starten und zum Ausführen des Knoten angegeben, die geschätze Anzahl an Zeilen, die dieser Knoten zurückliefert und die geschätzte durchschnittliche Breite in bytes der zurückgegebenen Zeilen.
+Innerhalb der zweiten Klammern wird die tatsächliche Zeit angegeben, die gebraucht wurde um den Befehl auszuführen.
+Darüberhinaus enthält die zweite Klammer die Anzahl der tatsächlich zurückgelieferten Zeilen und deren zugehörige Breite \cite{postgresQueryPlan}.

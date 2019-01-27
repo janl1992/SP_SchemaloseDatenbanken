@@ -1,0 +1,63 @@
+\subsection{Visitenkarte des Systems}
+\begin{itemize}
+    \item Allgemein
+    \begin{itemize}
+        \item Name: PostgreSQL, umgangssprachlich Postgres
+        \item Kategorie / Modell: PostgreSQL ist ein Relationales Datenbank System
+        \item Version: 11.1
+        \item Historie: PostgreSQL ist aus dem POSTGRES Projekt der University of California at Berkeley entstanden, welches unter der Leitung von  Professor Michael Stonebraker im Jahre 1986 began.
+        \item Hersteller: PostgreSQL Global Development Group
+        \item Lizenz: Open-Source
+        \item Referenzen / Quellenangaben: \cite{froehlich01}, \cite{postgres2018}, \cite{postgresqldoc}, \cite{eisentraut01}
+    \end{itemize}
+    \item Architektur
+    \begin{itemize}
+        \item Programmiersprache: C
+        \item Systemarchitektur: Objektrelationales Datenbankmanagementsystem
+        \item Betriebsart: Stand Alone, Cluster Betrieb für Replikation der Datenbank
+        %            \item Protokoll der Schnittstelle: TCP/IP % \cite[Seite 28]{froehlich01}
+        \item \ac{API}: u.A. libpq, psycopg, psqlODBC, pq, pgtclng, Npgsql, node-postgres
+    \end{itemize}
+    \newpage
+    \item Datenmodell
+    \begin{itemize}
+        \item Standardsprache: PL/pgSQL % \cite[Seite 270]{froehlich01}
+        %            \item Objektbegriffe, Konzepte:
+        \item Sichten (Views): Ja
+        \item Externe Dateien (BLOBs): Ja
+        \item Schlüssel: Ja
+        \item Semantische unterschiedliche Beziehungen: Ja
+        \item Constraints: Ja
+    \end{itemize}
+    \item Indexe
+    \begin{itemize}
+        \item Sekundärindexe: Ja
+        \item Gespeicherte Prozeduren: Ja
+        \item Triggermechanismen: Ja, Prozeduren , die als Trigger aufgerufen werden % \cite[Seite 610]{eisentraut01}
+        \item Versionierung: Ja, Versionierung mit Hilfe von Transaktions-ID(XID) % \cite[Seite 38]{froehlich01}
+    \end{itemize}
+    \item Anfragemethoden
+    \begin{itemize}
+        \item Kommunikation: \ac{SQL} über \ac{TCP}/\ac{IP}
+        \item \ac{CRUD}-Operationen: Ja
+        \item Ad-hoc-Anfragen: Ja
+        %            \item Kopplungstechniken Programmiersprache:
+        %            \item Map/Reduce:
+    \end{itemize}
+    %        Horizontale Skalierbarkeit fällt weg
+    \item Konsistenz
+    \begin{itemize}
+        \item \ac{ACID}, besoners \ac{MVCC}
+        \item Transaktionen: Ja
+        \item Nebenläufigkeit (Synchronisation): Ja
+        %            \item Dauerhaftigkeit: Ja, weil ACID konform
+        %            \item Konfliktbehandlung Replikation:
+    \end{itemize}
+    \item Administration
+    \begin{itemize}
+        \item Werkzeuge: pgAdmin, dataGrip, diverse Erweiterungen
+        \item Massendatenimport: Ja
+        \item Datensicherung: Ja
+        %            \item Recovery: Ja
+    \end{itemize}
+\end{itemize}

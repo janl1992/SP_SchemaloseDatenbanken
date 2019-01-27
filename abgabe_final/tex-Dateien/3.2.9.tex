@@ -1,0 +1,11 @@
+\subsection{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}
+\label{2.postgresInnerJoin.subsection}
+Bei der Graphtraversierung mit Hilfe von rekursiven $INNER JOIN$ soll der Graph traversiert werden, indem die Relationentabelle immer wieder mit sich selber verknüpft wird.
+Ausgegebnen werden, ähnlich wie bei der Graphtraversierung mit Hilfe von verschachteltem SELECT Statement, die Nachbarn der Knoten, die sich auf der mitgegebenen Rekursionsstiefe befinden.
+Ein Beispielstatement für den rekursiven $INNER JOIN$ ist im Anhang gegeben (siehe \ref{2.JOIN.listing}).
+Der Ausführungsplan für die relation$\_$facebook Tabelle befindet sich ebenfalls im Anhang (\ref{2.AusführungsplanINNERJOIN.listing}).
+Fast alle Verknüpfungen werden mit Hilfe eines Hash Join vollzogen.
+Bei dem Ausführungsplan fällt der Merge Join auf, der sehr viel Zeit in Ansprich nimmt:
+\begin{lstlisting}[language=SQL,caption = Merge JOIN,frame=single, label={2.mergeJoin.listing} ]
+    ->  Merge Join  (cost=89342.23..356052.39 rows=17747686 width=4) (actual time=112.509..1178.121 rows=8863706 loops=1)
+\end{lstlisting}

@@ -6,17 +6,17 @@
 \contentsline {lstlisting}{\numberline {3.3}\IeC {\"U}berpr\IeC {\"u}fen der Abbruchbedingung}{12}{lstlisting.3.3}
 \contentsline {lstlisting}{\numberline {3.4}\IeC {\"U}berpr\IeC {\"u}fung der WHERE Bedingung}{12}{lstlisting.3.4}
 \contentsline {lstlisting}{\numberline {3.5}Aufruf RECURSIVE und UNION Operator}{12}{lstlisting.3.5}
-\contentsline {lstlisting}{\numberline {3.6}Aufruf der graphtraverse Funktion}{12}{lstlisting.3.6}
+\contentsline {lstlisting}{\numberline {3.6}Aufruf der graphtraverse Funktion}{13}{lstlisting.3.6}
 \contentsline {lstlisting}{\numberline {3.7}Aufruf der graphtraverse Funktion im Ausf\IeC {\"u}hrungsplan}{13}{lstlisting.3.7}
 \contentsline {lstlisting}{\numberline {3.8}IN Klausel}{14}{lstlisting.3.8}
 \contentsline {lstlisting}{\numberline {3.9}Aufruf der DISTINCT Funktion}{14}{lstlisting.3.9}
 \contentsline {lstlisting}{\numberline {3.10}IndexScanFacebookRelation}{14}{lstlisting.3.10}
-\contentsline {lstlisting}{\numberline {3.11}Merge JOIN}{14}{lstlisting.3.11}
+\contentsline {lstlisting}{\numberline {3.11}Merge JOIN}{15}{lstlisting.3.11}
 \contentsline {lstlisting}{\numberline {3.12}Abbruchbedingung recursiveSearch}{15}{lstlisting.3.12}
 \contentsline {lstlisting}{\numberline {3.13}Signatur recursiveSearch}{15}{lstlisting.3.13}
 \contentsline {lstlisting}{\numberline {3.14}Erstellen 2. tempor\IeC {\"a}re Tabelle}{15}{lstlisting.3.14}
 \contentsline {lstlisting}{\numberline {3.15}Erstellen des Aufrufarray}{15}{lstlisting.3.15}
-\contentsline {lstlisting}{\numberline {3.16}Aufrufen der n\IeC {\"a}chst tieferen Rekursionsstufe}{15}{lstlisting.3.16}
+\contentsline {lstlisting}{\numberline {3.16}Aufrufen der n\IeC {\"a}chst tieferen Rekursionsstufe}{16}{lstlisting.3.16}
 \addvspace {10\p@ }
 \contentsline {lstlisting}{\numberline {4.1}Tabelle mit Index anlegen}{18}{lstlisting.4.1}
 \contentsline {lstlisting}{\numberline {4.2}Partitonierte Tabelle mit Indices anlegen}{18}{lstlisting.4.2}
