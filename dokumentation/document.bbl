@@ -109,11 +109,22 @@
 \newblock \url{https://blog.cloudboost.io/postgresql-and-graphql-2da30c6cde26}.
 \newblock \,Version:\,2017
 
+\bibitem[HN13]{hald2013datenbank}
+\textsc{Hald}, Anton ; \textsc{Nevermann}, Wolf:
+\newblock \emph{Datenbank-Engineering f{\"u}r Wirtschaftsinformatiker: eine
+  praxisorientierte Einf{\"u}hrung}.
+\newblock Springer-Verlag, 2013
+
 \bibitem[Ior10]{iordanov2010hypergraphdb}
 \textsc{Iordanov}, Borislav:
 \newblock HyperGraphDB: a generalized graph database.
 \newblock {In: }\emph{International conference on web-age information
   management} Springer, 2010, S. 25--36
+
+\bibitem[Jan]{janus}
+\textsc{JanusGraph}:
+\newblock \emph{JanusGraph Documentation 0.3.1}.
+\newblock \url{https://docs.janusgraph.org/latest/getting-started.html}
 
 \bibitem[KHA{\etalchar{+}}16]{kucuk2016pg}
 \textsc{Kucuk}, Ahmet ; \textsc{Hamdi}, Shah~M. ; \textsc{Aydin}, Berkay ;
@@ -145,6 +156,12 @@
 \textsc{Kudraß}, Thomas:
 \newblock \emph{Taschenbuc Datenbanken}.
 \newblock Fachbuchverlag Leipzig im Carl Hanser Verlag, 2015
+
+\bibitem[Neo]{neo4j}
+\textsc{Neo4j}, Inc:
+\newblock \emph{Graph database concepts}.
+\newblock
+  \url{https://neo4j.com/docs/getting-started/current/graphdb-concepts/}
 
 \bibitem[PL94]{poulovassilis1994nested}
 \textsc{Poulovassilis}, Alexandra ; \textsc{Levene}, Mark:
@@ -186,6 +203,12 @@
 \newblock
   \url{http://page.math.tu-berlin.de/~felsner/Lehre/GrTh05/Graphentheorie.pdf}.
 \newblock \,Version:\,2005
+
+\bibitem[SWL13]{shao2013trinity}
+\textsc{Shao}, Bin ; \textsc{Wang}, Haixun  ; \textsc{Li}, Yatao:
+\newblock Trinity: A distributed graph engine on a memory cloud.
+\newblock {In: }\emph{Proceedings of the 2013 ACM SIGMOD International
+  Conference on Management of Data} ACM, 2013, S. 505--516
 
 \bibitem[TT16]{Theobald2016}
 

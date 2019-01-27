@@ -1,5 +1,5 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
-\section{PostgreSQL: OLAP}
+\section{PostgreSQL}
 Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung wurden vier verschiedene Stored Procedures angelegt:
 \begin{itemize}
 	\item innerJoinGenerator
@@ -17,7 +17,7 @@ Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden 
 Die erste Tabelle hat das Suffix ''\_with\_index''. Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz ''youtube'' dargestellt:
 
 \lstsetsql
-\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={lineInQueryPlan} ]
+\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={2.tabelleIndex.listing} ]
 CREATE TABLE IF NOT EXISTS relation_youtube_with_index(
 src INTEGER REFERENCES profiles_youtube(ID),
 dst INTEGER REFERENCES profiles_youtube(ID),
@@ -33,7 +33,7 @@ Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei
 
 Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
 
-\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={lineInQueryPlan} ]
+\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={2.tabelleIndex.listing} ]
 
 CREATE TABLE IF NOT EXISTS relation_youtube_partitioned(
 src INTEGER REFERENCES profiles_youtube(ID),
@@ -81,7 +81,7 @@ pgbench wird über die Kommandozeile gestartet. Dabei können eine Reihe von Par
 \end{itemize}
 Für die Benchmarktests wurden zehn Clients parallel gestartet werden, die jeweils fünf Transaktionen durchführen sollten. Aus dem Mittelwert dieser 50 Transaktionen wurden bestimmt pgbench Latenz und Transaktionen pro Sekunde.
 
-\begin{lstlisting}[language=bash,caption = pgbench Statment,frame=single, label={lineInQueryPlan} ]
+\begin{lstlisting}[language=bash,caption = pgbench Statment,frame=single, label={2.pgbench.listing} ]
 /usr/lib/postgresql/11/bin/pgbench \ 
 -h 10.20.110.43 -p 5413 \ 
 -U postgres -d team22 \ 
@@ -125,12 +125,13 @@ child{node[file]{...}}
 %Reset Configuration
 \tikzstyle{every node}=[]
 \caption{Ordnerstruktur Benchmarktest}
+\label{2.pgbenchFile.image}
 \end{figure}
 Jedes pgbench.sh-Skript startet sequenziell einen pgbench-Benchmarktest mit jeder SQL-Datei im selben Ordner. Jeder Ordner steht dabei für eine der relations-Tabellen. Für jede Kombination aus Rekursionstiefe und SQL-Statement gibt es eine SQL-Datei, welche genau ein Statement enthält.
 
 Nach jedem Durchlauf von pgbench wird folgende Ausgabe erzeugt:
 
-\begin{lstlisting}[caption= Ausgabe pgbench]
+\begin{lstlisting}[caption= Ausgabe pgbench, label={2.outputpgbench.listing}]
 pghost: 10.20.110.43 pgport: 5413 nclients: 10 nxacts: 5 dbName: team22
 transaction type: Select_innerjoinsourcecodegenerator_1.sql
 scaling factor: 1
@@ -241,6 +242,7 @@ node[draw=none, midway, yshift=-4.5em]
 };
 \end{tikzpicture}
 	\caption{ relation\_epinions}
+	\label{2.relationepinions.image}
 \end{figure}
 
 % Please add the following required packages to your document preamble:
@@ -260,6 +262,7 @@ node[draw=none, midway, yshift=-4.5em]
 	
 	\end{tabular}
 	\caption{Laufzeit der SQLs für Tabelle relation\_epions}
+	\caption{2.relationepinions.table}
 \end{table}
 
 Bei der relation\_epinions Tabelle zeigen sich ab der 3. Rekursionstufe deutliche Unterschiede in den Laufzeiten der einzelnen Statements. In der Rekursionsstufe 5 schneidet das Innerjoin-Statement mit 81 Sekunden am schlechtesten ab. Das verschachtelte Select ist mit 677 Millisekunden am schnellsten und benötigt dabei nur 

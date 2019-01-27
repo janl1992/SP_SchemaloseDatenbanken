@@ -24,3 +24,6 @@
 *.pre
 *.snm
 *.vrb
+
+
+.idea/*
