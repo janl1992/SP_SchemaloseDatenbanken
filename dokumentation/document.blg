@@ -37,6 +37,10 @@ Repeated entry---line 243 of file bibliography.bib
  : @inproceedings{angles2012comparison
  :                                    ,
 I'm skipping whatever remains of this entry
+Warning--entry type for "neo4j" isn't style-file defined
+--line 268 of file bibliography.bib
+Warning--entry type for "janus" isn't style-file defined
+--line 275 of file bibliography.bib
 Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
 while executing---line 2132 of file alphadin.bst
 Name 1 in "A. Silberschatz; H. F. Korth, and S. Sudarshan" has a comma at the end for entry datamodels
@@ -53,45 +57,45 @@ while executing---line 2205 of file alphadin.bst
 Warning--empty chapter in Theobald2016
 You can't pop an empty literal stack for entry Theobald2016
 while executing---line 2205 of file alphadin.bst
-You've used 34 entries,
+You've used 38 entries,
             4793 wiz_defined-function locations,
-            1043 strings with 10581 characters,
-and the built_in function-call counts, 18950 in all, are:
-= -- 1973
-> -- 465
-< -- 681
-+ -- 746
-- -- 162
-* -- 1045
-:= -- 3244
-add.period$ -- 41
-call.type$ -- 34
-change.case$ -- 159
-chr.to.int$ -- 29
-cite$ -- 36
-duplicate$ -- 569
-empty$ -- 1308
-format.name$ -- 310
-if$ -- 3711
+            1060 strings with 11135 characters,
+and the built_in function-call counts, 20920 in all, are:
+= -- 2176
+> -- 525
+< -- 723
++ -- 797
+- -- 181
+* -- 1163
+:= -- 3593
+add.period$ -- 45
+call.type$ -- 38
+change.case$ -- 178
+chr.to.int$ -- 33
+cite$ -- 40
+duplicate$ -- 632
+empty$ -- 1454
+format.name$ -- 349
+if$ -- 4113
 int.to.chr$ -- 6
 int.to.str$ -- 0
-missing$ -- 141
-newline$ -- 189
-num.names$ -- 102
-pop$ -- 268
+missing$ -- 158
+newline$ -- 209
+num.names$ -- 114
+pop$ -- 301
 preamble$ -- 1
-purify$ -- 227
+purify$ -- 254
 quote$ -- 0
-skip$ -- 1193
+skip$ -- 1292
 stack$ -- 0
-substring$ -- 1203
-swap$ -- 105
-text.length$ -- 88
-text.prefix$ -- 20
+substring$ -- 1308
+swap$ -- 117
+text.length$ -- 98
+text.prefix$ -- 22
 top$ -- 0
-type$ -- 284
+type$ -- 320
 warning$ -- 2
-while$ -- 151
-width$ -- 37
-write$ -- 420
+while$ -- 170
+width$ -- 41
+write$ -- 467
 (There were 9 error messages)
