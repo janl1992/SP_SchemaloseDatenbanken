@@ -1,0 +1,17 @@
+\section{Modell}
+Allgemein betrachtet ist ein Modell eine vereinfachte bzw. abstrahierte Darstellung von realen Gegenständen, Sachverhalten oder Problemen.
+Durch die Modellierung soll die Realität auf die wichtigsten Einflussfaktoren reduziert werden \cite{datamodels}.
+In der Datenbankwelt beschreibt das Modell die Struktur der Daten, Operationen zum manipulieren der Daten und Integritätsbedingungen \cite{efcodd}.
+Das derzeit am häufigsten verwendete Modell ist das relationale Datenbankmodell, bei dem die Daten in Tabellen gespeichert werden und in der Regel die standardisierte Abfragesprache \ac{SQL} eingesetzt wird.
+Der Schwachpunkt des relationalen Datenbankmodells liegt bei der Verarbeitung von Daten mit einer hohen Anzahl an Beziehungen \cite{vicknair2010comparison}.
+
+%Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
+Da eine effiziente Verarbeitung von großen vernetzten Datenmengen immer wichtiger wird, haben Graphenmodelle in den letzten Jahren im Datenbankbereich stark an Bedeutung gewonnen.
+Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspezifische Operationen zur effizienten Verarbeitung vernetzter Daten zurück \cite{angles2008survey}.
+%Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
+%Dennoch sind die kleinen Unterschiede in der Datenmodellierung oft entscheidend und es können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
+Trotz der oft kleinen Unterschiede in der Datenmodellierung können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
+In der Praxis werden oft verschiedene Modelle zu Multi-Model Datenbanken kombiniert, um die Schwachpunkte der einzelnen Modelle auszugleichen.
+Ein Beispiel für eine solche Multi-Model Datenbank ist OrientDB, welche unteranderem das Graphen-Modell mit Key-Value Stores und dem Objektorientierten-Modell verbindet \cite{orient}.
+Im Folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
+\newpage

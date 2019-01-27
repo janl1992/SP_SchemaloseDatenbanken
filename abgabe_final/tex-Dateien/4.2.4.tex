@@ -1,0 +1,7 @@
+\subsection{Interpretation der Ergebnisse}
+
+Es ist auffallend das die Laufzeit der Statements sehr stark von der Anzahl der Eingabeknoten abhängig ist und die größe der Tabellen eher nachrangig ist. So ist die relations\_youtube Tabelle deutlich größer als die relation\_epinions Tabelle, jedoch ist die Latenz der Statements in der fünften Rekursion für die relations\_youtube Tabelle deutlich geringer als für die der relation\_epinions Tabelle.  
+
+Bei der relation\_epinions Tabelle werden in der vierten Iteration 29184 Zeilen zurückgegeben, die dann in der fünften Iteration als Input benutzt werden. Bei der relations\_youtube Tabelle sind es nur 760. Entsprechend sind die Unterschiede in der Latenz in der fünften Rekursionsstufe. Für die Youtube-Daten werden im besten Fall nur 14 Millisekunden benötigt, bei den Epinions-Daten sind es 505 Millisekunden.
+
+Weiterhin zeigt sich, dass das InnerJoin-Statement in fast allen Fällen in der fünften Rekursionsstufe die schlechteste Wahl darstellt. Besonders bei den Wikipedia und Epinions-Daten wird dies sehr deutlich.

@@ -1,62 +1,3 @@
-\chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
-\section{PostgreSQL}
-Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung wurden vier verschiedene Stored Procedures angelegt:
-\begin{itemize}
-	\item innerJoinGenerator
-	\item recursivesearch
-	\item selectCascadingGenerator
-	\item selectUnionGenerator
-\end{itemize}
-Der Aufruf der Statements funktioniert gleich, es werden die Rekursionstiefe, der Startknoten und die Tabelle, auf welcher die Stored Procedure ausgeführt wird, übergeben.
-
-Die Funktionen innerJoinGenerator, selectCascadingGenerator und selectWithUnionSourceCodeGenerator generieren die entsprechenden Statements und führen diese aus. Die Funktion innerJoinGenerator erzeugt ein Select Statement in der die Abfrage, wie in Abschnitt \ref{2.postgresInnerJoin.subsection} beschrieben, erzeugt und ausgeführt wird. Entsprechend erzeugt selectCascadingGenerator eine verschachtelte Select-Abfrage. Die Funktion ist in Listing \ref{2.StandardSQLGenerisch.listing} abgebildet. Die Funktion selectUnionGenerator erzeugt eine Abfrage wie in Abschnitt \ref{2.postgresStandardSQL.subsection} beschrieben. Bei der Funktion recursivesearch handelt es sich um die Funktion wie sie in Abschnitt \ref{2.postgresRecursiveFunction.subsection} beschrieben.
-
-\subsection{Indexe und Partionierte Tabellen}
-Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den ''Default'' --Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
-
-Die erste Tabelle hat das Suffix ''\_with\_index''. Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz ''youtube'' dargestellt:
-
-\lstsetsql
-\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={2.tabelleIndex.listing} ]
-CREATE TABLE IF NOT EXISTS relation_youtube_with_index(
-src INTEGER REFERENCES profiles_youtube(ID),
-dst INTEGER REFERENCES profiles_youtube(ID),
-type VARCHAR(50),
-date DATE
-);
-CREATE INDEX yt_dst ON relation_youtube_with_index (dst);
-CREATE INDEX yt_src ON relation_youtube_with_index (src);
-\end{lstlisting}
-
-Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. Dabei wurde ein index auf die src-Spalte angelegt, der andere auf die dst-Spalte.
-
-
-Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
-
-\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={2.tabelleIndex.listing} ]
-
-CREATE TABLE IF NOT EXISTS relation_youtube_partitioned(
-src INTEGER REFERENCES profiles_youtube(ID),
-dst INTEGER REFERENCES profiles_youtube(ID),
-type VARCHAR(50),
-date DATE
-)PARTITION BY RANGE(src);
-CREATE INDEX yt_part_src ON relation_youtube_partitioned (src);
-CREATE INDEX yt_part_dst ON relation_youtube_partitioned (dst);
-CREATE TABLE relation_youtube_partitioned_0 PARTITION OF relation_youtube_partitioned
-FOR VALUES FROM (0) TO (800000);
-CREATE TABLE relation_youtube_partitioned_1 PARTITION OF relation_youtube_partitioned
-FOR VALUES FROM (800001) TO (1600000);
-CREATE TABLE relation_youtube_partitioned_2 PARTITION OF relation_youtube_partitioned
-FOR VALUES FROM (1600001) TO (2400000);
-CREATE TABLE relation_youtube_partitioned_3 PARTITION OF relation_youtube_partitioned
-FOR VALUES FROM (2400001) TO (3200000);
-\end{lstlisting}
-
-Da die Datensätze unterschiedlich groß sind wurden die Partionsgrößen entsprechend angepasst. Jeder Datensatz wurde auf 4 Partitonen verteilt. Damit ergibt sich für den Datensatz youtube eine Partitonsgröße von 800.000.
-
-
-
 \subsection{Benchmark}
 Mit der Standardinstallation von PostgreSQL wird auch pgbench mitinstalliert. Bei pgbench handelt es sich um ein einfaches Tool zur Durchführung von Benchmark-Tests. Bei einem Benchmark-Test wird eine Menge von \ac{SQL}-Statements beliebig oft wiederholt, dabei können auch mehrere parallele Sessions geöffnet werden. Beim durchführen des Tests berechnet pgbench die durchschnittliche Latenz aller Requests, sowie die Transaktionen pro Sekunde \cite{postgres2018}.
 \subsubsection{Verwendung von pgbench}
@@ -1713,10 +1654,3 @@ Durch die Partitionierung ergeben sich weitere Verbesserungen in der Laufzeit. D
 %\subsection{Datenbankzugriffe}
 %\subsection{Zugriffsart Aggregation}
 %\subsection{Zugriffsart Traversierung}
-\subsection{Interpretation der Ergebnisse}
-
-Es ist auffallend das die Laufzeit der Statements sehr stark von der Anzahl der Eingabeknoten abhängig ist und die größe der Tabellen eher nachrangig ist. So ist die relations\_youtube Tabelle deutlich größer als die relation\_epinions Tabelle, jedoch ist die Latenz der Statements in der fünften Rekursion für die relations\_youtube Tabelle deutlich geringer als für die der relation\_epinions Tabelle.  
-
-Bei der relation\_epinions Tabelle werden in der vierten Iteration 29184 Zeilen zurückgegeben, die dann in der fünften Iteration als Input benutzt werden. Bei der relations\_youtube Tabelle sind es nur 760. Entsprechend sind die Unterschiede in der Latenz in der fünften Rekursionsstufe. Für die Youtube-Daten werden im besten Fall nur 14 Millisekunden benötigt, bei den Epinions-Daten sind es 505 Millisekunden.
-
-Weiterhin zeigt sich, dass das InnerJoin-Statement in fast allen Fällen in der fünften Rekursionsstufe die schlechteste Wahl darstellt. Besonders bei den Wikipedia und Epinions-Daten wird dies sehr deutlich.
