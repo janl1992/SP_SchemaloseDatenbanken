@@ -14,7 +14,7 @@ Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspez
 Trotz der oft kleinen Unterschiede in der Datenmodellierung können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
 In der Praxis werden oft verschiedene Modelle zu Multi-Model Datenbanken kombiniert, um die Schwachpunkte der einzelnen Modelle auszugleichen.
 Ein Beispiel für eine solche Multi-Model Datenbank ist OrientDB, welche unteranderem das Graphen-Modell mit Key-Value Stores und dem Objektorientierten-Modell verbindet \cite{orient}.
-Im folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
+Im Folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
 \newpage
 \subsection{Graph}
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
@@ -33,7 +33,7 @@ Die Grundlage aller Graphdatenbankmodelle liefert die Definition eines einfachen
 %	Zwei Knoten $a,b \in V$ heißen adjazent(adjacent) genau dann wenn es eine Kante $e$ gibt die zu $a$ und $b$ inzident ist.
 %	Es gilt	$\exists e \in E: \gamma(e)=\{a,b\}$.
 \end{definition}
-Ein Knoten representiert ein Element in einem Graphen und die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
+Ein Knoten repräsentiert ein Element in einem Graphen und die Kanten stellen die Beziehung zwischen den einzelnen Knoten her.
 %In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
 Bei einfachen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$ haben.
 Als Kardinalität wird die Anzahl Knoten bezeichnet, die durch eine Kante in Beziehung gesetzt werden kann.
@@ -88,7 +88,7 @@ Sind zwei Graphen gleich, bezeichnet man diese als isomorph \cite[Seite 22]{basi
 %	%\caption{Regulärer Graph}
 %\end{center}
 \subsection{Bäume}
-Ist ein Graph kreisfrei, es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
+Ist ein Graph kreisfrei und es gibt keinen Weg bei dem der Start- gleich dem Endknoten ist, spricht man von einem Wald.
 Sind die Knoten eines Waldes zusammenhängend entsteht ein Baum.
 %Ein Baum mit $n$ Knoten hat immer $n-1$ Kanten \cite{basicgraphtheory}.
 Knoten mit dem Grad $n=1$ werden als Blätter bezeichnet.
@@ -106,7 +106,7 @@ In einem Baum gibt es zwischen zwei beliebigen Knoten immer nur einen Weg \cite{
 	\end{center}
 \end{figure}
 Bäume sind Grundlage unteranderen des hierarchischen Datenbankmodells, welches sich dadurch auszeichnet, dass jeder Knoten nur einen Vorgänger haben kann.
-Dieses Datenbankmodell hat den Nachteil, dass bedingt durch die Kreisfreiheit eines Baumes sehr eingeschränkt ist und beispielsweise keinen:n Beziehungen modelliert werden können.
+Dieses Datenbankmodell hat den Nachteil, dass bedingt durch die Kreisfreiheit eines Baumes sehr eingeschränkt ist und beispielsweise keine n:n Beziehungen modelliert werden können.
 Das Netzwerkdatenbankmodell versucht dieses Problem zu lösen, indem die Limitierung auf einen Vorfahren aufgehoben wird \cite{hald2013datenbank}.
 \subsection{Property Graphen}
 Property Graphen erweitern das Modell des einfachen Graphen.
