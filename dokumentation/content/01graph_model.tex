@@ -9,8 +9,11 @@ Der Schwachpunkt des relationalen Datenbankmodells liegt bei der Verarbeitung vo
 %Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
 Da eine effiziente Verarbeitung von großen vernetzten Datenmengen immer wichtiger wird, haben Graphenmodelle in den letzten Jahren im Datenbankbereich stark an Bedeutung gewonnen.
 Graph-Datenbanken nutzen Graphen als Datenbankmodell und greifen auf graphenspezifische Operationen zur effizienten Verarbeitung vernetzter Daten zurück \cite{angles2008survey}.
-Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
-Dennoch sind die kleinen Unterschiede in der Datenmodellierung oft entscheidend und es können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
+%Obwohl sich die verschiedenen Graphdatenbanken im allgemeinen nur minimal bei der Strukturierung der Daten unterscheiden, gibt es sehr verschiedene Ansätze bei den Abfragesprachen \cite{anglesintro}.
+%Dennoch sind die kleinen Unterschiede in der Datenmodellierung oft entscheidend und es können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
+Trotz der oft kleinen Unterschiede in der Datenmodellierung können je nach Anwendungsfall verschiedene Modelle sinnvoll sein \cite{angles2012comparison}.
+In der Praxis werden oft verschiedene Modelle zu Multi-Model Datenbanken kombiniert, um die Schwachpunkte der einzelnen Modelle auszugleichen.
+Ein Beispiel für eine solche Multi-Model Datenbank ist OrientDB, welche unteranderem das Graphen-Modell mit Key-Value Stores und dem Objektorientierten-Modell verbindet \cite{orient}.
 Im folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphentheorie, die zur Modellierung von Graphdatenbanken von Bedeutung sind, kurz vorgestellt werden.
 \newpage
 \subsection{Graph}
@@ -106,7 +109,7 @@ Bäume sind Grundlage unteranderen des hierarchischen Datenbankmodells, welches 
 Dieses Datenbankmodell hat den Nachteil, dass bedingt durch die Kreisfreiheit eines Baumes sehr eingeschränkt ist und beispielsweise keinen:n Beziehungen modelliert werden können.
 Das Netzwerkdatenbankmodell versucht dieses Problem zu lösen, indem die Limitierung auf einen Vorfahren aufgehoben wird \cite{hald2013datenbank}.
 \subsection{Property Graphen}
-Propertygraphen erweitern das Modell des einfachen Graphen.
+Property Graphen erweitern das Modell des einfachen Graphen.
 Property Graphen sind gerichtete Graphen, die sich durch ihre den Kanten und Knoten zugewiesenen Eigenschaften (Properties) auszeichnen.
 Gespeichert werden diese Eigenschaften als Key-Value-Paare.
 Das Hinzufügen von Attributen an einen Knoten oder eine Kante soll zusammengehörige Daten schneller abrufbar machen \cite{angles2012comparison}.
@@ -128,9 +131,9 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 
 Der Vorteil von Property Graphen ist, dass diese eine sehr detailierte Modellierung der Daten ermöglichen.
 Nachteilig ist, dass eine komplexere Datenstruktur zu einer komplizierteren Realisierung führt.
-Derzeit sind Propertygraphen das am häufigsten verwendete Datenmodell für Graphdatenbanken.
-Neo4j, die momentan weltweit populärste Graphdatenbank, nutzt Propertygraphen als Datenbankmodell \cite{neo4j}.
-Ein weiteres Beispiel für ein Graph \ac{DBMS}, welches Propertygraphen zur Modellierung nutzt, ist JanusGraph \cite{janus}.
+Derzeit sind Property Graphen das am häufigsten verwendete Datenmodell für Graphdatenbanken.
+Neo4j, die momentan weltweit populärste Graphdatenbank, nutzt Property Graphen als Datenbankmodell \cite{neo4j}.
+Ein weiteres Beispiel für ein Graph \ac{DBMS}, welches Property Graphen zur Modellierung nutzt, ist JanusGraph \cite{janus}.
 
 \subsection{Hypergraphen}
 Hypergraphen stellen eine Generalisierung von Graphen dar und ermöglichen die Modelierung komplexer Beziehungen \cite{anglesintro}.
@@ -180,10 +183,10 @@ Das Hypernode Modell nutzt gerichtete Kanten.
 Jeder Knoten des verschachtelten Graphen bekommt ein eindeutiges Label.
 Um die Knoten in verschiedene Kategorien zu unterteilen werden Tags vergeben \cite{poulovassilis1994nested}.
 
-Abbildung \ref{2.hypernode.image} stellt einen Teil des in \ref{2.property.image} dargestellten Propertygraphen als Hypernodes dar.
+Abbildung \ref{2.hypernode.image} stellt einen Teil des in \ref{2.property.image} dargestellten Property Graphen als Hypernodes dar.
 Alle Knoten haben ein eindeutiges Label und es wurden zwei Tags vergeben - Unternehmen und Person.
 Durch gerichtete Kanten werden die Beziehungen zwischen den einzelnen Hypernodes hergestellt.
-Die Attributer, die im Propertygraphen als Key-Value Paare gespeichert werden, werden im verschachtelten Graphen als Knoten einer Hypernode gespeichert.
+Die Attributer, die im Property Graphen als Key-Value Paare gespeichert werden, werden im verschachtelten Graphen als Knoten einer Hypernode gespeichert.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.5]{./images/Hypernode.png}
