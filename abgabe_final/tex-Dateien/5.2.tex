@@ -1,0 +1,16 @@
+\chapter{Fazit}
+\section{Postgres}
+\subsection{Zusammenfassung}
+PostgreSQL ist sehr Ausgereift. Es hat sich bei den OLAP-Daten gezeigt, dass PostgreSQL keine Probleme mit dem Umgang größerer Datensätze hat und dabei noch Performant ist. Durch die Verwendung von Indices und der Partitionierung von Tabellen können bei großen Datenmengen deutliche Verbesserungen in der Latenz erreicht werden. Bei kleineren Datensätzen sind Indices und die Partitonierung wenig hilfreich und führen zum Teil zu einer Verschlechterung der Latenz.
+
+PostgreSQL weißt bei einer sehr großen Menge von Eingaben die deutlichsten Steigerungen in der Latenz auf. Es stellt sich die Frage ob sich dieser Effekt abschwächen und somit die Latenz verbessern lässt.
+Ein Aspekt der im Rahmen dieser Arbeit nicht berücksichtigt wurde, ist die Frage ob sich durch eine andere Modellierung der Daten eine Verbesserung der Latenz erreichen ließe. Hier wäre ein Vergleich zwischen der Modellierung wie sie im Rahmen dieser Arbeit verwendet wurde mit der Modellierung, die Agensgraph erzeugt, durchaus interessant. 
+
+PostgreSQL zeigt sich als relationale Datenbank als konkurrenzfähig bei der Traversierung gegenüber den spezialisierten Graph-Datenbanken.
+
+\subsection{Pros}
+PostgreSQL konnte über den in Ubuntu vorhandenenen Paketmanager installiert werden, dadurch war die Installation sehr einfach. Der Import der Daten ging leicht von der Hand. Auch die Durchführung des Lasttests war mit dem von PostgreSQL mitgelieferten Tool pgbench leicht zu realisieren.  
+
+\subsection{Cons}
+
+PostgreSQL bietet vielfältige Konfigurationsmöglichkeiten, was dazu geführt hat, dass einige Zeit für die Anpassung der Konfiguration von PostgreSQL an die Umgebung aufgewendet werden musste.

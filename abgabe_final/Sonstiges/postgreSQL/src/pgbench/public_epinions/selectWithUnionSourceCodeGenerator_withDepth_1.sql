@@ -1,0 +1,1 @@
+SELECT selectUnionGenerator('relation_epinions',5197,1);

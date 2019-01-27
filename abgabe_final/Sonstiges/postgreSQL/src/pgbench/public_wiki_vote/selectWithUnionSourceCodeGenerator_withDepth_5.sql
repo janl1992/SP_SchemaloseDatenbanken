@@ -1,0 +1,1 @@
+SELECT selectUnionGenerator('relation_wiki_vote',158,5);

@@ -1,0 +1,1 @@
+SELECT selectUnionGenerator('relation_livejournal',510760,3);

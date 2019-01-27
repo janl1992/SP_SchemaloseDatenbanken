@@ -1,0 +1,1 @@
+SELECT recursivesearch(Array[5197], 2, 'relation_epinions');
