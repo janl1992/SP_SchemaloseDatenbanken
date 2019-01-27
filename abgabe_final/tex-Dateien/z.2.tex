@@ -1,0 +1,66 @@
+\begin{abstract}
+\section*{Zusammenfassung}\markboth{Zusammenfassung}{}
+  \addcontentsline{toc}{chapter}{Zusammenfassung}
+\enlargethispage*{\baselineskip}
+%\subsubsection*{Problemstellung und Erkenntnisinteresse}
+% Problemstellung „Welches theoretische, praktische Problem ist Ausgangspunkt der Arbeit?“
+%\begin{itemize}
+%	\item Es soll untersucht werden wie sich Graphen in der relationalen Datenbank Postgresql abbilden lassen
+%	\item Ist es besser eine Relationale Datenbank als Graphdatenbank zu verwenden oder eine "richtige" Graphendatenbank zu verwenden.
+%	\item Welche Problemstellungen lassen sich durch die Modellierung von Daten in Form von Graphen lösen
+%	\item Optimierungemöglichkeiten? Handgrestrikte  SQLs vs. Stored Procedure
+%\end{itemize}
+% Wissenslücke/Erkenntnisinteresse	Warum will man sich mit diesem Problem beschäftigen? Welche Wissenslücke kann man dadurch schließen?
+%\begin{itemize}
+%	\item Praktische Anwendungsgebiete wie Empfehlungsengines o.Ä.
+%	\item Vorteile von Relationalen Datenbanken.
+%	\item Auswirkungen auf bestehende Anwendungen. Was sind die Vorteile? Wie wären die Auswirkungen auf ein Datenbankschema?
+%\end{itemize}
+%Zur Lösung bestimmter Fragestellungen ist es sinnvoll, vorhandene Daten als Graphen abzubilden.
+In den letzten Jahren haben Graphdatenbanken an Bedeutung gewonnen, da sich mit diesen bestimmte Fragestellungen besonders schnell lösen lassen.
+Graphdatenbanken haben den Vorteil, dass sich insbesondere Beziehungen zwischen Objekten gut abbilden und sehr performant abfragen lassen.
+Bei relationalen Datenbanken ist es zur Darstellung von Beziehungen zwischen Objekten erforderlich die verschiedenen Tabellen mittes des JOIN Operators zu verknüpfen.
+Diese Verknüpfungen können schnell zu einem großen Rechenaufwand und langen Laufzeiten führen.
+Es soll am Beispiel von Postgres untersucht werden, ob und wie sich Graphen in relationalen Datenbanken abbilden lassen.
+%Speziell soll dies anhand der relationalen Datenbank Postgres untersucht werden.
+Weiterhin soll analysiert werden, ob und für welche Problemstellungen es sinnvoller ist Graphen in einer relationale Datenbank statt einer Graphdatenbank abzubilden.
+Ist es zukünftig notwendig für die performante Verarbeitung steigender Datenmengen auf neue Technologien, wie Graphdatenbanken zu schwenken oder lassen sich die klassischen relationalen Datenbanken so erweitern, dass diese Problemstellungen ähnlich effizient lösen können.
+%Ist es möglich durch Erweiterungen des standart SQL, wie beispielsweise Stored Prozedures, bei rekursiven Abfragen vergleichbare Laufzeiten wie bei Graphdatenbanken zu erreichen?
+%\subsubsection*{Aktueller Forschungsstand}
+
+% Forschungsstand Eigene Vorkenntnisse im Exposé darlegen: Wie ist der aktuelle Forschungsstand zum Thema der Arbeit?
+%\begin{itemize}
+%	\item Optimierungemöglichkeiten?
+%	\item In einer relationalen Datenbank wird beim Auflösen von Beziehungen (z.B. Vater-Kind Beziehung oder wer kennt wen Beziehung) ein JOIN verwendet,
+%	Bei einem JOIN wird das kartesische Produkt verwendet, welches schon nach relativ wenigen Eingabeelementen viel Rechenleistung beansprucht.
+%\end{itemize}
+%	$\rightarrow$ In der Praxis wurde folgende Beobachtung gemacht: Das Traversieren über einen Graph mit Hilfe von Stored Procedures auf einer relationalen Datenbank
+%	ist vermutlich ähnlich schnell, wie das Traversieren mit Hilfe einer klassischen Graphdatenbank.
+\ac{NoSQL} Datenbanken und insbesondere Graphdatenbanken sind im Gegensatz zu den relationalen Datenbanken flexibler und bei der Lösung bestimmter Probleme weniger rechen- und speicherintensiv.
+Insbesonder wenn es um die Auflösung von Beziehungen bzw. um die Traversierung über einen Graphen geht, bieten Graphdatenbanken Vorteile gegenüber den herkömmlichen relationalen Datenbanken.
+In der Praxis wurde jedoch auch die Beobachtung gemacht, dass durch die Verwendung von Stored Procedures die Traversierung über einen Graphen mittels einer relationalen Datenbank ähnlich schnell umgesetzt werden kann, wie mit einer Graphdatenbank.
+%\item Fragestellung	Welche Frage (Forschungsfrage) soll in der Arbeit beantwortet werden? \\
+%$\rightarrow$ Warum sind Graphdatenbanken so schnell?
+%\subsubsection*{Zielsetzung}
+
+%\item Ziel/Hypothese Im Exposé darlegen, welches Ziel erreicht werden soll: Was soll bewiesen oder widerlegt werden? Kurz: „Was will ich wissen? (Fragestellung), wozu will ich das wissen? (Ziel)“
+%\begin{itemize}
+%	\item Wie performant lässt sich die Traversierung mit hilfe von Stored Procedures bzw SQL-Erweiterungen abbilden? Kann man hier Abschätzungen zur Komplexität machen?
+%	\item Welche Besonderheiten bietet Postgresql?
+%	\item Gibt es Frameworks die hier unterstützen? // Anmerkung Jan: Laut Prof. Knolle sollten wir ja plain PL/SQL verwenden
+%	\item Schneiden die relationale Datenbanken im Vergleich zu Graphdatenbanken in Hinsicht auf Performance beim Traversieren von Graphen ähnlich gut ab,
+%	wenn man unkonventionelle Methoden verwendet (Traversieren mit Hilfe von rekursiven Stored Procedures).
+%\end{itemize}
+Es soll das Modell als grundlegender technologische Aspekt von Graphdatenbanken kurz erläutert werden.
+Zielsetzung dieser Arbeit ist es einen Graphen in der relationalen Datenbank Postgres abzubilden und zu vergleichen, wie sich die Traversierung über diesen Graphen effizient umsetzen lässt.
+Zunächst soll die Umsetzung mittels klassischer SQL Operationen erfolgen. Anschließend sollen die Problemstellungen mittels Stored Procedures, sowie der Rekursion mittels PL/SQL gelöst werden.
+Die Ergebnisse der verschiedenen Vorgehensweisen sollen miteinander verglichen werden.
+    %\subsection*{Theoriebezug}
+%\item Theoriebezug	Welche Theorien sollen als Basis für die Bearbeitung der Fragestellung dienen?
+%\begin{itemize}
+%	\item Graphentheorie
+%	\item Relationale Algebra
+%	\item Komplexitätstheorie
+%	\item Rekursion - Besonderheit Rekursion in SQL
+%\end{itemize}
+\end{abstract}
