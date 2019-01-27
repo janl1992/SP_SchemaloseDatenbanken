@@ -1,0 +1,827 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6aa0dc32-0960-42e4-b9f4-29861b3a49cd" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team22@10.20.110.43" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team22@10.20.110.43" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team22@10.20.110.43" type="feb32156:DbDataSourceImpl" />
+        <item name="databases" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="team22: database" type="162271b6:PgImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="team22@10.20.110.43" type="feb32156:DbDataSourceImpl" />
+        <item name="roles" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ExecutionTargetDialog">
+    <checked>
+      <node key="d3be3204-660a-40d1-b403-e3a52c165345" />
+    </checked>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelect_withStartingNode.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="51" selection-start-column="27" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectSourceCode_Generate_5.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="77" selection-start-column="71" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d3be3204-660a-40d1-b403-e3a52c165345/console.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" lean-forward="true" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/improvedCascadingSelect_5.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_5.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectCascade.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_5.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>relation_facebook</find>
+      <find>765</find>
+      <find>158</find>
+      <find>%m_%d_%Y&quot;</find>
+      <find>%d</find>
+      <find>_d</find>
+      <find>relation_livejournal</find>
+      <find>relation_wiki_vote</find>
+      <find>relation_wiki_vote_partitioned</find>
+      <find>livejournal</find>
+      <find>relation_livejournal_with_index</find>
+      <find>wiki_vote</find>
+      <find>relation_epinions</find>
+      <find>epinions</find>
+      <find>lj_src</find>
+      <find>epinion</find>
+      <find>youtube</find>
+      <find>relation_youtube_partitioned</find>
+      <find>yt</find>
+      <find>facebook</find>
+      <find>001</find>
+      <find>selectWithUnionSourceCodeGenerator_withDepth</find>
+      <find>innerJoinSourceCodeGenerator</find>
+      <find>selectSourceCodeGenerator_withStartingNode</find>
+      <find>selectSourceCodeGenerator</find>
+      <find>selectCascadingGenerator(4</find>
+      <find>selectCascadingGenerator(3</find>
+      <find>selectCascadingGenerator(2</find>
+      <find>selectCascadingGenerator(1</find>
+      <find>selectCascadingGenerator(0</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>relation_wiki_vote</replace>
+      <replace>relation_youtube</replace>
+      <replace>270898</replace>
+      <replace>%Y_y</replace>
+      <replace>%Y_%m_%d&quot;</replace>
+      <replace>d_%H_%M</replace>
+      <replace>_%d</replace>
+      <replace>relation_livejournal_partitioned</replace>
+      <replace>relation_livejournal_with_index</replace>
+      <replace>relation_wiki_vote_partitioned</replace>
+      <replace>relation_wiki_vote_with_index</replace>
+      <replace>wiki_vote</replace>
+      <replace>epinions</replace>
+      <replace>relation_epinions_partitioned</replace>
+      <replace>relation_epinions_with_index</replace>
+      <replace>youtube</replace>
+      <replace>000</replace>
+      <replace>youtube_partitioned</replace>
+      <replace>youtube_with_index</replace>
+      <replace>fb</replace>
+      <replace>facebook_partitioned</replace>
+      <replace>facebook_with_index</replace>
+      <replace>selectUnionGenerator</replace>
+      <replace>innerJoinGenerator</replace>
+      <replace>selectCascadingGenerator</replace>
+      <replace>selectCascadingGenerator(5</replace>
+      <replace>selectCascadingGenerator(4</replace>
+      <replace>selectCascadingGenerator(3</replace>
+      <replace>selectCascadingGenerator(2</replace>
+      <replace>selectCascadingGenerator(1</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_with_index</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote_partitioned</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote_with_index</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube_partitioned</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube_with_index</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook_partitioned</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook_with_index</dir>
+      <dir>$PROJECT_DIR$/scripts/postgreSQL</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/selectSourceCode_Generate_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/selectSourceCode_Generate_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/selectSourceCode_Generate_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/selectSourceCode_Generate_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote/selectSourceCode_Generate_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/new_recursiveFunction.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/recursiveFunction.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/selectRecursivesearch_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/recursiveFunction_withCurrentDepth.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectWithUnionRecursionDepth.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/Select_innerjoinsourcecodegenerator_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/Select_innerjoinsourcecodegenerator_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/Select_innerjoinsourcecodegenerator_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/Select_innerjoinsourcecodegenerator_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook/Select_innerjoinsourcecodegenerator_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/Select_innerjoinsourcecodegenerator_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/Select_innerjoinsourcecodegenerator_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook/pgbench.sh" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal/pgbench.sh" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/pgbench.sh" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_with_index/Select_innerjoinsourcecodegenerator_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/olap/init-olap.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/pgbench.sh" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelectWithUnionRecursionDepth.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorInnerJoin.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelect_withStartingNode.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectSourceCode_Generate_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectSourceCode_Generate_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_4.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_5.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_3.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_2.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_1.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectCascade.sql" />
+        <option value="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/improvedCascadingSelect_5.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d3be3204-660a-40d1-b403-e3a52c165345/console.sql" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="993" />
+    <option name="y" value="27" />
+    <option name="width" value="927" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Graphtraversierung" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="olap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="oltp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pgbench" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pgbench" type="462c0819:PsiDirectoryNode" />
+              <item name="public_epinions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pgbench" type="462c0819:PsiDirectoryNode" />
+              <item name="public_epinions_partitioned" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pgbench" type="462c0819:PsiDirectoryNode" />
+              <item name="public_epinions_with_index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SP_SchemaloseDatenbanken" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SP_SchemaloseDatenbanken" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="postgreSQL" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pgbench" type="462c0819:PsiDirectoryNode" />
+              <item name="public_livejournal_partitioned" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547925035835" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench" />
+      <recent name="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote" />
+      <recent name="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal" />
+      <recent name="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_facebook" />
+      <recent name="$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6aa0dc32-0960-42e4-b9f4-29861b3a49cd" name="Default Changelist" comment="" />
+      <created>1544956788641</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544956788641</updated>
+      <workItem from="1544956789995" duration="122000" />
+      <workItem from="1544956930470" duration="2184000" />
+      <workItem from="1545039144643" duration="741000" />
+      <workItem from="1545416104210" duration="259000" />
+      <workItem from="1545426447229" duration="643000" />
+      <workItem from="1545508302628" duration="806000" />
+      <workItem from="1545557330412" duration="1332000" />
+      <workItem from="1545560657544" duration="1806000" />
+      <workItem from="1545576257922" duration="809000" />
+      <workItem from="1545583477897" duration="2895000" />
+      <workItem from="1545645030431" duration="2809000" />
+      <workItem from="1546621475412" duration="3844000" />
+      <workItem from="1546695155235" duration="7172000" />
+      <workItem from="1546777965539" duration="12682000" />
+      <workItem from="1546887215691" duration="3995000" />
+      <workItem from="1546965322028" duration="1733000" />
+      <workItem from="1546967253255" duration="907000" />
+      <workItem from="1546975568367" duration="1820000" />
+      <workItem from="1546980755036" duration="3047000" />
+      <workItem from="1547297754737" duration="4531000" />
+      <workItem from="1547324720126" duration="3176000" />
+      <workItem from="1547404104113" duration="603000" />
+      <workItem from="1547569737224" duration="623000" />
+      <workItem from="1547577925078" duration="2052000" />
+      <workItem from="1547662622615" duration="1566000" />
+      <workItem from="1547828021138" duration="4778000" />
+      <workItem from="1547899779556" duration="3394000" />
+      <workItem from="1548092369042" duration="3328000" />
+    </task>
+    <task id="LOCAL-00001" summary="added structure for pg_bench">
+      <created>1545647216259</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545647216259</updated>
+    </task>
+    <task id="LOCAL-00002" summary="pg_bench scripts - Now with partitioned and with and without index">
+      <created>1547302221696</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547302221697</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="73657000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29441062" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32937366" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32937366" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.33693305" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Database Console" order="12" visible="true" weight="0.32937366" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.115661316" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24958494" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33693305" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" visible="true" weight="0.23021583" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added structure for pg_bench" />
+    <MESSAGE value="pg_bench scripts - Now with partitioned and with and without index" />
+    <option name="LAST_COMMIT_MESSAGE" value="pg_bench scripts - Now with partitioned and with and without index" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/selectRecursivesearch_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/pgbench.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/pgbench.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/selectWithUnionSourceCodeGenerator_withDepth_3.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_youtube/selectWithUnionSourceCodeGenerator_withDepth_2.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_wiki_vote_with_index/pgbench.sh">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectRecursivesearch_3.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/Select_innerjoinsourcecodegenerator_3.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectWithUnionSourceCodeGenerator_withDepth_4.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectWithUnionSourceCodeGenerator_withDepth_5.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/Select_innerjoinsourcecodegenerator_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectRecursivesearch_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/Select_innerjoinsourcecodegenerator_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectWithUnionSourceCodeGenerator_withDepth_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="27" selection-start-column="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectWithUnion.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectWithJoin.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/recursiveFunction.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" selection-start-column="27" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectRecursivesearch_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="22" selection-start-column="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectWithUnionSourceCodeGenerator_withDepth_1.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectSourceCode_Generate_5.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectSourceCode_Generate_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_with_index/selectSourceCode_Generate_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/selectSourceCode_Generate_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_4.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectWithUnionSourceCodeGenerator_withDepth_3.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_3.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectWithUnionSourceCodeGenerator_withDepth_4.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectWithUnionSourceCodeGenerator_withDepth_5.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="33" selection-start-column="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions_partitioned/Select_innerjoinsourcecodegenerator_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelectWithUnionRecursionDepth.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectWithUnionRecursionDepth.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/Select_innerjoinsourcecodegenerator_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectSourceCode_Generate_1.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="68" selection-start-column="36" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorInnerJoin.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="45" selection-start-column="27" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelectWithUnion.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/SourceCodeGeneratorSelect_withStartingNode.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="51" selection-start-column="27" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/improvedCascadingSelect_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectRecursivesearch_5.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/Graphtraversierung/selectCascade.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d3be3204-660a-40d1-b403-e3a52c165345/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectSourceCode_Generate_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="77" selection-start-column="71" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/olap/init-olap.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="175" selection-start-line="175" selection-end-line="175" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/oltp/init.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_livejournal_partitioned/selectRecursivesearch_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="29" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/postgreSQL/src/pgbench/public_epinions/selectSourceCode_Generate_5.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
