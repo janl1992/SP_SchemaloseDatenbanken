@@ -11,7 +11,7 @@
 \BOOKMARK [1][-]{section.2.1}{PostgreSQL}{chapter.2}% 11
 \BOOKMARK [2][-]{subsection.2.1.1}{Visitenkarte des Systems}{section.2.1}% 12
 \BOOKMARK [0][-]{chapter.3}{Graph-Datenbanken im praktischen Einsatz: OLTP}{}% 13
-\BOOKMARK [1][-]{section.3.1}{PostgresSQL: OLTP}{chapter.3}% 14
+\BOOKMARK [1][-]{section.3.1}{PostgreSQL}{chapter.3}% 14
 \BOOKMARK [2][-]{subsection.3.1.1}{Installation von Postgres}{section.3.1}% 15
 \BOOKMARK [2][-]{subsection.3.1.2}{CSV-Import}{section.3.1}% 16
 \BOOKMARK [2][-]{subsection.3.1.3}{Datenbankschema}{section.3.1}% 17
@@ -22,7 +22,7 @@
 \BOOKMARK [2][-]{subsection.3.1.8}{Graphtraversierung mit Hilfe von rekursiven INNER JOIN}{section.3.1}% 22
 \BOOKMARK [2][-]{subsection.3.1.9}{Graphtraversierung mit Hilfe von selbstgeschriebenen Stored Procedure}{section.3.1}% 23
 \BOOKMARK [0][-]{chapter.4}{Graph-Datenbanken im praktischen Einsatz: OLAP}{}% 24
-\BOOKMARK [1][-]{section.4.1}{PostgreSQL: OLAP}{chapter.4}% 25
+\BOOKMARK [1][-]{section.4.1}{PostgreSQL}{chapter.4}% 25
 \BOOKMARK [2][-]{subsection.4.1.1}{Indexe und Partionierte Tabellen}{section.4.1}% 26
 \BOOKMARK [2][-]{subsection.4.1.2}{Benchmark}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.3}{Interpretation der Ergebnisse}{section.4.1}% 28

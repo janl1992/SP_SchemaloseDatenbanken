@@ -1,5 +1,5 @@
 \chapter{Graph-Datenbanken im praktischen Einsatz: OLAP}
-\section{PostgreSQL: OLAP}
+\section{PostgreSQL}
 Im folgenden Abschnitt werden die in Kapitel 3 vorgestellten SQLs auf ihre Leistungsfähigkeit untersucht. Für die Messung wurden vier verschiedene Stored Procedures angelegt:
 \begin{itemize}
 	\item innerJoinGenerator
@@ -17,7 +17,7 @@ Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden 
 Die erste Tabelle hat das Suffix ''\_with\_index''. Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz ''youtube'' dargestellt:
 
 \lstsetsql
-\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={lineInQueryPlan} ]
+\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={2.tabelleIndex.listing} ]
 CREATE TABLE IF NOT EXISTS relation_youtube_with_index(
 src INTEGER REFERENCES profiles_youtube(ID),
 dst INTEGER REFERENCES profiles_youtube(ID),
@@ -33,7 +33,7 @@ Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei
 
 Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
 
-\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={lineInQueryPlan} ]
+\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={2.tabelleIndex.listing} ]
 
 CREATE TABLE IF NOT EXISTS relation_youtube_partitioned(
 src INTEGER REFERENCES profiles_youtube(ID),
