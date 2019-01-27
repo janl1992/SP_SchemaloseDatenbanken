@@ -1,0 +1,1 @@
+SELECT recursivesearch(Array[270898], 3, 'relation_youtube_with_index');
