@@ -4,7 +4,7 @@ Allgemein betrachtet ist ein Modell eine vereinfachte bzw. abstrahierte Darstell
 Durch die Modellierung soll die Realität auf die wichtigsten Einflussfaktoren reduziert werden \cite{datamodels}.
 In der Datenbankwelt beschreibt das Modell die Struktur der Daten, Operationen zum manipulieren der Daten und Integritätsbedingungen \cite{efcodd}.
 Das derzeit am häufigsten verwendete Modell ist das relationale Datenbankmodell, bei dem die Daten in Tabellen gespeichert werden und in der Regel die standardisierte Abfragesprache \ac{SQL} eingesetzt wird.
-Der Schwachpunkt des relationalen Datenbankmodells liegt jedoch bei der Verarbeitung von Daten mit einer hohen Anzahl an Beziehungen \cite{vicknair2010comparison}.
+Der Schwachpunkt des relationalen Datenbankmodells liegt bei der Verarbeitung von Daten mit einer hohen Anzahl an Beziehungen \cite{vicknair2010comparison}.
 
 %Die Graphentheorie spielt eine zentrale Rolle bei der Modellierung, da sich Graphen sehr gut zur Darstellung vernetzter Daten eignen.
 Da eine effiziente Verarbeitung von großen vernetzten Datenmengen immer wichtiger wird, haben Graphenmodelle in den letzten Jahren im Datenbankbereich stark an Bedeutung gewonnen.
@@ -16,7 +16,7 @@ Im folgenden sollen verschiedene Graphdatenbankmodelle, sowie Aspekte der Graphe
 \subsection{Graph}
 %Ein Graph G besteht aus einer nichtleeren Menge an Knoten V und Kanten E.
 %Ein Graph ist mathematisch folgendermaßen definiert:
-Die Grundlage aller Graphdatenbankmodelle bietet die Definition eines einfachen Graphen:
+Die Grundlage aller Graphdatenbankmodelle liefert die Definition eines einfachen Graphen:
 \begin{definition}
 	Ein $\text{Graph } G=(V,E,\gamma)$ ist ein Tripel bestehend aus:
 	\begin{itemize}
@@ -34,7 +34,7 @@ Ein Knoten representiert ein Element in einem Graphen und die Kanten stellen die
 %In einem einfachen Graphen kann eine Kante immer nur jeweils zwei Knoten miteinander verbinden.
 Bei einfachen Graphen können die Kanten nur die Kardinalität $1 \leq |X| \leq 2$ haben.
 Als Kardinalität wird die Anzahl Knoten bezeichnet, die durch eine Kante in Beziehung gesetzt werden kann.
-Zwei Konten heißen adjazent, wenn diese über eine Kante direkt miteinander verbunden sind.
+Zwei Knoten heißen adjazent, wenn diese über eine Kante direkt miteinander verbunden sind.
 Eine Kante die mit einem Knoten verbunden ist wird als inzident zu diesem Knoten bezeichnet \cite{knauer2015diskrete}.
 
 %\subsection{Eigenschaften von Kanten}
@@ -44,7 +44,7 @@ Grafisch werden gerichtete Kanten in der Regel durch Pfeile dargestellt.
 Für die Modellierung von realen Gegebenheiten ist das Konzept der gerichteten Graphen sehr entscheidend, da dieses die Darstellung einseitiger Beziehungen zwischen den Entitäten des Modells erlaubt.
 
 Um die Beziehung zwischen zwei Knoten genauer zu definieren, lassen sich die Kanten gewichten.
-Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als Gewichtete Graphen.
+Dabei werden den Kanten in der Regel nummerische Werte zugeordnet und man bezeichnet diese Graphen als gewichtete Graphen.
 Durch die Wichtung von Kanten lassen sich beispielsweise Kosten oder Distanzen zwischen den Entitäten definieren.
 
 Ein Knoten ist isoliert, wenn er keine inzidenten Kanten und somit keine direkten Nachbarn hat \cite{knauer2015diskrete}.
@@ -63,13 +63,13 @@ Ein Graph, bei dem alle Knoten den selben Knotengrad haben, wird als regulärer 
 %	\label{fig:regular}
 	%\caption{Regulärer Graph}
 %\end{center}
-Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden spricht man von einem vollständigen Graphen:
+Sind bei einem Graphen alle Knoten mit allen übrigen Knoten verbunden, spricht man von einem vollständigen Graphen:
 \[K_{n}=\big([n],\begin{pmatrix}
 					 [n] \\ 2
 \end{pmatrix}\big)\]
 
 %Werden Kanten und Knoten eines Graphs vertauscht, entsteht der Kantengraph bzw. Line-Graph des jeweiligen Graphen L(G).
-Da bei einem Graphen nur die Struktur definiert ist, also welcher Knoten über welche Kante mit den anderen Knoten verbunden ist, können Graphen auf unterschiedliche weisen gezeichnet werden und trotzdem gleich sein.
+Da bei einem Graphen nur die Struktur definiert ist, also welcher Knoten über welche Kante mit den anderen Knoten verbunden ist, können Graphen auf unterschiedliche Weisen gezeichnet werden und trotzdem gleich sein.
 Sind zwei Graphen gleich, bezeichnet man diese als isomorph \cite[Seite 22]{basicgraphtheory}.
 %
 %Das simpelste Graphdatenbankmodell ist ein einfacher gelabelter Graph.
@@ -102,9 +102,9 @@ In einem Baum gibt es zwischen zwei beliebigen Knoten immer nur einen Weg \cite{
     \caption{gewurzelter Baum}
 	\end{center}
 \end{figure}
-Bäume sind Grundlage unteranderen des hierarchischen Datenbankmodells.
-Dieses Datenbankmodell hat jedoch den Nachteil, dass bedingt durch die Kreisfreiheit eines Baumes keine n:n Beziehungen modelliert werden können.
-Das Netzwerkdatenbankmodell versucht dieses Problem zu lösen.
+Bäume sind Grundlage unteranderen des hierarchischen Datenbankmodells, welches sich dadurch auszeichnet, dass jeder Knoten nur einen Vorgänger haben kann.
+Dieses Datenbankmodell hat den Nachteil, dass bedingt durch die Kreisfreiheit eines Baumes sehr eingeschränkt ist und beispielsweise keinen:n Beziehungen modelliert werden können.
+Das Netzwerkdatenbankmodell versucht dieses Problem zu lösen, indem die Limitierung auf einen Vorfahren aufgehoben wird \cite{hald2013datenbank}.
 %\subsection{Planare Graphen}
 %Planare Graphen lassen sich in der Ebene ohne Überschneidung der Kanten zeichnen.\cite{Theobald2016}
 %Eine Darstellung eines Graphen $G$ in der Ebene ohne Kantenüberkreuzungen wird planare Einbettung von $G$ genannt.
@@ -153,15 +153,17 @@ Die gerichteten Kanten stellen die Beziehungsverhältnisse zwischen den einzelne
 
 
 Der Vorteil von Property Graphen ist, dass diese eine sehr detailierte Modellierung der Daten ermöglichen.
-Nachteilig ist jedoch, dass eine komplexere Datenstruktur zu einer komplizierteren Realisierung führt.
+Nachteilig ist, dass eine komplexere Datenstruktur zu einer komplizierteren Realisierung führt.
 Derzeit sind Propertygraphen das am häufigsten verwendete Datenmodell für Graphdatenbanken.
+Neo4j, die momentan weltweit populärste Graphdatenbank, nutzt Propertygraphen als Datenbankmodell \cite{neo4j}.
+Ein weiteres Beispiel für ein Graph \ac{DBMS}, welches Propertygraphen zur Modellierung nutzt, ist JanusGraph \cite{janus}.
 
 \subsection{Hypergraphen}
 Hypergraphen stellen eine Generalisierung von Graphen dar und ermöglichen die Modelierung komplexer Beziehungen \cite{anglesintro}.
 %Hypergraphen haben die Eigenschaft, dass Kanten im Gegensatz zu klassischen Graphen mehr als zwei Knoten miteinander verbinden können.
 %Die Kanten des Hypergraphen werden auch als Hyperkanten bezeichnet.
 Im Vergleich zum normalen Graphen können die Kanten eines Hypergraphen eine beliebige Kardinalität haben.
-Die Hyperedges in einem Hypergraphen sind somit eine beliebige Menge von Knoten.
+Die Hyperedges in einem Hypergraphen verbinden somit eine beliebige Menge von Knoten, was eine direkte Darstellung von Beziehungen höherer Ordnung ermöglicht \cite{iordanov2010hypergraphdb}.
 Im Falle eines gerichteten Hypergraphen verbindet die Hyperkante den Ausgangsknoten direkt mit allen Zielknoten.
 %\\Mathematisch ist ein Hypergraph folgendermaßen definiert:
 %\begin{definition}
@@ -184,8 +186,10 @@ Die Kante $e_{4}$ verbindet in diesem Graphen die Knoten $v_{5}$, $v_{6}$ und $v
 	\caption{Hypergraph}
 \end{center}
 \end{figure}
-Hypergraphen ermöglichen die direkte Darstellung rekursiver Beziehungen \cite{iordanov2010hypergraphdb}.
-Da die Hypergraphen eine flexiblere Struktur als das einfache Graphen-Modell bietet, werden diese oft zur Modellierung in Graphdatenbanken verwendet \cite{flockdb}.
+%Hypergraphen ermöglichen die direkte Darstellung rekursiver Beziehungen \cite{iordanov2010hypergraphdb}.
+Da Hypergraphen die direkte Darstellung rekursiver Beziehungen ermöglichen und somit eine flexiblere Struktur als das einfache Graphen-Modell bieten, werden diese oft zur Modellierung in Graphdatenbanken verwendet \cite{iordanov2010hypergraphdb}\cite{flockdb}.
+Eine Datenbank, die Hypergraphen als Datenbankmodell nutzt ist beispielsweise HyperGraphDB, welche von Kobrix Software Inc entwickelt wurde \cite{iordanov2010hypergraphdb}.
+Ein weiteres Projekt, bei dem Hypergraphen zur Modellierung genutzt werden ist Trinity \cite{shao2013trinity}.
 %In einem normale Graphen sind die Kanten, eine in einem Intervall festgelegte Menge von Knoten:
 %    \[X = \{v_{1}, v_{2}, v_{3}, v_{4}, v_{5}, v_{6}, v_{7}\} \text{ Knoten}\]
 %    \[E=\{e_{1}, e_{2}, e_{3}, e_{4}\} \text{ Kanten}\]
@@ -205,7 +209,7 @@ Um die Knoten in verschiedene Kategorien zu unterteilen werden Tags vergeben \ci
 Abbildung \ref{fig:hypernode} stellt einen Teil des in \ref{fig:property} dargestellten Propertygraphen als Hypernodes dar.
 Alle Knoten haben ein eindeutiges Label und es wurden zwei Tags vergeben - Unternehmen und Person.
 Durch gerichtete Kanten werden die Beziehungen zwischen den einzelnen Hypernodes hergestellt.
-Die Attributer, die im Propertygraphen als Key-Vaule Paare gespeichert werden, werden im verschachtelten Graphen als Knoten einer Hypernode gespeichert.
+Die Attributer, die im Propertygraphen als Key-Value Paare gespeichert werden, werden im verschachtelten Graphen als Knoten einer Hypernode gespeichert.
 \begin{figure}[H]
 	\begin{center}
 		\includegraphics[scale = 0.5]{./images/Hypernode.png}
@@ -215,4 +219,4 @@ Die Attributer, die im Propertygraphen als Key-Vaule Paare gespeichert werden, w
 \end{figure}
 
 Hypergraphen lassen sich durch Hypernodes darstellen, indem man die im Hypergraph durch eine Hyperedge verbundenen Knoten in einer Hypernode modelliert.
-Umgekehrt lassen sich Hypernodes jedoch nicht unbedingt in einem Hypergraphen realisieren \cite{poulovassilis1994nested}.
+Umgekehrt lassen sich Hypernodes nicht unbedingt in einem Hypergraphen realisieren \cite{poulovassilis1994nested}.

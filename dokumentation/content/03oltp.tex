@@ -8,7 +8,7 @@ Für die Graphtraversierung wurden eigene Scripte geschrieben, die in diesem Kap
 %Das Ziel ist es 5 Graphen mit Hilfe einer objektrelationalen Datenbank zu traversieren.
 Da Graphdatenbanken für das Traversieren von Graphen entwickelt worden sind, sollten diese bei der Traversierung einen Performancegewinn gegenüber objektrelationalen Datenbanken haben.
 %Die Vermutung ist, dass das Traversieren eines Graphen mit Hilfe einer objektrelationalen Datenbank ähnlich performant ist, wie das Traversieren mit Hilfe einer Graphdatenbank.
-Ziel ist es mit Hilfe einer objektrelationalen Datenbank eine mit den Graphdatenbanken vergleichbar performante Abfrage eines Graphen zu implementieren.
+Ziel ist es, mit Hilfe einer objektrelationalen Datenbank eine mit den Graphdatenbanken vergleichbar performante Abfrage eines Graphen zu implementieren.
 Für die Graphtraversierung sind die folgenden 5 Methoden vorgesehen.
 
 Graphtraversierung mit Hilfe von:
@@ -49,7 +49,7 @@ innerhalb der relation Tabelle die src und die dst Spalte bei 0 anfangen - somit
 SQL Script geschrieben, was die Daten zuerst in eine temporäre Tabelle schreibt, von jeder Zeile innerhalb der Spalte ID 1 subtrahiert und anschließend die Werte aus
 der temporären Tabelle in die endgültige profile Tabelle schreibt (siehe hierzu auch beispielhaft das Script für die Tabelle facebook-profiles (siehe \ref{foreignKey}).
 Für die einzelnen relation Tabellen wurden ebenfalls Indexe erstellt. Die Messung der Performance wurde durchgeführt auf
-den relation Tabellen ohne Index , auf den relation Tabellen mit Index und auf den partitionierten Tabellen mit Index. Partitionierung bezeichnet das Aufteilen einer
+den relation Tabellen ohne Index, auf den relation Tabellen mit Index und auf den partitionierten Tabellen mit Index. Partitionierung bezeichnet das Aufteilen einer
 großen Tabelle in mehrere kleine Tabellen \cite{postgrespartitioning} . Die Motivation hinter der Erstellung von Indexen und der Partitionierung von Tabellen besteht darin,
 einen Performancegewinn bei der Graphtraversierung zu erzielen. Dies wird genauer im 4. Kapitel disuktiert.
 %Im Anhang befinden sich Scripte für die Erstellung von Indexen auf partitionierten Tabellen und auf nicht partitionierten Tabellen für alle relation Tabellen .
