@@ -1,0 +1,43 @@
+\subsection{Indexe und Partionierte Tabellen}
+Um eine bessere Aussage über die Performance von PostgreSQL zu bekommen wurden zusätzlich zu den ''Default'' --Relationstabellen für jeden Datensatz zwei weitere Tabellen angelegt.
+
+Die erste Tabelle hat das Suffix ''\_with\_index''. Im Listing ist Beispielhaft das Create-Skript für die Relationen aus dem Datensatz ''youtube'' dargestellt:
+
+\lstsetsql
+\begin{lstlisting}[language=SQL,caption = Tabelle mit Index anlegen,frame=single, label={2.tabelleIndex.listing} ]
+CREATE TABLE IF NOT EXISTS relation_youtube_with_index(
+src INTEGER REFERENCES profiles_youtube(ID),
+dst INTEGER REFERENCES profiles_youtube(ID),
+type VARCHAR(50),
+date DATE
+);
+CREATE INDEX yt_dst ON relation_youtube_with_index (dst);
+CREATE INDEX yt_src ON relation_youtube_with_index (src);
+\end{lstlisting}
+
+Im Unterschied zur ''public\_youtube''--Tabelle wurde diese Tabelle noch um Zwei Indices erweitert. Dabei wurde ein index auf die src-Spalte angelegt, der andere auf die dst-Spalte.
+
+
+Neben der den ''\_with\_index''--Tabellen wurden noch die \_partitioned--Tabellen angelegt. Diese verwenden die gleichen Indices wie die ''\_with\_index''-Tabellen, jedoch sind sie zusätzlich in 4 Partitonen aufgteilt:
+
+\begin{lstlisting}[language=SQL,caption = Partitonierte Tabelle mit Indices anlegen,frame=single, label={2.tabelleIndex.listing} ]
+
+CREATE TABLE IF NOT EXISTS relation_youtube_partitioned(
+src INTEGER REFERENCES profiles_youtube(ID),
+dst INTEGER REFERENCES profiles_youtube(ID),
+type VARCHAR(50),
+date DATE
+)PARTITION BY RANGE(src);
+CREATE INDEX yt_part_src ON relation_youtube_partitioned (src);
+CREATE INDEX yt_part_dst ON relation_youtube_partitioned (dst);
+CREATE TABLE relation_youtube_partitioned_0 PARTITION OF relation_youtube_partitioned
+FOR VALUES FROM (0) TO (800000);
+CREATE TABLE relation_youtube_partitioned_1 PARTITION OF relation_youtube_partitioned
+FOR VALUES FROM (800001) TO (1600000);
+CREATE TABLE relation_youtube_partitioned_2 PARTITION OF relation_youtube_partitioned
+FOR VALUES FROM (1600001) TO (2400000);
+CREATE TABLE relation_youtube_partitioned_3 PARTITION OF relation_youtube_partitioned
+FOR VALUES FROM (2400001) TO (3200000);
+\end{lstlisting}
+
+Da die Datensätze unterschiedlich groß sind wurden die Partionsgrößen entsprechend angepasst. Jeder Datensatz wurde auf 4 Partitonen verteilt. Damit ergibt sich für den Datensatz youtube eine Partitonsgröße von 800.000.
