@@ -111,7 +111,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 % set pagenumbering to roman(I II III IV)
 \pagenumbering{Roman}
 % input the title
-\input{title}
+%\input{title}
 \nocite{*} %TODO: Show full bibliography remove for final version.  
 
 % Inhaltsverzeichnis
@@ -123,11 +123,11 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 
 
 %Inhalt
-\input{abstract}
+%\input{abstract}
 
-\input{preamble}
+\input{p.2}
 
-\input{fancyRegisterPart}
+%\input{fancyRegisterPart}
 \tableofcontents \newpage
 % set pagenumbering to arabic(1 2 3 4)
 \pagenumbering{arabic}
@@ -144,7 +144,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 
 %\pagenumbering{arabic}
 %% loads the fancy pagestyle for main part
-\input{fancyMainPart}
+%\input{fancyMainPart}
 %
 %% #####
 %% # load the chapter from the files
@@ -153,21 +153,27 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 %% #####
 %\input{chapter1}
 %\input{chapter2}
-\input{1.2}
-\input{2.2}
-\input{3.2}
-\input{4.2}
-\input{5.2} 
+\chapter{Graph-Datenbanken - Grundlegende technologische Aspekte}
+\input{1.2.1}
+\input{1.2.2}
+\input{1.2.3}
+\input{1.2.4}
+\input{1.2.5}
+\input{1.2.6}
+%\input{2.2}
+%\input{3.2}
+%\input{4.2}
+%\input{5.2} 
 %
 \newpage
 %
 %% loads the fancy pagestyle for register part
-\input{fancyRegisterPart}
+%\input{fancyRegisterPart}
 %
 %% #####
 %% # load the appendix from the files
 %% #####
-\input{appendix}
+\input{a.2}
 %
 %% #####
 %% # list of table, list of figures, and list of listings in ToC
@@ -189,7 +195,7 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 \addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
 \renewcommand\refname{Abkürzungsverzeichnis}
 \chapter*{Abkürzungsverzeichnis}
-\input{abbreviations}
+%\input{abbreviations}
 \newpage
 
 % #####
@@ -200,6 +206,6 @@ keepaspectratio]{images/Logo_H-BRS_background.pdf}%
 % #####
 % # load the sworn declaration
 % #####
-\input{declaration}
+%\input{declaration}
 % end of the document
 \end{document}
